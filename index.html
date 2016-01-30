@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="winkelStore">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Angular Circular menu is a menu directive developed in angular. It can be dragged to any corner of the page.">
+    <meta name="author" content="Pradeep Kumar Terli">
+	<meta content='angular menu, angular menu directive, angular app menu, angular collapse menu, angularjs dynamic menu, angular dynamic menu, css3 menu, circular menu, html5 menu, drag menu, cool menu, fan menu, animated menu, svg menu, javascript menu' name='keywords'/>
+     <!-- SEO Tags -->
+    <meta content='Winkel Labs' property='og:site_name'/>
+    <meta content='Angular Circular Menu' property='og:title'/>
+<meta content='website' property='og:type'/>
+<meta content='http://www.winkelabs.com/' property='og:url'/>
+<meta content='assets/images/angular-circular-menu.png' property='og:image'/>
+<meta content='Angular circular menu is a menu directive for your angular apps. It is a dynamic menu, highly configurable and can be dragged around and positioned at any corner of the page. Developed using angular, css, svg and html with cool transition effects.' property='og:description'/>
+<meta content='Winkel Labs' property='og:site_name'/>
+<meta content='966242223397117' property='fb:app_id'/>
+<meta content='100005787193074' property='fb:admins'/>
+<meta content='en_US' property='og:locale'/>
+<meta content='en_GB' property='og:locale:alternate'/>
+<meta content='id_ID' property='og:locale:alternate'/>
+<meta content='summary' name='twitter:card'/>
+<meta content='Winkel Labs' name='twitter:title'/>
+<meta content='Pradeep Kumar Terli' name='twitter:site'/>
+<meta content='Pradeep Kumar Terli' name='twitter:creator'/>
+    
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Angular Circular Menu</title>
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Finger+Paint' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/store-styles.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/prettify.css">
+     <link rel="stylesheet" href="assets/css/animate.css">
+
+  </head>
+
+  <body onload="prettyPrint()" ng-controller="storeController">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" id="brand-icon" href="#"><div class="w-logo">W</div><div class="w-title2">Winkel Labs</div></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="" ng-click="scrollTo('getStarted-section')">UI Components</a></li>            
+            <li><a href="" ng-click="scrollTo('screenshots-section')">Templates</a></li>
+            <li><a href="" ng-click="scrollTo('screenshots-section')">Tutorials</a></li>
+            <li><a href="" ng-click="scrollTo('screenshots-section')">Team</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+ <section class="section banner-section">
+       <!-- <div class="black-overlay"></div> -->
+      <div class="container jumbotron">  	
+        <h1 class="animated fadeInDown">We Love Web Development</h1>
+        <h2 class="animated fadeIn">Free UI Components, Tutorials, Examples,<br> Live Demos and Source Code</h2>
+        <div class="buttons-section">
+        <button class="btn btn-lg btn-custom">Start Exploring <i class="fa fa-angle-right fa-lg"></i></button>
+        </div>
+        
+      </div>
+      <img class="animated fadeInRightBig" src="assets/images/macPro.png"></img>
+</section>
+<div class="main-content container">
+
+<div class="row col-xs-12 col-md-10">
+<div class="col-md-12 utilities">
+<ul class="filter-list">
+	<li><a href="#">All</a></li>
+	<li><a href="#">Angular</a></li>
+	<li><a href="#">HMTL5</a></li>
+	<li><a href="#">CSS3</a></li>
+	<li><a href="#">JS</a></li>
+	<li><a href="#">JQuery</a></li>
+</ul>
+</div>
+<div ng-repeat="app in items" class="col-xs-6 col-md-4" >
+	<div class="col-md-12 app">
+	<a href="#">
+		<div class="col-xs-12 col-md-12 thumbnail">
+			<img ng-src="{{app.thumbnail}}"></img>
+		</div>
+	</a>
+		<div class="col-xs-12 col-md-12 app-details">
+			<a href="{{app.url}}"><h3>{{app.title}}</h3></a>
+			<a href="#"><small>By: </small><small>{{app.author}}</small></a>
+			<div class="controls">
+				<button class="btn btn-default">DEMO</button>
+				<button class="btn btn-default">Download</button>
+				<button class="btn btn-sm btn-success">Docs</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+
+    <script type="text/javascript" src="assets/js/lib/jquery-1.11.3.js"></script>     
+    <script type="text/javascript" src="assets/js/lib/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/lib/prettify.js"></script>
+    <script type="text/javascript" src="assets/js/lib/angular.js"></script>
+    <script type="text/javascript" src="assets/js/lib/ngSmoothScroll.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript">
+    	window.onscroll = function() {
+    		console.log(document.body.scrollTop);
+    		if(document.body.scrollTop > 150){
+    			document.getElementById('brand-icon').classList.add('onscroll');
+    		}
+    		else{
+    			document.getElementById('brand-icon').classList.remove('onscroll');
+    		}
+    	};
+    </script>
+  </body>
+</html>
