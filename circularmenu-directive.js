@@ -1,7 +1,7 @@
 angular.module("circularMenu-directive",[]).directive("dragCircularMenu",function(){
 	return {
 		restrict: 'EA',
-		replace:false,
+		replace:true,
 		scope:{
 			angle:"=",
 			placement:"@",
