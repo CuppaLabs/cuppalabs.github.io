@@ -15,42 +15,89 @@
 
 	// this is the current date
 	var cal_current_date = new Date(); 
-	
-	function WinkelCalendar(month, year){
-		  this.month = (isNaN(month) || month == null) ? cal_current_date.getMonth() : month;
-		  this.year  = (isNaN(year) || year == null) ? cal_current_date.getFullYear() : year;
-		  this.date = null;
-		  this.html = '';
-		  this.renderView();
-		  this.attachEvents();
+	var extend = function(to, from, overwrite)
+    {
+        var prop, hasProp;
+        for (prop in from) {
+            hasProp = to[prop] !== undefined;
+            if (hasProp && typeof from[prop] === 'object' && from[prop] !== null && from[prop].nodeName === undefined) {
+                if (isDate(from[prop])) {
+                    if (overwrite) {
+                        to[prop] = new Date(from[prop].getTime());
+                    }
+                }
+                else if (isArray(from[prop])) {
+                    if (overwrite) {
+                        to[prop] = from[prop].slice(0);
+                    }
+                } else {
+                    to[prop] = extend({}, from[prop], overwrite);
+                }
+            } else if (overwrite || !hasProp) {
+                to[prop] = from[prop];
+            }
+        }
+        return to;
+    };
+
+
+	var defaults = {
+		defaultDate : new Date(),
+		format : "dd/mm/yyyy",
+		onSelect : null
+		
 	}
-	WinkelCalendar.prototype.renderView = function(){
+
+	
+	function WinkelCalendar(options){
+
+		  if (!this.options) {
+                	this.options = extend({}, defaults, true);
+            	  }
+
+                  this.options = extend(this.options, options, true);
+
+	          var opts = this.options;
+		  
+		  this.date = new Date(opts.defaultDate);
+
+		  this.el = document.createElement('div');
+		  this.createView();
+		  this.attachEvents();
+		  //this.onDateSelect = null;
+	}
+	WinkelCalendar.prototype.createView = function(){
+
+		  var self = this;
+		  var year = self.date.getFullYear(),
+		      month = self.date.getMonth(),
+		      current_day = self.date.getDate();
+
+
+
 		// get first day of month
-		  var firstDay = new Date(this.year, this.month, 1);
+		  var firstDay = new Date(year, month, 1);
 		  var startingDay = firstDay.getDay();
 		  
 		  // find number of days in month
-		  var monthLength = cal_days_in_month[this.month];
+		  var monthLength = cal_days_in_month[self.date.getMonth()];
 		  
 		  // compensate for leap year
-		  if (this.month == 1) { // February only!
-		    if((this.year % 4 == 0 && this.year % 100 != 0) || this.year % 400 == 0){
+		  if (month == 1) { // February only!
+		    if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0){
 		      monthLength = 29;
 		    }
 		  }
 		  
 		  // do the header
-		  var monthName = cal_months_labels[this.month]
-		  
-		  this.html = document.createElement("div");
-		  
-		  
+		  var monthName = cal_months_labels[month]
+
 		  var html = document.createElement("table"); 
 		  html.setAttribute('class','calendar-table');
 		  var headerRow = document.createElement('tr');
 		  var headerTh = document.createElement('th');
 		  headerTh.setAttribute('colspan','7');
-		  headerTh.textContent = this.date+ " " +monthName + " " + this.year;
+		  headerTh.textContent = current_day + " " + monthName + " " + year;
 		  headerRow.appendChild(headerTh);
 		  html.appendChild(headerRow);	  
 		  var daysRow = document.createElement('tr');
@@ -75,6 +122,9 @@
 		    	dateCell.setAttribute('class','calendar-day');
 		      if (day <= monthLength && (i > 0 || j >= startingDay)) {
 		    	  dateCell.textContent = day;
+			  if(day == parseInt(current_day)){
+				dateCell.classList.add('selected-day');
+			  }
 			  dateCell.isDate = true;
 		        day++;
 		      }
@@ -89,8 +139,8 @@
 		  }
 		  html.appendChild(dateRow);
 
-		  this.html = html;
-		  document.getElementById('container').appendChild(this.html);
+		  self.el.appendChild(html);
+		  document.getElementById('container').appendChild(self.el);
 		  
 	}
 	WinkelCalendar.prototype.getHTML = function() {
@@ -102,22 +152,32 @@
 	}
 	WinkelCalendar.prototype.attachEvents = function(){
 		var self = this;
-		var elem = self.html;
-		elem.addEventListener('click',function(event){
-if(event.target.hasOwnProperty('isDate') && event.target.innerHTML != ""){
+		var elem = self.el;
+		elem.addEventListener('click', self.onCalendarClick.bind(this), false);
+
+	}
+
+	WinkelCalendar.prototype.onCalendarClick = function(){
+		var self = this;
+		var elem = self.el;
+		if(event.target.hasOwnProperty('isDate') && event.target.innerHTML != ""){
 
 			var date = event.target.innerHTML;
-			self.date = date;
-			self.updateDate(date);
-}
-		});
+			self.day = date;
+			elem.getElementsByClassName('selected-day')[0].classList.remove('selected-day');
+			event.target.classList.add('selected-day');
+			self.updateHeader();
+		}
+	}
+	WinkelCalendar.prototype.updateHeader = function(){
+		this.el.children[0].children[0].children[0].innerHTML = "";
+		this.el.children[0].children[0].children[0].innerHTML = this.date.getDate()+ " " + cal_months_labels[this.date.getMonth()] + " " + this.date.getFullYear();
+		if(typeof this.options.onSelect === 'function'){
+			this.options.onSelect.call(this, this.date);
+		}
+		
+	}
 
-	}
-	WinkelCalendar.prototype.updateDate = function(){
-		console.log(this.html.children[0].innerText);	
-		 this.html.children[0].children[0].innerText = this.date+ " " + cal_months_labels[this.month] + " " + this.year;
-		console.log(this.date);
-	}
 	window.WinkelCalendar = WinkelCalendar || {};
 	
 })(window);
