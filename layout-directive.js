@@ -17,8 +17,9 @@ return {
 		var bottomHeight = 0;
 		var topOffset = 0;
 		var delta = 0;
+		var diff =0;
 		function onMouseDown(e){
-			yCoord = e.pageY;
+			yCoord = e.clientY;
 			document.addEventListener('mousemove',onMouseMove, false);
 			document.addEventListener('mouseup',onMouseUp, false);
 			topOffset = elem[0].getBoundingClientRect().top;
@@ -30,10 +31,61 @@ return {
 			//elem[0].nextElementSibling.style.maxHeight  = totalHeight - 10;
 		}
 		function onMouseMove(e){
-			var bCoord = e.pageY - yCoord;
+			var bCoord = e.clientY - yCoord;
 			var yDiff = bCoord;
+			console.log(yDiff);
+			if (e.clientY < yCoord ) {
+            		direction = "top";
+					diff = e.clientY - yCoord;
+					yCoord = e.clientY;
+        		} 
+			else if (e.clientY > yCoord && e.clientY < elem[0].nextElementSibling.getBoundingClientRect().bottom && elem[0].nextElementSibling.getBoundingClientRect().height > 0) {
+					console.log(elem[0].nextElementSibling.getBoundingClientRect());
+					console.log(e.clientY+" -- "+elem[0].nextElementSibling.getBoundingClientRect().bottom);
+            		direction = "bottom";
+					diff = e.clientY - yCoord;
+					yCoord = e.clientY;
+        	}
+        	else{
+        			direction = "";
+        			e.preventDefault();
+        	}
+        	if(direction == "top"){
+        			if(elem[0].getBoundingClientRect().height > 5){
+        				var newHeight1 = elem[0].getBoundingClientRect().height + yDiff;	
+        				elem[0].style.height = newHeight1+"px";
+        				 var newHeight2 = elem[0].nextElementSibling.getBoundingClientRect().height - yDiff;
+        				 if(newHeight2 < totalHeight){
+        				 		elem[0].nextElementSibling.style.height = newHeight2+"px";
+        				 }
+				    	
+        			}
+        			else{
+        				var newHeight1 = elem[0].getBoundingClientRect().height;
+        				var de = 5 - newHeight1;
+        				//alert(de);
+        				elem[0].style.height = "5px";
+        				 var newHeight2 = elem[0].nextElementSibling.getBoundingClientRect().height - de;
+        				 if(newHeight2 < totalHeight){
+				    	elem[0].nextElementSibling.style.height = newHeight2+"px";
+				    }
+        			}
+        	}
+        	else if(direction == "bottom"){
 
-			if(yDiff < 0){
+ 					if(elem[0].nextElementSibling.getBoundingClientRect().height > 10){
+ 						var newHeight1 = elem[0].getBoundingClientRect().height + yDiff;	
+				    	var newHeight2 = elem[0].nextElementSibling.getBoundingClientRect().height - yDiff;
+				    	 elem[0].style.height = newHeight1+"px";
+				    	 elem[0].nextElementSibling.style.height = newHeight2+"px";
+					}
+					else{
+						var newHeight2 = elem[0].nextElementSibling.getBoundingClientRect().height;	
+						elem[0].nextElementSibling.style.height = newHeight2+"px";
+					}
+				   
+        	}
+/*			if(yDiff < 0){
 				console.log(elem[0].getBoundingClientRect().height);
 				    var newHeight1 = elem[0].getBoundingClientRect().height + yDiff;	
 				    var newHeight2 = Math.abs(totalHeight - newHeight1);
@@ -57,9 +109,9 @@ return {
 					}
 									
 				
-			}
-			yCoord = e.pageY;
-			
+			}*/
+			//yCoord = e.pageY;
+			e.stopPropagation();
 		}
 		function onMouseUp(){
 			document.removeEventListener('mousemove',onMouseMove, false);
