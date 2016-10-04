@@ -1,0 +1,124 @@
+<html>
+<head>
+    <title>Bar Graph</title>
+    <script type="text/javascript">
+        var can, ctx,
+            minVal, maxVal,
+            xScalar, yScalar,
+            numSamples, y;
+        // data sets -- set literally or obtain from an ajax call
+        var dataName = [ 1, 2, 3, 4,5,6,7,8,9,10 ];
+        var dataValue = [ 100, 100, 100, 100,150,100, 100, 100, 100,100,100, 100, 200, 100,100 ];
+        var categories = ["India","America","Singapore","UK","Germany"];
+
+        var data = [
+                    {"time":"12:00","status":"up","category":"India"},
+                    {"time":"12:01","status":"down","category":"India"},
+                    {"time":"12:02","status":"up","category":"India"},
+                    {"time":"12:03","status":"up","category":"India"},
+                    {"time":"12:04","status":"up","category":"India"},
+                    {"time":"12:00","status":"up","category":"America"},
+                    {"time":"12:01","status":"up","category":"America"},
+                    {"time":"12:02","status":"up","category":"America"},
+                    {"time":"12:03","status":"up","category":"America"},
+                    {"time":"12:04","status":"up","category":"America"},
+                    {"time":"12:00","status":"up","category":"Singapore"},
+                    {"time":"12:01","status":"up","category":"Singapore"},
+                    {"time":"12:02","status":"up","category":"Singapore"},
+                    {"time":"12:03","status":"up","category":"Singapore"},
+                    {"time":"12:04","status":"up","category":"Singapore"},
+                    {"time":"12:00","status":"up","category":"UK"},
+                    {"time":"12:01","status":"up","category":"UK"},
+                    {"time":"12:02","status":"up","category":"UK"},
+                    {"time":"12:03","status":"up","category":"UK"},
+                    {"time":"12:04","status":"up","category":"UK"},
+                    {"time":"12:00","status":"up","category":"Germany"},
+                    {"time":"12:01","status":"up","category":"Germany"},
+                    {"time":"12:02","status":"up","category":"Germany"},
+                    {"time":"12:03","status":"up","category":"Germany"},
+                    {"time":"12:04","status":"up","category":"Germany"}
+        
+        ]
+ 
+        function init() {
+            // set these values for your data
+            numSamples = 15;
+            maxVal = 200;
+            var stepSize = 30;
+            var colHead = 50;
+            var rowHead = 60;
+            var margin = 0;
+            var header = "Millions"
+            can = document.getElementById("can");
+            ctx = can.getContext("2d");
+            ctx.fillStyle = "black";
+            //ctx.rect(0, 0, can.width, can.height);
+            ctx.fill();
+            yScalar = (can.height) / can.height;
+            xScalar = (can.width - 1) / (numSamples);
+            ctx.strokeStyle = "rgba(128,128,255, 0.5)"; // light blue line
+            ctx.beginPath();
+            // draw x axis
+             ctx.moveTo(0, can.height - 1);
+             ctx.lineTo(can.width,can.height - 1);
+             ctx.lineWidth = 1;
+             ctx.stroke();
+
+             // draw y axis
+
+             ctx.moveTo(1, 0);
+             ctx.lineWidth = 1;
+             ctx.lineTo(1,can.height - 1);
+             ctx.stroke();
+
+            // print row header and draw horizontal grid lines
+            ctx.font = "12pt Helvetica"
+            var count =  0;
+           /* for (scale = maxVal; scale >= 0; scale -= stepSize) {
+                y = colHead + (yScalar * count * stepSize);
+                //ctx.fillText(categories[count], margin,y + margin);
+                ctx.moveTo(rowHead, y);
+                ctx.lineTo(can.width, y);
+                count++;
+            }*/
+            ctx.stroke();
+            // label samples
+            ctx.font = "14pt Helvetica";
+            ctx.textBaseline = "bottom";
+            for (i = 0; i < 15; i++) {
+                calcY(dataValue[i]);
+                ctx.fillText(dataName[i], xScalar * (i + 1), y - margin);
+            }
+            // set a color and a shadow
+            
+            //ctx.shadowColor = 'rgba(128,128,128, 0.5)';
+            //ctx.shadowOffsetX = 20;
+            //ctx.shadowOffsetY = 1;
+            // translate to bottom of graph and scale x,y to match data
+            ctx.translate(0, can.height - 2);
+            ctx.scale(xScalar, -1 * yScalar);
+            // draw bars
+            for (i = 0; i < 15; i++) {
+                if(i%2 == 0){
+                    ctx.fillStyle = "green";
+                }
+                else{
+                    ctx.fillStyle = "red";
+                }
+                ctx.fillRect(i, 0, 1, dataValue[i]);
+            }
+        }
+ 
+        function calcY(value) {
+            y = can.height - value * yScalar;
+        }
+    </script>
+</head>
+<body onload="init()">
+    <div align="center">
+        <h2>Neurons in Cerebral Cortex</h2>
+        <canvas id="can" height="400" width="650">
+        </canvas>
+    </div>
+</body>
+</html>
