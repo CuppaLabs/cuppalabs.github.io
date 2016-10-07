@@ -122,3 +122,128 @@
     </div>
 </body>
 </html>
+ var can, ctx,
+            minVal, maxVal,
+            xScalar, yScalar,
+            numSamples, y;
+			
+        var data = [];
+ 
+ 
+        function init() {
+            // set these values for your data
+			
+			
+			data = generateMockData();
+            numSamples = data[0].series.length;
+			var marginBottom = 50;
+			var marginLeft = 5;
+			var barWidth = 25;
+			var space = 14;
+			var tickInterval = 2;
+            can = document.getElementById("can");
+            can.width = 800;
+            can.height = 350;
+            ctx = can.getContext("2d");
+            ctx.fillStyle = "#ccc";
+			var pixelWidth = can.width/numSamples;
+            //ctx.rect(0, 0, can.width, can.height);
+            ctx.fill();
+            yScalar = 1;
+            xScalar = (can.width - 1) / (numSamples);
+            ctx.strokeStyle = "rgba(128,128,255, 0.5)"; // light blue line
+            ctx.beginPath();
+            // draw x axis
+             ctx.moveTo(marginLeft, can.height - marginBottom - 1);
+             ctx.lineTo(can.width,can.height - marginBottom - 1);
+             ctx.lineWidth = 1;
+             ctx.stroke();
+             // draw y axis
+             ctx.moveTo(marginLeft,0);
+             ctx.lineWidth = 1;
+             ctx.lineTo(marginLeft,can.height -marginBottom- 1);
+             ctx.stroke();
+            // label samples
+			
+            
+
+            //ctx.translate(0 + marginLeft, can.height - marginBottom - 2);
+            //ctx.scale(xScalar, -1 * yScalar);
+            // draw bars
+			for(j=0;j<data.length;j++){
+				for (i = 0; i < data[j].series.length; i++) {
+					if(data[j].series[i].status == "up"){
+						ctx.fillStyle = "#7cea2b";
+					}
+					else{
+						ctx.fillStyle = "#ff4c4c";
+					}
+					ctx.fillRect(i*pixelWidth + marginLeft, ((j*barWidth + j*space)), pixelWidth, barWidth);
+				}
+			}
+			ctx.fillStyle = "#000";
+			ctx.font = "12px Helvetica";
+            ctx.textBaseline = "center";
+			
+            for (i = 0; i < numSamples / tickInterval; i++) {
+              //  calcY(dataValue[i]);
+			  var g = i*tickInterval;
+				var text = ctx.measureText(data[0].series[g].time);
+				drawLabel(marginLeft + pixelWidth * g + (pixelWidth/2) - (text.width/2), can.height - 20, data[0].series[g].time, 20);
+               //ctx.fillText(data[0].series[i].time, marginLeft + pixelWidth * i + (pixelWidth/2) - (text.width/2), can.height - 30);
+            }
+        }
+ 
+        function calcY(value) {
+            y = can.height - value * yScalar;
+        }
+		function formatAMPM(date) {
+		  var hours = date.getHours();
+		  var minutes = date.getMinutes();
+		  var ampm = hours >= 12 ? 'PM' : 'AM';
+		  hours = hours % 12;
+		  hours = hours ? hours : 12; // the hour '0' should be '12'
+		  minutes = minutes < 10 ? '0'+minutes : minutes;
+		  var strTime = hours + ':' + minutes + ' ' + ampm;
+		  return strTime;
+		}
+		function generateMockData(){
+			var arr = [];
+			var noOfRecords = 10;
+			var categories = ["India","Singapore","UK","Ireland","Sweden","South Korea","Germany","France"];
+			var statusOps = ["up","down"];
+			var  date = '5-10-2016';
+			
+			for(var i=0;i< categories.length; i++){
+				var obj = {"category":categories[i],"series":[]};
+				for(var k=0;k<noOfRecords;k++){
+					var randomStatus = statusOps[Math.floor(Math.random() * statusOps.length)];
+					var startDate = new Date(date);
+					var dateSample = new Date(startDate.setMinutes(startDate.getMinutes() + k));
+					if(i==0){
+					//console.error(formatAMPM(dateSample));
+					//console.log(dateSample.getHours() +":"+(dateSample.getMinutes()<10?'0':'')+dateSample.getMinutes());
+					}
+					var seriesObj = {"time": formatAMPM(dateSample),"status":randomStatus};
+					obj.series.push(seriesObj);
+				}
+				arr.push(obj);
+			}
+			return arr;
+		}
+		function drawLabel(x, y, text, maxWidth) {
+			var metric = ctx.measureText(text); 
+			ctx.save();
+			if(maxWidth != null && metric.width > maxWidth) {
+				var tx = x + (metric.width/2);
+				var ty = y + 5;
+				ctx.translate(tx,ty);
+				ctx.rotate(-Math.PI / 4);
+				ctx.translate(-tx,-ty);
+			}
+			ctx.fillText(text, x, y);
+			ctx.restore();
+		}
+		window.onload = function(){
+		init();
+		}
