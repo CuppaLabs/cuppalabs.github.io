@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>Data Table · Planets of the Universe</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+  <meta name="description" content="Render 10,000+ Records with high performance. The Grid component allows users to browse and edit tabular data.">
+    <meta content='Angular2 data grid, angular2 grid, ng2-grid, angular2 datatable, datatable large datasets' name='keywords'/>
+  <meta name="description" content="Render 10,000+ Records with high performance. The Grid component allows users to browse and edit tabular data."/>
+<meta property="og:description" content="Render 10,000+ Records with high performance. The Grid component allows users to browse and edit tabular data." />
+<meta property="og:url" content="/tutorials/angular/datatable/" />
+<meta property="og:site_name" content="Cuppa Labs" />
+<meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
+<meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
+<meta property="article:tag" content="Angular 2" />
+<meta property="article:tag" content="html5" />
+<meta property="article:tag" content="css3" />
+<meta property="og:image" content="https://raw.githubusercontent.com/CuppaLabs/angular2-dataGrid/master/docs/assets/img/datagrid-banner.png" />
+</head>
+<body>
+<!--<nav>
+  <ul class="nav nav-top">
+    <li><a href="/" class="">Home</a></li>
+    <li><a href="/planets/" class="">Planets</a></li>
+    <li><a href="/news/" class="">News</a></li>
+  </ul>
+</nav> -->
+<nav class="navbar main-menu navbar-default">
+    <div class="container">
+        <div class="menu-content">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                <img src="/img/logo.png" alt="">
+                CUPPA LABS
+                </a>
+            </div>
+
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav text-uppercase">
+                    <li class="menu-item-has-children">
+                        <a href="/components" class="">Angular Components</a>
+                     <!--   <i class="fa fa-angle-down"></i>
+                        <ul class="sub-menu">
+                        
+                            
+                            <li><a href="/components/datatable/">Data Table</a></li>
+                        
+                        
+                            
+                            <li><a href="/tutorials/angular/datatable/">Data Table</a></li>
+                        
+                        
+                            
+                            <li><a href="/tutorials/angular/datepicker/">Datepicker</a></li>
+                        
+                        
+                            
+                            <li><a href="/components/datepicker/">Datepicker</a></li>
+                        
+                        
+                            
+                            <li><a href="/components/fanmenu/">Fan Menu</a></li>
+                        
+                        
+                            
+                            <li><a href="/tutorials/angular/fanmenu/">Fan Menu</a></li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                            <li><a href="/components/slidemenu/">Slide Menu</a></li>
+                        
+                        
+                            
+                            <li><a href="/tutorials/angular/slidemenu/">Slide Menu</a></li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        </ul> -->
+                    </li>
+                   <!-- <li class="menu-item-has-children"><a data-toggle="dropdown" class="dropdown-toggle" href="#">JS Components
+                        <i class="fa fa-angle-down"></i></a>
+                        <ul class="sub-menu">
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                        </ul>
+                    </li> -->
+                    <li><a href="/tutorials" class="current">TUTORIALS</a></li>
+                     <li><a href="https://cuppalabs.github.io/angular2-social-login/" target="_blank">OAuth</a></li>
+                    <li><a href="https://www.facebook.com/pradeepkumar.terli" target="_blank">ABOUT ME </a></li>
+                </ul>
+                <div class="i_con">
+                    <a href="https://www.facebook.com/cuppalabs"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/pradeep-kumar-terli"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a>
+                    <a href="https://twitter.com/PradeepTerli"><i class="active fa fa-twitter"></i></a>
+                   <!-- <div class="top-search">
+                        <a href="#"><i class="fa fa-search"></i></a>
+                    </div> -->
+                </div>
+
+            </div>
+            <!-- /.navbar-collapse -->
+
+
+            <div class="show-search">
+                <form role="search" method="get" id="searchform" action="#">
+                    <div>
+                        <input type="text" placeholder="Search and hit enter..." name="s" id="s">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+
+<nav class="navbar secondary-menu navbar-default sticky">
+    <div class="container">
+    <div class="col-md-2">
+        <h3><a href="/components">COMPONENTS</a></h3>
+    </div>
+    <div class="col-md-2">
+        <h2 class="component-title">Data Table</h2>
+    </div>
+    <div class="col-md-5">
+        <div class="bt-group">
+            <a class="btn btn-success" href="" target="blank"><i class="fa fa-desktop" aria-hidden="true"></i> Live Demos</a>
+            <a class="btn btn-success" href="" target="blank"><i class="fa fa-github" aria-hidden="true"></i>Code on Github</a>
+        </div>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+    </div>
+</nav>
+<div class="main-content component-section content-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="left-sticky">
+                    <nav id="myScrollspy">
+                <ul class="index-list nav">
+                    <li><h4>Table of Contents</h4></li>
+                    
+                </ul>
+    </nav>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <article class="post">
+                    <div class="post-content">
+                        <header class="entry-header">
+                           <!-- <h1 class="entry-title" >Data Table</h2> -->
+                            <div class="social-share">
+							<span class="social-share-title pull-left text-capitalize">By Pradeep Terli On 12-02-2017</span>
+                               <ul class="text-center pull-right">
+    <li>
+        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/tutorials/angular/datatable/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
+    </li>
+    <li>
+        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/tutorials/angular/datatable/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
+    </li>
+    <li>
+        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/tutorials/angular/datatable/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
+    </li>
+    <li>
+        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/tutorials/angular/datatable/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
+    </li>
+</ul> 
+                            </div>
+                        <h2 class="entry-title" id="overview">Overview</h2>
+                            <p>Render 10,000+ Records with high performance. The Grid component allows users to browse and edit tabular data.</p>
+                            <div class="post-thumb">
+                        <a href="#"><img src="/img/planets/datagrid-banner.png" alt=""></a>
+                    </div> 
+                        </header>
+                        <div class="entry-content">
+                            <h3 id="features">Features</h3>
+<ol>
+  <li>Render <code class="highlighter-rouge">10k + records</code> with high performance</li>
+  <li>Faster Rendering without browser hanging.</li>
+  <li>Faster <code class="highlighter-rouge">Sorting algorithm</code></li>
+  <li>Faster <code class="highlighter-rouge">filtering</code> and <code class="highlighter-rouge">search algorithm</code></li>
+</ol>
+
+<h3 id="getting-started">Getting Started</h3>
+
+<h3 id="installation">Installation</h3>
+
+<ul>
+  <li>The data table package is published on <a href="https://www.npmjs.com/package/cuppa-ng2-grid">npm</a></li>
+  <li>Install the package:
+    <div class="language-posh highlighter-rouge"><pre class="highlight"><code>  npm install cuppa-ng2-grid 
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h3 id="usage">Usage</h3>
+
+<ul>
+  <li>Import <code class="highlighter-rouge">CuppaDataGridModule</code> from the installed package into your module as follows:</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">CuppaDataGridModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'cuppa-ng2-grid/cuppa-ng2-dataGrid'</span><span class="p">;</span>
+</code></pre>
+</div>
+<ul>
+  <li>Declare the data grid module in your <code class="highlighter-rouge">ngModule</code> as follows:</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">CuppaDataGridModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'cuppa-ng2-grid/cuppa-ng2-dataGrid'</span><span class="p">;</span>
+<span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
+  <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">],</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+        <span class="nx">BrowserModule</span><span class="p">,</span>
+        <span class="nx">CuppaDataGridModule</span> <span class="c1">// Import DataGrid module variable here</span>
+  <span class="p">],</span>
+  <span class="na">bootstrap</span><span class="p">:</span> <span class="p">[</span> <span class="nx">AppComponent</span> <span class="p">]</span>
+<span class="p">})</span>
+</code></pre>
+</div>
+<ul>
+  <li>Place the component html tag in the template where the table needs to be rendered.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;cuppa-datagrid</span> <span class="err">[</span><span class="na">datalist</span><span class="err">]</span> <span class="err">=</span> <span class="err">"</span><span class="na">arrayList</span><span class="err">"</span> <span class="err">[</span><span class="na">config</span><span class="err">]="</span><span class="na">config</span><span class="err">"</span><span class="nt">&gt;&lt;/cuppa-datagrid&gt;</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Component requires a <code class="highlighter-rouge">config</code> object to configure the grid and <code class="highlighter-rouge">datalist</code> to pass data to the component, as follows:</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><pre class="highlight"><code>
+<span class="k">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="k">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+
+      <span class="k">private</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">w</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+        <span class="na">h</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+        <span class="na">itemHeight</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span>
+        <span class="na">totalRows</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
+        <span class="na">items</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">arrayList</span><span class="p">,</span>
+        <span class="na">sort</span><span class="p">:{</span><span class="s1">'id'</span><span class="p">:</span><span class="s1">'desc'</span><span class="p">}</span>
+      <span class="p">}</span>
+      <span class="k">private</span> <span class="na">arrayList</span><span class="p">:</span><span class="kr">any</span><span class="p">[]</span> <span class="o">=</span>
+            <span class="p">[</span>
+                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Mayo"</span><span class="p">,</span><span class="s2">"mobile"</span><span class="p">:</span><span class="mi">9240592804</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Nelson"</span><span class="p">,</span><span class="s2">"mobile"</span><span class="p">:</span><span class="mi">9008774782</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Nichols"</span><span class="p">,</span><span class="s2">"mobile"</span><span class="p">:</span><span class="mi">9965852134</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Summers"</span><span class="p">,</span><span class="s2">"mobile"</span><span class="p">:</span><span class="mi">9600712058</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Novak"</span><span class="p">,</span><span class="s2">"mobile"</span><span class="p">:</span><span class="mi">9045924098</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bell"</span><span class="p">,</span><span class="s2">"mobile"</span><span class="p">:</span><span class="mi">9001240358</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Marshall"</span><span class="p">,</span><span class="s2">"mobile"</span><span class="p">:</span><span class="mi">9276107621</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"May"</span><span class="p">,</span><span class="s2">"mobile"</span><span class="p">:</span><span class="mi">9966279627</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Villanueva"</span><span class="p">,</span><span class="s2">"mobile"</span><span class="p">:</span><span class="mi">9695365778</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Gonzalez"</span><span class="p">,</span><span class="s2">"mobile"</span><span class="p">:</span><span class="mi">9946879817</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Dorsey"</span><span class="p">,</span><span class="s2">"mobile"</span><span class="p">:</span><span class="mi">9243595415</span><span class="p">}</span>
+            <span class="p">]</span>
+  <span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Thats all Folks !! You are good to go.</p>
+
+<p>Please raise any issues <a href="https://github.com/CuppaLabs/angular2-dataGrid/issues">here</a></p>
+
+<p>To run the code and build in your local, follw the below steps</p>
+
+<ul>
+  <li>git clone <code class="highlighter-rouge">https://github.com/CuppaLabs/angular2-dataGrid.git</code></li>
+  <li>npm install</li>
+  <li>npm start</li>
+  <li>Go to <code class="highlighter-rouge">http://localhost:3000</code> where your app will run.</li>
+</ul>
+
+<h2 id="licence">Licence</h2>
+
+<p>This project is licensed under the MIT license.
+The MIT License (MIT)
+Copyright (c) 2016 Cuppa Labs</p>
+
+
+                        </div>
+
+  <div class="social-share">
+							<span
+                                    class="social-share-title pull-left text-capitalize">By Pradeep Terli On 12-02-2017</span>
+                            <ul class="text-center pull-right">
+                                <li><a class="s-facebook" href=""><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="s-twitter" href=""><i class="fa fa-twitter"></i></a></li>
+                                <li><a class="s-google-plus" href=""><i class="fa fa-google-plus"></i></a></li>
+                                <li><a class="s-linkedin" href=""><i class="fa fa-linkedin"></i></a></li>
+                                <li><a class="s-instagram" href=""><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <div class="top-comment"><!--top comment-->
+                    <img src="/img/pradeep.jpg" class="pull-left img-circle" alt="">
+                    <h4>Pradeep Terli</h4>
+                    <p>Web UI Developer, Blogger, Thinker , Entrepreneur. Loves to explore technology with focus on web technologies.</p>
+                     <div class="social-share">
+                            <ul>
+                                <li><a class="s-facebook" href="https://www.facebook.com/pradeepkumar.terli" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="s-linkedin" href="http://www.linkedin.com/in/pradeep-kumar-terli" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a class="s-google-plus" href=""><i class="fa fa-google-plus"></i></a></li>
+                                <li><a class="s-twitter" href=""><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="comments-section">
+                    
+                </div>
+            </div>
+            <div class="col-md-3">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- pradeepterli_sidebar_AdSense1_300x250_as -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-4525567075133342"
+     data-ad-slot="2263435109"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- pradeepterli_sidebar_AdSense1_300x250_as -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-4525567075133342"
+     data-ad-slot="2263435109"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                <aside class="widget about-me-widget">
+                        <div class="about-me-img">
+
+                            <div class="about-me-content text-center">
+                                <img src="/img/pradeep.jpg" alt="" class="img-me">
+
+                                <h3 class="text-uppercase">Pradeep Kumar Terli</h3>
+
+                                <p>Web UI Developer, Blogger, Thinker , Entrepreneur. Loves to explore technology with focus on web technologies.</p>
+                            </div>
+                        </div>
+                        <div class="social-share">
+                            <ul class="text-center text-center">
+                                <li><a class="s-facebook" href="https://www.facebook.com/pradeepkumar.terli" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="s-linkedin" href="http://www.linkedin.com/in/pradeep-kumar-terli" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a class="s-google-plus" href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a class="s-twitter" href="https://twitter.com/PradeepTerli"><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                 <!--   <aside class="widget news-letter">
+                        <h3 class="widget-title text-uppercase text-center">Get Newsletter</h3>
+
+                        <form action="#">
+                            <input type="email" placeholder="Your email address">
+                            <input type="submit" value="Subscribe Now" class="text-uppercase text-center btn btn-subscribe">
+                        </form>
+
+                    </aside> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<footer class="footer">
+  <p>© 2009-2017 www.cuppalabs.com. <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
+</footer>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=929055083862567";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+
+<script>
+  $(window).scroll(function(){
+  var sticky = $('.sticky'),
+      scroll = $(window).scrollTop(),
+      sticky2 = $('.left-sticky'),
+      sticky3 = $('.content-sticky');
+
+  if (scroll >= 60) {
+    sticky.addClass('fixed');
+    sticky2.addClass('left-fixed');
+    sticky3.addClass('content-fixed');
+  }
+  else {
+    sticky.removeClass('fixed');
+    sticky2.removeClass('left-fixed');
+    sticky3.removeClass('content-fixed');
+  }
+});
+</script>
+<script>
+$(function() {
+  return $("h2, h3, h4, h5, h6").each(function(i, el) {
+    var $el, icon, id;
+    $el = $(el);
+    id = $el.attr('id');
+    icon = '<i class="fa fa-link"></i>';
+    if (id) {
+      $el.addClass('anchor');
+      return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id));
+    }
+  });
+});
+/*$(function(){
+      $("#myScrollspy ul li a[href^='#']").on('click', function(e) {
+
+       // prevent default anchor click behavior
+       e.preventDefault();
+
+       // animate
+       $('html, body').animate({
+           scrollTop: $(this.hash).offset().top - 75
+         }, 300, function(){
+   
+           // when done, add hash to url
+           // (default click behaviour)
+           window.location.hash = this.hash;
+         });
+
+    });
+
+});*/
+$(document).on('click', '.index-list a', function (event) {
+    "use strict";
+    event.preventDefault();
+    var animLen = $($.attr(this, 'href')).offset().top - 62.667 - 30;
+    $('html, body').animate({
+        scrollTop: animLen
+    }, 300);
+
+});
+$(function () {
+    "use strict";
+    $(window).bind('scroll', function () {
+        $('.anchor').each(function () {
+            var anchored = $(this).attr("id"),
+                position = $(this).position().top - $(window).scrollTop()- 62.667 - 30,
+                targetOffset = $(this).offset().top - 75 - 30;
+
+            if ($(window).scrollTop() > targetOffset) {
+
+                $('ul.index-list').find('li').removeClass("active");
+                $('ul.index-list').find(('*[data-anchor="' + anchored + '"]')).addClass("active");
+            }
+        });
+    });
+});
+</script>
+</html>
