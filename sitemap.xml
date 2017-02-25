@@ -5,7 +5,7 @@
   
     
       <url>
-  <loc>http://algonquin-design.github.io/components/datatable/</loc>
+  <loc>http://cuppalabs.github.io/components/datatable/</loc>
   
   
 </url>
@@ -14,7 +14,7 @@
   
     
       <url>
-  <loc>http://algonquin-design.github.io/tutorials/angular/datatable/</loc>
+  <loc>http://cuppalabs.github.io/components/datepicker/</loc>
   
   
 </url>
@@ -23,7 +23,7 @@
   
     
       <url>
-  <loc>http://algonquin-design.github.io/tutorials/angular/datepicker/</loc>
+  <loc>http://cuppalabs.github.io/components/fanmenu/</loc>
   
   
 </url>
@@ -32,7 +32,7 @@
   
     
       <url>
-  <loc>http://algonquin-design.github.io/components/datepicker/</loc>
+  <loc>http://cuppalabs.github.io/components/</loc>
   
   
 </url>
@@ -41,43 +41,7 @@
   
     
       <url>
-  <loc>http://algonquin-design.github.io/components/fanmenu/</loc>
-  
-  
-</url>
-
-    
-  
-    
-      <url>
-  <loc>http://algonquin-design.github.io/tutorials/angular/fanmenu/</loc>
-  
-  
-</url>
-
-    
-  
-    
-      <url>
-  <loc>http://algonquin-design.github.io/components/</loc>
-  
-  
-</url>
-
-    
-  
-    
-      <url>
-  <loc>http://algonquin-design.github.io/tutorials/</loc>
-  
-  
-</url>
-
-    
-  
-    
-      <url>
-  <loc>http://algonquin-design.github.io/</loc>
+  <loc>http://cuppalabs.github.io/</loc>
   
   
     <priority>1.0</priority>
@@ -87,12 +51,8 @@
     
   
     
-  
-    
-  
-    
       <url>
-  <loc>http://algonquin-design.github.io/components/slidemenu/</loc>
+  <loc>http://cuppalabs.github.io/tutorials/</loc>
   
   
 </url>
@@ -100,8 +60,12 @@
     
   
     
+  
+    
+  
+    
       <url>
-  <loc>http://algonquin-design.github.io/tutorials/angular/slidemenu/</loc>
+  <loc>http://cuppalabs.github.io/components/slidemenu/</loc>
   
   
 </url>

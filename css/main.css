@@ -195,7 +195,6 @@ header
 }
 
 .main-menu li {
-    display: inline-block;
     position: relative;
 }
 
@@ -375,10 +374,7 @@ article {
 }
 
 .entry-header h1 a {
-    font-weight: 600;
     color: #333333;
-    font-size: 36px;
-    line-height: 42px;
 }
 
 .entry-header h1 a:hover {
@@ -1443,16 +1439,11 @@ post grid
 
 .post-grid .entry-header h1, .post-list .entry-header h1 {
     margin: 0;
-    line-height: 24px;
 }
 .post-grid .entry-header h1 a{
-    font-size: 26px;
-    line-height: 24px;
 }
 
 .post-list .entry-header h1 a {
-    font-size: 26px;
-    line-height: 42px;
 
 }
 
