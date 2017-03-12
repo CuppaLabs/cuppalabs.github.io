@@ -348,7 +348,7 @@ article {
 }
 
 .entry-header {
-    margin: 40px 0 23px;
+    margin: 15px 0 5px;
 }
 
 .entry-header h1 a, .entry-header h6 a {
@@ -1439,6 +1439,7 @@ post grid
 
 .post-grid .entry-header h1, .post-list .entry-header h1 {
     margin: 0;
+    line-height: 1.3em;
 }
 .post-grid .entry-header h1 a{
 }
@@ -1459,7 +1460,7 @@ post grid
 }
 
 .post-list .entry-header {
-    margin: 22px 0;
+    margin: 10px 0;
     margin-bottom: 0px;
 }
 
@@ -1883,6 +1884,39 @@ p.go-back-home a:hover {
 .comments-section{
     padding: 0px 20px;
 }
+.post-tutorial .entry-header h1{
+    font-size: 36px;
+    line-height: 1.3em;
+}
+.post-content img{
+    display: block;
+    margin: 0px auto;
+}
+.nav-tabs{
+    margin-left: 0px !important;
+    background: #1976D2;
+}
+.nav-tabs>li{
+    margin-bottom: 2px;
+}
+.nav-tabs>li>a{
+    color: #fff;
+    background: rgb(30, 136, 229); 
+    padding: 10px 15px;
+}
+
+.code-area{
+    border: 2px solid #1976D2;
+    margin-bottom: 20px;
+}
+.post-content .bt-group{
+    text-align: center;
+    padding: 10px 0px;
+}
+.fixed-ad.fixed{
+    left: initial;
+    top: 10px;
+}
 .highlight { 
     background-color: transparent;
     border: 2px solid #1976D2;
@@ -1953,3 +1987,76 @@ p.go-back-home a:hover {
 .highlight .vg { color: #008080 } /* Name.Variable.Global */
 .highlight .vi { color: #008080 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+/* Doxy pretty-printing styles. Used with prettify.js.  */
+
+pre .str, code .str { color: #00796B; } /* string  - eggyolk gold */
+pre .kwd, code .kwd { color: #D81B60; } /* keyword - light slate blue */
+pre .com, code .com { color: #32cd32; font-style: italic; } /* comment - green */
+pre .typ, code .typ { color: #D81B60; } /* type - turq green */
+pre .lit, code .lit { color: #00796B; } /* literal - cherry red */
+pre .pun, code .pun { color: #455A64;  } /* punctuation - lemon chiffon4  */
+pre .pln, code .pln { color: #455A64; } /* plaintext - white */
+pre .tag, code .tag { color: #D81B60; } /* html/xml tag  (bluey)  */
+pre .htm, code .htm { color: #dda0dd; } /* html tag  light purply*/
+pre .xsl, code .xsl { color: #d0a0d0; } /* xslt tag  light purply*/
+pre .atn, code .atn { color: #00796B; font-weight: normal;} /* html/xml attribute name  - lt turquoise */
+pre .atv, code .atv { color: #00796B; } /* html/xml attribute value - rosy brown2 */
+pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
+
+a {
+  text-decoration: none;
+}
+pre.prettyprint, code.prettyprint {
+  font-family: Monaco,"Lucida Console",monospace !important;
+  font-weight: normal;
+  font-size: 14px;
+  background-color: #fff;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
+}  /*  background is black (well, just a tad less dark )  */
+
+pre.prettyprint {
+  width: 100%;
+  margin: 0px;
+  padding: 1em;
+  white-space: pre-wrap;
+  border-radius: 0px;
+  border-color: transparent;
+  border: 0px !important;
+}
+
+pre.prettyprint a, code.prettyprint a {
+   text-decoration:none;
+}
+/* Specify class=linenums on a pre to get line numbering; line numbers themselves are the same color as punctuation */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #8B8970; } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 {list-style-type: decimal;}
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+.prettyprint ol.linenums > li { list-style-type: decimal; }
+.linenums{
+  background: rgba(236,239,241,0.24);
+}
+.linenums > li{
+  background-color: #fff !important;
+}
+/* print is mostly unchanged from default at present  */
+@media print {
+  pre.prettyprint, code.prettyprint { background-color: #fff;  }
+  pre .str, code .str { color: #088; }
+  pre .kwd, code .kwd { color: #006; font-weight: bold; }
+  pre .com, code .com { color: #oc3; font-style: italic; }
+  pre .typ, code .typ { color: #404; font-weight: bold; }
+  pre .lit, code .lit { color: #044; }
+  pre .pun, code .pun { color: #455A64; }
+  pre .pln, code .pln { color: #455A64; }
+  pre .tag, code .tag { color: #b66ff7; font-weight: bold; }
+  pre .htm, code .htm { color: #606; font-weight: bold; }
+  pre .xsl, code .xsl { color: #606; font-weight: bold; }
+  pre .atn, code .atn { color: #c71585;  font-weight: normal; }
+  pre .atv, code .atv { color: #088;  font-weight: normal; }
+}

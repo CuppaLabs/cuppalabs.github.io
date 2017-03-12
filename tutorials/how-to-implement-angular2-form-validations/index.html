@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <title>How to Implement Angular 2 Form validations and custom validation</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+  <meta name="description" content="Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2 validate interface.">
+    <meta content='Angular2 data grid, angular2 grid, ng2-grid, angular2 datatable, datatable large datasets' name='keywords'/>
+  <meta name="description" content="Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2 validate interface."/>
+<meta property="og:description" content="Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2 validate interface." />
+<meta property="og:url" content="/tutorials/how-to-implement-angular2-form-validations/" />
+<meta property="og:site_name" content="Cuppa Labs" />
+<meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
+<meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
+<meta property="article:tag" content="Angular 2" />
+<meta property="article:tag" content="html5" />
+<meta property="article:tag" content="css3" />
+<meta property="og:image" content="http://cuppalabs.github.io/img/planets/form-validations-tutorial3.png" />
+</head>
+<body>
+<!--<nav>
+  <ul class="nav nav-top">
+    <li><a href="/" class="">Home</a></li>
+    <li><a href="/planets/" class="">Planets</a></li>
+    <li><a href="/news/" class="">News</a></li>
+  </ul>
+</nav> -->
+<nav class="navbar main-menu navbar-default">
+    <div class="container">
+        <div class="menu-content">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                <img src="/img/logo.png" alt="">
+                CUPPA LABS
+                </a>
+            </div>
+
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav text-uppercase">
+                    <li class="menu-item-has-children">
+                        <a href="/components" class="">Angular Components</a>
+                     <!--   <i class="fa fa-angle-down"></i>
+                        <ul class="sub-menu">
+                        
+                            
+                            <li><a href="/components/datatable/">Data Table</a></li>
+                        
+                        
+                            
+                            <li><a href="/components/datepicker/">Datepicker</a></li>
+                        
+                        
+                            
+                            <li><a href="/components/fanmenu/">Fan Menu</a></li>
+                        
+                        
+                            
+                            <li><a href="/tutorials/how-to-implement-angular2-form-validations/">Data Table</a></li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                            <li><a href="/components/slidemenu/">Slide Menu</a></li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        </ul> -->
+                    </li>
+                   <!-- <li class="menu-item-has-children"><a data-toggle="dropdown" class="dropdown-toggle" href="#">JS Components
+                        <i class="fa fa-angle-down"></i></a>
+                        <ul class="sub-menu">
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                        </ul>
+                    </li> -->
+                    <li><a href="/tutorials" class="current">TUTORIALS</a></li>
+                     <li><a href="https://cuppalabs.github.io/angular2-social-login/" target="_blank">OAuth</a></li>
+                    <li><a href="https://www.facebook.com/pradeepkumar.terli" target="_blank">ABOUT ME </a></li>
+                </ul>
+                <div class="i_con">
+                    <a href="https://www.facebook.com/cuppalabs"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/pradeep-kumar-terli"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a>
+                    <a href="https://twitter.com/PradeepTerli"><i class="active fa fa-twitter"></i></a>
+                   <!-- <div class="top-search">
+                        <a href="#"><i class="fa fa-search"></i></a>
+                    </div> -->
+                </div>
+
+            </div>
+            <!-- /.navbar-collapse -->
+
+
+            <div class="show-search">
+                <form role="search" method="get" id="searchform" action="#">
+                    <div>
+                        <input type="text" placeholder="Search and hit enter..." name="s" id="s">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+
+<div class="container">
+<nav class="navbar secondary-menu navbar-default sticky">
+    <div class="container">
+        <div class="menu-content">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/tutorials">
+                Tutorials
+                </a>
+            </div>
+           <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav text-uppercase">
+                <li>
+                    <a href="/tutorials" class="">All</a>
+                  </li>
+                
+                </ul>
+            </div> -->
+        </div>
+    </div>
+</nav>
+</div>
+<div class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <article class="post post-tutorial">
+                    <div class="post-content">
+                        <header class="entry-header">
+                            <h1 class="entry-title">How to Implement Angular 2 Form validations and custom validation</h1>
+                          <div class="social-share">
+							<span class="social-share-title pull-left text-capitalize">By Pradeep Terli On 11-03-2017</span>
+                               <ul class="text-center pull-right">
+    <li>
+        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
+    </li>
+    <li>
+        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
+    </li>
+    <li>
+        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
+    </li>
+    <li>
+        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
+    </li>
+</ul> 
+                        </div>
+                            <h6>
+                                        
+                                        <a href="#" style="text-transform: uppercase;"> angular</a>
+                                        
+                                        <a href="#" style="text-transform: uppercase;"> tutorial</a>
+                                        
+                                    </h6>
+                            <p>Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2 validate interface.</p>
+                    <div class="bt-group">
+                        <a class="btn btn-success" href="https://cuppalabs.github.io/angular2-forms" target="blank"><i class="fa fa-desktop" aria-hidden="true"></i> Live Demo</a>
+                        <a class="btn btn-success" href="https://github.com/CuppaLabs/angular2-forms" target="blank"><i class="fa fa-github" aria-hidden="true"></i>Code on Github</a>
+                    </div>
+                    <div class="post-thumb">
+                        <a href="#"><img src="/img/tutorials/form-validations-tutorial3.png" alt=""></a>
+                    </div>
+                        </header>
+                        <div class="bt-group">
+                            <a class="btn btn-success" href="https://cuppalabs.github.io/angular2-forms" target="blank"><i class="fa fa-desktop" aria-hidden="true"></i> Live Demo</a>
+                            <a class="btn btn-success" href="https://github.com/CuppaLabs/angular2-forms" target="blank"><i class="fa fa-github" aria-hidden="true"></i>Code on Github</a>
+                        </div>
+                        <div class="entry-content">
+                            <p>In this tutorial, let’s implement the following angular 2 inbuilt validations and create a custom validation using
+angular 2 <code class="highlighter-rouge">validate</code> interface</p>
+
+<ol>
+  <li><b>Required</b> - The form field is mandatroy</li>
+  <li><b>Maxlength</b> - Maximum number of characters in the field.</li>
+  <li><b>Minlength</b> - Minimum number of characters in the field.</li>
+  <li><b>Pattern</b> - Regular expression to match the input values and validate.</li>
+  <li><b>Custom Validator</b> - Writing custom validation function to match password and confirm password fields.</li>
+</ol>
+
+<h3 id="getting-started">Getting Started</h3>
+<p>Lets create a form component. I used angular CLI to generate the folder structure and created a form folder for 
+component files. To style we are using bootstrap. The folder structure should look like this :</p>
+
+<p><img src="/img/tutorials/form-folder-structure.png" alt="www.cuppalabs.com" /></p>
+
+<h3 id="create-form-component">Create Form Component</h3>
+<p>Following code creates a form component with the input fields. In the next steps, let see how we can apply validations
+on each of these fields.</p>
+
+<div class="code-area">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">login-form.component.ts</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">login-form.component.html</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">password.match.directive.ts</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">User.ts</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+    <pre class="prettyprint lang-ts linenums:1">
+  import { Component,Directive, forwardRef, 
+           Attribute,OnChanges, SimpleChanges,Input } from '@angular/core';
+  import { NG_VALIDATORS,Validator,
+           Validators,AbstractControl,ValidatorFn } from '@angular/forms';
+  import { User }    from './user';
+  @Component({
+    moduleId: module.id,
+    selector: 'login-form',
+    templateUrl: './login-form.component.html',
+    styleUrls: ['./login-form.component.css']
+  })
+  export class LoginFormComponent {
+    powers = ['Really Smart', 'Super Flexible',
+              'Super Hot', 'Weather Changer'];
+    model = new User('','',null,'','','');
+    submitted = false;
+    onSubmit() { this.submitted = true; }
+    newHero() {
+    // this.model = new User('','');
+    }
+  }
+    </pre>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+      <pre class="prettyprint lang-html linenums:1">
+&#x3C;div class=&#x22;col-md-6&#x22;&#x3E;
+   &#x3C;h3&#x3E;Angular 2 Form Validations Demo&#x3C;/h3&#x3E;
+   &#x3C;form (ngSubmit)=&#x22;onSubmit()&#x22; #loginForm=&#x22;ngForm&#x22;&#x3E;
+   &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+      &#x3C;label for=&#x22;name&#x22;&#x3E;Name&#x3C;/label&#x3E;
+      &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;name&#x22; #name=&#x22;ngModel&#x22;&#x3E;
+   &#x3C;/div&#x3E;
+   &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+      &#x3C;label for=&#x22;name&#x22;&#x3E;Email Address&#x3C;/label&#x3E;
+      &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;emailaddress&#x22; #email=&#x22;ngModel&#x22;&#x3E;
+   &#x3C;/div&#x3E;
+   &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+      &#x3C;label for=&#x22;name&#x22;&#x3E;Mobile Number&#x3C;/label&#x3E;
+      &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;mobilenumber&#x22; #mobile=&#x22;ngModel&#x22;&#x3E;
+   &#x3C;/div&#x3E;
+   &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+      &#x3C;label for=&#x22;name&#x22;&#x3E;Password&#x3C;/label&#x3E;
+      &#x3C;input type=&#x22;password&#x22; class=&#x22;form-control&#x22; id=&#x22;password&#x22; #password=&#x22;ngModel&#x22;&#x3E;
+   &#x3C;/div&#x3E;
+   &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+      &#x3C;label for=&#x22;name&#x22;&#x3E;Confirm Password&#x3C;/label&#x3E;
+      &#x3C;input type=&#x22;password&#x22; class=&#x22;form-control&#x22; id=&#x22;confirmPassword&#x22; #confirmPassword=&#x22;ngModel&#x22;&#x3E;
+   &#x3C;/div&#x3E;
+   &#x3C;button type=&#x22;submit&#x22; class=&#x22;btn btn-success btn-block&#x22; [disabled]=&#x22;!loginForm.form.valid&#x22;&#x3E;Submit&#x3C;/button&#x3E;
+   &#x3C;/form&#x3E;
+&#x3C;/div&#x3E;
+      </pre>
+    
+    </div>
+    <div role="tabpanel" class="tab-pane" id="messages">
+    <pre class="prettyprint lang-ts linenums:1">
+    import { Directive, forwardRef, Attribute } from '@angular/core';
+    import { NG_VALIDATORS,Validator,
+             Validators,AbstractControl,ValidatorFn } from '@angular/forms';
+
+    @Directive({
+        selector: '[validateEqual][formControlName],[validateEqual][formControl],
+                   [validateEqual][ngModel]',
+        providers: [
+                    { provide: NG_VALIDATORS, 
+                      useExisting: forwardRef(() =&gt; EqualValidator),
+                      multi: true }
+                   ]
+    })
+    export class EqualValidator implements Validator {
+        constructor( @Attribute('validateEqual') public validateEqual: string) {}
+
+        validate(c: AbstractControl): { [key: string]: any } {
+            // self value (e.g. retype password)
+            let v = c.value;
+
+            // control value (e.g. password)
+            let e = c.root.get(this.validateEqual);
+
+            // value not equal
+            if (e &amp;&amp; v !== e.value) return {
+                validateEqual: false
+            }
+            return null;
+        }
+    }
+    </pre>
+    
+    </div>
+    <div role="tabpanel" class="tab-pane" id="settings">
+     <pre class="prettyprint lang-ts linenums:1">
+export class User{
+    constructor(
+        public name:string,
+        public email: string,
+        public mobile: number,
+        public gender: string,
+        public password: any,
+        public confirmPassword: any
+    ){}
+}      
+    </pre>
+    </div>
+  </div>
+
+</div>
+
+<p>Once we have created the form, it looks like something below.</p>
+
+<p><img src="/img/tutorials/basic-form.png" alt="www.cuppalabs.com" /></p>
+
+<p>Now it’s time for us to apply the validations on each field.</p>
+
+<h3 id="first-name-validation">First Name Validation</h3>
+<p><b>Requirement</b> - Required and only alphabets allowed in the name field.</p>
+<ul>
+  <li><code class="highlighter-rouge">required</code> attribute on input tag ensures that the filed value is mandatory.</li>
+  <li><code class="highlighter-rouge">pattern="[a-zA-Z][a-zA-Z ]+"</code> attribute take a <code class="highlighter-rouge">regex</code> to check for only characters in the field.</li>
+  <li><code class="highlighter-rouge">[a-zA-Z][a-zA-Z ]+</code> is the regular expression to check for only alphabets.</li>
+  <li><code class="highlighter-rouge">name.valid</code> is a boolean value to check if the field has any error on the validation attributes.</li>
+  <li><code class="highlighter-rouge">name.hasError('required')"</code> returns true if the value is not entered.</li>
+  <li><code class="highlighter-rouge">name.hasError('pattern')"</code> return true if the entered value does not match with the regular expression.</li>
+</ul>
+
+<p>Based on the type of error, whether on <code class="highlighter-rouge">required</code> or on <code class="highlighter-rouge">pattern</code> attributes, the error messages are shown and hidden.</p>
+<div class="code-area">
+ <pre class="prettyprint lang-html linenums:1">
+&#x3C;div class=&#x22;form-group&#x22;&#x3E;
+   &#x3C;label for=&#x22;name&#x22;&#x3E;Name&#x3C;/label&#x3E;
+   &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;name&#x22;
+   required
+   pattern=&#x22;[a-zA-Z][a-zA-Z ]+&#x22;
+   [(ngModel)]=&#x22;model.name&#x22; name=&#x22;name&#x22;
+   #name=&#x22;ngModel&#x22;&#x3E;
+   &#x3C;div [hidden]=&#x22;name.valid || name.pristine&#x22;
+      class=&#x22;alert alert-danger&#x22;&#x3E;
+      &#x3C;div [hidden]=&#x22;!name.hasError(&#x27;required&#x27;)&#x22;&#x3E;Name is required&#x3C;/div&#x3E;
+      &#x3C;div [hidden]=&#x22;!name.hasError(&#x27;pattern&#x27;)&#x22;&#x3E;Only alphabetsallowed&#x3C;/div&#x3E;
+   &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+ </pre>
+</div>
+
+<h3 id="email-address-validation">Email Address Validation</h3>
+<p><b>Requirement</b> - Validate the email format <code class="highlighter-rouge">joe@gmail.com</code>. Entered email should be having valid email with @, .co or.com.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">required</code> attribute on input tag ensures that the filed value is mandatory.</li>
+  <li><code class="highlighter-rouge">pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" </code> takes regular expression <code class="highlighter-rouge">^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$</code> to check for valid email.</li>
+</ul>
+<div class="code-area">
+ <pre class="prettyprint lang-html linenums:1">
+&#x3C;div class=&#x22;form-group&#x22;&#x3E;
+&#x3C;label for=&#x22;name&#x22;&#x3E;Email Address&#x3C;/label&#x3E;
+&#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;emailaddress&#x22;
+required
+[(ngModel)]=&#x22;model.email&#x22; name=&#x22;email&#x22;
+pattern=&#x22;^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$&#x22; 
+#email=&#x22;ngModel&#x22;&#x3E;
+&#x3C;div [hidden]=&#x22;email.valid || email.pristine&#x22;
+   class=&#x22;alert alert-danger&#x22;&#x3E;
+   &#x3C;div [hidden]=&#x22;!email.hasError(&#x27;required&#x27;)&#x22;&#x3E;Email is required&#x3C;/div&#x3E;
+   &#x3C;div [hidden]=&#x22;!email.hasError(&#x27;pattern&#x27;)&#x22;&#x3E;Email format should be 
+      &#x3C;small&#x3E;&#x3C;b&#x3E;joe@abc.com&#x3C;/b&#x3E;&#x3C;/small&#x3E;
+   &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</pre>
+</div>
+
+<h3 id="mobile-number-validation">Mobile Number Validation</h3>
+<p><b>Requirement</b> - Should be only numbers and should have 10 digits only.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">required</code> attribute on input tag ensures that the filed value is mandatory.</li>
+  <li><code class="highlighter-rouge">pattern="[0-9]*"</code> take regular expression <code class="highlighter-rouge">[0-9]*</code> to allow only numbers.</li>
+  <li><code class="highlighter-rouge">minlength="10"</code> minlength of the input value should be 10.</li>
+  <li><code class="highlighter-rouge">maxlength="10" </code> max length of the input value should be 10.
+Based on the type of error in each of the attributes above, the error messages are shown.</li>
+</ul>
+<div class="code-area">
+ <pre class="prettyprint lang-html linenums:1">
+&#x3C;div class=&#x22;form-group&#x22;&#x3E;
+   &#x3C;label for=&#x22;name&#x22;&#x3E;Mobile Number&#x3C;/label&#x3E;
+   &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;mobilenumber&#x22;
+   required
+   [(ngModel)]=&#x22;model.mobile&#x22; name=&#x22;mobilenumber&#x22;
+   pattern=&#x22;[0-9]*&#x22;
+   minlength=&#x22;10&#x22;
+   maxlength=&#x22;10&#x22; 
+   #mobile=&#x22;ngModel&#x22;&#x3E;
+   &#x3C;div [hidden]=&#x22;mobile.valid || mobile.pristine&#x22;
+      class=&#x22;alert alert-danger&#x22;&#x3E;
+      &#x3C;div [hidden]=&#x22;!mobile.hasError(&#x27;minlength&#x27;)&#x22;&#x3E;Mobile should be 10digit&#x3C;/div&#x3E;
+      &#x3C;div [hidden]=&#x22;!mobile.hasError(&#x27;required&#x27;)&#x22;&#x3E;Mobile is required&#x3C;/div&#x3E;
+      &#x3C;div [hidden]=&#x22;!mobile.hasError(&#x27;pattern&#x27;)&#x22;&#x3E;Mobile numberr should be only numbers&#x3C;/div&#x3E;
+   &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;  
+ </pre>
+</div>
+
+<h3 id="password-matching-validation">Password Matching Validation</h3>
+<p>Angular 2 does not provide any inbuilt validator to match password. We need to write a custom directive to validate password match.
+Let’s write the directive using the <code class="highlighter-rouge">validator</code> interface.</p>
+<div class="code-area">
+ <pre class="prettyprint lang-ts linenums:1">
+import { Directive, forwardRef, Attribute } from '@angular/core';
+import { NG_VALIDATORS,Validator,
+         Validators,AbstractControl,ValidatorFn } from '@angular/forms';
+
+@Directive({
+    selector: '[validateEqual][formControlName],[validateEqual][formControl],[validateEqual][ngModel]',
+    providers: [
+        { provide: NG_VALIDATORS, useExisting: forwardRef(() =&gt; EqualValidator), multi: true }
+    ]
+})
+export class EqualValidator implements Validator {
+    constructor( @Attribute('validateEqual') public validateEqual: string) {}
+
+    validate(c: AbstractControl): { [key: string]: any } {
+        // self value (e.g. retype password)
+        let v = c.value;
+
+        // control value (e.g. password)
+        let e = c.root.get(this.validateEqual);
+
+        // value not equal
+        if (e &amp;&amp; v !== e.value) return {
+            validateEqual: false
+        }
+        return null;
+    }
+}
+ </pre>
+</div>
+
+<p>The <code class="highlighter-rouge">EqualValidator</code> directive needs to be added to the html code as shown below.</p>
+<ul>
+  <li><code class="highlighter-rouge">validateEqual="password"</code> in which <code class="highlighter-rouge">password</code> is the name of the field whose value is to be matched.</li>
+</ul>
+<div class="code-area">
+ <pre class="prettyprint lang-html linenums:1">
+&#x3C;div class=&#x22;form-group&#x22;&#x3E;
+   &#x3C;label for=&#x22;name&#x22;&#x3E;Password&#x3C;/label&#x3E;
+   &#x3C;input type=&#x22;password&#x22; class=&#x22;form-control&#x22; id=&#x22;password&#x22;
+   required
+   [(ngModel)]=&#x22;model.password&#x22; name=&#x22;password&#x22;
+   #password=&#x22;ngModel&#x22;&#x3E;
+   &#x3C;div [hidden]=&#x22;password.valid || password.pristine&#x22;
+      class=&#x22;alert alert-danger&#x22;&#x3E;
+      Password is required
+   &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;form-group&#x22;&#x3E;
+   &#x3C;label for=&#x22;name&#x22;&#x3E;Confirm Password&#x3C;/label&#x3E;
+   &#x3C;input type=&#x22;password&#x22; class=&#x22;form-control&#x22; id=&#x22;confirmPassword&#x22;
+   required
+   validateEqual=&#x22;password&#x22;
+   [(ngModel)]=&#x22;model.confirmPassword&#x22; name=&#x22;confirmPassword&#x22;
+   #confirmPassword=&#x22;ngModel&#x22;&#x3E;
+   &#x3C;div [hidden]=&#x22;confirmPassword.valid || confirmPassword.pristine&#x22;
+      class=&#x22;alert alert-danger&#x22;&#x3E;
+      Passwords did not match
+   &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+ </pre>
+</div>
+
+<p>That’s all folks !!</p>
+
+
+                        </div>
+                        <div class="bt-group">
+                            <a class="btn btn-success" href="https://cuppalabs.github.io/angular2-forms" target="blank"><i class="fa fa-desktop" aria-hidden="true"></i> Live Demo</a>
+                            <a class="btn btn-success" href="https://github.com/CuppaLabs/angular2-forms" target="blank"><i class="fa fa-github" aria-hidden="true"></i>Code on Github</a>
+                        </div>
+                        <div class="social-share">
+							<span class="social-share-title pull-left text-capitalize">By Pradeep Terli On 11-03-2017</span>
+                               <ul class="text-center pull-right">
+    <li>
+        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
+    </li>
+    <li>
+        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
+    </li>
+    <li>
+        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
+    </li>
+    <li>
+        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
+    </li>
+</ul> 
+                        </div>
+                    </div>
+                </article>
+                <div class="top-comment"><!--top comment-->
+                    <img src="/img/pradeep.jpg" class="pull-left img-circle" alt="">
+                    <h4>Pradeep Terli</h4>
+                    <p>Web UI Developer, Blogger, Thinker , Entrepreneur. Loves to explore technology with focus on web technologies.</p>
+                     <div class="social-share">
+                            <ul>
+                                <li><a class="s-facebook" href="https://www.facebook.com/pradeepkumar.terli" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="s-linkedin" href="http://www.linkedin.com/in/pradeep-kumar-terli" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a class="s-google-plus" href=""><i class="fa fa-google-plus"></i></a></li>
+                                <li><a class="s-twitter" href=""><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="comments-section">
+                    
+                        <div id="disqus_thread"></div>
+<script>
+
+
+var disqus_config = function () {
+this.page.url = "https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "How to Implement Angular 2 Form validations and custom validation"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//cuppalabs.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                
+                    
+                </div>
+            </div>
+            <div class="col-md-4">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4525567075133342"
+     data-ad-slot="3548333904"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                <aside class="widget about-me-widget">
+                        <div class="about-me-img">
+
+                            <div class="about-me-content text-center">
+                                <img src="/img/pradeep.jpg" alt="" class="img-me">
+
+                                <h3 class="text-uppercase">Pradeep Kumar Terli</h3>
+
+                                <p>Web UI Developer, Blogger, Thinker , Entrepreneur. Loves to explore technology with focus on web technologies.</p>
+                            </div>
+                        </div>
+                        <div class="social-share">
+                            <ul class="text-center text-center">
+                                <li><a class="s-facebook" href="https://www.facebook.com/pradeepkumar.terli" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="s-linkedin" href="http://www.linkedin.com/in/pradeep-kumar-terli" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a class="s-google-plus" href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a class="s-twitter" href="https://twitter.com/PradeepTerli"><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                 <!--   <aside class="widget news-letter">
+                        <h3 class="widget-title text-uppercase text-center">Get Newsletter</h3>
+
+                        <form action="#">
+                            <input type="email" placeholder="Your email address">
+                            <input type="submit" value="Subscribe Now" class="text-uppercase text-center btn btn-subscribe">
+                        </form>
+
+                    </aside> -->
+                <div class="fixed-ad">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- github-ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4525567075133342"
+     data-ad-slot="3548333904"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- tutorial-ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4525567075133342"
+     data-ad-slot="3918262705"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<footer class="footer">
+  <p>© 2009-2017 www.cuppalabs.com. <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
+</footer>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=929055083862567";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+
+<script>
+  $(window).scroll(function(){
+  var sticky = $('.sticky'),
+      scroll = $(window).scrollTop(),
+      sticky2 = $('.left-sticky'),
+      sticky3 = $('.content-sticky'),
+      sticky4 = $('.fixed-ad');
+
+  if (scroll >= 60) {
+    sticky.addClass('fixed');
+    sticky2.addClass('left-fixed');
+    sticky3.addClass('content-fixed');
+  }
+  else {
+    sticky.removeClass('fixed');
+    sticky2.removeClass('left-fixed');
+    sticky3.removeClass('content-fixed');
+  }
+  if (scroll >= 820) {
+    sticky4.addClass('fixed');
+  }
+  else if (scroll < 820) {
+    sticky4.removeClass('fixed');
+  }
+});
+</script>
+<script>
+$(function() {
+  return $("h2, h3, h4, h5, h6").each(function(i, el) {
+    var $el, icon, id;
+    $el = $(el);
+    id = $el.attr('id');
+    icon = '<i class="fa fa-link"></i>';
+    if (id) {
+      $el.addClass('anchor');
+      return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id));
+    }
+  });
+});
+/*$(function(){
+      $("#myScrollspy ul li a[href^='#']").on('click', function(e) {
+
+       // prevent default anchor click behavior
+       e.preventDefault();
+
+       // animate
+       $('html, body').animate({
+           scrollTop: $(this.hash).offset().top - 75
+         }, 300, function(){
+   
+           // when done, add hash to url
+           // (default click behaviour)
+           window.location.hash = this.hash;
+         });
+
+    });
+
+});*/
+$(document).on('click', '.index-list a', function (event) {
+    "use strict";
+    event.preventDefault();
+    var animLen = $($.attr(this, 'href')).offset().top - 62.667 - 30;
+    $('html, body').animate({
+        scrollTop: animLen
+    }, 300);
+
+});
+$(function () {
+    "use strict";
+    $(window).bind('scroll', function () {
+        $('.anchor').each(function () {
+            var anchored = $(this).attr("id"),
+                position = $(this).position().top - $(window).scrollTop()- 62.667 - 30,
+                targetOffset = $(this).offset().top - 75 - 30;
+
+            if ($(window).scrollTop() > targetOffset) {
+
+                $('ul.index-list').find('li').removeClass("active");
+                $('ul.index-list').find(('*[data-anchor="' + anchored + '"]')).addClass("active");
+            }
+        });
+    });
+});
+</script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</html>

@@ -69,6 +69,10 @@
                             <li><a href="/components/fanmenu/">Fan Menu</a></li>
                         
                         
+                            
+                            <li><a href="/tutorials/how-to-implement-angular2-form-validations/">Data Table</a></li>
+                        
+                        
                         
                         
                         
@@ -92,6 +96,8 @@
                    <!-- <li class="menu-item-has-children"><a data-toggle="dropdown" class="dropdown-toggle" href="#">JS Components
                         <i class="fa fa-angle-down"></i></a>
                         <ul class="sub-menu">
+                         
+                         
                          
                          
                          
@@ -176,7 +182,7 @@
                         <div class="col-md-5">
                             <div class="post-thumb">
                                 <a href="/components/datatable/">
-                                    <img src="/img/planets/datatable-thumbnail.png" alt="" class="pull-left">
+                                    <img src="/img/components/datatable-thumbnail.png" alt="" class="pull-left">
                                     <!--<img src="http://finodiary.trade/wp-content/uploads/2015/06/light-grey-background-pattern-i1.jpg" alt="" class="pull-left"> -->
                                 </a>
 
@@ -239,7 +245,7 @@
                         <div class="col-md-5">
                             <div class="post-thumb">
                                 <a href="/components/datepicker/">
-                                    <img src="/img/planets/datepicker-thumbnail.png" alt="" class="pull-left">
+                                    <img src="/img/components/datepicker-thumbnail.png" alt="" class="pull-left">
                                     <!--<img src="http://finodiary.trade/wp-content/uploads/2015/06/light-grey-background-pattern-i1.jpg" alt="" class="pull-left"> -->
                                 </a>
 
@@ -302,7 +308,7 @@
                         <div class="col-md-5">
                             <div class="post-thumb">
                                 <a href="/components/fanmenu/">
-                                    <img src="/img/planets/fanmenu-thumbnail.png" alt="" class="pull-left">
+                                    <img src="/img/components/fanmenu-thumbnail.png" alt="" class="pull-left">
                                     <!--<img src="http://finodiary.trade/wp-content/uploads/2015/06/light-grey-background-pattern-i1.jpg" alt="" class="pull-left"> -->
                                 </a>
 
@@ -370,12 +376,14 @@
               
                 
               
+                
+              
               <article class="post post-list col-sm-6 col-md-12">
                     <div class="row">
                         <div class="col-md-5">
                             <div class="post-thumb">
                                 <a href="/components/slidemenu/">
-                                    <img src="/img/planets/slidemenu-thumbnail.png" alt="" class="pull-left">
+                                    <img src="/img/components/slidemenu-thumbnail.png" alt="" class="pull-left">
                                     <!--<img src="http://finodiary.trade/wp-content/uploads/2015/06/light-grey-background-pattern-i1.jpg" alt="" class="pull-left"> -->
                                 </a>
 
@@ -475,7 +483,7 @@
 
 
 
-<!--<h2>Recently Discovered Planets</h2>
+<!--<h2>Recently Discovered components</h2>
 
 <ul>
   
@@ -500,7 +508,8 @@
   var sticky = $('.sticky'),
       scroll = $(window).scrollTop(),
       sticky2 = $('.left-sticky'),
-      sticky3 = $('.content-sticky');
+      sticky3 = $('.content-sticky'),
+      sticky4 = $('.fixed-ad');
 
   if (scroll >= 60) {
     sticky.addClass('fixed');
@@ -511,6 +520,12 @@
     sticky.removeClass('fixed');
     sticky2.removeClass('left-fixed');
     sticky3.removeClass('content-fixed');
+  }
+  if (scroll >= 820) {
+    sticky4.addClass('fixed');
+  }
+  else if (scroll < 820) {
+    sticky4.removeClass('fixed');
   }
 });
 </script>
@@ -572,4 +587,5 @@ $(function () {
     });
 });
 </script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </html>

@@ -69,6 +69,10 @@
                             <li><a href="/components/fanmenu/">Fan Menu</a></li>
                         
                         
+                            
+                            <li><a href="/tutorials/how-to-implement-angular2-form-validations/">Data Table</a></li>
+                        
+                        
                         
                         
                         
@@ -92,6 +96,8 @@
                    <!-- <li class="menu-item-has-children"><a data-toggle="dropdown" class="dropdown-toggle" href="#">JS Components
                         <i class="fa fa-angle-down"></i></a>
                         <ul class="sub-menu">
+                         
+                         
                          
                          
                          
@@ -295,7 +301,7 @@
                         <h2 class="entry-title" id="overview">Overview</h2>
                             <p>Cuppa Angular Fan Menu is an `angular 1 directive` for cool menu componet for web and mobile, developed using `angularJS`, `CSS3`, `HTML5`.</p>
                             <div class="post-thumb">
-                        <a href="#"><img src="/img/planets/fanmenu-thumbnail.png" alt=""></a>
+                        <a href="#"><img src="/img/components/fanmenu-thumbnail.png" alt=""></a>
                     </div> 
                         </header>
                         <div class="entry-content">
@@ -623,17 +629,22 @@ Copyright (c) 2016 Cuppa Labs</p>
 
 
                         </div>
-
-  <div class="social-share">
-							<span
-                                    class="social-share-title pull-left text-capitalize">By Pradeep Terli On 12-02-2017</span>
-                            <ul class="text-center pull-right">
-                                <li><a class="s-facebook" href=""><i class="fa fa-facebook"></i></a></li>
-                                <li><a class="s-twitter" href=""><i class="fa fa-twitter"></i></a></li>
-                                <li><a class="s-google-plus" href=""><i class="fa fa-google-plus"></i></a></li>
-                                <li><a class="s-linkedin" href=""><i class="fa fa-linkedin"></i></a></li>
-                                <li><a class="s-instagram" href=""><i class="fa fa-instagram"></i></a></li>
-                            </ul>
+                        <div class="social-share">
+							<span class="social-share-title pull-left text-capitalize">By Pradeep Terli On 12-02-2017</span>
+                               <ul class="text-center pull-right">
+    <li>
+        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/components/fanmenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
+    </li>
+    <li>
+        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/components/fanmenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
+    </li>
+    <li>
+        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/components/fanmenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
+    </li>
+    <li>
+        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/components/fanmenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
+    </li>
+</ul> 
                         </div>
                     </div>
                 </article>
@@ -746,7 +757,8 @@ s.setAttribute('data-timestamp', +new Date());
   var sticky = $('.sticky'),
       scroll = $(window).scrollTop(),
       sticky2 = $('.left-sticky'),
-      sticky3 = $('.content-sticky');
+      sticky3 = $('.content-sticky'),
+      sticky4 = $('.fixed-ad');
 
   if (scroll >= 60) {
     sticky.addClass('fixed');
@@ -757,6 +769,12 @@ s.setAttribute('data-timestamp', +new Date());
     sticky.removeClass('fixed');
     sticky2.removeClass('left-fixed');
     sticky3.removeClass('content-fixed');
+  }
+  if (scroll >= 820) {
+    sticky4.addClass('fixed');
+  }
+  else if (scroll < 820) {
+    sticky4.removeClass('fixed');
   }
 });
 </script>
@@ -818,4 +836,5 @@ $(function () {
     });
 });
 </script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </html>

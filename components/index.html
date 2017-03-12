@@ -69,6 +69,10 @@
                             <li><a href="/components/fanmenu/">Fan Menu</a></li>
                         
                         
+                            
+                            <li><a href="/tutorials/how-to-implement-angular2-form-validations/">Data Table</a></li>
+                        
+                        
                         
                         
                         
@@ -92,6 +96,8 @@
                    <!-- <li class="menu-item-has-children"><a data-toggle="dropdown" class="dropdown-toggle" href="#">JS Components
                         <i class="fa fa-angle-down"></i></a>
                         <ul class="sub-menu">
+                         
+                         
                          
                          
                          
@@ -150,47 +156,27 @@
 
 <nav class="navbar secondary-menu navbar-default sticky">
     <div class="container">
-    <ol class="breadcrumb">
-            
-            
-            
-            
+        <div class="menu-content">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/components">
+                Angular Components
+                </a>
+            </div>
+           <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav text-uppercase">
+                <li>
+                    <a href="/tutorials" class="">All</a>
+                  </li>
                 
-                
-                
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                    
-                        <li class="active">
-                            
-                               
-                            Angular Components
-                        </li>
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-            
-        </ol>
-
+                </ul>
+            </div> -->
+        </div>
     </div>
 </nav>
 
@@ -206,7 +192,7 @@
 <div class="col-md-4 col-sm-6">
                         <article class="post portfolio-2 post-grid">
                             <div class="post-thumb">
-                                <a href="/components/datatable/"><img src="/img/planets/datatable-thumbnail.png" alt=""></a>
+                                <a href="/components/datatable/"><img src="/img/components/datatable-thumbnail.png" alt=""></a>
 
                                 <a href="/components/datatable/" class="post-thumb-overlay text-center">
                                     <div class="text-uppercase text-center">View Project</div>
@@ -238,7 +224,7 @@
 <div class="col-md-4 col-sm-6">
                         <article class="post portfolio-2 post-grid">
                             <div class="post-thumb">
-                                <a href="/components/datepicker/"><img src="/img/planets/datepicker-thumbnail.png" alt=""></a>
+                                <a href="/components/datepicker/"><img src="/img/components/datepicker-thumbnail.png" alt=""></a>
 
                                 <a href="/components/datepicker/" class="post-thumb-overlay text-center">
                                     <div class="text-uppercase text-center">View Project</div>
@@ -270,7 +256,7 @@
 <div class="col-md-4 col-sm-6">
                         <article class="post portfolio-2 post-grid">
                             <div class="post-thumb">
-                                <a href="/components/fanmenu/"><img src="/img/planets/fanmenu-thumbnail.png" alt=""></a>
+                                <a href="/components/fanmenu/"><img src="/img/components/fanmenu-thumbnail.png" alt=""></a>
 
                                 <a href="/components/fanmenu/" class="post-thumb-overlay text-center">
                                     <div class="text-uppercase text-center">View Project</div>
@@ -307,12 +293,14 @@
     
   
     
+  
+    
 
 
 <div class="col-md-4 col-sm-6">
                         <article class="post portfolio-2 post-grid">
                             <div class="post-thumb">
-                                <a href="/components/slidemenu/"><img src="/img/planets/slidemenu-thumbnail.png" alt=""></a>
+                                <a href="/components/slidemenu/"><img src="/img/components/slidemenu-thumbnail.png" alt=""></a>
 
                                 <a href="/components/slidemenu/" class="post-thumb-overlay text-center">
                                     <div class="text-uppercase text-center">View Project</div>
@@ -408,7 +396,8 @@
   var sticky = $('.sticky'),
       scroll = $(window).scrollTop(),
       sticky2 = $('.left-sticky'),
-      sticky3 = $('.content-sticky');
+      sticky3 = $('.content-sticky'),
+      sticky4 = $('.fixed-ad');
 
   if (scroll >= 60) {
     sticky.addClass('fixed');
@@ -419,6 +408,12 @@
     sticky.removeClass('fixed');
     sticky2.removeClass('left-fixed');
     sticky3.removeClass('content-fixed');
+  }
+  if (scroll >= 820) {
+    sticky4.addClass('fixed');
+  }
+  else if (scroll < 820) {
+    sticky4.removeClass('fixed');
   }
 });
 </script>
@@ -480,4 +475,5 @@ $(function () {
     });
 });
 </script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </html>
