@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width,initial-scale=1" name="viewport">
   <meta content="width=device-width,initial-scale=1" name="viewport">
+  <link rel="icon" href="img/coffee14.png" type="image/x-icon" />
   <title>DateTimepicker</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Asap:500,700" rel="stylesheet">
   <link href="/css/main.css" rel="stylesheet">
   <meta name="description" content="Angular Cuppa DateTimepicker is a cool responsive DateTimepicker directive for Web and Mobile. It is Mobile friendly and light weight. Developed by [Cuppa Labs](http://www.cuppalabs.com).">
     <meta content='Angular2 data grid, angular2 grid, ng2-grid, angular2 datatable, datatable large datasets' name='keywords'/>
@@ -43,15 +45,15 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="/">
-                <img src="/img/logo.png" alt="">
-                CUPPA LABS
+                <img src="/img/cuppa-logo-coffee11.png" alt="">
                 </a>
             </div>
 
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                <ul class="nav navbar-nav text-uppercase">
+                <ul class="nav navbar-nav">
+                    <li><a href="/" class="">Home</a></li>
                     <li class="menu-item-has-children">
                         <a href="/components" class="current">Angular Components</a>
                      <!--   <i class="fa fa-angle-down"></i>
@@ -123,9 +125,9 @@
                          
                         </ul>
                     </li> -->
-                    <li><a href="/tutorials" class="">TUTORIALS</a></li>
+                    <li><a href="/tutorials" class="">Tutorials</a></li>
                      <li><a href="https://cuppalabs.github.io/angular2-social-login/" target="_blank">OAuth</a></li>
-                    <li><a href="https://www.facebook.com/pradeepkumar.terli" target="_blank">ABOUT ME </a></li>
+                    <li><a href="https://www.facebook.com/pradeepkumar.terli" target="_blank">About Me </a></li>
                 </ul>
                 <div class="i_con">
                     <a href="https://www.facebook.com/cuppalabs"><i class="fa fa-facebook"></i></a>
@@ -298,45 +300,47 @@
 </ul>
 
 <h3 id="setup-and-usage">Setup and Usage</h3>
-<ol>
-  <li>Add Datepicker Directive
-Include the <code class="highlighter-rouge">datepicker-directive.js</code> script file in the <code class="highlighter-rouge">&lt;head&gt;</code> section or at the bottom of your html page.
-    <div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"datepicker-directive.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<p>Add Datepicker Directive
+Include the <code class="highlighter-rouge">datepicker-directive.js</code> script file in the <code class="highlighter-rouge">&lt;head&gt;</code> section or at the bottom of your html page.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"datepicker-directive.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre>
-    </div>
-  </li>
-  <li>CSS
-Include the CSS file in <code class="highlighter-rouge">&lt;head&gt;</code> section of your page.
-```html</li>
-</ol>
-<link href="cuppa-datepicker-styles.css" rel="stylesheet" />
+</div>
+<p>CSS
+Include the CSS file in <code class="highlighter-rouge">&lt;head&gt;</code> section of your page.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-3. Initialize
-Inject the directive `cuppaDatepickerDirective` as a dependency into the module where the datepicker needs to be initialized.
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"cuppa-datepicker-styles.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+</code></pre>
+</div>
 
-```js
-angular.module("cuppaDatepicker",["cuppaDatepickerDirective"])
-.controller("cuppaDatepickerController",function($scope){
-        $scope.myDate = new Date();
-        $scope.myDate2 = "04-18-1990 12:15 AM";
-});
+<p>Initialize
+Inject the directive <code class="highlighter-rouge">cuppaDatepickerDirective</code> as a dependency into the module where the datepicker needs to be initialized.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s2">"cuppaDatepicker"</span><span class="p">,[</span><span class="s2">"cuppaDatepickerDirective"</span><span class="p">])</span>
+<span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s2">"cuppaDatepickerController"</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">){</span>
+        <span class="nx">$scope</span><span class="p">.</span><span class="nx">myDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+        <span class="nx">$scope</span><span class="p">.</span><span class="nx">myDate2</span> <span class="o">=</span> <span class="s2">"04-18-1990 12:15 AM"</span><span class="p">;</span>
+<span class="p">});</span>
 
 </code></pre>
 </div>
-<ol>
-  <li>HTML
-Directive tag declaration.
-```html</li>
-</ol>
-<cuppa-datepicker ng-model="myDate" big-banner="true" format="dd/MM/yyyy hh:mm a" default-open="true" time-picker="true" on-date-select="onDateSelect(selectedDate)">
-</cuppa-datepicker>
-<div class="highlighter-rouge"><pre class="highlight"><code>5. External Dependencies
+<p>HTML
+Directive tag declaration.</p>
 
-We have font awesome icons as dependency for the component. Don't forget to include the following dependencies.
+<div class="language-html highlighter-rouge"><pre class="highlight"><code> <span class="nt">&lt;cuppa-datepicker</span> 
+ 		<span class="na">ng-model=</span><span class="s">"myDate"</span> 
+		<span class="na">big-banner=</span><span class="s">"true"</span> 
+		<span class="na">format=</span><span class="s">"dd/MM/yyyy hh:mm a"</span> 
+		<span class="na">default-open=</span><span class="s">"true"</span>
+		<span class="na">time-picker=</span><span class="s">"true"</span> 
+		<span class="na">on-date-select=</span><span class="s">"onDateSelect(selectedDate)"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/cuppa-datepicker&gt;</span>
+</code></pre>
+</div>
+<p>External Dependencies</p>
 
-```html
-&lt;script src="https://use.fontawesome.com/698aa4e2c2.js"&gt;&lt;/script&gt;
+<p>We have font awesome icons as dependency for the component. Don’t forget to include the following dependencies.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://use.fontawesome.com/698aa4e2c2.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre>
 </div>
 
