@@ -1816,7 +1816,8 @@ p.go-back-home a:hover {
     float: right;
 }
 .component-title{
-    margin: 15px 20px 9px;
+    margin: 20px 20px 9px;
+    font-size: 21px;
 }
 .index-list > li.active{
     background: #ea2929;
