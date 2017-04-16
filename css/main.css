@@ -380,6 +380,7 @@ article {
 }
 .post-thumb img {
     width: 100%;
+    min-height: 152px;
 }
 
 a.more-link {
