@@ -5,24 +5,24 @@
   <meta content="width=device-width,initial-scale=1" name="viewport">
   <meta content="width=device-width,initial-scale=1" name="viewport">
   <link rel="icon" href="img/coffee14.png" type="image/x-icon" />
-  <title>Slide Menu</title>
+  <title>MultiSelect Dropdown</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Asap:500,700" rel="stylesheet">
   <link href="/css/main.css" rel="stylesheet">
-  <meta name="description" content="An angular 2 slide navigation menu component for mobile and web.Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days.">
+  <meta name="description" content="A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install and integrate.">
     <meta content='Angular2 data grid, angular2 grid, ng2-grid, angular2 datatable, datatable large datasets' name='keywords'/>
-  <meta name="description" content="An angular 2 slide navigation menu component for mobile and web.Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days."/>
-<meta property="og:description" content="An angular 2 slide navigation menu component for mobile and web.Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days." />
-<meta property="og:url" content="/components/slidemenu/" />
+  <meta name="description" content="A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install and integrate."/>
+<meta property="og:description" content="A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install and integrate." />
+<meta property="og:url" content="/components/multiselectDropdown/" />
 <meta property="og:site_name" content="Cuppa Labs" />
 <meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
 <meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
 <meta property="article:tag" content="Angular 2" />
 <meta property="article:tag" content="html5" />
 <meta property="article:tag" content="css3" />
-<meta property="og:image" content="http://cuppalabs.github.io/img/components/slidemenu-thumbnail.png" />
+<meta property="og:image" content="http://cuppalabs.github.io/img/components/multiselect-dropdown.png" />
 </head>
 <body>
 <!--<nav>
@@ -168,12 +168,12 @@
         <h3><a href="/components">COMPONENTS</a></h3>
     </div>
     <div class="col-md-2">
-        <h2 class="component-title">Slide Menu</h2>
+        <h2 class="component-title">MultiSelect Dropdown</h2>
     </div>
     <div class="col-md-5">
         <div class="bt-group">
-            <a class="btn btn-success" href="https://cuppalabs.github.io/cuppa-ng2-slidemenu" target="blank"><i class="fa fa-desktop" aria-hidden="true"></i> Live Demos</a>
-            <a class="btn btn-success" href="https://github.com/CuppaLabs/cuppa-ng2-slidemenu" target="blank"><i class="fa fa-github" aria-hidden="true"></i>Code on Github</a>
+            <a class="btn btn-success" href="https://cuppalabs.github.io/angular2-multiselect-dropdown" target="blank"><i class="fa fa-desktop" aria-hidden="true"></i> Live Demos</a>
+            <a class="btn btn-success" href="https://github.com/CuppaLabs/angular2-multiselect-dropdown" target="blank"><i class="fa fa-github" aria-hidden="true"></i>Code on Github</a>
         </div>
     </div>
     <div class="col-md-3">
@@ -219,7 +219,25 @@
                     
                     
                     
-                     <li data-anchor="basic-usage"><a href="#basic-usage">basic usage</a></li>
+                     <li data-anchor="usage"><a href="#usage">usage</a></li>
+                     
+                   <!-- <li data-anchor="getting-started"><a href="#getting-started">Getting Started</a></li>
+                    <li data-anchor="installation"><a href="#installation">Installation</a></li>
+                    <li data-anchor="basic-usage"><a href="#basic-usage">Basic Usage</a></li>
+                    <li data-anchor="section6"><a href="#section6">Example</a></li>-->
+                    
+                    
+                    
+                     <li data-anchor="settings"><a href="#settings">settings</a></li>
+                     
+                   <!-- <li data-anchor="getting-started"><a href="#getting-started">Getting Started</a></li>
+                    <li data-anchor="installation"><a href="#installation">Installation</a></li>
+                    <li data-anchor="basic-usage"><a href="#basic-usage">Basic Usage</a></li>
+                    <li data-anchor="section6"><a href="#section6">Example</a></li>-->
+                    
+                    
+                    
+                     <li data-anchor="callback-methods"><a href="#callback-methods">callback-methods</a></li>
                      
                    <!-- <li data-anchor="getting-started"><a href="#getting-started">Getting Started</a></li>
                     <li data-anchor="installation"><a href="#installation">Installation</a></li>
@@ -234,121 +252,198 @@
                 <article class="post">
                     <div class="post-content">
                         <header class="entry-header">
-                           <!-- <h1 class="entry-title" >Slide Menu</h2> -->
+                           <!-- <h1 class="entry-title" >MultiSelect Dropdown</h2> -->
                             <div class="social-share">
-							<span class="social-share-title pull-left text-capitalize">By Pradeep Terli On 12-02-2017</span>
+							<span class="social-share-title pull-left text-capitalize">By Pradeep Terli On 16-04-2017</span>
                                <ul class="text-center pull-right">
     <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
     </li>
     <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
+        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
     </li>
     <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
     </li>
     <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
     </li>
 </ul> 
                             </div>
                         <h2 class="entry-title" id="overview">Overview</h2>
-                            <p>An angular 2 slide navigation menu component for mobile and web.Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days.</p>
+                            <p>A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install and integrate.</p>
                             <div class="post-thumb">
-                        <a href="#"><img src="/img/components/slidemenu-thumbnail.png" alt=""></a>
+                        <a href="#"><img src="/img/components/multiselect-dropdown.png" alt=""></a>
                     </div> 
                         </header>
                         <div class="entry-content">
-                            <p>An angular 2 slide navigation menu component for mobile and web.
-Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days.</p>
+                            <ol>
+  <li>Dropdown with multiselect.</li>
+  <li>Filter list.</li>
+  <li>Checkboxes.</li>
+  <li>Check all feature.</li>
+  <li>Single selection mode.</li>
+  <li>Highly configurable.</li>
+</ol>
 
 <h3 id="getting-started">Getting Started</h3>
 
+<p>To get started with using the multiselect dropdown component, follow the below steps. It’s easy to integrate and just a matter of minutes.</p>
+
 <h3 id="installation">Installation</h3>
+
 <ul>
-  <li>The Slide menu package is published on the <a href="https://www.npmjs.com/package/cuppa-ng2-slidemenu">npm</a> Registry.</li>
+  <li>The Mutiselect Dropdown package is published on the <a href="https://www.npmjs.com/package/angular2-multiselect-dropdown">npm</a> Registry.</li>
   <li>
     <p>Install the package :
-  <code class="highlighter-rouge">npm install cuppa-ng2-slidemenu</code></p>
+  <code class="highlighter-rouge">npm install angular2-multiselect-dropdown</code></p>
   </li>
-  <li>Once installed import <code class="highlighter-rouge">SlideMenuModule</code> from the installed package into your module as follows:</li>
+  <li>Once installed import <code class="highlighter-rouge">AngularMultiSelectModule</code> from the installed package into your module as follows:</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">SlideMenuModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'cuppa-ng2-slidemenu/cuppa-ng2-slidemenu'</span><span class="p">;</span>
+<h3 id="usage">Usage</h3>
+
+<p>Import <code class="highlighter-rouge">AngularMultiSelectModule</code> into <code class="highlighter-rouge">NgModule</code> in <code class="highlighter-rouge">app.module.ts</code></p>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">AngularMultiSelectModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'angular2-multiselect-dropdown/angular2-multiselect-dropdown'</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
+  <span class="c1">// ...</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">AngularMultiSelectModule</span><span class="p">,</span>
+  <span class="p">]</span>
+  <span class="c1">// ...</span>
+<span class="p">})</span>
+
 </code></pre>
 </div>
 
-<h3 id="basic-usage">Basic Usage</h3>
+<p>Declare the component data variables and options in your component where you want to consume the dropdown component.</p>
 
-<ul>
-  <li>Import the <code class="highlighter-rouge">SlideMenuModule</code> in your <code class="highlighter-rouge">ngModule</code> as follows:</li>
-</ul>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/platform-browser'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">SlideMenuModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'cuppa-ng2-slidemenu/cuppa-ng2-slidemenu'</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'./app.component'</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
-   <span class="na">bootstrap</span><span class="p">:</span> <span class="p">[</span> <span class="nx">AppComponent</span> <span class="p">],</span>
-   <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">],</span>
-   <span class="na">imports</span><span class="p">:</span> <span class="p">[</span><span class="nx">SlideMenuModule</span><span class="p">]</span> <span class="c1">// Import SlideMenu module variable here </span>
-<span class="p">})</span>
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+    <span class="nx">dropdownList</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">selectedItems</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">dropdownSettings</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="nx">ngOnInit</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">dropdownList</span> <span class="o">=</span> <span class="p">[</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"India"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Singapore"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Australia"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Canada"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"South Korea"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Germany"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"France"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Russia"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Italy"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Sweden"</span><span class="p">}</span>
+                            <span class="p">];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">selectedItems</span> <span class="o">=</span> <span class="p">[</span>
+                                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Singapore"</span><span class="p">},</span>
+                                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Australia"</span><span class="p">},</span>
+                                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Canada"</span><span class="p">},</span>
+                                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"South Korea"</span><span class="p">}</span>
+                            <span class="p">];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">dropdownSettings</span> <span class="o">=</span> <span class="p">{</span> 
+                                  <span class="na">singleSelection</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> 
+                                  <span class="na">text</span><span class="p">:</span><span class="s2">"Select Countries"</span><span class="p">,</span>
+                                  <span class="na">selectAllText</span><span class="p">:</span><span class="s1">'Select All'</span><span class="p">,</span>
+                                  <span class="na">unSelectAllText</span><span class="p">:</span><span class="s1">'UnSelect All'</span><span class="p">,</span>
+                                  <span class="na">enableSearchFilter</span><span class="p">:</span> <span class="kc">true</span>
+                                <span class="p">};</span>            
+    <span class="p">}</span>
+    <span class="nx">onItemSelect</span><span class="p">(</span><span class="nx">item</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Selected Item:'</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">OnItemDeSelect</span><span class="p">(</span><span class="nx">item</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'De-Selected Item:'</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 </div>
-<ul>
-  <li>Place the component html tag in the template where the hamburger menu needs to be rendered.</li>
-</ul>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;cuppa-slidemenu</span> <span class="err">[</span><span class="na">menulist</span><span class="err">]="</span><span class="na">menuItemsArray</span><span class="err">"</span> <span class="err">(</span><span class="na">open</span><span class="err">)="</span><span class="na">onMenuOpen</span><span class="err">()"</span> <span class="err">(</span><span class="na">close</span><span class="err">)="</span><span class="na">onMenuClose</span><span class="err">()"</span> <span class="err">(</span><span class="na">onItemSelect</span><span class="err">)="</span><span class="na">onItemSelect</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;&lt;/cuppa-slidemenu&gt;</span>
+<p>Add the following component tag in you template</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;angular2-multiselect</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">dropdownList</span><span class="err">"</span> <span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">selectedItems</span><span class="err">"</span> <span class="err">[</span><span class="na">settings</span><span class="err">]="</span><span class="na">dropdownSettings</span><span class="err">"</span> <span class="err">(</span><span class="na">onSelect</span><span class="err">)="</span><span class="na">onItemSelect</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> <span class="err">(</span><span class="na">onDeSelect</span><span class="err">)="</span><span class="na">OnItemDeSelect</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;&lt;/angular2-multiselect&gt;</span>
+
 </code></pre>
 </div>
+<h3 id="settings">Settings</h3>
+<p>The following list of settings are supported by the component. Configure the settings to meet your requirement.</p>
 
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Setting</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Default Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">singleSelection</td>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">To set the dropdown for single item selection only.</td>
+      <td style="text-align: left">false</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">text</td>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">Text to be show in the dropdown, when no items are selected.</td>
+      <td style="text-align: left">‘Select’</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">enableCheckAll</td>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">Enable the option to select all items in list</td>
+      <td style="text-align: left">false</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">selectAllText</td>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">Text to display as the label of select all option</td>
+      <td style="text-align: left">Select All</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">unSelectAllText</td>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">Text to display as the label of unSelect option</td>
+      <td style="text-align: left">UnSelect All</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">enableSearchFilter</td>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">Enable filter option for the list.</td>
+      <td style="text-align: left">false</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">maxHeight</td>
+      <td style="text-align: left">Number</td>
+      <td style="text-align: left">Set maximum height of the dropdown list in px.</td>
+      <td style="text-align: left">300</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="callback-methods">Callback Methods</h3>
 <ul>
-  <li>Component requires a <code class="highlighter-rouge">menulist</code> to pass data as array of objects to the component, as follows:</li>
+  <li><code class="highlighter-rouge">onSelect</code> - Return the selected item on selection.
+  Example : (onSelect)=”onItemSelect($event)”</li>
+  <li><code class="highlighter-rouge">onDeSelect</code> - Return the un-selected item on un-selecting.
+  Example : (onDeSelect)=”OnItemDeSelect($event)”</li>
 </ul>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">private</span> <span class="nx">menuItemsArray</span><span class="err">:</span> <span class="nx">any</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span> 
-       <span class="p">{</span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Electricity"</span><span class="p">,</span><span class="s2">"link"</span><span class="p">:</span><span class="s2">"#"</span><span class="p">},</span>
-       <span class="p">{</span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Mobile Bill"</span><span class="p">,</span><span class="s2">"link"</span><span class="p">:</span><span class="s2">"#"</span><span class="p">},</span>
-       <span class="p">{</span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Home and Kitchen"</span><span class="p">,</span><span class="s2">"link"</span><span class="p">:</span><span class="s2">"#"</span><span class="p">,</span>
-       <span class="s2">"subItems"</span><span class="p">:[</span>
-                   <span class="p">{</span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Furniture"</span><span class="p">,</span><span class="s2">"link"</span><span class="p">:</span><span class="s2">"#"</span><span class="p">},</span>
-                   <span class="p">{</span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Cookware"</span><span class="p">,</span><span class="s2">"link"</span><span class="p">:</span><span class="s2">"#"</span><span class="p">},</span>
-                  <span class="p">]</span>
-       <span class="p">},</span>
-       <span class="p">{</span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Car and Bike Accessories"</span><span class="p">,</span><span class="s2">"link"</span><span class="p">:</span><span class="s2">"#"</span><span class="p">,</span>
-        <span class="s2">"subItems"</span><span class="p">:[</span>
-                     <span class="p">{</span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Tyres and Alloys"</span><span class="p">,</span><span class="s2">"link"</span><span class="p">:</span><span class="s2">"#"</span><span class="p">},</span>
-                     <span class="p">{</span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Comfort and Safety"</span><span class="p">,</span><span class="s2">"link"</span><span class="p">:</span><span class="s2">"#"</span><span class="p">},</span>
-                    <span class="p">]</span>
-       <span class="p">},</span>
- <span class="p">];</span>
-
-  <span class="kr">public</span> <span class="nx">onMenuClose</span><span class="p">(){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"menu closed"</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="kr">public</span> <span class="nx">onMenuOpen</span><span class="p">(){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"menu Opened"</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="kr">private</span> <span class="nx">onItemSelect</span><span class="p">(</span><span class="nx">item</span><span class="err">:</span><span class="nx">any</span><span class="p">){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
-  <span class="p">}</span>
-</code></pre>
-</div>
 
 <p>Thats all Folks !! You are good to go.</p>
 
-<h3 id="view-the-demo-here">View the <a href="https://cuppalabs.github.io/cuppa-ng2-slidemenu/">Demo here</a>.</h3>
-
-<p>Please raise any issues <a href="https://github.com/CuppaLabs/cuppa-ng2-slidemenu/issues">here</a></p>
+<p>Please raise any issues <a href="https://github.com/CuppaLabs/angular2-dataGrid/issues">here</a></p>
 
 <p>To run the code and build in your local, follw the below steps</p>
 
 <ul>
-  <li>git clone <code class="highlighter-rouge">https://github.com/CuppaLabs/cuppa-ng2-slidemenu.git</code></li>
+  <li>git clone <code class="highlighter-rouge">https://github.com/CuppaLabs/angular2-dataGrid.git</code></li>
   <li>npm install</li>
   <li>npm start</li>
   <li>Go to <code class="highlighter-rouge">http://localhost:3000</code> where your app will run.</li>
@@ -356,27 +451,26 @@ Hamburger kind of menu for mobile and web is very common feature and a must have
 
 <h2 id="licence">Licence</h2>
 
-<p>This project is licensed under the MIT license. See the <a href="LICENSE">LICENSE</a> file for more info.</p>
-
-<p>The MIT License (MIT)
+<p>This project is licensed under the MIT license.
+The MIT License (MIT)
 Copyright (c) 2016 Cuppa Labs</p>
 
 
                         </div>
                         <div class="social-share">
-							<span class="social-share-title pull-left text-capitalize">By Pradeep Terli On 12-02-2017</span>
+							<span class="social-share-title pull-left text-capitalize">By Pradeep Terli On 16-04-2017</span>
                                <ul class="text-center pull-right">
     <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
     </li>
     <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
+        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
     </li>
     <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
     </li>
     <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
     </li>
 </ul> 
                         </div>
@@ -402,8 +496,8 @@ Copyright (c) 2016 Cuppa Labs</p>
 
 
 var disqus_config = function () {
-this.page.url = "https://cuppalabs.github.io/components/slidemenu/";  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = "Slide Menu"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = "https://cuppalabs.github.io/components/multiselectDropdown/";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "MultiSelect Dropdown"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
