@@ -226,6 +226,51 @@
                     <li data-anchor="basic-usage"><a href="#basic-usage">Basic Usage</a></li>
                     <li data-anchor="section6"><a href="#section6">Example</a></li>-->
                     
+                    
+                    
+                     <li data-anchor="config-options"><a href="#config-options">Config Options</a></li>
+                     
+                   <!-- <li data-anchor="getting-started"><a href="#getting-started">Getting Started</a></li>
+                    <li data-anchor="installation"><a href="#installation">Installation</a></li>
+                    <li data-anchor="basic-usage"><a href="#basic-usage">Basic Usage</a></li>
+                    <li data-anchor="section6"><a href="#section6">Example</a></li>-->
+                    
+                    
+                    
+                     <li data-anchor="column-template"><a href="#column-template">Column Template</a></li>
+                     
+                   <!-- <li data-anchor="getting-started"><a href="#getting-started">Getting Started</a></li>
+                    <li data-anchor="installation"><a href="#installation">Installation</a></li>
+                    <li data-anchor="basic-usage"><a href="#basic-usage">Basic Usage</a></li>
+                    <li data-anchor="section6"><a href="#section6">Example</a></li>-->
+                    
+                    
+                    
+                     <li data-anchor="heading-template"><a href="#heading-template">heading-template</a></li>
+                     
+                   <!-- <li data-anchor="getting-started"><a href="#getting-started">Getting Started</a></li>
+                    <li data-anchor="installation"><a href="#installation">Installation</a></li>
+                    <li data-anchor="basic-usage"><a href="#basic-usage">Basic Usage</a></li>
+                    <li data-anchor="section6"><a href="#section6">Example</a></li>-->
+                    
+                    
+                    
+                     <li data-anchor="events"><a href="#events">events</a></li>
+                     
+                   <!-- <li data-anchor="getting-started"><a href="#getting-started">Getting Started</a></li>
+                    <li data-anchor="installation"><a href="#installation">Installation</a></li>
+                    <li data-anchor="basic-usage"><a href="#basic-usage">Basic Usage</a></li>
+                    <li data-anchor="section6"><a href="#section6">Example</a></li>-->
+                    
+                    
+                    
+                     <li data-anchor="license"><a href="#license">license</a></li>
+                     
+                   <!-- <li data-anchor="getting-started"><a href="#getting-started">Getting Started</a></li>
+                    <li data-anchor="installation"><a href="#installation">Installation</a></li>
+                    <li data-anchor="basic-usage"><a href="#basic-usage">Basic Usage</a></li>
+                    <li data-anchor="section6"><a href="#section6">Example</a></li>-->
+                    
                 </ul>
     </nav>
                 </div>
@@ -345,6 +390,107 @@
   <span class="p">}</span>
 </code></pre>
 </div>
+
+<h3 id="config-options">Config Options</h3>
+<p>The following config options can be used</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Setting</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">title</td>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">Set the title of the table</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">w</td>
+      <td style="text-align: left">Number</td>
+      <td style="text-align: left">Set the width of the table.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">h</td>
+      <td style="text-align: left">Number</td>
+      <td style="text-align: left">Set the height of the table.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">itemHeight</td>
+      <td style="text-align: left">Number</td>
+      <td style="text-align: left">Set the height of the row.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">totalRows</td>
+      <td style="text-align: left">Number</td>
+      <td style="text-align: left">Total number of records.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">items</td>
+      <td style="text-align: left">Array</td>
+      <td style="text-align: left">Array of table records.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">sort</td>
+      <td style="text-align: left">Object</td>
+      <td style="text-align: left">Object to set the default column for sorting.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="column-template">Column Template</h3>
+<p>Custom content or elements can be added to table columns.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;c-column&gt;</code> - Column component for the table.</li>
+  <li>Example:</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;cuppa-datagrid</span> <span class="err">[</span><span class="na">datalist</span><span class="err">]</span> <span class="err">=</span> <span class="err">"</span><span class="na">arrayList</span><span class="err">"</span> <span class="err">[</span><span class="na">config</span><span class="err">]="</span><span class="na">config</span><span class="err">"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;c-column</span> <span class="na">field=</span><span class="s">"id"</span><span class="nt">&gt;&lt;/c-column&gt;</span>
+          <span class="nt">&lt;c-column</span> <span class="na">field=</span><span class="s">"name"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;ng-template</span> <span class="na">let-person=</span><span class="s">"rowData"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
+            <span class="nt">&lt;/ng-template&gt;</span>
+          <span class="nt">&lt;/c-column&gt;</span>
+          <span class="nt">&lt;c-column</span> <span class="na">field=</span><span class="s">"mobile"</span><span class="nt">&gt;&lt;/c-column&gt;</span>
+          <span class="nt">&lt;c-column&gt;</span>
+            <span class="nt">&lt;ng-template</span> <span class="na">let-person=</span><span class="s">"rowData"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-default btn-success"</span> <span class="err">(</span><span class="na">click</span><span class="err">)="</span><span class="na">getRowData</span><span class="err">(</span><span class="na">person</span><span class="err">)"</span><span class="nt">&gt;</span>Get Row<span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;/ng-template&gt;</span>
+          <span class="nt">&lt;/c-column&gt;</span>
+      <span class="nt">&lt;/cuppa-datagrid&gt;</span>
+</code></pre>
+</div>
+
+<h3 id="heading-template">Heading Template</h3>
+<p>The table heading can be customised with the <code class="highlighter-rouge">&lt;c-heading&gt;</code> tag. The following example show how to use a font awesome icon with text in the title section.
+  -Example:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>        <span class="nt">&lt;cuppa-datagrid</span> <span class="err">[</span><span class="na">datalist</span><span class="err">]</span> <span class="err">=</span> <span class="err">"</span><span class="na">arrayList</span><span class="err">"</span> <span class="err">[</span><span class="na">config</span><span class="err">]="</span><span class="na">config</span><span class="err">"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;c-heading&gt;</span>
+            <span class="nt">&lt;ng-template&gt;</span> 
+              <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"fa fa-list"</span><span class="nt">&gt;&lt;/span&gt;</span>
+              <span class="nt">&lt;b&gt;</span>Heading Template<span class="nt">&lt;/b&gt;</span>
+            <span class="nt">&lt;/ng-template&gt;</span>
+          <span class="nt">&lt;/c-heading&gt;</span>
+      <span class="nt">&lt;/cuppa-datagrid&gt;</span> 
+
+</code></pre>
+</div>
+
+<h3 id="events">Events</h3>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">onRowSelect</code> - Return the clicked row object.</p>
+
+    <p>Example : (onRowSelect)=”onRowClick($event)”</p>
+  </li>
+</ul>
+
 <p>Thats all Folks !! You are good to go.</p>
 
 <p>Please raise any issues <a href="https://github.com/CuppaLabs/angular2-dataGrid/issues">here</a></p>
