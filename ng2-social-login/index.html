@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
+  <title>Ng2 SocialLogin | Cuppa Labs</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Asap:500,700" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+  <meta name="description" content="Cuppa Angular 2 OAuth Social Login Script is a light weight framework for implementation of social networking login using OAuth standard. Developed using Full stack. Social Login using NodeJS, MongoDB and Angular 2.">
+  <meta content='' name='keywords'/>
+  <meta name="description" content="Cuppa Angular 2 OAuth Social Login Script is a light weight framework for implementation of social networking login using OAuth standard. Developed using Full stack. Social Login using NodeJS, MongoDB and Angular 2."/>
+<meta property="og:description" content="Cuppa Angular 2 OAuth Social Login Script is a light weight framework for implementation of social networking login using OAuth standard. Developed using Full stack. Social Login using NodeJS, MongoDB and Angular 2." />
+<meta property="og:url" content="/ng2-social-login/" />
+<meta property="og:site_name" content="Cuppa Labs" />
+<meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
+<meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
+<meta property="article:tag" content="Angular 2" />
+<meta property="article:tag" content="html5" />
+<meta property="article:tag" content="css3" />
+<meta property="og:image" content="http://cuppalabs.github.io/img/components/" />
+</head>
+<body>
+<nav class="navbar main-menu navbar-default">
+    <div class="container-fluid">
+        <div class="menu-content">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                <img src="/img/cuppa-logo-coffee11.png" alt="">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/" class="">Home</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="/components" class="">Angular Components</a>
+                    <li><a href="/tutorials" class="">Tutorials</a></li>
+                     <li><a href="/ng2-social-login" class="current">OAuth</a></li>
+                    <li><a href="/aboutMe" class="">About Me </a></li>
+                </ul>
+                <div class="i_con">
+                    <a href="https://github.com/CuppaLabs"><i class="fa fa-github"></i></a>
+                    <a href="https://www.facebook.com/cuppalabs"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/pradeep-kumar-terli"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a>
+                    <a href="https://twitter.com/PradeepTerli"><i class="active fa fa-twitter"></i></a>
+                </div>
+
+            </div>
+            <div class="show-search">
+                <form role="search" method="get" id="searchform" action="#">
+                    <div>
+                        <input type="text" placeholder="Search and hit enter..." name="s" id="s">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="jumbotron ">
+      <div class="container-fluid">
+        
+
+        <div class="col-md-7">
+          <h2>Angular 2 Social Login Script</h2>
+          <p>Simple, light weight social login script for your angular apps. Easy to install and integrate. </p>
+        <div class="bt-group">
+            <a href="https://cuppa-angular2-oauth.herokuapp.com/login" target="_blank" type="button" class="btn btn-default"><i class="fa fa-desktop" aria-hidden="true"></i><span class="hidden-xs"> LIVE DEMO</span></a>
+            <a href="https://github.com/CuppaLabs/angular2-social-login/archive/master.zip" type="button" class="btn btn-default"><i class="fa fa-download" aria-hidden="true"></i><span class="hidden-xs"> DOWNLOAD </span></a>
+            <a href="https://github.com/CuppaLabs/angular2-social-login" type="button" class="btn btn-default"><i class="fa fa-github" aria-hidden="true"></i><span class="hidden-xs"> GITHUB </span></a>
+
+        </div>
+        </div>
+        <div class="col-md-5">
+        </div>
+
+        
+      </div>
+    </div>
+    <nav class="navbar main-menu navbar-default  sec-menu-sticky ">
+    <div class="container-fluid">
+        <div class="sub-menu-content">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/ng2-social-login#overview" class="">OVERVIEW</a></li>
+                    <li><a href="/ng2-social-login#architecture" class="">ARCHITECTURE</a></li>
+                    <li><a href="/ng2-social-login#flowchart" class="">FLOWCHART</a></li>
+                    <li><a href="/ng2-social-login/documentation" class="">DOCUMENTATION</a></li>
+                </ul>
+                <div class="social-share">
+                <ul class="text-center pull-right">
+    <li>
+        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/ng2-social-login/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
+    </li>
+    <li>
+        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/ng2-social-login/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
+    </li>
+    <li>
+        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/ng2-social-login/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
+    </li>
+    <li>
+        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/ng2-social-login/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
+    </li>
+</ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid main-content-section">
+       <div class="section row" id="technologies">
+          <div class="col-md-4">
+            <h2>Overview</h2>
+            <p>        
+            </p>
+          </div>
+          <div class="col-md-8">
+            <figure>
+                <img src="/img/social-login/technology-stack3.png"></img>
+            </figure>
+          </div>   
+      </div>
+      <div class="section row" id="architecture">
+        <div class="col-md-8">
+            <figure>
+                <img class="img-responsive" src="/img/social-login/oauth-architecture3.png" />
+            </figure>
+          </div> 
+          <div class="col-md-4">
+            <h2>Architecture</h2>
+            <p>        
+            </p>
+          </div>  
+      </div>
+      <div class="section row" id="flowchart">
+          <div class="col-md-12">
+            <h2>Flowchart</h2>
+            <figure>
+                <img src="/img/social-login/horizontal-flowchart.png" />
+            </figure>
+          </div> 
+      </div>
+      <div class="section row" id="technologies">
+         
+          <h2>Technologies</h2>
+          
+          <div class="col-md-6">
+            <figure>
+                <img class="img-responsive" src="/img/social-login/oauth-technologies.png" />
+            </figure>
+          </div>
+          <div class="col-md-6">
+              <table class="table table-responsive">
+                  <tbody>
+                  <tr>
+                    <td width="25%"><b>Angular 2</b></td>
+                    <td>To develope the front end UI for login screen and authentication of routes implementation</td>
+                  </tr>
+                  <tr><td><b>Node JS</b></td><td>Application server for auth routes and backend OAuth implementation</td></tr>
+                  <tr><td><b>Mongo DB</b></td><td>To store user credentials and social profile details.</td></tr>
+                  <tr><td><b>OAuth 2.0</b></td><td>OAuth 2.0 framework for the auth workflow</td></tr>
+                  <tr><td><b>HTML5, CSS3, JS</b></td><td>Web Technologies for front end.</td></tr>
+
+                  </tbody>
+              </table>
+          </div>
+      </div>
+    </div>
+
+<footer class="footer">
+  <p>© 2009-2017 www.cuppalabs.com. <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
+</footer>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=929055083862567";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+
+<script>
+  $(window).scroll(function(){
+  var sticky = $('.sticky'),
+      scroll = $(window).scrollTop(),
+      sticky2 = $('.left-sticky'),
+      sticky3 = $('.content-sticky'),
+      sticky4 = $('.fixed-ad'),
+      sticky5 = $('.sec-menu-sticky'),
+      sticky6 = $('.doc-menu-sticky'),
+      sticky7 = $('.doc-left-sticky');
+
+  if (scroll >= 60) {
+    sticky.addClass('fixed');
+    sticky2.addClass('left-fixed');
+    sticky3.addClass('content-fixed');
+  }
+  else {
+    sticky.removeClass('fixed');
+    sticky2.removeClass('left-fixed');
+    sticky3.removeClass('content-fixed');
+  }
+  if (scroll >= 50) {
+    sticky4.addClass('fixed');
+  }
+  else if (scroll < 50) {
+    sticky4.removeClass('fixed');
+  }
+  if (scroll >= 364) {
+    sticky5.addClass('fixed');
+  }
+  else if (scroll <= 364) {
+    sticky5.removeClass('fixed');
+  }
+  if (scroll >= 200 ) {
+    sticky6.addClass('fixed');
+  }
+  else if (scroll <= 200 ) {
+    sticky6.removeClass('fixed');
+  }
+  if (scroll >= 200 ) {
+    sticky7.addClass('fixed');
+  }
+  else if (scroll <= 200 ) {
+    sticky7.removeClass('fixed');
+  }
+});
+</script>
+<script>
+$(function() {
+  return $("h2, h3, h4, h5, h6").each(function(i, el) {
+    var $el, icon, id;
+    $el = $(el);
+    id = $el.attr('id');
+    icon = '<i class="fa fa-link"></i>';
+    if (id) {
+      $el.addClass('anchor');
+      return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id));
+    }
+  });
+});
+$(function() {
+  return $("table").each(function(i, el) {
+    var $el, icon, id;
+    $el = $(el);
+    $el.addClass('table table-bordered table-responsive');
+  });
+});
+/*$(function(){
+      $("#myScrollspy ul li a[href^='#']").on('click', function(e) {
+
+       // prevent default anchor click behavior
+       e.preventDefault();
+
+       // animate
+       $('html, body').animate({
+           scrollTop: $(this.hash).offset().top - 75
+         }, 300, function(){
+   
+           // when done, add hash to url
+           // (default click behaviour)
+           window.location.hash = this.hash;
+         });
+
+    });
+
+});*/
+$(document).on('click', '.index-list a', function (event) {
+    "use strict";
+    event.preventDefault();
+    var animLen = $($.attr(this, 'href')).offset().top - 62.667 - 30;
+    $('html, body').animate({
+        scrollTop: animLen
+    }, 300);
+
+});
+$(function () {
+    "use strict";
+    $(window).bind('scroll', function () {
+        $('.anchor').each(function () {
+            var anchored = $(this).attr("id"),
+                position = $(this).position().top - $(window).scrollTop()- 62.667 - 30,
+                targetOffset = $(this).offset().top - 75 - 30;
+
+            if ($(window).scrollTop() > targetOffset) {
+
+                $('ul.index-list').find('li').removeClass("active");
+                $('ul.index-list').find(('*[data-anchor="' + anchored + '"]')).addClass("active");
+            }
+        });
+    });
+});
+</script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93566400-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>

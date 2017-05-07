@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
+  <title>SocialLogin Docs | Cuppa Labs</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Asap:500,700" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+  <meta name="description" content="Cuppa Angular 2 OAuth Social Login Script documentation for implementation of social networking login using OAuth standard. Developed using Full stack. Social Login using NodeJS, MongoDB and Angular 2.">
+  <meta content='' name='keywords'/>
+  <meta name="description" content="Cuppa Angular 2 OAuth Social Login Script documentation for implementation of social networking login using OAuth standard. Developed using Full stack. Social Login using NodeJS, MongoDB and Angular 2."/>
+<meta property="og:description" content="Cuppa Angular 2 OAuth Social Login Script documentation for implementation of social networking login using OAuth standard. Developed using Full stack. Social Login using NodeJS, MongoDB and Angular 2." />
+<meta property="og:url" content="/ng2-social-login/documentation/" />
+<meta property="og:site_name" content="Cuppa Labs" />
+<meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
+<meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
+<meta property="article:tag" content="Angular 2" />
+<meta property="article:tag" content="html5" />
+<meta property="article:tag" content="css3" />
+<meta property="og:image" content="http://cuppalabs.github.io/img/components/oauth-banner.png" />
+</head>
+<body>
+<nav class="navbar main-menu navbar-default">
+    <div class="container-fluid">
+        <div class="menu-content">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                <img src="/img/cuppa-logo-coffee11.png" alt="">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/" class="">Home</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="/components" class="">Angular Components</a>
+                    <li><a href="/tutorials" class="">Tutorials</a></li>
+                     <li><a href="/ng2-social-login" class="current">OAuth</a></li>
+                    <li><a href="/aboutMe" class="">About Me </a></li>
+                </ul>
+                <div class="i_con">
+                    <a href="https://github.com/CuppaLabs"><i class="fa fa-github"></i></a>
+                    <a href="https://www.facebook.com/cuppalabs"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/pradeep-kumar-terli"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a>
+                    <a href="https://twitter.com/PradeepTerli"><i class="active fa fa-twitter"></i></a>
+                </div>
+
+            </div>
+            <div class="show-search">
+                <form role="search" method="get" id="searchform" action="#">
+                    <div>
+                        <input type="text" placeholder="Search and hit enter..." name="s" id="s">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+        <div class="jumbotron documentation">
+      <div class="container-fluid">
+        
+        <div class="col-md-6">
+          <h2>Documentation</h2>
+          <p>Angular 2 Social Login Script</p>
+        </div>
+        <div class="col-md-6">
+        <div class="bt-group">
+            <a href="https://cuppa-angular2-oauth.herokuapp.com/login" target="_blank" type="button" class="btn btn-default"><i class="fa fa-desktop" aria-hidden="true"></i><span class="hidden-xs"> LIVE DEMO</span></a>
+            <a href="https://github.com/CuppaLabs/angular2-social-login/archive/master.zip" type="button" class="btn btn-default"><i class="fa fa-download" aria-hidden="true"></i><span class="hidden-xs"> DOWNLOAD </span></a>
+            <a href="https://github.com/CuppaLabs/angular2-social-login" type="button" class="btn btn-default"><i class="fa fa-github" aria-hidden="true"></i><span class="hidden-xs"> GITHUB </span></a>
+
+        </div>
+        </div>
+        
+      </div>
+    </div>
+    <nav class="navbar main-menu navbar-default documentation doc-menu-sticky ">
+    <div class="container-fluid">
+        <div class="sub-menu-content">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/ng2-social-login#overview" class="">OVERVIEW</a></li>
+                    <li><a href="/ng2-social-login#architecture" class="">ARCHITECTURE</a></li>
+                    <li><a href="/ng2-social-login#flowchart" class="">FLOWCHART</a></li>
+                    <li><a href="/ng2-social-login/documentation" class="current">DOCUMENTATION</a></li>
+                </ul>
+                <div class="social-share">
+                <ul class="text-center pull-right">
+    <li>
+        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/ng2-social-login/documentation/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
+    </li>
+    <li>
+        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/ng2-social-login/documentation/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
+    </li>
+    <li>
+        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/ng2-social-login/documentation/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
+    </li>
+    <li>
+        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/ng2-social-login/documentation/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
+    </li>
+</ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="container-fluid main-content-section doc-content">
+
+      <div class="section row">
+          <div class="col-md-2 left-section ">
+              <nav id="myScrollspy" class="bs-docs-sidebar hidden-print hidden-sm hidden-xs doc-left-sticky"> 
+                  <ul class="index-list nav bs-docs-sidenav"> 
+                      <li data-anchor="introduction"><a href=#introduction>Introduction</a></li>
+                      <li data-anchor="getting-started"><a href="#getting-started">Getting Started</a></li>
+                      <li data-anchor="installation"><a href="#installation">Installation</a></li>
+                      <li data-anchor="initialization"><a href="#initialization">Initialization</a></li>
+                      <li data-anchor="config-options"><a href="#config-options">Config Options</a></li>
+                      <li data-anchor="api-methods"><a href="#api-methods">API Methods</a></li>
+                      <li data-anchor="auth-server-setup"><a href="#auth-server-setup">Auth Server Setup</a></li>
+                      <li data-anchor="auth-server-config"><a href="#auth-server-config">Auth Server Config</a></li>
+                      <li data-anchor="mongo-db-schema"><a href="#mongo-db-schema">Mongo DB Schema</a></li>
+                      <li data-anchor="build-and-deployment"><a href="#build-and-deployment">Build and Deployment</a></li>
+                      <li data-anchor="create-google-application"><a href="#create-google-application">Create Google Application</a></li>
+                      <li data-anchor="create-facebook-application"><a href="#create-facebook-application">Create Facebook Application</a></li>
+                      <li data-anchor="create-linkedin-application"><a href="#create-linkedin-application">Create LinkedIn Application</a></li>
+                  </ul>
+              </nav>
+          </div>
+          <div class="col-md-8 right-section">
+            <h2 id="introduction">Introduction</h2>
+
+<h4 id="social-login-script-for-facebook-google-linkedin">Social Login Script for Facebook, Google, LinkedIn</h4>
+<p>It is often required that, a user register’s or sign up to login to a particular website or application. It is a tedious job to fill those long forms with user basic details. To avoid filling long forms, Cuppa Angular 2 OAuth provides a module to login using social OAuth services like google OAtuh, Facebook OAuth and LinkedIn OAuth. Using this your application will be able to recieve basic details of the user from social networking sites and you can store in your application environment.</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<h3 id="installation">Installation</h3>
+
+<p>Cuppa Angular social login script is available as an npm package <code class="highlighter-rouge">ng2-social-login</code></p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>   <span class="nx">npm</span> <span class="nx">install</span> <span class="nx">ng2</span><span class="o">-</span><span class="nx">social</span><span class="o">-</span><span class="nx">login</span>
+</code></pre>
+</div>
+
+<h3 id="initialization">Initialization</h3>
+<ul>
+  <li>Import <code class="highlighter-rouge">CuppaOAuthModule</code> in your app root module.
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code>  <span class="kr">import</span> <span class="p">{</span> <span class="nx">CuppaOAuthModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'./cuppaOAuth/cuppaOAuth.module'</span><span class="p">;</span>
+  <span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
+    <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+      <span class="nx">BrowserModule</span><span class="p">,</span>
+      <span class="nx">HttpModule</span><span class="p">,</span>
+      <span class="nx">CuppaOAuthModule</span>  <span class="c1">// this is the cuppa oauth module </span>
+    <span class="p">],</span>
+    <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">],</span>
+    <span class="na">providers</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="na">bootstrap</span><span class="p">:</span> <span class="p">[</span> <span class="nx">AppComponent</span> <span class="p">]</span>
+  <span class="p">})</span>
+  <span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span>
+  <span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>Secure your app routes by applying the <code class="highlighter-rouge">AuthService</code> on your routes <code class="highlighter-rouge">canActivate</code> property.Import <code class="highlighter-rouge">AuthService</code> in app router module before setting the <code class="highlighter-rouge">canActivate</code> property with <code class="highlighter-rouge">AuthService</code></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthService</span> <span class="p">}</span>          <span class="nx">from</span> <span class="s1">'./cuppaOAuth/auth.service'</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">appRoutes</span><span class="err">:</span> <span class="nx">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> 
+    <span class="na">path</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span> 
+    <span class="na">component</span><span class="p">:</span> <span class="nx">LoginComponent</span> <span class="p">},</span>
+  <span class="p">{</span> 
+    <span class="na">path</span><span class="p">:</span> <span class="s1">'login'</span><span class="p">,</span> 
+    <span class="na">component</span><span class="p">:</span> <span class="nx">LoginComponent</span> <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="s1">'admin'</span><span class="p">,</span>
+    <span class="na">component</span><span class="p">:</span> <span class="nx">AdminComponent</span><span class="p">,</span>
+    <span class="na">canActivate</span><span class="p">:</span> <span class="p">[</span><span class="nx">AuthService</span><span class="p">],</span>
+    <span class="na">children</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">path</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+        <span class="na">canActivateChild</span><span class="p">:</span> <span class="p">[</span><span class="nx">AuthService</span><span class="p">],</span>
+        <span class="na">children</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span> 
+            <span class="na">path</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span> 
+            <span class="na">component</span><span class="p">:</span> <span class="nx">AdminDashboardComponent</span> 
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span><span class="s1">'projects'</span><span class="p">,</span> 
+    <span class="na">component</span><span class="p">:</span> <span class="nx">ProjectsComponent</span><span class="p">,</span> 
+    <span class="na">canActivate</span><span class="p">:[</span><span class="nx">AuthService</span><span class="p">]</span> 
+  <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">appRoutes</span><span class="p">)</span>
+  <span class="p">],</span>
+  <span class="na">exports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">RouterModule</span>
+  <span class="p">],</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">PreloadSelectedModules</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppRoutingModule</span> <span class="p">{}</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Now, it’s time we place the cuppa auth view, containing the login buttons. For example you have your login component where you want the <code class="highlighter-rouge">cupp oauth</code> to show the login options, place the <code class="highlighter-rouge">cuppa-oauth</code> tag there with config options as below</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;cuppa-oauth</span> <span class="err">[</span><span class="na">authConfig</span><span class="err">]="</span><span class="na">config</span><span class="err">"</span><span class="nt">&gt;&lt;/cuppa-oauth&gt;</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>You login component class should have the config object as below:</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span>        <span class="nx">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="na">template</span><span class="p">:</span> <span class="err">`</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"row"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">cuppa</span><span class="o">-</span><span class="nx">oauth</span> <span class="p">[</span><span class="nx">authConfig</span><span class="p">]</span><span class="o">=</span><span class="s2">"config"</span><span class="o">&gt;&lt;</span><span class="sr">/cuppa-oauth</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">`
+</span><span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">LoginComponent</span> <span class="p">{</span>
+   <span class="kr">private</span> <span class="nx">authServerBaseUrl</span> <span class="o">=</span> <span class="s1">'https://cuppa-angular2-oauth.herokuapp.com'</span><span class="p">;</span>
+   <span class="kr">private</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s2">"loginRoute"</span><span class="p">:</span><span class="s2">"login"</span><span class="p">,</span>
+   <span class="s2">"linkedin"</span><span class="p">:{</span>
+     <span class="s2">"authEndpoint"</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">authServerBaseUrl</span><span class="o">+</span><span class="s2">"/auth/linkedin"</span><span class="p">,</span>
+     <span class="s2">"clientId"</span><span class="p">:</span><span class="s2">"8176r44lz2ewos"</span><span class="p">,</span>
+     <span class="s2">"redirectURI"</span> <span class="p">:</span> <span class="s2">"https://cuppa-angular2-oauth.herokuapp.com/admin"</span>
+   <span class="p">},</span>
+   <span class="s2">"facebook"</span><span class="p">:{</span>
+     <span class="s2">"authEndpoint"</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">authServerBaseUrl</span><span class="o">+</span><span class="s2">"/auth/facebook"</span><span class="p">,</span>
+     <span class="s2">"clientId"</span><span class="p">:</span><span class="s2">"929055083862567"</span><span class="p">,</span>
+     <span class="s2">"redirectURI"</span> <span class="p">:</span> <span class="s2">"https://cuppa-angular2-oauth.herokuapp.com/admin"</span>
+   <span class="p">},</span>
+   <span class="s2">"google"</span><span class="p">:{</span>
+     <span class="s2">"authEndpoint"</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">authServerBaseUrl</span><span class="o">+</span><span class="s2">"/auth/google"</span><span class="p">,</span>
+     <span class="s2">"clientId"</span><span class="p">:</span><span class="s2">"77954512562-eftl8up04q1g3aha2mjg5h6bgel9svkk.apps.googleusercontent.com"</span><span class="p">,</span>
+     <span class="s2">"redirectURI"</span> <span class="p">:</span> <span class="s2">"https://cuppa-angular2-oauth.herokuapp.com/admin"</span>
+   <span class="p">}</span>
+ <span class="p">};</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Once you have done this, you should see the login page with <code class="highlighter-rouge">cuppa oauth</code> login features.</p>
+
+<h3 id="config-options">Config Options</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>loginRoute</td>
+      <td>String</td>
+      <td>The route to redirect when not logged in</td>
+    </tr>
+    <tr>
+      <td>authEndpoint</td>
+      <td>String</td>
+      <td>Endpoint to make a call to login the user. This is Oauth Server which generates the token for the logged in user. By default it points to <code class="highlighter-rouge">https://cuppa-angular2-oauth.herokuapp.com</code>. To setup server in your environment follow steps in below section.</td>
+    </tr>
+    <tr>
+      <td>clientId</td>
+      <td>String</td>
+      <td>The client id of your application. You will get this once you create you application with any of the provider viz., Google, Facebook, LinkedIn</td>
+    </tr>
+    <tr>
+      <td>redirectUI</td>
+      <td>String</td>
+      <td>The route to redirect the user after successful login. Not: This should match exactly with the redirect URL specified at the time of application creation with the respective providers viz., Google, Facebook and LinkedIn.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-danger"> NOTE : authServerBaseUrl https://cuppa-angular2-oauth.herokuapp.com is where the cuppa auth server is hosted. If you want to setup auth server in your local environment, follow the below steps. </div>
+
+<h2 id="api-methods">API Methods</h2>
+<ul>
+  <li><code class="highlighter-rouge">logout()</code> - To logout the user from current session.</li>
+  <li>Example:
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code>      <span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+      <span class="kr">import</span> <span class="p">{</span> <span class="nx">AuthService</span> <span class="p">}</span>      <span class="nx">from</span> <span class="s1">'../cuppaOAuth/auth.service'</span><span class="p">;</span>
+
+      <span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+      <span class="na">template</span><span class="p">:</span>  <span class="err">`</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Projects</span> <span class="nx">Page</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="p">(</span><span class="nx">click</span><span class="p">)</span><span class="o">=</span><span class="s2">"logout()"</span><span class="o">&gt;</span><span class="nx">logout</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="err">`</span>
+      <span class="p">})</span>
+      <span class="kr">export</span> <span class="kr">class</span> <span class="nx">ProjectsComponent</span> <span class="p">{</span>
+      <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">authService</span><span class="err">:</span> <span class="nx">AuthService</span> <span class="p">){</span>
+
+      <span class="p">}</span>
+      <span class="kr">public</span> <span class="nx">logout</span><span class="p">(){</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">logout</span><span class="p">();</span>
+      <span class="p">}</span>
+      <span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h2 id="auth-server-setup">Auth Server Setup.</h2>
+<ul>
+  <li>To run the auth server in your environment instead of <code class="highlighter-rouge">https://cuppa-angular2-oauth.herokuapp.com</code> follow the below steps.</li>
+  <li>Download <code class="highlighter-rouge">auth-server.js</code> from the github repository.</li>
+  <li>Open command line and change location to the file directory.</li>
+  <li>Run <code class="highlighter-rouge">node auth-server</code></li>
+  <li>Server would start on http://<yourhost>:5000</yourhost></li>
+  <li>Replace <code class="highlighter-rouge">authServerBaseUrl</code> with <code class="highlighter-rouge">http://&lt;yourhost&gt;:5000</code> in your angular login component class config object.</li>
+</ul>
+
+<h2 id="auth-server-config">Auth Server Config</h2>
+<ul>
+  <li>The auth server needs a set of configuration options as below. All the options are self explanatory in themselves. Refer to <a href="https://cuppalabs.github.io/angular2-social-login/documentation.html">Documentation</a> to learn how to create facebook, google, linkedin apps.
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+<span class="na">MONGO_URI</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">MONGO_URI</span> <span class="o">||</span> <span class="s1">'mongodb://&lt;username&gt;:&lt;password&gt;@&lt;mongodb host url&gt;:&lt;port&gt;/&lt;DB Name&gt;'</span><span class="p">,</span>
+<span class="na">TOKEN_SECRET</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TOKEN_SECRET</span> <span class="o">||</span> <span class="s1">'YOUR_UNIQUE_JWT_TOKEN_SECRET'</span><span class="p">,</span>
+  
+<span class="na">FACEBOOK_SECRET</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">FACEBOOK_SECRET</span> <span class="o">||</span> <span class="s1">'YOUR_FB_APP_SECRET'</span><span class="p">,</span>
+<span class="na">GOOGLE_SECRET</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">GOOGLE_SECRET</span> <span class="o">||</span> <span class="s1">'YOUR_GOOGLE_APP_SECRET'</span><span class="p">,</span>
+<span class="na">LINKEDIN_SECRET</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">LINKEDIN_SECRET</span> <span class="o">||</span> <span class="s1">'YOUR_LINKEDIN_APP_SECRET'</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre>
+    </div>
+    <h2 id="mongo-db-schema">Mongo DB Schema</h2>
+  </li>
+</ul>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">userSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span><span class="p">({</span>
+  <span class="na">email</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="na">lowercase</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+  <span class="na">password</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="na">select</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
+  <span class="na">displayName</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+  <span class="na">picture</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+  <span class="na">provider</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+  <span class="na">provider_id</span><span class="p">:</span> <span class="nb">String</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h2 id="locally-build-and-run">Locally Build and Run</h2>
+
+<p>1) Clone git repository.</p>
+
+<p>2) Configure <code class="highlighter-rouge">auth-config.js</code> with your mongoDB environment details and app secrets.</p>
+
+<p>3) replace <code class="highlighter-rouge">authServerBaseUrl</code> in login component with your environment details.</p>
+
+<p>4) Run <code class="highlighter-rouge">npm start</code></p>
+
+<p>5) Go to <code class="highlighter-rouge">http://localhost:5000</code></p>
+
+<div class="alert alert-danger"> NOTE: When running in local environment, make sure the redirect URL should match with the redirect URL you specified at the time of creating app with respective providers viz., Facebook, Google, LinkedIn. you can add http://localhost:5000/admin as redirectURL. </div>
+
+<h2 id="create-google-application">Create Google Application</h2>
+
+<p>   
+  <b>1) </b> Visit <a href="https://console.developers.google.com/apis">Google API Console</a><br />
+  <b>2) </b> Go to "Credentials" tab.<br />
+  <b>3) </b> Select "OAuth Client ID"" from "Create credentials"" tab.<br />
+  <b>4) </b> Select "web application"" option.<br />
+  <b>5) </b> Provide your application name, URL of your app origin and redirect URL and Click Create.<br />
+  <b>6) </b> On creating successfully, you will see the following screen with client ID and client secret.<br />
+</p>
+
+<p><img src="/img/social-login/google-oauth.png" alt="www.cuppalabs.com" /></p>
+
+<h2 id="create-facebook-application">Create Facebook Application</h2>
+
+<p>   
+    <b>1) </b> Visit <a href="https://developers.facebook.com/apps/">Facebook Apps</a><br />
+    <b>2) </b> Click "Add a New App" button.Fill the details and click "Create ID"<br />
+    <b>3) </b> Select "Facebook Login" from product list and click "Get Started"<br />
+    <b>4) </b> Provide redirect URL.&lt;/br&gt;&lt;/br&gt;
+    <b>6) </b> On creating successfully, you will see the following screen with client ID and client secret.<br />
+  </p>
+
+<p><img src="/img/social-login/facebook-oauth-1.png" alt="www.cuppalabs.com" /></p>
+
+<p><br />
+  <img src="/img/social-login/facebook-oauth-2.png" alt="www.cuppalabs.com" /></p>
+
+<h2 id="create-linkedin-application">Create LinkedIn Application</h2>
+
+<p>   
+    <b>1) </b> Visit <a href="https://www.linkedin.com/developer/apps">LinkedIn Apps</a><br />
+    <b>2) </b> Click "Create Application" button.Fill the details and click "Create"<br />
+    <b>6) </b> On creating successfully, you will see the following screen with client ID and client secret.<br />                 
+  </p>
+
+<p><img src="/img/social-login/linkedin-oauth.png" alt="www.cuppalabs.com" /></p>
+
+<p><br />
+  <img src="/img/social-login/linkedin-oauth--2.png" alt="www.cuppalabs.com" /></p>
+
+<p>Ahh !!! Now you are ready to make your app up and running.</p>
+
+<h2 id="licence">Licence</h2>
+
+<p>This project is licensed under the MIT license. See the <a href="LICENSE">LICENSE</a> file for more info.</p>
+
+<h2 id="credits">Credits</h2>
+<p>Thanks to Font Awesome the library.</p>
+
+<h2 id="author">Author</h2>
+<p>Pradeep Kumar Terli</p>
+
+
+                            <div class="top-comment"><!--top comment-->
+                    <img src="/img/pradeep.jpg" class="pull-left img-circle" alt="">
+                    <h4></h4>
+                    <p>Web UI Developer, Blogger, Thinker , Entrepreneur. Loves to explore technology with focus on web technologies.</p>
+                     <div class="social-share">
+                            <ul>
+                                <li><a class="s-facebook" href="https://www.facebook.com/pradeepkumar.terli" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="s-linkedin" href="http://www.linkedin.com/in/pradeep-kumar-terli" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a class="s-google-plus" href=""><i class="fa fa-google-plus"></i></a></li>
+                                <li><a class="s-twitter" href=""><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="comments-section">
+                    
+                        <div id="disqus_thread"></div>
+<script>
+
+
+var disqus_config = function () {
+this.page.url = "https://cuppalabs.github.io/ng2-social-login/documentation/";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "SocialLogin Docs | Cuppa Labs"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//cuppalabs.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                
+                    
+                </div>
+          </div>
+          <div class="col-md-2">
+            <div class="row">
+                  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- github-ads -->
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-4525567075133342"
+                        data-ad-slot="3548333904"
+                        data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+              </div>
+              <div class="row">
+                  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- datagrid-ads -->
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-4525567075133342"
+                        data-ad-slot="2640021500"
+                        data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+              </div>
+          </div>
+          
+      </div>
+    </div> 
+
+
+<footer class="footer">
+  <p>© 2009-2017 www.cuppalabs.com. <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
+</footer>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=929055083862567";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+
+<script>
+  $(window).scroll(function(){
+  var sticky = $('.sticky'),
+      scroll = $(window).scrollTop(),
+      sticky2 = $('.left-sticky'),
+      sticky3 = $('.content-sticky'),
+      sticky4 = $('.fixed-ad'),
+      sticky5 = $('.sec-menu-sticky'),
+      sticky6 = $('.doc-menu-sticky'),
+      sticky7 = $('.doc-left-sticky');
+
+  if (scroll >= 60) {
+    sticky.addClass('fixed');
+    sticky2.addClass('left-fixed');
+    sticky3.addClass('content-fixed');
+  }
+  else {
+    sticky.removeClass('fixed');
+    sticky2.removeClass('left-fixed');
+    sticky3.removeClass('content-fixed');
+  }
+  if (scroll >= 50) {
+    sticky4.addClass('fixed');
+  }
+  else if (scroll < 50) {
+    sticky4.removeClass('fixed');
+  }
+  if (scroll >= 364) {
+    sticky5.addClass('fixed');
+  }
+  else if (scroll <= 364) {
+    sticky5.removeClass('fixed');
+  }
+  if (scroll >= 200 ) {
+    sticky6.addClass('fixed');
+  }
+  else if (scroll <= 200 ) {
+    sticky6.removeClass('fixed');
+  }
+  if (scroll >= 200 ) {
+    sticky7.addClass('fixed');
+  }
+  else if (scroll <= 200 ) {
+    sticky7.removeClass('fixed');
+  }
+});
+</script>
+<script>
+$(function() {
+  return $("h2, h3, h4, h5, h6").each(function(i, el) {
+    var $el, icon, id;
+    $el = $(el);
+    id = $el.attr('id');
+    icon = '<i class="fa fa-link"></i>';
+    if (id) {
+      $el.addClass('anchor');
+      return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id));
+    }
+  });
+});
+$(function() {
+  return $("table").each(function(i, el) {
+    var $el, icon, id;
+    $el = $(el);
+    $el.addClass('table table-bordered table-responsive');
+  });
+});
+/*$(function(){
+      $("#myScrollspy ul li a[href^='#']").on('click', function(e) {
+
+       // prevent default anchor click behavior
+       e.preventDefault();
+
+       // animate
+       $('html, body').animate({
+           scrollTop: $(this.hash).offset().top - 75
+         }, 300, function(){
+   
+           // when done, add hash to url
+           // (default click behaviour)
+           window.location.hash = this.hash;
+         });
+
+    });
+
+});*/
+$(document).on('click', '.index-list a', function (event) {
+    "use strict";
+    event.preventDefault();
+    var animLen = $($.attr(this, 'href')).offset().top - 62.667 - 30;
+    $('html, body').animate({
+        scrollTop: animLen
+    }, 300);
+
+});
+$(function () {
+    "use strict";
+    $(window).bind('scroll', function () {
+        $('.anchor').each(function () {
+            var anchored = $(this).attr("id"),
+                position = $(this).position().top - $(window).scrollTop()- 62.667 - 30,
+                targetOffset = $(this).offset().top - 75 - 30;
+
+            if ($(window).scrollTop() > targetOffset) {
+
+                $('ul.index-list').find('li').removeClass("active");
+                $('ul.index-list').find(('*[data-anchor="' + anchored + '"]')).addClass("active");
+            }
+        });
+    });
+});
+</script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93566400-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>

@@ -25,17 +25,9 @@
 <meta property="og:image" content="http://cuppalabs.github.io/img/components/fanmenu-thumbnail.png" />
 </head>
 <body>
-<!--<nav>
-  <ul class="nav nav-top">
-    <li><a href="/" class="">Home</a></li>
-    <li><a href="/planets/" class="">Planets</a></li>
-    <li><a href="/news/" class="">News</a></li>
-  </ul>
-</nav> -->
 <nav class="navbar main-menu navbar-default">
-    <div class="container">
+    <div class="container-fluid">
         <div class="menu-content">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#bs-example-navbar-collapse-1">
@@ -48,107 +40,24 @@
                 <img src="/img/cuppa-logo-coffee11.png" alt="">
                 </a>
             </div>
-
-
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
                 <ul class="nav navbar-nav">
                     <li><a href="/" class="">Home</a></li>
                     <li class="menu-item-has-children">
                         <a href="/components" class="current">Angular Components</a>
-                     <!--   <i class="fa fa-angle-down"></i>
-                        <ul class="sub-menu">
-                        
-                            
-                            <li><a href="/components/datatable/">Data Table</a></li>
-                        
-                        
-                            
-                            <li><a href="/components/datepicker/">Datepicker</a></li>
-                        
-                        
-                            
-                            <li><a href="/components/fanmenu/">Fan Menu</a></li>
-                        
-                        
-                            
-                            <li><a href="/tutorials/how-to-implement-angular2-form-validations/">Data Table</a></li>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                            
-                            <li><a href="/components/multiselectDropdown/">MultiSelect Dropdown</a></li>
-                        
-                        
-                        
-                        
-                            
-                            <li><a href="/components/slidemenu/">Slide Menu</a></li>
-                        
-                        
-                        
-                        
-                        
-                        
-                        </ul> -->
-                    </li>
-                   <!-- <li class="menu-item-has-children"><a data-toggle="dropdown" class="dropdown-toggle" href="#">JS Components
-                        <i class="fa fa-angle-down"></i></a>
-                        <ul class="sub-menu">
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                         
-                        </ul>
-                    </li> -->
                     <li><a href="/tutorials" class="">Tutorials</a></li>
-                     <li><a href="https://cuppalabs.github.io/angular2-social-login/" target="_blank">OAuth</a></li>
-                    <li><a href="https://www.facebook.com/pradeepkumar.terli" target="_blank">About Me </a></li>
+                     <li><a href="/ng2-social-login" class="">OAuth</a></li>
+                    <li><a href="/aboutMe" class="">About Me </a></li>
                 </ul>
                 <div class="i_con">
+                    <a href="https://github.com/CuppaLabs"><i class="fa fa-github"></i></a>
                     <a href="https://www.facebook.com/cuppalabs"><i class="fa fa-facebook"></i></a>
                     <a href="https://www.linkedin.com/in/pradeep-kumar-terli"><i class="fa fa-linkedin"></i></a>
                     <a href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a>
                     <a href="https://twitter.com/PradeepTerli"><i class="active fa fa-twitter"></i></a>
-                   <!-- <div class="top-search">
-                        <a href="#"><i class="fa fa-search"></i></a>
-                    </div> -->
                 </div>
 
             </div>
-            <!-- /.navbar-collapse -->
-
-
             <div class="show-search">
                 <form role="search" method="get" id="searchform" action="#">
                     <div>
@@ -158,12 +67,11 @@
             </div>
         </div>
     </div>
-    <!-- /.container-fluid -->
 </nav>
 
 
 <nav class="navbar secondary-menu navbar-default sticky">
-    <div class="container">
+    <div class="container-fluid">
     <div class="col-md-2">
         <h3><a href="/components">COMPONENTS</a></h3>
     </div>
@@ -182,13 +90,13 @@
     </div>
 </nav>
 <div class="main-content component-section content-sticky">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
                 <div class="left-sticky">
                     <nav id="myScrollspy">
                 <ul class="index-list nav">
-                    <li><h4>Table of Contents</h4></li>
+                    <li><h5>Table of Contents</h5></li>
                     
                     
                     
@@ -284,7 +192,7 @@
     </nav>
                 </div>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <article class="post">
                     <div class="post-content">
                         <header class="entry-header">
@@ -309,7 +217,7 @@
                         <h2 class="entry-title" id="overview">Overview</h2>
                             <p>Cuppa Angular Fan Menu is an angular directive for cool menu componet for web and mobile , developed using `angularJS`, `CSS3`, `HTML5`.</p>
                             <div class="post-thumb">
-                        <a href="#"><img src="/img/components/fanmenu-thumbnail.png" alt=""></a>
+                        <a href="#"><img src="/img/component/fanmenu-thumbnail.png" alt=""></a>
                     </div> 
                         </header>
                         <div class="entry-content">
@@ -691,54 +599,30 @@ s.setAttribute('data-timestamp', +new Date());
                     
                 </div>
             </div>
-            <div class="col-md-3">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <div class="col-md-2">
+                <div class="fixed-ad">
+                    <div class="row">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- pradeepterli_sidebar_AdSense1_300x250_as -->
 <ins class="adsbygoogle"
-     style="display:inline-block;width:300px;height:250px"
+     style="display:block;width:200px;height:250px"
      data-ad-client="ca-pub-4525567075133342"
      data-ad-slot="2263435109"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- pradeepterli_sidebar_AdSense1_300x250_as -->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Sidebar-two -->
 <ins class="adsbygoogle"
-     style="display:inline-block;width:300px;height:250px"
+     style="display:block;width:200px;height:250px"
      data-ad-client="ca-pub-4525567075133342"
-     data-ad-slot="2263435109"></ins>
+     data-ad-slot="8850561506"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-                <aside class="widget about-me-widget">
-                        <div class="about-me-img">
-
-                            <div class="about-me-content text-center">
-                                <img src="/img/pradeep.jpg" alt="" class="img-me">
-
-                                <h3 class="text-uppercase">Pradeep Kumar Terli</h3>
-
-                                <p>Web UI Developer, Blogger, Thinker , Entrepreneur. Loves to explore technology with focus on web technologies.</p>
-                            </div>
-                        </div>
-                        <div class="social-share">
-                            <ul class="text-center text-center">
-                                <li><a class="s-facebook" href="https://www.facebook.com/pradeepkumar.terli" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                <li><a class="s-linkedin" href="http://www.linkedin.com/in/pradeep-kumar-terli" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a class="s-google-plus" href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a class="s-twitter" href="https://twitter.com/PradeepTerli"><i class="fa fa-twitter"></i></a></li>
-                            </ul>
-                        </div>
-                    </aside>
-                 <!--   <aside class="widget news-letter">
-                        <h3 class="widget-title text-uppercase text-center">Get Newsletter</h3>
-
-                        <form action="#">
-                            <input type="email" placeholder="Your email address">
-                            <input type="submit" value="Subscribe Now" class="text-uppercase text-center btn btn-subscribe">
-                        </form>
-
-                    </aside> -->
+                    </div>       
+                </div>
             </div>
         </div>
     </div>
@@ -766,7 +650,10 @@ s.setAttribute('data-timestamp', +new Date());
       scroll = $(window).scrollTop(),
       sticky2 = $('.left-sticky'),
       sticky3 = $('.content-sticky'),
-      sticky4 = $('.fixed-ad');
+      sticky4 = $('.fixed-ad'),
+      sticky5 = $('.sec-menu-sticky'),
+      sticky6 = $('.doc-menu-sticky'),
+      sticky7 = $('.doc-left-sticky');
 
   if (scroll >= 60) {
     sticky.addClass('fixed');
@@ -778,11 +665,29 @@ s.setAttribute('data-timestamp', +new Date());
     sticky2.removeClass('left-fixed');
     sticky3.removeClass('content-fixed');
   }
-  if (scroll >= 820) {
+  if (scroll >= 50) {
     sticky4.addClass('fixed');
   }
-  else if (scroll < 820) {
+  else if (scroll < 50) {
     sticky4.removeClass('fixed');
+  }
+  if (scroll >= 364) {
+    sticky5.addClass('fixed');
+  }
+  else if (scroll <= 364) {
+    sticky5.removeClass('fixed');
+  }
+  if (scroll >= 200 ) {
+    sticky6.addClass('fixed');
+  }
+  else if (scroll <= 200 ) {
+    sticky6.removeClass('fixed');
+  }
+  if (scroll >= 200 ) {
+    sticky7.addClass('fixed');
+  }
+  else if (scroll <= 200 ) {
+    sticky7.removeClass('fixed');
   }
 });
 </script>
@@ -797,6 +702,13 @@ $(function() {
       $el.addClass('anchor');
       return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id));
     }
+  });
+});
+$(function() {
+  return $("table").each(function(i, el) {
+    var $el, icon, id;
+    $el = $(el);
+    $el.addClass('table table-bordered table-responsive');
   });
 });
 /*$(function(){
