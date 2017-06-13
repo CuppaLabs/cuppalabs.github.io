@@ -159,6 +159,7 @@ header
 .container-fluid{
     padding-left: 25px;
     padding-right: 25px;
+    max-width: 1400px;
 }
 .menu-left {
     float: left;
