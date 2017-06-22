@@ -1455,7 +1455,7 @@ post grid
 }
 .post.post-list{
     border: 0px;
-    max-height: 380px;
+    height: 380px;
 }
 /*==========
 about me
