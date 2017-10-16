@@ -107,6 +107,9 @@ header
 .main-menu{
     margin-bottom: 0px;
 }
+.main-menu .menu-content {
+background: #fff;
+}
 .navbar > .container{
     padding: 0px;
 }
