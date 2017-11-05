@@ -1,126 +1,156 @@
 <!DOCTYPE html>
 <html lang="en-ca">
+
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
-  <title>Ng2 Social Login | Cuppa Labs</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Asap:500,700" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/img/coffee14.png" type="image/x-icon" />
+  <title>Angular 2 Social Login</title>
   <link href="/css/main.css" rel="stylesheet">
   <meta name="description" content="Cuppa Angular 2 OAuth Social Login Script is a light weight framework for implementation of social networking login using OAuth standard. Developed using Full stack. Social Login using NodeJS, MongoDB and Angular 2.">
-  <meta content='' name='keywords'/>
-  <meta name="description" content="Cuppa Angular 2 OAuth Social Login Script is a light weight framework for implementation of social networking login using OAuth standard. Developed using Full stack. Social Login using NodeJS, MongoDB and Angular 2."/>
-<meta property="og:description" content="Cuppa Angular 2 OAuth Social Login Script is a light weight framework for implementation of social networking login using OAuth standard. Developed using Full stack. Social Login using NodeJS, MongoDB and Angular 2." />
-<meta property="og:url" content="/ng2-social-login/" />
-<meta property="og:site_name" content="Cuppa Labs" />
-<meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
-<meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
-<meta property="article:tag" content="Angular 2" />
-<meta property="article:tag" content="html5" />
-<meta property="article:tag" content="css3" />
-<meta property="og:image" content="http://cuppalabs.github.io/img/social-login/oauth-banner.png" />
+  <meta content='Angular2 social login, social login, oauth, angular2 oauth' name='keywords' />
+  <meta property="og:description" content="Cuppa Angular 2 OAuth Social Login Script is a light weight framework for implementation of social networking login using OAuth standard. Developed using Full stack. Social Login using NodeJS, MongoDB and Angular 2." />
+  <meta property="og:url" content="/ng2-social-login/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Angular 2 Social Login" />
+  <meta property="og:site_name" content="Cuppa Labs" />
+  <meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
+  <meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
+  <meta property="article:tag" content="Angular 2" />
+  <meta property="article:tag" content="html5" />
+  <meta property="article:tag" content="css3" />
+  <meta property="og:image" content="/img/social-login/oauth-banner.png" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 </head>
-<body>
-<nav class="navbar main-menu navbar-default">
-    <div class="container-fluid">
-        <div class="menu-content">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">
-                <img src="/img/cuppa-logo-coffee11.png" alt="">
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/" class="">Home</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="/components" class="">Angular Components</a>
-                    <li><a href="/tutorials" class="">Tutorials</a></li>
-                     <li><a href="/ng2-social-login" class="current">OAuth</a></li>
-                    <li><a href="/aboutMe" class="">About Me </a></li>
-                </ul>
-                <div class="i_con">
-                    <a href="https://github.com/CuppaLabs"><i class="fa fa-github"></i></a>
-                    <a href="https://www.facebook.com/cuppalabs"><i class="fa fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/pradeep-kumar-terli"><i class="fa fa-linkedin"></i></a>
-                    <a href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a>
-                    <a href="https://twitter.com/PradeepTerli"><i class="active fa fa-twitter"></i></a>
-                </div>
 
-            </div>
-            <div class="show-search">
-                <form role="search" method="get" id="searchform" action="#">
-                    <div>
-                        <input type="text" placeholder="Search and hit enter..." name="s" id="s">
-                    </div>
-                </form>
-            </div>
-        </div>
+<body data-spy="scroll" data-target="#navbar-example2" data-offset="60">
+
+  <nav class="navbar navbar-expand-md top-navbar d-print-none">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+          <img src="/img/cuppa-logo-coffee11.png" height="32" alt="">
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+      aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-navicon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/components">Angular Components</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/tutorials">Tutorials</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/ng2-social-login">OAuth</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/aboutme">About Me</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://github.com/CuppaLabs">
+                <i class="fa fa-github"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://www.facebook.com/cuppalabs">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://www.linkedin.com/in/pradeep-kumar-terli">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://plus.google.com/102171107795347642020">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://twitter.com/PradeepTerli">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+      </ul>
     </div>
-</nav>
-
-
-    <div class="jumbotron ">
+  </div>
+</nav> 
+  
+      <div class="jumbotron ">
       <div class="container-fluid">
-        
-
         <div class="col-md-7">
           <h2>Angular 2 Social Login Script</h2>
           <p>Simple, light weight social login script for your angular apps. Easy to install and integrate. </p>
         <div class="bt-group">
-            <a href="https://cuppa-angular2-oauth.herokuapp.com/login" target="_blank" type="button" class="btn btn-default"><i class="fa fa-desktop" aria-hidden="true"></i><span class="hidden-xs"> LIVE DEMO</span></a>
-            <a href="https://github.com/CuppaLabs/angular2-social-login/archive/master.zip" type="button" class="btn btn-default"><i class="fa fa-download" aria-hidden="true"></i><span class="hidden-xs"> DOWNLOAD </span></a>
-            <a href="https://github.com/CuppaLabs/angular2-social-login" type="button" class="btn btn-default"><i class="fa fa-github" aria-hidden="true"></i><span class="hidden-xs"> GITHUB </span></a>
-
+            <a href="https://cuppa-angular2-oauth.herokuapp.com/login" target="_blank" role="button" class="btn btn-light custom-btn"><i class="fa fa-desktop" aria-hidden="true"></i><span class="hidden-xs"> LIVE DEMO</span></a>
+            <a href="https://github.com/CuppaLabs/angular2-social-login/archive/master.zip" role="button" class="btn btn-light custom-btn"><i class="fa fa-download" aria-hidden="true"></i><span class="hidden-xs"> DOWNLOAD </span></a>
+            <a href="https://github.com/CuppaLabs/angular2-social-login" role="button" class="btn btn-light custom-btn"><i class="fa fa-github" aria-hidden="true"></i><span class="hidden-xs"> GITHUB </span></a>
         </div>
         </div>
         <div class="col-md-5">
         </div>
-
-        
       </div>
     </div>
-    <nav class="navbar main-menu navbar-default  sec-menu-sticky ">
-    <div class="container-fluid">
-        <div class="sub-menu-content">
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/ng2-social-login#overview" class="">OVERVIEW</a></li>
-                    <li><a href="/ng2-social-login#architecture" class="">ARCHITECTURE</a></li>
-                    <li><a href="/ng2-social-login#flowchart" class="">FLOWCHART</a></li>
-                    <li><a href="/ng2-social-login/documentation" class="">DOCUMENTATION</a></li>
-                </ul>
-                <div class="social-share">
-                <ul class="text-center pull-right">
-    <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/ng2-social-login/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
-    </li>
-    <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/ng2-social-login/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
-    </li>
-    <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/ng2-social-login/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
-    </li>
-    <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/ng2-social-login/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
-    </li>
-</ul>
-                </div>
-            </div>
-        </div>
+<div class="row component-headline" style="margin: 0px;">
+            <nav class="navbar navbar-expand-md top-navbar d-print-none">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#subnavbar" aria-controls="subnavbar"
+      aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-navicon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="subnavbar">
+      <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="/ng2-social-login#overview">OVERVIEW</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ng2-social-login#architecture">ARCHITECTURE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ng2-social-login#flowchart">FLOWCHART</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ng2-social-login/documentation">DOCUMENTATION</a></li>
+      </ul>
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/ng2-social-login/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/ng2-social-login/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://plus.google.com/share?url=https://cuppalabs.github.io/ng2-social-login/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="http://twitter.com/share?url=https://cuppalabs.github.io/ng2-social-login/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://github.com/CuppaLabs/angular2-social-login">
+                <i class="fa fa-github"></i>
+            </a>
+        </li>
+      </ul>
     </div>
+  </div>
 </nav>
-    <div class="container-fluid main-content-section">
+      </div>
+
+
+    <div class="container main-content-section">
        <div class="section row" id="technologies">
           <div class="col-md-4">
             <h2>Overview</h2>
@@ -156,7 +186,7 @@
       <div class="section row" id="technologies">
          
           <h2>Technologies</h2>
-          
+          <div class="row">
           <div class="col-md-6">
             <figure>
                 <img class="img-responsive" src="/img/social-login/oauth-technologies.png" />
@@ -177,12 +207,10 @@
                   </tbody>
               </table>
           </div>
+          </div>
       </div>
     </div>
 
-<footer class="footer">
-  <p>© 2009-2017 https://cuppalabs.github.io <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
-</footer>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -316,4 +344,65 @@ $(function () {
   ga('send', 'pageview');
 
 </script>
+
+
+  <footer class="footer">
+    <p>© 2009-2017 &nbsp <a href="https://cuppalabs.github.io" style="color: #fff;font-size: 16px;">Cuppa Labs</a> &nbsp <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <script>
+    $(function() {
+  return $(".component-article h1, .component-article h2, .component-article h3, .component-article h4, .component-article h5, .component-article h6").each(function(i, el) {
+    var $el, icon, id, val;
+    $el = $(el);
+    val = $(el).html().split(' ').join('-');
+    id = $el.attr('id', val);
+    if (id) {
+      return $el;
+    }
+  });
+});
+    $(function() {
+  return $("#navbar-example2 > a").each(function(i, el) {
+    var $el, icon, id, val;
+    $el = $(el);
+    val = '#'+$(el).html().split(' ').join('-');
+    id = $el.attr('href', val);
+    if (id) {
+      return $el;
+    }
+  });
+});
+$(function() {
+  return $("table").each(function(i, el) {
+    var $el, icon, id;
+    $el = $(el);
+    $el.addClass('table table-bordered table-responsive');
+  });
+});
+  function toJSONLocal (date) {
+	var local = new Date(date);
+	local.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+	return local.toJSON().slice(0, 10);
+}
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+  </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93566400-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
 </html>

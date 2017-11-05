@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+<div style="width: 80%;margin: 20px auto;">
+
+<angular2-multiselect 
+  [data]="basicExampleList" 
+  [(ngModel)]="basicExampleSelectedItems" 
+  [settings]="basicExampleSettings" 
+  (onSelect)="onItemSelect($event)" 
+  (onDeSelect)="OnItemDeSelect($event)"  
+  (onSelectAll)="onSelectAll($event)" 
+  (onDeSelectAll)="onDeSelectAll($event)">
+</angular2-multiselect>
+  
+</div>

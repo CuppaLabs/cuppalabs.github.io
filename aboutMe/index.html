@@ -1,319 +1,321 @@
 <!DOCTYPE html>
 <html lang="en-ca">
+
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
-  <title>Cuppa Labs - UI Development | AngularJS | Angular 2 Tutorials | Demos | Javascript | Angular | HTML5 | CSS3</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Asap:500,700" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/img/coffee14.png" type="image/x-icon" />
+  <title></title>
   <link href="/css/main.css" rel="stylesheet">
-  <meta name="description" content="UI Programming Tech Blog with Demos and Tutorials. Learn Angular 2, JavaScript, HTML5, CSS3 with examples. Free UI components and tutorials for your web projects.">
-  <meta content='angularjs, html5, javascript, css, css3, angular 2, angular2,' name='keywords'/>
-  <meta name="description" content="UI Programming Tech Blog with Demos and Tutorials. Learn Angular 2, JavaScript, HTML5, CSS3 with examples. Free UI components and tutorials for your web projects."/>
-<meta property="og:description" content="UI Programming Tech Blog with Demos and Tutorials. Learn Angular 2, JavaScript, HTML5, CSS3 with examples. Free UI components and tutorials for your web projects." />
-<meta property="og:url" content="/aboutMe/" />
-<meta property="og:site_name" content="Cuppa Labs" />
-<meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
-<meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
-<meta property="article:tag" content="Angular 2" />
-<meta property="article:tag" content="html5" />
-<meta property="article:tag" content="css3" />
-<meta property="og:image" content="http://cuppalabs.github.io/img//cuppa-banner.png" />
+  <meta name="description" content="">
+  <meta content='' name='keywords' />
+  <meta property="og:description" content="" />
+  <meta property="og:url" content="/aboutMe/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="" />
+  <meta property="og:site_name" content="Cuppa Labs" />
+  <meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
+  <meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
+  <meta property="article:tag" content="Angular 2" />
+  <meta property="article:tag" content="html5" />
+  <meta property="article:tag" content="css3" />
+  <meta property="og:image" content="/img//" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 </head>
-<body>
-<nav class="navbar main-menu navbar-default">
-    <div class="container-fluid">
-        <div class="menu-content">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">
-                <img src="/img/cuppa-logo-coffee11.png" alt="">
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/" class="">Home</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="/components" class="">Angular Components</a>
-                    <li><a href="/tutorials" class="">Tutorials</a></li>
-                     <li><a href="/ng2-social-login" class="">OAuth</a></li>
-                    <li><a href="/aboutMe" class="current">About Me </a></li>
-                </ul>
-                <div class="i_con">
-                    <a href="https://github.com/CuppaLabs"><i class="fa fa-github"></i></a>
-                    <a href="https://www.facebook.com/cuppalabs"><i class="fa fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/pradeep-kumar-terli"><i class="fa fa-linkedin"></i></a>
-                    <a href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a>
-                    <a href="https://twitter.com/PradeepTerli"><i class="active fa fa-twitter"></i></a>
-                </div>
 
-            </div>
-            <div class="show-search">
-                <form role="search" method="get" id="searchform" action="#">
-                    <div>
-                        <input type="text" placeholder="Search and hit enter..." name="s" id="s">
-                    </div>
-                </form>
-            </div>
-        </div>
+<body data-spy="scroll" data-target="#navbar-example2" data-offset="60">
+
+  <nav class="navbar navbar-expand-md top-navbar d-print-none">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+          <img src="/img/cuppa-logo-coffee11.png" height="32" alt="">
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+      aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-navicon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/components">Angular Components</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/tutorials">Tutorials</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/ng2-social-login">OAuth</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/aboutme">About Me</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://github.com/CuppaLabs">
+                <i class="fa fa-github"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://www.facebook.com/cuppalabs">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://www.linkedin.com/in/pradeep-kumar-terli">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://plus.google.com/102171107795347642020">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://twitter.com/PradeepTerli">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+      </ul>
     </div>
-</nav>
-
-
-    <div class="container documentation-container about-me">
-
-      <div class="row">
-          <div class="col-md-10 col-md-offset-1 right-section">
-               <div class="row col-md-12 col-xs-12" id="introduction">
-                    <h2 class="">PRADEEP KUMAR TERLI</h2>
-                    <h4 class="role">Front End Engineer & UI Developer</h4>
-                    <h5><span class="fa fa-map-marker"></span>Bengaluru, India</h5>
-                    <p>  
-                       <ul class="contact-details">
-                           <li class="col-md-3 col-xs-3"><span class="fa fa-envelope"></span><span>solomon.terli@gmail.com</span></li>
-                           <li class="col-md-3 col-xs-3"><span class="fa fa-link"></span><a href="https://cuppalabs.github.io"><span>https://cuppalabs.github.io</span></a></li>
-                           <li class="col-md-2 col-xs-2"><span class="fa fa-mobile-phone"></span><span>+91-9902384179</span></li>
-                           <li class="col-md-4 col-xs-4"><span class="fa fa-linkedin-square"></span><a href="www.linkedin.com/in/pradeep-kumar-terli"><span>www.linkedin.com/in/pradeep-kumar-terli</span></a></li>
-
-                       </ul>
-                    </p>
+  </div>
+</nav> 
+  
+  <div class="container documentation-container about-me page">
+    <div class="row">
+        <div class="col-md-8 offset-md-8 ml-auto mr-auto center-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="">PRADEEP KUMAR TERLI</h4>
+                    <h6 class="role">Front End Engineer & UI Developer</h6>
+                    <h6><span class="fa fa-map-marker"></span>Bengaluru, India</h6>
                 </div>
+                <div class="col-md-12">
+                    <ul class="contact-details">
+                        <li class="col-md-3"><span class="fa fa-envelope"></span><span>solomon.terli@gmail.com</span></li>
+                        <li class="col-md-3"><span class="fa fa-link"></span><a href="https://cuppalabs.github.io"><span>https://cuppalabs.github.io</span></a></li>
+                        <li class="col-md-2"><span class="fa fa-mobile-phone"></span><span>+91-9902384179</span></li>
+                        <li class="col-md-4"><span class="fa fa-linkedin-square"></span><a href="www.linkedin.com/in/pradeep-kumar-terli"><span>www.linkedin.com/in/pradeep-kumar-terli</span></a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-xs-8 col-sm-8 col-md-8">
-                <h3 class="page-header">Experience (6 Years)</h3>
-                <div class="row">
-                    <h4>Senior UI Developer</h4>
-                    <h5 class="organization">Wipro Technologies</h5>
-                    <ul class="contact-details exp-details">
-                           <li><span class="fa fa-calendar"></span><span>July 2016 - Ongoing</span></li>
-                           <li><span class="fa fa-map-marker"></span><span>Bengaluru, India</span></li>
-                    </ul>
+                    <h4 class="page-header">Experience (6 Years)</h4>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <h5>Senior UI Developer</h5>
+                            <h6 class="organization">Wipro Technologies</h6>
+                            <ul class="contact-details exp-details">
+                                <li><span class="fa fa-calendar"></span><span>July 2016 - Ongoing</span></li>
+                                <li><span class="fa fa-map-marker"></span><span>Bengaluru, India</span></li>
+                            </ul>
 
-                    <ul class="pull-left job-description">
-                        <li>Optimized Web Framework and migrated the framework from JQuery to AngularJS</li>
-                        <li>Developed re-usable AngularJS components.</li>
-                        <li>Responsible for requirement analysis, design and development of UI.</li>
-                        <li>Creator of Heatmap and Layout Management in AngularJS</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <h4>Senior UI Developer</h4>
-                    <h5 class="organization">Ericsson Ltd</h5>
-                    <ul class="contact-details exp-details">
-                           <li><span class="fa fa-calendar"></span><span>March 2016 - June 2016</span></li>
-                           <li><span class="fa fa-map-marker"></span><span>Bengaluru, India</span></li>
-                    </ul>
+                            <ul class="pull-left job-description">
+                                <li>Optimized Web Framework and migrated the framework from JQuery to AngularJS</li>
+                                <li>Developed re-usable AngularJS components.</li>
+                                <li>Responsible for requirement analysis, design and development of UI.</li>
+                                <li>Creator of Heatmap and Layout Management in AngularJS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <h5>Senior UI Developer</h5>
+                            <h6 class="organization">Ericsson Ltd</h6>
+                            <ul class="contact-details exp-details">
+                                <li><span class="fa fa-calendar"></span><span>March 2016 - June 2016</span></li>
+                                <li><span class="fa fa-map-marker"></span><span>Bengaluru, India</span></li>
+                            </ul>
 
-                    <ul class="pull-left job-description">
-                        <li>Creator of Analytics dashboard</li>
-                        <li>Developed re-usable AngularJS components.</li>
-                        <li>Highcharts Angular directives development.</li>
-                        <li>Responsive dashboards.</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <h4>UI Tech Lead</h4>
-                    <h5 class="organization">TCS - Apple</h5>
-                    <ul class="contact-details exp-details">
-                           <li><span class="fa fa-calendar"></span><span>October 2014 - Feb 2016</span></li>
-                           <li><span class="fa fa-map-marker"></span><span>Bengaluru, India</span></li>
-                    </ul>
+                            <ul class="pull-left job-description">
+                                <li>Creator of Analytics dashboard</li>
+                                <li>Developed re-usable AngularJS components.</li>
+                                <li>Highcharts Angular directives development.</li>
+                                <li>Responsive dashboards.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <h5>UI Tech Lead</h5>
+                            <h6 class="organization">TCS - Apple</h6>
+                            <ul class="contact-details exp-details">
+                                <li><span class="fa fa-calendar"></span><span>October 2014 - Feb 2016</span></li>
+                                <li><span class="fa fa-map-marker"></span><span>Bengaluru, India</span></li>
+                            </ul>
 
-                    <ul class="pull-left job-description">
-                        <li>Led UI Center of Excellence (CoE) Team and an individual contributor for several other projects in the account.</li>
-                        <li>Worked with Technical Architects group on project proposals, estimates of design and development efforts.</li>
-                        <li>Actively worked on UI Architecture Design, Documentation and Proposing best technologies for the projects</li>
-                        <li>Worked on multiple POC’s and RFP’s on AngularJS and Charting.</li>
-                        <li>Worked on Mutant, SecApp, Winkel projects</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <h4>UI Developer & Tech Lead</h4>
-                    <h5 class="organization">TCS - Apple</h5>
-                    <ul class="contact-details exp-details">
-                           <li><span class="fa fa-calendar"></span><span>July 2014 - October 2014</span></li>
-                           <li><span class="fa fa-map-marker"></span><span>Sao Paulo, Brazil</span></li>
-                    </ul>
+                            <ul class="pull-left job-description">
+                                <li>Led UI Center of Excellence (CoE) Team and an individual contributor for several other projects
+                                    in the account.</li>
+                                <li>Worked with Technical Architects group on project proposals, estimates of design and development
+                                    efforts.
+                                </li>
+                                <li>Actively worked on UI Architecture Design, Documentation and Proposing best technologies
+                                    for the projects</li>
+                                <li>Worked on multiple POC’s and RFP’s on AngularJS and Charting.</li>
+                                <li>Worked on Mutant, SecApp, Winkel projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <h5>UI Developer & Tech Lead</h5>
+                            <h6 class="organization">TCS - Apple</h6>
+                            <ul class="contact-details exp-details">
+                                <li><span class="fa fa-calendar"></span><span>July 2014 - October 2014</span></li>
+                                <li><span class="fa fa-map-marker"></span><span>Sao Paulo, Brazil</span></li>
+                            </ul>
 
-                    <ul class="pull-left job-description">
-                        <li>Had experience in working at TCS, Brazil with Apple Client on multiple projects, as UI Front End Technical Lead.</li>
-                        <li>Had been a part of proposal, design and development phases for two projects.</li>
-                        <li>Conducted training sessions on AngularJs Framework, JQuery and Bootstrap frameworks. </li>
-                        <li>Worked on App and Doc store, PRQ, Phoenix automation projects.</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <h4>UI Developer</h4>
-                    <h5 class="organization">TCS Apple</h5>
-                    <ul class="contact-details exp-details">
-                           <li><span class="fa fa-calendar"></span><span>July 2011 - June 2014</span></li>
-                           <li><span class="fa fa-map-marker"></span><span>Bengaluru, India</span></li>
-                    </ul>
+                            <ul class="pull-left job-description">
+                                <li>Had experience in working at TCS, Brazil with Apple Client on multiple projects, as UI Front
+                                    End Technical Lead.</li>
+                                <li>Had been a part of proposal, design and development phases for two projects.</li>
+                                <li>Conducted training sessions on AngularJs Framework, JQuery and Bootstrap frameworks. </li>
+                                <li>Worked on App and Doc store, PRQ, Phoenix automation projects.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <h5>UI Developer</h5>
+                            <h6 class="organization">TCS Apple</h6>
+                            <ul class="contact-details exp-details">
+                                <li><span class="fa fa-calendar"></span><span>July 2011 - June 2014</span></li>
+                                <li><span class="fa fa-map-marker"></span><span>Bengaluru, India</span></li>
+                            </ul>
 
-                    <ul class="pull-left job-description">
-                        <li>Joined as the first member of CoE team as UI Developer.</li>
-                        <li>Worked on HTML, CSS, JQuery, JavaScript POC's.</li>
-                        <li>Single handedly worked on iPulse project and strived to make it a blockbuster project.</li>
-                        <li>Achieved star of the month and star of the quarter awards in the first year.</li>
-                        <li>Worked on iPulse, iChart projects.</li>
-                    </ul>
+                            <ul class="pull-left job-description">
+                                <li>Joined as the first member of CoE team as UI Developer.</li>
+                                <li>Worked on HTML, CSS, JQuery, JavaScript POC's.</li>
+                                <li>Single handedly worked on iPulse project and strived to make it a blockbuster project.</li>
+                                <li>Achieved star of the month and star of the quarter awards in the first year.</li>
+                                <li>Worked on iPulse, iChart projects.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="page-header">Education</h3>
-                <div class="row">
-                    <h4>B.E in Electonics & Instrumentation</h4>
-                    <h5>GITAM University</h5>
-                    <ul class="contact-details exp-details">
-                           <li><span class="fa fa-calendar"></span><span>Oct 2007 - May 2011</span></li>
-                           <li><span class="fa fa-map-marker"></span><span>Visakhapatnam, India</span></li>
-                    </ul>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <h4 class="page-header">Tech Skills</h4>
+                            <span class="badge badge-pill badge-primary">AngularJS 2</span>
+                            <span class="badge badge-pill badge-primary">AngularJS 1</span>
+                            <span class="badge badge-pill badge-primary">JavaScript</span>
+                            <span class="badge badge-pill badge-primary">Bootstrap</span>
+                            <span class="badge badge-pill badge-primary">HTML</span>
+                            <span class="badge badge-pill badge-primary">HTML5</span>
+                            <span class="badge badge-pill badge-primary">CSS3</span>
+                            <span class="badge badge-pill badge-primary">CSS</span>
+                            <span class="badge badge-pill badge-primary">JQuery</span>
+                            <span class="badge badge-pill badge-primary">Fullstack</span>
+                            <span class="badge badge-pill badge-primary">SVG</span>
+                            <span class="badge badge-pill badge-primary">Zing Charts</span>
+                            <span class="badge badge-pill badge-primary">High Charts</span>
+                            <span class="badge badge-pill badge-primary">D3 Charts</span>
+                            <span class="badge badge-pill badge-primary">NodeJS</span>
+                            <span class="badge badge-pill badge-primary">MongoDB</span>
+                            <span class="badge badge-pill badge-primary">REST API</span>
+                            <span class="badge badge-pill badge-primary">OOPS</span>
+                            <span class="badge badge-pill badge-primary">Data Structures</span>
+                            <span class="badge badge-pill badge-primary">Algorithms</span>
+                            <span class="badge badge-pill badge-primary">MEAN</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <h4 class="page-header">Achievements</h4>
+                            <ul class="pull-left job-description">
+                                <li>Led CoE Team for more than 3 years. Mentoring and training team members in UI competencies.
+                                    Contributed in expanding the team strength from 2 to 6.</li>
+                                <li>Guest Lecture at ILP, Trivandrum and harnessing best talent in UI.</li>
+                                <li>Best performer Award for my contribution to TCS-Apple.</li>
+                                <li>Star of the month and Star of the quarter awards from various teams.</li>
+                                <li>Author of UI website cuppalabs.github.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <h4 class="page-header">Blockbuster Projects</h4>
+                            <ul class="pull-left job-description">
+                                <li>iPulse</li>
+                                <li>Mutant</li>
+                                <li>iCharts</li>
+                                <li>SecApp</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <h4 class="page-header">Open Source Projects</h4>
+                            <ul class="pull-left job-description">
+                                <li>Angular 2 OAuth Social Login</li>
+                                <li>Angular 2 Datatable</li>
+                                <li>Angular datetimepicker</li>
+                                <li>Angular 2 slidemenu</li>
+                                <li>Angular Fan menu</li>
+                                <li>Javascript datetimepicker</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <h4 class="page-header">Education</h4>
+                            <div>
+                                <h5>Bachelor of Engineering</h5>
+                                <h6>Electonics & Instrumentation</h6>
+                                <h6>GITAM University</h6>
+                                <ul class="contact-details exp-details">
+                                    <li style="width: 100%;"><span class="fa fa-calendar"></span><span>Oct 2007 - May 2011</span></li>
+                                    <li style="width: 100%;"><span class="fa fa-map-marker"></span><span>Visakhapatnam, India</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+            </div>
+        </div>
     </div>
-    <div class="col-xs-4 col-sm-4 col-md-4">
-        <h3 class="page-header">Tech Skills</h3>
-        <div class="row">
-            <span class="badge">AngularJS 2</span>
-            <span class="badge">AngularJS 1</span>
-            <span class="badge">JavaScript</span>
-            <span class="badge">Bootstrap</span>
-            <span class="badge">HTML</span>
-            <span class="badge">HTML5</span>
-            <span class="badge">CSS3</span>
-            <span class="badge">CSS</span>   
-            <span class="badge">JQuery</span>
-            <span class="badge">Fullstack</span>
-            <span class="badge">SVG</span>
-             <span class="badge">Zing Charts</span>
-             <span class="badge">High Charts</span>
-             <span class="badge">D3 Charts</span>
-            <span class="badge">NodeJS</span>   
-            <span class="badge">MongoDB</span> 
-            <span class="badge">REST API</span>
-            <span class="badge">OOPS</span>
-            <span class="badge">Data Structures</span>    
-            <span class="badge">Algorithms</span>  
-            <span class="badge">MEAN</span>                                   
-        </div>
-        <h3 class="page-header">Achievements</h3>
-        <div class="row">
-            <ul class="pull-left job-description">
-                <li>Led CoE Team for more than 3 years. Mentoring and training team members in UI competencies. Contributed in expanding the team strength from 2 to 6.</li>
-                <li>Guest Lecture at ILP, Trivandrum and harnessing best talent in UI.</li>
-                <li>Best performer Award for my contribution to TCS-Apple.</li>
-                <li>Star of the month and Star of the quarter awards from various teams.</li>
-                <li>Author of UI website cuppalabs.github.com</li>
-            </ul>
-        </div>
-        <h3 class="page-header">Blockbuster Projects</h3>
-        <div class="row">
-            <ul class="pull-left job-description">
-                <li>iPulse</li>
-                <li>Mutant</li>
-                <li>iCharts</li>
-                <li>SecApp</li>
-            </ul>
-        </div>
-        <h3 class="page-header">Open Source Projects</h3>
-        <div class="row">
-            <ul class="pull-left job-description">
-                <li>Angular 2 OAuth Social Login</li>
-                <li>Angular 2 Datatable</li>
-                <li>Angular datetimepicker</li>
-                <li>Angular 2 slidemenu</li>
-                <li>Angular Fan menu</li>
-                <li>Javascript datetimepicker</li>
-            </ul>
-        </div>
-        <h3 class="page-header">Philosophy</h3>
-        <div class="row">
-               <h4>"If I am not for myself, who will</h4>
-               <h4> If I am only for myself, what am I </h4>
-               <h4> If not today, then when" </h4>
-        </div>
-    </div>
-          </div>
-          
-      </div>
-    </div> <!-- /container -->
 
-<footer class="footer">
-  <p>© 2009-2017 https://cuppalabs.github.io <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
-</footer>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=929055083862567";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-</body>
+</div>
 
-<script>
-  $(window).scroll(function(){
-  var sticky = $('.sticky'),
-      scroll = $(window).scrollTop(),
-      sticky2 = $('.left-sticky'),
-      sticky3 = $('.content-sticky'),
-      sticky4 = $('.fixed-ad'),
-      sticky5 = $('.sec-menu-sticky'),
-      sticky6 = $('.doc-menu-sticky'),
-      sticky7 = $('.doc-left-sticky');
-
-  if (scroll >= 60) {
-    sticky.addClass('fixed');
-    sticky2.addClass('left-fixed');
-    sticky3.addClass('content-fixed');
-  }
-  else {
-    sticky.removeClass('fixed');
-    sticky2.removeClass('left-fixed');
-    sticky3.removeClass('content-fixed');
-  }
-  if (scroll >= 50) {
-    sticky4.addClass('fixed');
-  }
-  else if (scroll < 50) {
-    sticky4.removeClass('fixed');
-  }
-  if (scroll >= 364) {
-    sticky5.addClass('fixed');
-  }
-  else if (scroll <= 364) {
-    sticky5.removeClass('fixed');
-  }
-  if (scroll >= 200 ) {
-    sticky6.addClass('fixed');
-  }
-  else if (scroll <= 200 ) {
-    sticky6.removeClass('fixed');
-  }
-  if (scroll >= 200 ) {
-    sticky7.addClass('fixed');
-  }
-  else if (scroll <= 200 ) {
-    sticky7.removeClass('fixed');
-  }
-});
-</script>
-<script>
-$(function() {
-  return $("h2, h3, h4, h5, h6").each(function(i, el) {
-    var $el, icon, id;
+  <footer class="footer">
+    <p>© 2009-2017 &nbsp <a href="https://cuppalabs.github.io" style="color: #fff;font-size: 16px;">Cuppa Labs</a> &nbsp <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <script>
+    $(function() {
+  return $(".component-article h1, .component-article h2, .component-article h3, .component-article h4, .component-article h5, .component-article h6").each(function(i, el) {
+    var $el, icon, id, val;
     $el = $(el);
-    id = $el.attr('id');
-    icon = '<i class="fa fa-link"></i>';
+    val = $(el).html().split(' ').join('-');
+    id = $el.attr('id', val);
     if (id) {
-      $el.addClass('anchor');
-      return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id));
+      return $el;
+    }
+  });
+});
+    $(function() {
+  return $("#navbar-example2 > a").each(function(i, el) {
+    var $el, icon, id, val;
+    $el = $(el);
+    val = '#'+$(el).html().split(' ').join('-');
+    id = $el.attr('href', val);
+    if (id) {
+      return $el;
     }
   });
 });
@@ -324,52 +326,15 @@ $(function() {
     $el.addClass('table table-bordered table-responsive');
   });
 });
-/*$(function(){
-      $("#myScrollspy ul li a[href^='#']").on('click', function(e) {
-
-       // prevent default anchor click behavior
-       e.preventDefault();
-
-       // animate
-       $('html, body').animate({
-           scrollTop: $(this.hash).offset().top - 75
-         }, 300, function(){
-   
-           // when done, add hash to url
-           // (default click behaviour)
-           window.location.hash = this.hash;
-         });
-
-    });
-
-});*/
-$(document).on('click', '.index-list a', function (event) {
-    "use strict";
-    event.preventDefault();
-    var animLen = $($.attr(this, 'href')).offset().top - 62.667 - 30;
-    $('html, body').animate({
-        scrollTop: animLen
-    }, 300);
-
-});
-$(function () {
-    "use strict";
-    $(window).bind('scroll', function () {
-        $('.anchor').each(function () {
-            var anchored = $(this).attr("id"),
-                position = $(this).position().top - $(window).scrollTop()- 62.667 - 30,
-                targetOffset = $(this).offset().top - 75 - 30;
-
-            if ($(window).scrollTop() > targetOffset) {
-
-                $('ul.index-list').find('li').removeClass("active");
-                $('ul.index-list').find(('*[data-anchor="' + anchored + '"]')).addClass("active");
-            }
-        });
-    });
-});
-</script>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  function toJSONLocal (date) {
+	var local = new Date(date);
+	local.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+	return local.toJSON().slice(0, 10);
+}
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+  </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -380,4 +345,6 @@ $(function () {
   ga('send', 'pageview');
 
 </script>
+</body>
+
 </html>

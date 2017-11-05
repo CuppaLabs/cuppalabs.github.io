@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  
 
   
     
       <url>
-  <loc>http://cuppalabs.github.io/aboutMe/</loc>
-  
-  
-    <priority>1.0</priority>
-  
-</url>
-
-    
-  
-    
-      <url>
-  <loc>http://cuppalabs.github.io/components/datatable/</loc>
+  <loc>https://cuppalabs.github.io/aboutMe/</loc>
   
   
 </url>
@@ -25,7 +15,7 @@
   
     
       <url>
-  <loc>http://cuppalabs.github.io/components/datepicker/</loc>
+  <loc>https://cuppalabs.github.io/components/datatable/</loc>
   
   
 </url>
@@ -34,7 +24,7 @@
   
     
       <url>
-  <loc>http://cuppalabs.github.io/ng2-social-login/documentation/</loc>
+  <loc>https://cuppalabs.github.io/components/datepicker/</loc>
   
   
 </url>
@@ -43,7 +33,7 @@
   
     
       <url>
-  <loc>http://cuppalabs.github.io/components/fanmenu/</loc>
+  <loc>https://cuppalabs.github.io/components/fanmenu/</loc>
   
   
 </url>
@@ -52,7 +42,7 @@
   
     
       <url>
-  <loc>http://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/</loc>
+  <loc>https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/</loc>
   
   
 </url>
@@ -61,7 +51,7 @@
   
     
       <url>
-  <loc>http://cuppalabs.github.io/components/</loc>
+  <loc>https://cuppalabs.github.io/tutorials/</loc>
   
   
 </url>
@@ -70,7 +60,7 @@
   
     
       <url>
-  <loc>http://cuppalabs.github.io/tutorials/</loc>
+  <loc>https://cuppalabs.github.io/ng2-social-login/documentation/</loc>
   
   
 </url>
@@ -79,7 +69,7 @@
   
     
       <url>
-  <loc>http://cuppalabs.github.io/ng2-social-login/</loc>
+  <loc>https://cuppalabs.github.io/ng2-social-login/</loc>
   
   
 </url>
@@ -88,20 +78,16 @@
   
     
       <url>
-  <loc>http://cuppalabs.github.io/</loc>
+  <loc>https://cuppalabs.github.io/</loc>
   
-  
-    <priority>1.0</priority>
   
 </url>
 
     
   
     
-  
-    
       <url>
-  <loc>http://cuppalabs.github.io/components/multiselectDropdown/</loc>
+  <loc>https://cuppalabs.github.io/components/</loc>
   
   
 </url>
@@ -112,7 +98,7 @@
   
     
       <url>
-  <loc>http://cuppalabs.github.io/components/slidemenu/</loc>
+  <loc>https://cuppalabs.github.io/components/multiselectDropdown/</loc>
   
   
 </url>
@@ -121,6 +107,13 @@
   
     
   
+    
+      <url>
+  <loc>https://cuppalabs.github.io/components/slidemenu/</loc>
+  
+  
+</url>
+
     
   
 

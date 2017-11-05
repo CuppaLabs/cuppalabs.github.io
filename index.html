@@ -1,649 +1,447 @@
 <!DOCTYPE html>
 <html lang="en-ca">
+
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/img/coffee14.png" type="image/x-icon" />
   <title>Cuppa Labs - UI Development | AngularJS | Angular 2 Tutorials | Demos | Javascript | Angular | HTML5 | CSS3</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Asap:500,700" rel="stylesheet">
   <link href="/css/main.css" rel="stylesheet">
   <meta name="description" content="UI Programming Tech Blog with Demos and Tutorials. Learn Angular 2, JavaScript, HTML5, CSS3 with examples. Free UI components and tutorials for your web projects.">
-  <meta content='angularjs, html5, javascript, css, css3, angular 2, angular2,' name='keywords'/>
-  <meta name="description" content="UI Programming Tech Blog with Demos and Tutorials. Learn Angular 2, JavaScript, HTML5, CSS3 with examples. Free UI components and tutorials for your web projects."/>
-<meta prefix="og: http://ogp.me/ns#" property="og:description" content="UI Programming Tech Blog with Demos and Tutorials. Learn Angular 2, JavaScript, HTML5, CSS3 with examples. Free UI components and tutorials for your web projects." />
-<meta prefix="og: http://ogp.me/ns#" property="og:url" content="/" />
-<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Cuppa Labs" />
-<meta prefix="og: http://ogp.me/ns#" property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
-<meta prefix="og: http://ogp.me/ns#" property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
-<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="Angular 2" />
-<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="html5" />
-<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="css3" />
-<meta prefix="og: http://ogp.me/ns#" property="og:image" content="http://cuppalabs.github.io/img/cuppa-banner.png" />
+  <meta content='angular, angular2, jaascript, html5,css3' name='keywords' />
+  <meta property="og:description" content="UI Programming Tech Blog with Demos and Tutorials. Learn Angular 2, JavaScript, HTML5, CSS3 with examples. Free UI components and tutorials for your web projects." />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cuppa Labs - UI Development | AngularJS | Angular 2 Tutorials | Demos | Javascript | Angular | HTML5 | CSS3" />
+  <meta property="og:site_name" content="Cuppa Labs" />
+  <meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
+  <meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
+  <meta property="article:tag" content="Angular 2" />
+  <meta property="article:tag" content="html5" />
+  <meta property="article:tag" content="css3" />
+  <meta property="og:image" content="/img/banner-img/website-banner.png" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 </head>
-<body>
-<nav class="navbar main-menu navbar-default">
-    <div class="container-fluid">
-        <div class="menu-content">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">
-                <img src="/img/cuppa-logo-coffee11.png" alt="">
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/" class="">Home</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="/components" class="">Angular Components</a>
-                    <li><a href="/tutorials" class="">Tutorials</a></li>
-                     <li><a href="/ng2-social-login" class="">OAuth</a></li>
-                    <li><a href="/aboutMe" class="">About Me </a></li>
-                </ul>
-                <div class="i_con">
-                    <a href="https://github.com/CuppaLabs"><i class="fa fa-github"></i></a>
-                    <a href="https://www.facebook.com/cuppalabs"><i class="fa fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/pradeep-kumar-terli"><i class="fa fa-linkedin"></i></a>
-                    <a href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a>
-                    <a href="https://twitter.com/PradeepTerli"><i class="active fa fa-twitter"></i></a>
-                </div>
 
-            </div>
-            <div class="show-search">
-                <form role="search" method="get" id="searchform" action="#">
-                    <div>
-                        <input type="text" placeholder="Search and hit enter..." name="s" id="s">
-                    </div>
-                </form>
-            </div>
-        </div>
+<body data-spy="scroll" data-target="#navbar-example2" data-offset="60">
+
+  <nav class="navbar navbar-expand-md top-navbar d-print-none">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+          <img src="/img/cuppa-logo-coffee11.png" height="32" alt="">
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+      aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-navicon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/components">Angular Components</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/tutorials">Tutorials</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/ng2-social-login">OAuth</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/aboutme">About Me</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://github.com/CuppaLabs">
+                <i class="fa fa-github"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://www.facebook.com/cuppalabs">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://www.linkedin.com/in/pradeep-kumar-terli">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://plus.google.com/102171107795347642020">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://twitter.com/PradeepTerli">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+      </ul>
     </div>
-</nav>
+  </div>
+</nav> 
+  
+  <div id="carouselExampleIndicators" class="carousel slide" >
+  <ol class="carousel-indicators">
+    
+    
+  
 
+      
+ 
+ 
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+         
+ 
+ 
+ 
+    <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+         
+ 
+  
+ 
+  
+ 
+ 
+ 
+    <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
+         
+ 
+ 
+ 
+    <li data-target="#carouselExampleIndicators" data-slide-to="3" class=""></li>
+         
+ 
+ 
+ 
+    <li data-target="#carouselExampleIndicators" data-slide-to="4" class=""></li>
+         
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
 
-<div class="main-content">
-   <!-- <div class="slider-content"></div> -->
-    <div class="container-fluid">
-        <div class="row ad-row">
-            <div class="col-md-12 col-sm-12">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- github-ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4525567075133342"
-     data-ad-slot="3548333904"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+  </ol>
+  <div class="carousel-inner">
+      
+ 
+ 
 
-            </div>
-            
+    <div class="carousel-item jumbo-section active">
+      <div class="row">
+        <div class="col-md-6">
+          <h6>Most Viewed</h6>
+      <h2 class="jumbo-title">Angular 2 MultiSelect Dropdown Component</h2>
+      <p class="jumbo-description">A multiselect dropdown component for angular 2 and 4 applications. Developed in Angular 2 and 4, its easy to install and integrate.</p>
+              <div class="bt-group">
+            <a href="/components/multiselectDropdown/" role="button" class="btn btn-light custom-btn"><i class="fa fa-desktop" aria-hidden="true"></i><span class="hidden-xs">View Details</span></a>
+            <a href="https://cuppalabs.github.io/angular2-multiselect-dropdown" target="_blank" role="button" class="btn btn-light custom-btn"><i class="fa fa-download" aria-hidden="true"></i><span class="hidden-xs"> Live Demo </span></a>
         </div>
-        <div class="row">
-            <div class="col-md-9 col-sm-12">
-                      
-              
-              
-              <article class="post post-list col-sm-6 col-md-4">
-                  <div class="card">
-                            <div class="post-thumb">
-                                <a href="/components/multiselectDropdown/">
-                                    <img src="/img/component/multiselect-dropdown.png" alt="" class="pull-left">
-                                    <!--<img src="http://finodiary.trade/wp-content/uploads/2015/06/light-grey-background-pattern-i1.jpg" alt="" class="pull-left"> -->
-                                </a>
-
-                                <a href="/components/multiselectDropdown/" class="post-thumb-overlay text-center">
-                                    <div class="text-uppercase text-center">View Post</div>
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <header class="entry-header">
-                                    <h3 class="entry-title"><a href="/components/multiselectDropdown/">MultiSelect Dropdown</a></h3>
-                                    <div>
-                                        <span class="social-share-title pull-left text-capitalize">
-                                            By Pradeep Terli</span>
-                                        <span class="social-share-title pull-right text-capitalize">
-                                             16 April 2017</span>
-                                    </div>  
-                                    <p class="card-description">A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install and integrate.</p>          
-                                    <h6>
-                                        
-                                        <a href="#"> angular</a>
-                                        
-                                        <a href="#"> component</a>
-                                        
-                                    </h6>
-                                    <div class="social-share">
-                                       <ul class="text-center pull-right">
-    <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
-    </li>
-    <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
-    </li>
-    <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
-    </li>
-    <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
-    </li>
-</ul>
-                                        </div>
-
-                                </header>
-                               <!-- <div class="entry-content">
-                                    <p>A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install...
-                                    </p>
-                                </div> -->
-                                
-                            </div>
-                  </div>
-                </article>
-                
-             <!--    -->
-                
-              
-              <article class="post post-list col-sm-6 col-md-4">
-                  <div class="card">
-                            <div class="post-thumb">
-                                <a href="/components/slidemenu/">
-                                    <img src="/img/component/slidemenu-thumbnail.png" alt="" class="pull-left">
-                                    <!--<img src="http://finodiary.trade/wp-content/uploads/2015/06/light-grey-background-pattern-i1.jpg" alt="" class="pull-left"> -->
-                                </a>
-
-                                <a href="/components/slidemenu/" class="post-thumb-overlay text-center">
-                                    <div class="text-uppercase text-center">View Post</div>
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <header class="entry-header">
-                                    <h3 class="entry-title"><a href="/components/slidemenu/">Slide Menu</a></h3>
-                                    <div>
-                                        <span class="social-share-title pull-left text-capitalize">
-                                            By Pradeep Terli</span>
-                                        <span class="social-share-title pull-right text-capitalize">
-                                             28 March 2017</span>
-                                    </div>  
-                                    <p class="card-description">An angular 2 slide navigation menu component for mobile and web.Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days.</p>          
-                                    <h6>
-                                        
-                                        <a href="#"> angular</a>
-                                        
-                                        <a href="#"> component</a>
-                                        
-                                    </h6>
-                                    <div class="social-share">
-                                       <ul class="text-center pull-right">
-    <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
-    </li>
-    <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
-    </li>
-    <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
-    </li>
-    <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
-    </li>
-</ul>
-                                        </div>
-
-                                </header>
-                               <!-- <div class="entry-content">
-                                    <p>An angular 2 slide navigation menu component for mobile and web.Hamburger kind of menu for...
-                                    </p>
-                                </div> -->
-                                
-                            </div>
-                  </div>
-                </article>
-                
-             <!--    -->
-                
-              
-              <article class="post post-list col-sm-6 col-md-4">
-                  <div class="card">
-                            <div class="post-thumb">
-                                <a href="/tutorials/how-to-implement-angular2-form-validations/">
-                                    <img src="/img/tutorial/form-validations-tutorial-banner.png" alt="" class="pull-left">
-                                    <!--<img src="http://finodiary.trade/wp-content/uploads/2015/06/light-grey-background-pattern-i1.jpg" alt="" class="pull-left"> -->
-                                </a>
-
-                                <a href="/tutorials/how-to-implement-angular2-form-validations/" class="post-thumb-overlay text-center">
-                                    <div class="text-uppercase text-center">View Post</div>
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <header class="entry-header">
-                                    <h3 class="entry-title"><a href="/tutorials/how-to-implement-angular2-form-validations/">Angular 2 Form validations and custom validation, How to Implement</a></h3>
-                                    <div>
-                                        <span class="social-share-title pull-left text-capitalize">
-                                            By Pradeep Terli</span>
-                                        <span class="social-share-title pull-right text-capitalize">
-                                             11 March 2017</span>
-                                    </div>  
-                                    <p class="card-description">Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2 validate interface.</p>          
-                                    <h6>
-                                        
-                                        <a href="#"> angular</a>
-                                        
-                                        <a href="#"> tutorial</a>
-                                        
-                                    </h6>
-                                    <div class="social-share">
-                                       <ul class="text-center pull-right">
-    <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
-    </li>
-    <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
-    </li>
-    <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
-    </li>
-    <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
-    </li>
-</ul>
-                                        </div>
-
-                                </header>
-                               <!-- <div class="entry-content">
-                                    <p>Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2...
-                                    </p>
-                                </div> -->
-                                
-                            </div>
-                  </div>
-                </article>
-                
-             <!--   
-              <article class="post post-list col-sm-6 col-md-4">
-                  <div class="card">
-                            <div class="post-thumb">
-                                <a href="/tutorials/how-to-implement-angular2-form-validations/">
-                                    <img src="/img/tutorials/form-validations-tutorial-banner.png" alt="" class="pull-left">
-                                </a>
-
-                                <a href="/tutorials/how-to-implement-angular2-form-validations/" class="post-thumb-overlay text-center">
-                                    <div class="text-uppercase text-center">View Post</div>
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <header class="entry-header">
-                                    <h3 class="entry-title"><a href="/tutorials/how-to-implement-angular2-form-validations/">Angular 2 Form validations and custom validation, How to Implement</a></h3>
-                                    <div>
-                                        <span class="social-share-title pull-left text-capitalize">
-                                            By Pradeep Terli</span>
-                                        <span class="social-share-title pull-right text-capitalize">
-                                            On 11-03-2017</span>
-                                    </div>  
-                                    <p class="card-description">Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2...</p>          
-                                    <h6>
-                                        
-                                        <a href="#"> angular</a>
-                                        
-                                        <a href="#"> tutorial</a>
-                                        
-                                    </h6>
-                                    <div class="social-share">
-                                       <ul class="text-center pull-right">
-    <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
-    </li>
-    <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
-    </li>
-    <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
-    </li>
-    <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
-    </li>
-</ul>
-                                        </div>
-
-                                </header>
-                                
-                            </div>
-                  </div>
-                </article>
-                 -->
-                
-              
-              <article class="post post-list col-sm-6 col-md-4">
-                  <div class="card">
-                            <div class="post-thumb">
-                                <a href="/components/datatable/">
-                                    <img src="/img/component/datatable-thumbnail.png" alt="" class="pull-left">
-                                    <!--<img src="http://finodiary.trade/wp-content/uploads/2015/06/light-grey-background-pattern-i1.jpg" alt="" class="pull-left"> -->
-                                </a>
-
-                                <a href="/components/datatable/" class="post-thumb-overlay text-center">
-                                    <div class="text-uppercase text-center">View Post</div>
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <header class="entry-header">
-                                    <h3 class="entry-title"><a href="/components/datatable/">Data Table</a></h3>
-                                    <div>
-                                        <span class="social-share-title pull-left text-capitalize">
-                                            By Pradeep Terli</span>
-                                        <span class="social-share-title pull-right text-capitalize">
-                                             20 February 2017</span>
-                                    </div>  
-                                    <p class="card-description">Render 10,000+ Records with high performance. The Grid component allows users to browse and edit tabular data.</p>          
-                                    <h6>
-                                        
-                                        <a href="#"> angular</a>
-                                        
-                                        <a href="#"> component</a>
-                                        
-                                    </h6>
-                                    <div class="social-share">
-                                       <ul class="text-center pull-right">
-    <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/components/datatable/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
-    </li>
-    <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/components/datatable/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
-    </li>
-    <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/components/datatable/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
-    </li>
-    <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/components/datatable/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
-    </li>
-</ul>
-                                        </div>
-
-                                </header>
-                               <!-- <div class="entry-content">
-                                    <p>Render 10,000+ Records with high performance. The Grid component allows users to browse and edit...
-                                    </p>
-                                </div> -->
-                                
-                            </div>
-                  </div>
-                </article>
-                
-             <!--    -->
-                
-              
-              <article class="post post-list col-sm-6 col-md-4">
-                  <div class="card">
-                            <div class="post-thumb">
-                                <a href="/components/datepicker/">
-                                    <img src="/img/component/datepicker-thumbnail.png" alt="" class="pull-left">
-                                    <!--<img src="http://finodiary.trade/wp-content/uploads/2015/06/light-grey-background-pattern-i1.jpg" alt="" class="pull-left"> -->
-                                </a>
-
-                                <a href="/components/datepicker/" class="post-thumb-overlay text-center">
-                                    <div class="text-uppercase text-center">View Post</div>
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <header class="entry-header">
-                                    <h3 class="entry-title"><a href="/components/datepicker/">DateTimepicker</a></h3>
-                                    <div>
-                                        <span class="social-share-title pull-left text-capitalize">
-                                            By Pradeep Terli</span>
-                                        <span class="social-share-title pull-right text-capitalize">
-                                             12 February 2017</span>
-                                    </div>  
-                                    <p class="card-description">Angular Cuppa DateTimepicker is a cool responsive DateTimepicker directive for Web and Mobile. It is Mobile friendly and light weight. Developed by [Cuppa Labs](http://www.cuppalabs.com).</p>          
-                                    <h6>
-                                        
-                                        <a href="#"> angular</a>
-                                        
-                                        <a href="#"> component</a>
-                                        
-                                    </h6>
-                                    <div class="social-share">
-                                       <ul class="text-center pull-right">
-    <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/components/datepicker/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
-    </li>
-    <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/components/datepicker/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
-    </li>
-    <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/components/datepicker/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
-    </li>
-    <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/components/datepicker/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
-    </li>
-</ul>
-                                        </div>
-
-                                </header>
-                               <!-- <div class="entry-content">
-                                    <p>Angular Cuppa DateTimepicker is a cool responsive DateTimepicker directive for Web and Mobile. It is...
-                                    </p>
-                                </div> -->
-                                
-                            </div>
-                  </div>
-                </article>
-                
-             <!--    -->
-                
-              
-              <article class="post post-list col-sm-6 col-md-4">
-                  <div class="card">
-                            <div class="post-thumb">
-                                <a href="/components/fanmenu/">
-                                    <img src="/img/component/fanmenu-thumbnail.png" alt="" class="pull-left">
-                                    <!--<img src="http://finodiary.trade/wp-content/uploads/2015/06/light-grey-background-pattern-i1.jpg" alt="" class="pull-left"> -->
-                                </a>
-
-                                <a href="/components/fanmenu/" class="post-thumb-overlay text-center">
-                                    <div class="text-uppercase text-center">View Post</div>
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <header class="entry-header">
-                                    <h3 class="entry-title"><a href="/components/fanmenu/">Fan Menu</a></h3>
-                                    <div>
-                                        <span class="social-share-title pull-left text-capitalize">
-                                            By Pradeep Terli</span>
-                                        <span class="social-share-title pull-right text-capitalize">
-                                             12 February 2017</span>
-                                    </div>  
-                                    <p class="card-description">Cuppa Angular Fan Menu is an angular directive for cool menu componet for web and mobile , developed using `angularJS`, `CSS3`, `HTML5`.</p>          
-                                    <h6>
-                                        
-                                        <a href="#"> angular</a>
-                                        
-                                        <a href="#"> component</a>
-                                        
-                                    </h6>
-                                    <div class="social-share">
-                                       <ul class="text-center pull-right">
-    <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/components/fanmenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
-    </li>
-    <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/components/fanmenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
-    </li>
-    <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/components/fanmenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
-    </li>
-    <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/components/fanmenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
-    </li>
-</ul>
-                                        </div>
-
-                                </header>
-                               <!-- <div class="entry-content">
-                                    <p>Cuppa Angular Fan Menu is an angular directive for cool menu componet for web and...
-                                    </p>
-                                </div> -->
-                                
-                            </div>
-                  </div>
-                </article>
-                
-             <!--    -->
-                
-              
-             <!--    -->
-                
-              
-             <!--    -->
-                
-              
-             <!--    -->
-                
-              
-             <!--    -->
-                
-              
-             <!--    -->
-                
-              
-             <!--    -->
-                
-              
-             <!--    -->
-                
-              
-             <!--    -->
-                
-              
-             <!--    -->
-                
-              
-             <!--    -->
-                
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <aside class="widget about-me-widget">
-                        <div class="about-me-img">
-
-                            <div class="about-me-content text-center">
-                                <img src="/img/pradeep.jpg" alt="" class="img-me">
-
-                                <h3 class="text-uppercase">Pradeep Kumar Terli</h3>
-
-                                <p>Web UI Developer, Blogger, Thinker , Entrepreneur. Loves to explore technology with focus on web technologies.</p>
-                            </div>
-                        </div>
-                        <div class="social-share">
-                            <ul class="text-center text-center">
-                                <li><a class="s-facebook" href="https://www.facebook.com/pradeepkumar.terli" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                <li><a class="s-linkedin" href="http://www.linkedin.com/in/pradeep-kumar-terli" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a class="s-google-plus" href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a class="s-twitter" href="https://twitter.com/PradeepTerli"><i class="fa fa-twitter"></i></a></li>
-                            </ul>
-                        </div>
-                    </aside>
-                 <!--   <aside class="widget news-letter">
-                        <h3 class="widget-title text-uppercase text-center">Get Newsletter</h3>
-
-                        <form action="#">
-                            <input type="email" placeholder="Your email address">
-                            <input type="submit" value="Subscribe Now" class="text-uppercase text-center btn btn-subscribe">
-                        </form>
-
-                    </aside> -->    
-            </div>
         </div>
+        <div class="col-md-6">
+          <img class="" src="/img/banner-img/multiselect-banner.png">
+        </div>
+      </div>
+      
+      
     </div>
+     
+ 
+ 
+ 
+
+    <div class="carousel-item jumbo-section ">
+      <div class="row">
+        <div class="col-md-6">
+          <h6>Most Viewed</h6>
+      <h2 class="jumbo-title">Angular 2 Slide Menu</h2>
+      <p class="jumbo-description">An angular 2 slide navigation menu component for mobile and web.Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days.</p>
+              <div class="bt-group">
+            <a href="/components/slidemenu/" role="button" class="btn btn-light custom-btn"><i class="fa fa-desktop" aria-hidden="true"></i><span class="hidden-xs">View Details</span></a>
+            <a href="https://cuppalabs.github.io/cuppa-ng2-slidemenu" target="_blank" role="button" class="btn btn-light custom-btn"><i class="fa fa-download" aria-hidden="true"></i><span class="hidden-xs"> Live Demo </span></a>
+        </div>
+        </div>
+        <div class="col-md-6">
+          <img class="" src="/img/banner-img/slidemenu-banner.png">
+        </div>
+      </div>
+      
+      
+    </div>
+     
+ 
+  
+ 
+  
+ 
+ 
+ 
+
+    <div class="carousel-item jumbo-section ">
+      <div class="row">
+        <div class="col-md-6">
+          <h6>Most Viewed</h6>
+      <h2 class="jumbo-title">Angular 2 Data Table</h2>
+      <p class="jumbo-description">Angular 2 Datatable component. Render 10,000+ Records with high performance. The datatable component allows users to browse and edit tabular data.</p>
+              <div class="bt-group">
+            <a href="/components/datatable/" role="button" class="btn btn-light custom-btn"><i class="fa fa-desktop" aria-hidden="true"></i><span class="hidden-xs">View Details</span></a>
+            <a href="https://cuppalabs.github.io/angular2-dataGrid" target="_blank" role="button" class="btn btn-light custom-btn"><i class="fa fa-download" aria-hidden="true"></i><span class="hidden-xs"> Live Demo </span></a>
+        </div>
+        </div>
+        <div class="col-md-6">
+          <img class="" src="/img/banner-img/datatable-banner.png">
+        </div>
+      </div>
+      
+      
+    </div>
+     
+ 
+ 
+ 
+
+    <div class="carousel-item jumbo-section ">
+      <div class="row">
+        <div class="col-md-6">
+          <h6>Most Viewed</h6>
+      <h2 class="jumbo-title">Angular 2 DateTime picker</h2>
+      <p class="jumbo-description">A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install and integrate.</p>
+              <div class="bt-group">
+            <a href="/components/datepicker/" role="button" class="btn btn-light custom-btn"><i class="fa fa-desktop" aria-hidden="true"></i><span class="hidden-xs">View Details</span></a>
+            <a href="https://cuppalabs.github.io/angular-cuppa-datepicker" target="_blank" role="button" class="btn btn-light custom-btn"><i class="fa fa-download" aria-hidden="true"></i><span class="hidden-xs"> Live Demo </span></a>
+        </div>
+        </div>
+        <div class="col-md-6">
+          <img class="" src="/img/banner-img/datepicker-banner.png">
+        </div>
+      </div>
+      
+      
+    </div>
+     
+ 
+ 
+ 
+
+    <div class="carousel-item jumbo-section ">
+      <div class="row">
+        <div class="col-md-6">
+          <h6>Most Viewed</h6>
+      <h2 class="jumbo-title">AngularJS Fan menu</h2>
+      <p class="jumbo-description">Cuppa Angular Fan Menu is an angular directive for cool menu componet for web and mobile , developed using `angularJS`, `CSS3`, `HTML5`.</p>
+              <div class="bt-group">
+            <a href="/components/fanmenu/" role="button" class="btn btn-light custom-btn"><i class="fa fa-desktop" aria-hidden="true"></i><span class="hidden-xs">View Details</span></a>
+            <a href="https://cuppalabs.github.io/angular-fan-menu" target="_blank" role="button" class="btn btn-light custom-btn"><i class="fa fa-download" aria-hidden="true"></i><span class="hidden-xs"> Live Demo </span></a>
+        </div>
+        </div>
+        <div class="col-md-6">
+          <img class="" src="/img/banner-img/fanmenu-banner.png">
+        </div>
+      </div>
+      
+      
+    </div>
+     
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+
+  </div>
+  <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a> -->
 </div>
 
+<div class="container">
 
-
-
-<!--<h2>Recently Discovered components</h2>
-
-<ul>
+  <div class="row flex-xl-nowrap center-content">
+    
+    <div class="col">
+      <div class="row component-list">
+         <div class="col-md-12">
+   <div class="row">
+          
   
-</ul> -->
+ 
+<div class="col-md-3 card-container">
+  <div class="card">
+    <a href="/components/multiselectDropdown/"><img class="card-img-top" src="/img/components/multiselect-thumbnail.png" alt="MultiSelect Dropdown"></a>
+    <div class="card-body">
+      <h4 class="card-title"><a href="/components/multiselectDropdown/">MultiSelect Dropdown</a></h4>
+      <p class="card-text">A multiselect dropdown component for angular 2 and 4 applications. Developed in Angular 2 and 4, its easy to install and integrate.</p>
+    </div>
+     <div class="card-footer">
+       <a href="/components/multiselectDropdown/" class="card-link">View Details <i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+</div>
+ 
+ 
+ 
+<div class="col-md-3 card-container">
+  <div class="card">
+    <a href="/components/slidemenu/"><img class="card-img-top" src="/img/components/slidemenu-thumbnail.png" alt="Angular 2 Slide Menu"></a>
+    <div class="card-body">
+      <h4 class="card-title"><a href="/components/slidemenu/">Angular 2 Slide Menu</a></h4>
+      <p class="card-text">An angular 2 slide navigation menu component for mobile and web.Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days.</p>
+    </div>
+     <div class="card-footer">
+       <a href="/components/slidemenu/" class="card-link">View Details <i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+</div>
+ 
+ 
+  
+ 
+  
+ 
+ 
+<div class="col-md-3 card-container">
+  <div class="card">
+    <a href="/components/datatable/"><img class="card-img-top" src="/img/components/datatable-thumbnail.png" alt="Angular 2 Data Table"></a>
+    <div class="card-body">
+      <h4 class="card-title"><a href="/components/datatable/">Angular 2 Data Table</a></h4>
+      <p class="card-text">Angular 2 Datatable component. Render 10,000+ Records with high performance. The datatable component allows users to browse and edit tabular data.</p>
+    </div>
+     <div class="card-footer">
+       <a href="/components/datatable/" class="card-link">View Details <i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+</div>
+ 
+ 
+ 
+<div class="col-md-3 card-container">
+  <div class="card">
+    <a href="/components/datepicker/"><img class="card-img-top" src="/img/components/datepicker-thumbnail.png" alt="DateTime picker"></a>
+    <div class="card-body">
+      <h4 class="card-title"><a href="/components/datepicker/">DateTime picker</a></h4>
+      <p class="card-text">A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install and integrate.</p>
+    </div>
+     <div class="card-footer">
+       <a href="/components/datepicker/" class="card-link">View Details <i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+</div>
+ 
+ 
+ 
+<div class="col-md-3 card-container">
+  <div class="card">
+    <a href="/components/fanmenu/"><img class="card-img-top" src="/img/components/fanmenu-thumbnail.png" alt="Circular Fan Menu"></a>
+    <div class="card-body">
+      <h4 class="card-title"><a href="/components/fanmenu/">Circular Fan Menu</a></h4>
+      <p class="card-text">Cuppa Angular Fan Menu is an angular directive for cool menu componet for web and mobile , developed using `angularJS`, `CSS3`, `HTML5`.</p>
+    </div>
+     <div class="card-footer">
+       <a href="/components/fanmenu/" class="card-link">View Details <i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+</div>
+ 
+ 
+  
+ 
+  
+ 
+ 
+<div class="col-md-3 card-container">
+  <div class="card">
+    <a href="/tutorials/how-to-implement-angular2-form-validations/"><img class="card-img-top" src="/img/tutorials/form-validations-tutorial-banner.png" alt="Angular 2 Form validations and custom validation, How to Implement"></a>
+    <div class="card-body">
+      <h4 class="card-title"><a href="/tutorials/how-to-implement-angular2-form-validations/">Angular 2 Form validations and custom validation, How to Implement</a></h4>
+      <p class="card-text">Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2 validate interface.</p>
+    </div>
+     <div class="card-footer">
+       <a href="/tutorials/how-to-implement-angular2-form-validations/" class="card-link">View Details <i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+</div>
+ 
+ 
+  
+ 
+  
+ 
+  
+ 
+  
 
 
-<footer class="footer">
-  <p>© 2009-2017 https://cuppalabs.github.io/ <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
-</footer>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=929055083862567";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-</body>
+   </div>
+         </div>
+      </div>
+      <!--/row-->
 
-<script>
-  $(window).scroll(function(){
-  var sticky = $('.sticky'),
-      scroll = $(window).scrollTop(),
-      sticky2 = $('.left-sticky'),
-      sticky3 = $('.content-sticky'),
-      sticky4 = $('.fixed-ad'),
-      sticky5 = $('.sec-menu-sticky'),
-      sticky6 = $('.doc-menu-sticky'),
-      sticky7 = $('.doc-left-sticky');
 
-  if (scroll >= 60) {
-    sticky.addClass('fixed');
-    sticky2.addClass('left-fixed');
-    sticky3.addClass('content-fixed');
-  }
-  else {
-    sticky.removeClass('fixed');
-    sticky2.removeClass('left-fixed');
-    sticky3.removeClass('content-fixed');
-  }
-  if (scroll >= 50) {
-    sticky4.addClass('fixed');
-  }
-  else if (scroll < 50) {
-    sticky4.removeClass('fixed');
-  }
-  if (scroll >= 364) {
-    sticky5.addClass('fixed');
-  }
-  else if (scroll <= 364) {
-    sticky5.removeClass('fixed');
-  }
-  if (scroll >= 200 ) {
-    sticky6.addClass('fixed');
-  }
-  else if (scroll <= 200 ) {
-    sticky6.removeClass('fixed');
-  }
-  if (scroll >= 200 ) {
-    sticky7.addClass('fixed');
-  }
-  else if (scroll <= 200 ) {
-    sticky7.removeClass('fixed');
-  }
-});
-</script>
-<script>
-$(function() {
-  return $("h2, h3, h4, h5, h6").each(function(i, el) {
-    var $el, icon, id;
+    </div>
+    <!--/span-->
+    <!--/span-->
+  </div>
+  <!--/row-->
+</div>
+
+  <footer class="footer">
+    <p>© 2009-2017 &nbsp <a href="https://cuppalabs.github.io" style="color: #fff;font-size: 16px;">Cuppa Labs</a> &nbsp <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <script>
+    $(function() {
+  return $(".component-article h1, .component-article h2, .component-article h3, .component-article h4, .component-article h5, .component-article h6").each(function(i, el) {
+    var $el, icon, id, val;
     $el = $(el);
-    id = $el.attr('id');
-    icon = '<i class="fa fa-link"></i>';
+    val = $(el).html().split(' ').join('-');
+    id = $el.attr('id', val);
     if (id) {
-      $el.addClass('anchor');
-      return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id));
+      return $el;
+    }
+  });
+});
+    $(function() {
+  return $("#navbar-example2 > a").each(function(i, el) {
+    var $el, icon, id, val;
+    $el = $(el);
+    val = '#'+$(el).html().split(' ').join('-');
+    id = $el.attr('href', val);
+    if (id) {
+      return $el;
     }
   });
 });
@@ -654,52 +452,15 @@ $(function() {
     $el.addClass('table table-bordered table-responsive');
   });
 });
-/*$(function(){
-      $("#myScrollspy ul li a[href^='#']").on('click', function(e) {
-
-       // prevent default anchor click behavior
-       e.preventDefault();
-
-       // animate
-       $('html, body').animate({
-           scrollTop: $(this.hash).offset().top - 75
-         }, 300, function(){
-   
-           // when done, add hash to url
-           // (default click behaviour)
-           window.location.hash = this.hash;
-         });
-
-    });
-
-});*/
-$(document).on('click', '.index-list a', function (event) {
-    "use strict";
-    event.preventDefault();
-    var animLen = $($.attr(this, 'href')).offset().top - 62.667 - 30;
-    $('html, body').animate({
-        scrollTop: animLen
-    }, 300);
-
-});
-$(function () {
-    "use strict";
-    $(window).bind('scroll', function () {
-        $('.anchor').each(function () {
-            var anchored = $(this).attr("id"),
-                position = $(this).position().top - $(window).scrollTop()- 62.667 - 30,
-                targetOffset = $(this).offset().top - 75 - 30;
-
-            if ($(window).scrollTop() > targetOffset) {
-
-                $('ul.index-list').find('li').removeClass("active");
-                $('ul.index-list').find(('*[data-anchor="' + anchored + '"]')).addClass("active");
-            }
-        });
-    });
-});
-</script>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  function toJSONLocal (date) {
+	var local = new Date(date);
+	local.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+	return local.toJSON().slice(0, 10);
+}
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+  </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -710,4 +471,6 @@ $(function () {
   ga('send', 'pageview');
 
 </script>
+</body>
+
 </html>

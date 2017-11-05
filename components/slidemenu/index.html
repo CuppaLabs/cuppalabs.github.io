@@ -1,176 +1,203 @@
 <!DOCTYPE html>
 <html lang="en-ca">
+
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
-  <title>Slide Menu</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Asap:500,700" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/img/coffee14.png" type="image/x-icon" />
+  <title>Angular 2 Slide Menu</title>
   <link href="/css/main.css" rel="stylesheet">
   <meta name="description" content="An angular 2 slide navigation menu component for mobile and web.Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days.">
-  <meta content='angular 2 menu, angular 2 slide menu, angular2 left slide menu, angular 2 hamburger menu' name='keywords'/>
-  <meta name="description" content="An angular 2 slide navigation menu component for mobile and web.Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days."/>
-<meta property="og:description" content="An angular 2 slide navigation menu component for mobile and web.Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days." />
-<meta property="og:url" content="/components/slidemenu/" />
-<meta property="og:site_name" content="Cuppa Labs" />
-<meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
-<meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
-<meta property="article:tag" content="Angular 2" />
-<meta property="article:tag" content="html5" />
-<meta property="article:tag" content="css3" />
-<meta property="og:image" content="http://cuppalabs.github.io/img/component/slidemenu-thumbnail.png" />
+  <meta content='angular 2 menu, angular 2 slide menu, angular2 left slide menu, angular 2 hamburger menu' name='keywords' />
+  <meta property="og:description" content="An angular 2 slide navigation menu component for mobile and web.Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days." />
+  <meta property="og:url" content="/components/slidemenu/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Angular 2 Slide Menu" />
+  <meta property="og:site_name" content="Cuppa Labs" />
+  <meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
+  <meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
+  <meta property="article:tag" content="Angular 2" />
+  <meta property="article:tag" content="html5" />
+  <meta property="article:tag" content="css3" />
+  <meta property="og:image" content="/img/components/slidemenu-thumbnail.png" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 </head>
-<body>
-<nav class="navbar main-menu navbar-default">
-    <div class="container-fluid">
-        <div class="menu-content">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">
-                <img src="/img/cuppa-logo-coffee11.png" alt="">
+
+<body data-spy="scroll" data-target="#navbar-example2" data-offset="60">
+
+  <nav class="navbar navbar-expand-md top-navbar d-print-none">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+          <img src="/img/cuppa-logo-coffee11.png" height="32" alt="">
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+      aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-navicon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/components">Angular Components</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/tutorials">Tutorials</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/ng2-social-login">OAuth</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/aboutme">About Me</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://github.com/CuppaLabs">
+                <i class="fa fa-github"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://www.facebook.com/cuppalabs">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://www.linkedin.com/in/pradeep-kumar-terli">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://plus.google.com/102171107795347642020">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://twitter.com/PradeepTerli">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+  
+  <div class="container">
+
+  <div class="row flex-xl-nowrap center-content">
+    <div class="col col-md-12 col-lg-9 left-col">
+      <div class="row component-headline">
+        <div class="col-md-12 px-0">
+        <div class="navbar">
+          <h4 class="mr-md-auto component-title">Angular 2 Slide Menu</h4>
+          <ul class="navbar-nav flex-row ml-md-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-share-alt share-btn"></i>
+            </a>
+              <div class="dropdown-menu">
+                <h6 class="pt-2 pb-1 pr-3 pl-3">Share on</h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="http://www.facebook.com/sharer.php?u=/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
+                  rel="nofollow" target="_blank">
+                <i class="fa fa-facebook"></i>
+              </a>
+                <a class="dropdown-item" href="http://www.linkedin.com/shareArticle?url=/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
+                  rel="nofollow" target="_blank">
+                <i class="fa fa-linkedin"></i>
+              </a>
+                <a class="dropdown-item" href="http://twitter.com/share?url=/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
+                  rel="nofollow" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+                <a class="dropdown-item" href="https://plus.google.com/share?url=/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
+                  rel="nofollow" target="_blank">
+                <i class="fa fa-google"></i>
+              </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link mr-md-2 btn btn-primary d-none d-md-block" href="https://cuppalabs.github.io/cuppa-ng2-slidemenu" target="_blank">
+                Live Demos
+            </a>
+             <a class="nav-item nav-link mr-md-2 d-block d-md-none" href="https://cuppalabs.github.io/cuppa-ng2-slidemenu" target="_blank">
+                <i class="fa fa-tv  share-btn"></i>
+            </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link mr-md-2 btn btn-primary d-none d-md-block" href="https://github.com/CuppaLabs/cuppa-ng2-slidemenu" target="_blank">
+                Code on Github
+            </a>
+             <a class="nav-item nav-link mr-md-2 d-block d-md-none" href="https://github.com/CuppaLabs/cuppa-ng2-slidemenu" target="_blank">
+                <i class="fa fa-download  share-btn"></i>
+            </a>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-lg-3 sidebar-offcanvas sidebar d-none d-md-non d-lg-block" id="sidebar">
+          <div class="list-group" id="navbar-example2">
+            <a href="#" class="list-group-item disabled">
+              <h6>Table of Contents</h6>
+            </a>
+            
+            <a href="#Overview" class="list-group-item">Overview</a> 
+            <a href="#Getting Started" class="list-group-item">Getting Started</a> 
+            <a href="#Installation" class="list-group-item">Installation</a> 
+            <a href="#Usage" class="list-group-item">Usage</a> 
+            <a href="#Dependencies" class="list-group-item">Dependencies</a> 
+
+          </div>
+          <div class="card bg-default mb-3 user-card" style="max-width: 20rem;">
+             <div class="card-header"></div>
+            <div class="card-body">
+              <img src="http://cuppalabs.github.io/img/pradeep.jpg" alt="" class="img-me">
+              <h5 class="card-title">Pradeep Kumar Terli</h5>
+              <p class="card-text">
+                Web UI Developer, Blogger, Thinker, Entrepreneur
+              </p>
+              <nav class="nav">
+                <a class="nav-link active" href="https://www.facebook.com/pradeepkumar.terli">
+                  <i class="fa fa-facebook"></i>
                 </a>
+                <a class="nav-link" href="https://twitter.com/PradeepTerli">
+                  <i class="fa fa-twitter"></i>
+                </a>
+                <a class="nav-link" href="https://github.com/CuppaLabs">
+                  <i class="fa fa-github"></i>
+                </a>
+                <a class="nav-link" href="https://www.linkedin.com/in/pradeep-kumar-terli">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+                <a class="nav-link" href="https://plus.google.com/102171107795347642020">
+                  <i class="fa fa-google-plus"></i>
+                </a>
+              </nav>
             </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/" class="">Home</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="/components" class="current">Angular Components</a>
-                    <li><a href="/tutorials" class="">Tutorials</a></li>
-                     <li><a href="/ng2-social-login" class="">OAuth</a></li>
-                    <li><a href="/aboutMe" class="">About Me </a></li>
-                </ul>
-                <div class="i_con">
-                    <a href="https://github.com/CuppaLabs"><i class="fa fa-github"></i></a>
-                    <a href="https://www.facebook.com/cuppalabs"><i class="fa fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/pradeep-kumar-terli"><i class="fa fa-linkedin"></i></a>
-                    <a href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a>
-                    <a href="https://twitter.com/PradeepTerli"><i class="active fa fa-twitter"></i></a>
-                </div>
-
-            </div>
-            <div class="show-search">
-                <form role="search" method="get" id="searchform" action="#">
-                    <div>
-                        <input type="text" placeholder="Search and hit enter..." name="s" id="s">
-                    </div>
-                </form>
-            </div>
+          </div>
         </div>
-    </div>
-</nav>
+        <div class="col-md-12 col-lg-9">
 
-
-<nav class="navbar secondary-menu navbar-default sticky">
-    <div class="container-fluid">
-    <div class="col-md-2">
-        <h3><a href="/components">COMPONENTS</a></h3>
-    </div>
-    <div class="col-md-3">
-        <h2 class="component-title">Slide Menu</h2>
-    </div>
-    <div class="col-md-4">
-        <div class="bt-group">
-            <a class="btn btn-success" href="https://cuppalabs.github.io/cuppa-ng2-slidemenu" target="blank"><i class="fa fa-desktop" aria-hidden="true"></i> Live Demos</a>
-            <a class="btn btn-success" href="https://github.com/CuppaLabs/cuppa-ng2-slidemenu" target="blank"><i class="fa fa-github" aria-hidden="true"></i>Code on Github</a>
-        </div>
-    </div>
-    <div class="col-md-3">
-
-    </div>
-    </div>
-</nav>
-<div class="main-content component-section content-sticky">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-                <div class="left-sticky">
-                    <nav id="myScrollspy">
-                <ul class="index-list nav">
-                    <li><h5>Table of Contents</h5></li>
-                    
-                    
-                    
-                    <li class="active" data-anchor="overview"><a href="#overview">overview</a></li>
-                    
-                   <!-- <li data-anchor="getting-started"><a href="#getting-started">Getting Started</a></li>
-                    <li data-anchor="installation"><a href="#installation">Installation</a></li>
-                    <li data-anchor="basic-usage"><a href="#basic-usage">Basic Usage</a></li>
-                    <li data-anchor="section6"><a href="#section6">Example</a></li>-->
-                    
-                    
-                    
-                     <li data-anchor="getting-started"><a href="#getting-started">getting started</a></li>
-                     
-                   <!-- <li data-anchor="getting-started"><a href="#getting-started">Getting Started</a></li>
-                    <li data-anchor="installation"><a href="#installation">Installation</a></li>
-                    <li data-anchor="basic-usage"><a href="#basic-usage">Basic Usage</a></li>
-                    <li data-anchor="section6"><a href="#section6">Example</a></li>-->
-                    
-                    
-                    
-                     <li data-anchor="installation"><a href="#installation">installation</a></li>
-                     
-                   <!-- <li data-anchor="getting-started"><a href="#getting-started">Getting Started</a></li>
-                    <li data-anchor="installation"><a href="#installation">Installation</a></li>
-                    <li data-anchor="basic-usage"><a href="#basic-usage">Basic Usage</a></li>
-                    <li data-anchor="section6"><a href="#section6">Example</a></li>-->
-                    
-                    
-                    
-                     <li data-anchor="basic-usage"><a href="#basic-usage">basic usage</a></li>
-                     
-                   <!-- <li data-anchor="getting-started"><a href="#getting-started">Getting Started</a></li>
-                    <li data-anchor="installation"><a href="#installation">Installation</a></li>
-                    <li data-anchor="basic-usage"><a href="#basic-usage">Basic Usage</a></li>
-                    <li data-anchor="section6"><a href="#section6">Example</a></li>-->
-                    
-                </ul>
-    </nav>
-                </div>
+          <div class="row component-article">
+            <div class="col component-image">
+              <img class="img-fluid" src="/img/components/slidemenu-thumbnail.png" />
             </div>
-            <div class="col-md-8">
-                <article class="post">
-                    <div class="post-content">
-                        <header class="entry-header">
-                           <!-- <h1 class="entry-title" >Slide Menu</h2> -->
-                            <div class="social-share">
-							<span class="social-share-title pull-left text-capitalize">By Pradeep Terli On 28-03-2017</span>
-                               <ul class="text-center pull-right">
-    <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
-    </li>
-    <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
-    </li>
-    <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
-    </li>
-    <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
-    </li>
-</ul> 
-                            </div>
-                        <h2 class="entry-title" id="overview">Overview</h2>
-                            <p>An angular 2 slide navigation menu component for mobile and web.Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days.</p>
-                            <div class="post-thumb">
-                        <a href="#"><img src="/img/component/slidemenu-thumbnail.png" alt=""></a>
-                    </div> 
-                        </header>
-                        <div class="entry-content">
-                            <p>An angular 2 slide navigation menu component for mobile and web.
-Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days.</p>
 
-<h3 id="getting-started">Getting Started</h3>
+          </div>
+          <div class="row component-article">
+            <h3 id="overview">Overview</h3>
+
+<p>Hamburger menu for mobile and web is very common feature and a must have in app development.
+An angular 2 slide navigation menu component for mobile and web. Hamburger kind of menu for mobile and web is very common feature and a must have as well, these days.</p>
+
+<h2 id="getting-started">Getting Started</h2>
 
 <h3 id="installation">Installation</h3>
 <ul>
@@ -186,7 +213,7 @@ Hamburger kind of menu for mobile and web is very common feature and a must have
 </code></pre>
 </div>
 
-<h3 id="basic-usage">Basic Usage</h3>
+<h3 id="usage">Usage</h3>
 
 <ul>
   <li>Import the <code class="highlighter-rouge">SlideMenuModule</code> in your <code class="highlighter-rouge">ngModule</code> as follows:</li>
@@ -247,6 +274,11 @@ Hamburger kind of menu for mobile and web is very common feature and a must have
 </code></pre>
 </div>
 
+<h3 id="dependencies">Dependencies</h3>
+<ul>
+  <li><code class="highlighter-rouge">Font-awesome</code> is required for the icons in component.</li>
+</ul>
+
 <p>Thats all Folks !! You are good to go.</p>
 
 <h3 id="view-the-demo-here">View the <a href="https://cuppalabs.github.io/cuppa-ng2-slidemenu/">Demo here</a>.</h3>
@@ -258,175 +290,160 @@ Hamburger kind of menu for mobile and web is very common feature and a must have
 <ul>
   <li>git clone <code class="highlighter-rouge">https://github.com/CuppaLabs/cuppa-ng2-slidemenu.git</code></li>
   <li>npm install</li>
-  <li>npm start</li>
-  <li>Go to <code class="highlighter-rouge">http://localhost:3000</code> where your app will run.</li>
+  <li>ng serve</li>
+  <li>Go to <code class="highlighter-rouge">http://localhost:4200</code> where your app will run.</li>
 </ul>
+
+<h3 id="credits">Credits</h3>
+<p>Thanks to font awesome for the wonderful font icons.</p>
 
 <h2 id="licence">Licence</h2>
 
 <p>This project is licensed under the MIT license. See the <a href="LICENSE">LICENSE</a> file for more info.</p>
 
+<p>–</p>
+
 <p>The MIT License (MIT)
 Copyright (c) 2016 Cuppa Labs</p>
 
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
 
-                        </div>
-                        <div class="social-share">
-							<span class="social-share-title pull-left text-capitalize">By Pradeep Terli On 28-03-2017</span>
-                               <ul class="text-center pull-right">
-    <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
-    </li>
-    <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
-    </li>
-    <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
-    </li>
-    <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/components/slidemenu/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
-    </li>
-</ul> 
-                        </div>
-                    </div>
-                </article>
-                <div class="top-comment"><!--top comment-->
-                    <img src="/img/pradeep.jpg" class="pull-left img-circle" alt="">
-                    <h4>Pradeep Terli</h4>
-                    <p>Web UI Developer, Blogger, Thinker , Entrepreneur. Loves to explore technology with focus on web technologies.</p>
-                     <div class="social-share">
-                            <ul>
-                                <li><a class="s-facebook" href="https://www.facebook.com/pradeepkumar.terli" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                <li><a class="s-linkedin" href="http://www.linkedin.com/in/pradeep-kumar-terli" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a class="s-google-plus" href=""><i class="fa fa-google-plus"></i></a></li>
-                                <li><a class="s-twitter" href=""><i class="fa fa-twitter"></i></a></li>
-                            </ul>
-                        </div>
-                </div>
-                <div class="comments-section">
-                    
-                        <div id="disqus_thread"></div>
-<script>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+
+<h2 id="author">Author</h2>
+<p>Pradeep Kumar Terli  @ <a href="http://www.cuppalabs.com">Cuppa Labs</a></p>
 
 
-var disqus_config = function () {
-this.page.url = "https://cuppalabs.github.io/components/slidemenu/";  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = "Slide Menu"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = '//cuppalabs.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                                
-                    
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="fixed-ad">
-                    <div class="row">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          </div>
+          <!--/row-->
+          <div class="comments-section">
+
+            <div id="disqus_thread"></div>
+            <script>
+              var disqus_config = function () {
+                this.page.url = "/components/slidemenu/";  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = "Angular 2 Slide Menu"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              };
+              (function () { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = '//cuppalabs.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            </script>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!--/span-->
+    <div class="col d-none d-md-block sidebar ad-sidebar">
+              <div class="row component-headline">
+        <div class="col-md-12">
+        <div class="navbar">
+          <i class="fa fa-download" style="font-size: 30px;margin-top: 5px;"></i>
+<div class="mr-md-auto component-title"  style="padding: 11px 0px 0px 10px;text-align: center;">
+    <h4 style="margin: 0;line-height: 13px;" id="cuppa-ng2-slidemenu"><img style="width:45px;" src="/img/ezgif.gif"/></h4> 
+    <small style="line-height: 12px;font-size: 14px;">Downloads</small>
+</div>
+        </div>
+        </div>
+
+      </div>
+      <div class="row" style="margin-top: 15px;margin-bottom: 15px;">
+    <div class="col-md-12">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- pradeepterli_sidebar_AdSense1_300x250_as -->
 <ins class="adsbygoogle"
-     style="display:block;width:200px;height:250px"
+     style="display:inline-block;width:300px;height:250px"
      data-ad-client="ca-pub-4525567075133342"
      data-ad-slot="2263435109"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+    </div>
+</div>
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<div class="row" style="margin-top: 15px;margin-bottom: 15px;">
+    <div class="col-md-12">
+       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Sidebar-two -->
 <ins class="adsbygoogle"
-     style="display:block;width:200px;height:250px"
+     style="display:inline-block;width:300px;height:250px"
      data-ad-client="ca-pub-4525567075133342"
      data-ad-slot="8850561506"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-                    </div>       
-                </div>
-            </div>
-        </div>
     </div>
 </div>
+    </div>
+    <script>
+  $(function() {
+    var currentTime = toJSONLocal(new Date);
+  $.ajax({
+  method: "GET",
+  url: "https://npm-stat.com/downloads/range/2017-03-28:"+currentTime+"/cuppa-ng2-slidemenu"
+})
+  .done(function( data ) {
+    var total = 0;
+    $.each(data.downloads, function(key, obj){
+      total += obj.downloads
+    });
+    $("#cuppa-ng2-slidemenu").empty().html(numberWithCommas(total));
+  });
+  });
 
 
-
-
-<footer class="footer">
-  <p>© 2009-2017 https://cuppalabs.github.io <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
-</footer>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=929055083862567";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-</body>
-
-<script>
-  $(window).scroll(function(){
-  var sticky = $('.sticky'),
-      scroll = $(window).scrollTop(),
-      sticky2 = $('.left-sticky'),
-      sticky3 = $('.content-sticky'),
-      sticky4 = $('.fixed-ad'),
-      sticky5 = $('.sec-menu-sticky'),
-      sticky6 = $('.doc-menu-sticky'),
-      sticky7 = $('.doc-left-sticky');
-
-  if (scroll >= 60) {
-    sticky.addClass('fixed');
-    sticky2.addClass('left-fixed');
-    sticky3.addClass('content-fixed');
-  }
-  else {
-    sticky.removeClass('fixed');
-    sticky2.removeClass('left-fixed');
-    sticky3.removeClass('content-fixed');
-  }
-  if (scroll >= 50) {
-    sticky4.addClass('fixed');
-  }
-  else if (scroll < 50) {
-    sticky4.removeClass('fixed');
-  }
-  if (scroll >= 364) {
-    sticky5.addClass('fixed');
-  }
-  else if (scroll <= 364) {
-    sticky5.removeClass('fixed');
-  }
-  if (scroll >= 200 ) {
-    sticky6.addClass('fixed');
-  }
-  else if (scroll <= 200 ) {
-    sticky6.removeClass('fixed');
-  }
-  if (scroll >= 200 ) {
-    sticky7.addClass('fixed');
-  }
-  else if (scroll <= 200 ) {
-    sticky7.removeClass('fixed');
-  }
-});
 </script>
-<script>
-$(function() {
-  return $("h2, h3, h4, h5, h6").each(function(i, el) {
-    var $el, icon, id;
+    <!--/span-->
+  </div>
+  <!--/row-->
+
+  <footer class="footer">
+    <p>© 2009-2017 &nbsp <a href="https://cuppalabs.github.io" style="color: #fff;font-size: 16px;">Cuppa Labs</a> &nbsp <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <script>
+    $(function() {
+  return $(".component-article h1, .component-article h2, .component-article h3, .component-article h4, .component-article h5, .component-article h6").each(function(i, el) {
+    var $el, icon, id, val;
     $el = $(el);
-    id = $el.attr('id');
-    icon = '<i class="fa fa-link"></i>';
+    val = $(el).html().split(' ').join('-');
+    id = $el.attr('id', val);
     if (id) {
-      $el.addClass('anchor');
-      return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id));
+      return $el;
+    }
+  });
+});
+    $(function() {
+  return $("#navbar-example2 > a").each(function(i, el) {
+    var $el, icon, id, val;
+    $el = $(el);
+    val = '#'+$(el).html().split(' ').join('-');
+    id = $el.attr('href', val);
+    if (id) {
+      return $el;
     }
   });
 });
@@ -437,52 +454,15 @@ $(function() {
     $el.addClass('table table-bordered table-responsive');
   });
 });
-/*$(function(){
-      $("#myScrollspy ul li a[href^='#']").on('click', function(e) {
-
-       // prevent default anchor click behavior
-       e.preventDefault();
-
-       // animate
-       $('html, body').animate({
-           scrollTop: $(this.hash).offset().top - 75
-         }, 300, function(){
-   
-           // when done, add hash to url
-           // (default click behaviour)
-           window.location.hash = this.hash;
-         });
-
-    });
-
-});*/
-$(document).on('click', '.index-list a', function (event) {
-    "use strict";
-    event.preventDefault();
-    var animLen = $($.attr(this, 'href')).offset().top - 62.667 - 30;
-    $('html, body').animate({
-        scrollTop: animLen
-    }, 300);
-
-});
-$(function () {
-    "use strict";
-    $(window).bind('scroll', function () {
-        $('.anchor').each(function () {
-            var anchored = $(this).attr("id"),
-                position = $(this).position().top - $(window).scrollTop()- 62.667 - 30,
-                targetOffset = $(this).offset().top - 75 - 30;
-
-            if ($(window).scrollTop() > targetOffset) {
-
-                $('ul.index-list').find('li').removeClass("active");
-                $('ul.index-list').find(('*[data-anchor="' + anchored + '"]')).addClass("active");
-            }
-        });
-    });
-});
-</script>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  function toJSONLocal (date) {
+	var local = new Date(date);
+	local.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+	return local.toJSON().slice(0, 10);
+}
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+  </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -493,4 +473,6 @@ $(function () {
   ga('send', 'pageview');
 
 </script>
+</body>
+
 </html>

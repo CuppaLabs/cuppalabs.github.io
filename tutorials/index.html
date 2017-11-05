@@ -1,336 +1,237 @@
 <!DOCTYPE html>
 <html lang="en-ca">
+
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
-  <title>Tutorials | Cuppa Labs - UI Development | Tutorials | Demos | Javascript | Angular | HTML5 | CSS3</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Asap:500,700" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/img/coffee14.png" type="image/x-icon" />
+  <title>Angular 2 Tutorials</title>
   <link href="/css/main.css" rel="stylesheet">
-  <meta name="description" content="UI Programming Tech Blog with Demos and Tutorials. Learn Angular 2, JavaScript, HTML5, CSS3 with examples. Free UI components and tutorials for your web projects.">
-  <meta content='' name='keywords'/>
-  <meta name="description" content="UI Programming Tech Blog with Demos and Tutorials. Learn Angular 2, JavaScript, HTML5, CSS3 with examples. Free UI components and tutorials for your web projects."/>
-<meta property="og:description" content="UI Programming Tech Blog with Demos and Tutorials. Learn Angular 2, JavaScript, HTML5, CSS3 with examples. Free UI components and tutorials for your web projects." />
-<meta property="og:url" content="/tutorials/" />
-<meta property="og:site_name" content="Cuppa Labs" />
-<meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
-<meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
-<meta property="article:tag" content="Angular 2" />
-<meta property="article:tag" content="html5" />
-<meta property="article:tag" content="css3" />
-<meta property="og:image" content="http://cuppalabs.github.io/img//" />
+  <meta name="description" content="">
+  <meta content='' name='keywords' />
+  <meta property="og:description" content="" />
+  <meta property="og:url" content="/tutorials/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Angular 2 Tutorials" />
+  <meta property="og:site_name" content="Cuppa Labs" />
+  <meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
+  <meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
+  <meta property="article:tag" content="Angular 2" />
+  <meta property="article:tag" content="html5" />
+  <meta property="article:tag" content="css3" />
+  <meta property="og:image" content="/img/banner-img/website-banner.png" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 </head>
-<body>
-<nav class="navbar main-menu navbar-default">
-    <div class="container-fluid">
-        <div class="menu-content">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">
-                <img src="/img/cuppa-logo-coffee11.png" alt="">
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/" class="">Home</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="/components" class="">Angular Components</a>
-                    <li><a href="/tutorials" class="current">Tutorials</a></li>
-                     <li><a href="/ng2-social-login" class="">OAuth</a></li>
-                    <li><a href="/aboutMe" class="">About Me </a></li>
-                </ul>
-                <div class="i_con">
-                    <a href="https://github.com/CuppaLabs"><i class="fa fa-github"></i></a>
-                    <a href="https://www.facebook.com/cuppalabs"><i class="fa fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/pradeep-kumar-terli"><i class="fa fa-linkedin"></i></a>
-                    <a href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a>
-                    <a href="https://twitter.com/PradeepTerli"><i class="active fa fa-twitter"></i></a>
-                </div>
 
-            </div>
-            <div class="show-search">
-                <form role="search" method="get" id="searchform" action="#">
-                    <div>
-                        <input type="text" placeholder="Search and hit enter..." name="s" id="s">
-                    </div>
-                </form>
-            </div>
-        </div>
+<body data-spy="scroll" data-target="#navbar-example2" data-offset="60">
+
+  <nav class="navbar navbar-expand-md top-navbar d-print-none">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+          <img src="/img/cuppa-logo-coffee11.png" height="32" alt="">
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+      aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-navicon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/components">Angular Components</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/tutorials">Tutorials</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/ng2-social-login">OAuth</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/aboutme">About Me</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://github.com/CuppaLabs">
+                <i class="fa fa-github"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://www.facebook.com/cuppalabs">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://www.linkedin.com/in/pradeep-kumar-terli">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://plus.google.com/102171107795347642020">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://twitter.com/PradeepTerli">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+      </ul>
     </div>
-</nav>
+  </div>
+</nav> 
+  
+  <div class="container">
 
+  <div class="row flex-xl-nowrap center-content">
+    
+    <div class="col">
+      <div class="row component-list">
+         <div class="col-md-12">
+   <div class="row">
+         
+ 
+  
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+ 
 
-<div class="container-fluid">
-<nav class="navbar secondary-menu navbar-default sticky">
-    <div class="container-fluid">
-        <div class="menu-content">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/tutorials">
-                Tutorials
-                </a>
-            </div>
-           <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav text-uppercase">
-                <li>
-                    <a href="/tutorials" class="">All</a>
-                  </li>
-                
-                </ul>
-            </div> -->
-        </div>
+<div class="col-md-4 card-container">
+  <div class="card">
+    <a href="/tutorials/how-to-implement-angular2-form-validations/"><img class="card-img-top" src="/img/tutorials/form-validations-tutorial-banner.png" alt="Angular 2 Form validations and custom validation, How to Implement"></a>
+    <div class="card-body">
+      <h4 class="card-title"><a href="/tutorials/how-to-implement-angular2-form-validations/">Angular 2 Form validations and custom validation, How to Implement</a></h4>
+      <p class="card-text">Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2 validate interface.</p>
     </div>
-</nav>
+    <div class="card-footer">
+       
+      
+       <a href="/tutorials/how-to-implement-angular2-form-validations/" class="card-link">View Details <i class="fa fa-arrow-right"></i></a>
+       
+    </div>
+    
+  </div>
 </div>
-<div class="main-content">
-   <!-- <div class="slider-content"></div> -->
-    <div class="container-fluid">
-        <div class="row ad-row">
-            <div class="col-md-12 col-sm-12">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- github-ads -->
+<script>
+  $(function() {
+     var currentTime = toJSONLocal(new Date);
+  $.ajax({
+  method: "GET",
+  url: "https://npm-stat.com/downloads/range/:"+currentTime+"/"
+})
+  .done(function( data ) {
+    var total = 0;
+    $.each(data.downloads, function(key, obj){
+      total += obj.downloads
+    });
+    $("#").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
+  });
+  });
+</script>
+ 
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+
+
+   </div>
+         </div>
+      </div>
+      <!--/row-->
+
+
+    </div>
+        <div class="col sidebar ad-sidebar">
+          <div class="row" style="margin-top: 15px;margin-bottom: 15px;">
+    <div class="col-md-12">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- pradeepterli_sidebar_AdSense1_300x250_as -->
 <ins class="adsbygoogle"
-     style="display:block"
+     style="display:inline-block;width:300px;height:250px"
      data-ad-client="ca-pub-4525567075133342"
-     data-ad-slot="3548333904"
-     data-ad-format="auto"></ins>
+     data-ad-slot="2263435109"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-
-            </div>
-            
-        </div>
-        <div class="row">
-            <div class="col-md-8 col-sm-12">
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-              <article class="post post-list col-sm-5 col-md-5">
-                    <div class="card">
-                            <div class="post-thumb">
-                                <a href="/tutorials/how-to-implement-angular2-form-validations/">
-                                    <img src="/img/tutorial/form-validations-tutorial-banner.png" alt="" class="pull-left">
-                                    <!--<img src="http://finodiary.trade/wp-content/uploads/2015/06/light-grey-background-pattern-i1.jpg" alt="" class="pull-left"> -->
-                                </a>
-
-                                <a href="/tutorials/how-to-implement-angular2-form-validations/" class="post-thumb-overlay text-center">
-                                    <div class="text-uppercase text-center">View Post</div>
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <header class="entry-header">
-                                    <h1 class="entry-title"><a href="/tutorials/how-to-implement-angular2-form-validations/">Angular 2 Form validations and custom validation, How to Implement</a></h1>
-                                    <div>
-                                        <span class="social-share-title pull-left text-capitalize">
-                                            By Pradeep Terli</span>
-                                        <span class="social-share-title pull-right text-capitalize">
-                                            11 March 2017</span>
-                                    </div> 
-                                    <p class="card-description">Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2...</p>      
-                                    <h6>
-                                        
-                                        <a href="#"> angular</a>
-                                        
-                                        <a href="#"> tutorial</a>
-                                        
-                                    </h6>
-                                    <div class="social-share">
-                                       <ul class="text-center pull-right">
-    <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
-    </li>
-    <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
-    </li>
-    <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
-    </li>
-    <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
-    </li>
-</ul>
-                                    </div> 
-                                </header>
-                            </div>
-                    </div>
-                </article>
-                
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <aside class="widget about-me-widget">
-                        <div class="about-me-img">
-
-                            <div class="about-me-content text-center">
-                                <img src="/img/pradeep.jpg" alt="" class="img-me">
-
-                                <h3 class="text-uppercase">Pradeep Kumar Terli</h3>
-
-                                <p>Web UI Developer, Blogger, Thinker , Entrepreneur. Loves to explore technology with focus on web technologies.</p>
-                            </div>
-                        </div>
-                        <div class="social-share">
-                            <ul class="text-center text-center">
-                                <li><a class="s-facebook" href="https://www.facebook.com/pradeepkumar.terli" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                <li><a class="s-linkedin" href="http://www.linkedin.com/in/pradeep-kumar-terli" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a class="s-google-plus" href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a class="s-twitter" href="https://twitter.com/PradeepTerli"><i class="fa fa-twitter"></i></a></li>
-                            </ul>
-                        </div>
-                    </aside>
-                 <!--   <aside class="widget news-letter">
-                        <h3 class="widget-title text-uppercase text-center">Get Newsletter</h3>
-
-                        <form action="#">
-                            <input type="email" placeholder="Your email address">
-                            <input type="submit" value="Subscribe Now" class="text-uppercase text-center btn btn-subscribe">
-                        </form>
-
-                    </aside> -->    
-                
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- github-ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4525567075133342"
-     data-ad-slot="3548333904"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- tutorial-ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4525567075133342"
-     data-ad-slot="3918262705"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-            </div>
-        </div>
     </div>
 </div>
 
 
-
-<footer class="footer">
-  <p>© 2009-2017 https://cuppalabs.github.io <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
-</footer>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=929055083862567";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-</body>
-
+<div class="row" style="margin-top: 15px;margin-bottom: 15px;">
+    <div class="col-md-12">
+       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Sidebar-two -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-4525567075133342"
+     data-ad-slot="8850561506"></ins>
 <script>
-  $(window).scroll(function(){
-  var sticky = $('.sticky'),
-      scroll = $(window).scrollTop(),
-      sticky2 = $('.left-sticky'),
-      sticky3 = $('.content-sticky'),
-      sticky4 = $('.fixed-ad'),
-      sticky5 = $('.sec-menu-sticky'),
-      sticky6 = $('.doc-menu-sticky'),
-      sticky7 = $('.doc-left-sticky');
-
-  if (scroll >= 60) {
-    sticky.addClass('fixed');
-    sticky2.addClass('left-fixed');
-    sticky3.addClass('content-fixed');
-  }
-  else {
-    sticky.removeClass('fixed');
-    sticky2.removeClass('left-fixed');
-    sticky3.removeClass('content-fixed');
-  }
-  if (scroll >= 50) {
-    sticky4.addClass('fixed');
-  }
-  else if (scroll < 50) {
-    sticky4.removeClass('fixed');
-  }
-  if (scroll >= 364) {
-    sticky5.addClass('fixed');
-  }
-  else if (scroll <= 364) {
-    sticky5.removeClass('fixed');
-  }
-  if (scroll >= 200 ) {
-    sticky6.addClass('fixed');
-  }
-  else if (scroll <= 200 ) {
-    sticky6.removeClass('fixed');
-  }
-  if (scroll >= 200 ) {
-    sticky7.addClass('fixed');
-  }
-  else if (scroll <= 200 ) {
-    sticky7.removeClass('fixed');
-  }
-});
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<script>
-$(function() {
-  return $("h2, h3, h4, h5, h6").each(function(i, el) {
-    var $el, icon, id;
+    </div>
+</div>
+    </div>
+    <!--/span-->
+    <!--/span-->
+  </div>
+  <!--/row-->
+</div>
+
+  <footer class="footer">
+    <p>© 2009-2017 &nbsp <a href="https://cuppalabs.github.io" style="color: #fff;font-size: 16px;">Cuppa Labs</a> &nbsp <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <script>
+    $(function() {
+  return $(".component-article h1, .component-article h2, .component-article h3, .component-article h4, .component-article h5, .component-article h6").each(function(i, el) {
+    var $el, icon, id, val;
     $el = $(el);
-    id = $el.attr('id');
-    icon = '<i class="fa fa-link"></i>';
+    val = $(el).html().split(' ').join('-');
+    id = $el.attr('id', val);
     if (id) {
-      $el.addClass('anchor');
-      return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id));
+      return $el;
+    }
+  });
+});
+    $(function() {
+  return $("#navbar-example2 > a").each(function(i, el) {
+    var $el, icon, id, val;
+    $el = $(el);
+    val = '#'+$(el).html().split(' ').join('-');
+    id = $el.attr('href', val);
+    if (id) {
+      return $el;
     }
   });
 });
@@ -341,52 +242,15 @@ $(function() {
     $el.addClass('table table-bordered table-responsive');
   });
 });
-/*$(function(){
-      $("#myScrollspy ul li a[href^='#']").on('click', function(e) {
-
-       // prevent default anchor click behavior
-       e.preventDefault();
-
-       // animate
-       $('html, body').animate({
-           scrollTop: $(this.hash).offset().top - 75
-         }, 300, function(){
-   
-           // when done, add hash to url
-           // (default click behaviour)
-           window.location.hash = this.hash;
-         });
-
-    });
-
-});*/
-$(document).on('click', '.index-list a', function (event) {
-    "use strict";
-    event.preventDefault();
-    var animLen = $($.attr(this, 'href')).offset().top - 62.667 - 30;
-    $('html, body').animate({
-        scrollTop: animLen
-    }, 300);
-
-});
-$(function () {
-    "use strict";
-    $(window).bind('scroll', function () {
-        $('.anchor').each(function () {
-            var anchored = $(this).attr("id"),
-                position = $(this).position().top - $(window).scrollTop()- 62.667 - 30,
-                targetOffset = $(this).offset().top - 75 - 30;
-
-            if ($(window).scrollTop() > targetOffset) {
-
-                $('ul.index-list').find('li').removeClass("active");
-                $('ul.index-list').find(('*[data-anchor="' + anchored + '"]')).addClass("active");
-            }
-        });
-    });
-});
-</script>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  function toJSONLocal (date) {
+	var local = new Date(date);
+	local.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+	return local.toJSON().slice(0, 10);
+}
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+  </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -397,4 +261,6 @@ $(function () {
   ga('send', 'pageview');
 
 </script>
+</body>
+
 </html>

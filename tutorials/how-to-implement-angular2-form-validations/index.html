@@ -1,148 +1,200 @@
 <!DOCTYPE html>
 <html lang="en-ca">
+
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/img/coffee14.png" type="image/x-icon" />
   <title>Angular 2 Form validations and custom validation, How to Implement</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Asap:500,700" rel="stylesheet">
   <link href="/css/main.css" rel="stylesheet">
   <meta name="description" content="Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2 validate interface.">
-  <meta content='' name='keywords'/>
-  <meta name="description" content="Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2 validate interface."/>
-<meta property="og:description" content="Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2 validate interface." />
-<meta property="og:url" content="/tutorials/how-to-implement-angular2-form-validations/" />
-<meta property="og:site_name" content="Cuppa Labs" />
-<meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
-<meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
-<meta property="article:tag" content="Angular 2" />
-<meta property="article:tag" content="html5" />
-<meta property="article:tag" content="css3" />
-<meta property="og:image" content="http://cuppalabs.github.io/img/tutorial/form-validations-tutorial-banner.png" />
+  <meta content='angular 2 form, angular form validation, custom angular 2 form' name='keywords' />
+  <meta property="og:description" content="Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2 validate interface." />
+  <meta property="og:url" content="/tutorials/how-to-implement-angular2-form-validations/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Angular 2 Form validations and custom validation, How to Implement" />
+  <meta property="og:site_name" content="Cuppa Labs" />
+  <meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
+  <meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
+  <meta property="article:tag" content="Angular 2" />
+  <meta property="article:tag" content="html5" />
+  <meta property="article:tag" content="css3" />
+  <meta property="og:image" content="/img/tutorials/form-validations-tutorial-banner.png" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 </head>
-<body>
-<nav class="navbar main-menu navbar-default">
-    <div class="container-fluid">
-        <div class="menu-content">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">
-                <img src="/img/cuppa-logo-coffee11.png" alt="">
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/" class="">Home</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="/components" class="">Angular Components</a>
-                    <li><a href="/tutorials" class="current">Tutorials</a></li>
-                     <li><a href="/ng2-social-login" class="">OAuth</a></li>
-                    <li><a href="/aboutMe" class="">About Me </a></li>
-                </ul>
-                <div class="i_con">
-                    <a href="https://github.com/CuppaLabs"><i class="fa fa-github"></i></a>
-                    <a href="https://www.facebook.com/cuppalabs"><i class="fa fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/pradeep-kumar-terli"><i class="fa fa-linkedin"></i></a>
-                    <a href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a>
-                    <a href="https://twitter.com/PradeepTerli"><i class="active fa fa-twitter"></i></a>
-                </div>
 
-            </div>
-            <div class="show-search">
-                <form role="search" method="get" id="searchform" action="#">
-                    <div>
-                        <input type="text" placeholder="Search and hit enter..." name="s" id="s">
-                    </div>
-                </form>
-            </div>
-        </div>
+<body data-spy="scroll" data-target="#navbar-example2" data-offset="60">
+
+  <nav class="navbar navbar-expand-md top-navbar d-print-none">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+          <img src="/img/cuppa-logo-coffee11.png" height="32" alt="">
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+      aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-navicon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/components">Angular Components</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/tutorials">Tutorials</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/ng2-social-login">OAuth</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/aboutme">About Me</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://github.com/CuppaLabs">
+                <i class="fa fa-github"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://www.facebook.com/cuppalabs">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://www.linkedin.com/in/pradeep-kumar-terli">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://plus.google.com/102171107795347642020">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://twitter.com/PradeepTerli">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+      </ul>
     </div>
-</nav>
+  </div>
+</nav> 
+  
+  <div class="container">
 
-
-<div class="container-fluid">
-<nav class="navbar secondary-menu navbar-default sticky">
-    <div class="container-fluid">
-        <div class="menu-content">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/tutorials">
-                Tutorials
-                </a>
-            </div>
-           <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav text-uppercase">
-                <li>
-                    <a href="/tutorials" class="">All</a>
-                  </li>
-                
-                </ul>
-            </div> -->
+  <div class="row flex-xl-nowrap center-content">
+    <div class="col col-md-12 col-lg-9 left-col">
+      <div class="row component-headline">
+        <div class="col-md-12 px-0">
+        <div class="navbar">
+          <h4 class="mr-md-auto component-title">Angular 2 Form validations tutorial</h4>
+          <ul class="navbar-nav flex-row ml-md-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-share-alt share-btn"></i>
+            </a>
+              <div class="dropdown-menu">
+                <h6 class="pt-2 pb-1 pr-3 pl-3">Share on</h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="http://www.facebook.com/sharer.php?u=/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
+                  rel="nofollow" target="_blank">
+                <i class="fa fa-facebook"></i>
+              </a>
+                <a class="dropdown-item" href="http://www.linkedin.com/shareArticle?url=/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
+                  rel="nofollow" target="_blank">
+                <i class="fa fa-linkedin"></i>
+              </a>
+                <a class="dropdown-item" href="http://twitter.com/share?url=/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
+                  rel="nofollow" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+                <a class="dropdown-item" href="https://plus.google.com/share?url=/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
+                  rel="nofollow" target="_blank">
+                <i class="fa fa-google"></i>
+              </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link mr-md-2 btn btn-primary d-none d-md-block" href="https://cuppalabs.github.io/angular2-forms" target="_blank">
+                Live Demos
+            </a>
+             <a class="nav-item nav-link mr-md-2 d-block d-md-none" href="https://cuppalabs.github.io/angular2-forms" target="_blank">
+                <i class="fa fa-tv  share-btn"></i>
+            </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link mr-md-2 btn btn-primary d-none d-md-block" href="https://github.com/CuppaLabs/angular2-forms" target="_blank">
+                Code on Github
+            </a>
+             <a class="nav-item nav-link mr-md-2 d-block d-md-none" href="https://github.com/CuppaLabs/angular2-forms" target="_blank">
+                <i class="fa fa-download  share-btn"></i>
+            </a>
+            </li>
+          </ul>
         </div>
-    </div>
-</nav>
-</div>
-<div class="main-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8">
-                <article class="post post-tutorial">
-                    <div class="post-content">
-                        <header class="entry-header">
-                            <h1 class="entry-title">Angular 2 Form validations and custom validation, How to Implement</h1>
-                          <div class="social-share">
-							<span class="social-share-title pull-left text-capitalize">By Pradeep Terli On 11-03-2017</span>
-                               <ul class="text-center pull-right">
-    <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
-    </li>
-    <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
-    </li>
-    <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
-    </li>
-    <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
-    </li>
-</ul> 
-                        </div>
-                            <h6>
-                                        
-                                        <a href="#" style="text-transform: uppercase;"> angular</a>
-                                        
-                                        <a href="#" style="text-transform: uppercase;"> tutorial</a>
-                                        
-                                    </h6>
-                            <p>Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2 validate interface.</p>
-                    <div class="bt-group">
-                        <a class="btn btn-success" href="https://cuppalabs.github.io/angular2-forms" target="blank"><i class="fa fa-desktop" aria-hidden="true"></i> Live Demo</a>
-                        <a class="btn btn-success" href="https://github.com/CuppaLabs/angular2-forms" target="blank"><i class="fa fa-github" aria-hidden="true"></i>Code on Github</a>
-                    </div>
-                    <div class="post-thumb">
-                        <a href="#"><img src="/img/tutorial/form-validations-tutorial-banner.png" alt=""></a>
-                    </div>
-                        </header>
-                        <div class="bt-group">
-                            <a class="btn btn-success" href="https://cuppalabs.github.io/angular2-forms" target="blank"><i class="fa fa-desktop" aria-hidden="true"></i> Live Demo</a>
-                            <a class="btn btn-success" href="https://github.com/CuppaLabs/angular2-forms" target="blank"><i class="fa fa-github" aria-hidden="true"></i>Code on Github</a>
-                        </div>
-                        <div class="entry-content">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-lg-3 sidebar-offcanvas sidebar d-none d-md-non d-lg-block" id="sidebar">
+          <div class="list-group" id="navbar-example2">
+            <a href="#" class="list-group-item disabled">
+              <h6>Table of Contents</h6>
+            </a>
+            
+            <a href="#Getting Started" class="list-group-item">Getting Started</a> 
+            <a href="#Create Form Component" class="list-group-item">Create Form Component</a> 
+            <a href="#First Name Validation" class="list-group-item">First Name Validation</a> 
+            <a href="#Email Address Validation" class="list-group-item">Email Address Validation</a> 
+            <a href="#Mobile Number Validation" class="list-group-item">Mobile Number Validation</a> 
+            <a href="#Password Matching Validation" class="list-group-item">Password Matching Validation</a> 
+
+          </div>
+          <div class="card bg-default mb-3 user-card" style="max-width: 20rem;">
+             <div class="card-header"></div>
+            <div class="card-body">
+              <img src="http://cuppalabs.github.io/img/pradeep.jpg" alt="" class="img-me">
+              <h5 class="card-title">Pradeep Kumar Terli</h5>
+              <p class="card-text">
+                Web UI Developer, Blogger, Thinker, Entrepreneur
+              </p>
+              <nav class="nav">
+                <a class="nav-link active" href="https://www.facebook.com/pradeepkumar.terli">
+                  <i class="fa fa-facebook"></i>
+                </a>
+                <a class="nav-link" href="https://twitter.com/PradeepTerli">
+                  <i class="fa fa-twitter"></i>
+                </a>
+                <a class="nav-link" href="https://github.com/CuppaLabs">
+                  <i class="fa fa-github"></i>
+                </a>
+                <a class="nav-link" href="https://www.linkedin.com/in/pradeep-kumar-terli">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+                <a class="nav-link" href="https://plus.google.com/102171107795347642020">
+                  <i class="fa fa-google-plus"></i>
+                </a>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-9">
+
+          <div class="row component-article">
+            <div class="col component-image">
+              <h1 class="mr-md-auto">Angular 2 Form validations and custom validation, How to Implement</h1>
+              <img class="img-fluid" src="/img/tutorials/form-validations-tutorial-banner.png" />
+            </div>
+
+          </div>
+          <div class="row component-article">
+            <div class="entry-content">
                             <p>In this tutorial, let’s implement the following angular 2 inbuilt validations and create a custom validation using
 angular 2 <code class="highlighter-rouge">validate</code> interface</p>
 
@@ -154,13 +206,13 @@ angular 2 <code class="highlighter-rouge">validate</code> interface</p>
   <li><b>Custom Validator</b> - Writing custom validation function to match password and confirm password fields.</li>
 </ol>
 
-<h3 id="getting-started">Getting Started</h3>
+<h3 id="Getting-Started" class="anchor">Getting Started</h3>
 <p>Lets create a form component. I used angular CLI to generate the folder structure and created a form folder for 
 component files. To style we are using bootstrap. The folder structure should look like this :</p>
 
 <p><img src="/img/tutorials/form-folder-structure.png" alt="www.cuppalabs.com" /></p>
 
-<h3 id="create-form-component">Create Form Component</h3>
+<h3 id="Create-Form-Component" class="anchor">Create Form Component</h3>
 <p>Following code creates a form component with the input fields. In the next steps, let see how we can apply validations
 on each of these fields. <a href="https://cuppalabs.github.io/angular2-forms" target="_blank">View Live Demo</a></p>
 
@@ -168,118 +220,27 @@ on each of these fields. <a href="https://cuppalabs.github.io/angular2-forms" ta
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">login-form.component.ts</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">login-form.component.html</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">password.match.directive.ts</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">User.ts</a></li>
+    <li role="presentation" class="nav-item"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" class="nav-link active">login-form.component.ts</a></li>
+    <li role="presentation" class="nav-item"><a class="nav-link" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">login-form.component.html</a></li>
+    <li role="presentation" class="nav-item"><a class="nav-link" href="#messages" aria-controls="messages" role="tab" data-toggle="tab">password.match.directive.ts</a></li>
+    <li role="presentation" class="nav-item"><a class="nav-link" href="#settings" aria-controls="settings" role="tab" data-toggle="tab">User.ts</a></li>
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="home">
-    <pre class="prettyprint lang-ts linenums:1">
-  import { Component,Directive, forwardRef, 
-           Attribute,OnChanges, SimpleChanges,Input } from '@angular/core';
-  import { NG_VALIDATORS,Validator,
-           Validators,AbstractControl,ValidatorFn } from '@angular/forms';
-  import { User }    from './user';
-  @Component({
-    moduleId: module.id,
-    selector: 'login-form',
-    templateUrl: './login-form.component.html',
-    styleUrls: ['./login-form.component.css']
-  })
-  export class LoginFormComponent {
-    powers = ['Really Smart', 'Super Flexible',
-              'Super Hot', 'Weather Changer'];
-    model = new User('','',null,'','','');
-    submitted = false;
-    onSubmit() { this.submitted = true; }
-    newHero() {
-    // this.model = new User('','');
-    }
-  }
-    </pre>
+    <pre class="prettyprint lang-ts linenums:1 prettyprinted" style=""><ol class="linenums"><li value="1" class="L0"><span class="pln">  </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="typ">Component</span><span class="pun">,</span><span class="typ">Directive</span><span class="pun">,</span><span class="pln"> forwardRef</span><span class="pun">,</span><span class="pln"> </span></li><li class="L1"><span class="pln">           </span><span class="typ">Attribute</span><span class="pun">,</span><span class="typ">OnChanges</span><span class="pun">,</span><span class="pln"> </span><span class="typ">SimpleChanges</span><span class="pun">,</span><span class="typ">Input</span><span class="pln"> </span><span class="pun">}</span><span class="pln"> from </span><span class="str">'@angular/core'</span><span class="pun">;</span></li><li class="L2"><span class="pln">  </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> NG_VALIDATORS</span><span class="pun">,</span><span class="typ">Validator</span><span class="pun">,</span></li><li class="L3"><span class="pln">           </span><span class="typ">Validators</span><span class="pun">,</span><span class="typ">AbstractControl</span><span class="pun">,</span><span class="typ">ValidatorFn</span><span class="pln"> </span><span class="pun">}</span><span class="pln"> from </span><span class="str">'@angular/forms'</span><span class="pun">;</span></li><li class="L4"><span class="pln">  </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="typ">User</span><span class="pln"> </span><span class="pun">}</span><span class="pln">    from </span><span class="str">'./user'</span><span class="pun">;</span></li><li class="L5"><span class="pln">  </span><span class="lit">@Component</span><span class="pun">({</span></li><li class="L6"><span class="pln">    moduleId</span><span class="pun">:</span><span class="pln"> module</span><span class="pun">.</span><span class="pln">id</span><span class="pun">,</span></li><li class="L7"><span class="pln">    selector</span><span class="pun">:</span><span class="pln"> </span><span class="str">'login-form'</span><span class="pun">,</span></li><li class="L8"><span class="pln">    templateUrl</span><span class="pun">:</span><span class="pln"> </span><span class="str">'./login-form.component.html'</span><span class="pun">,</span></li><li class="L9"><span class="pln">    styleUrls</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'./login-form.component.css'</span><span class="pun">]</span></li><li class="L0"><span class="pln">  </span><span class="pun">})</span></li><li class="L1"><span class="pln">  </span><span class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">LoginFormComponent</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">    powers </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="str">'Really Smart'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Super Flexible'</span><span class="pun">,</span></li><li class="L3"><span class="pln">              </span><span class="str">'Super Hot'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Weather Changer'</span><span class="pun">];</span></li><li class="L4"><span class="pln">    model </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">User</span><span class="pun">(</span><span class="str">''</span><span class="pun">,</span><span class="str">''</span><span class="pun">,</span><span class="kwd">null</span><span class="pun">,</span><span class="str">''</span><span class="pun">,</span><span class="str">''</span><span class="pun">,</span><span class="str">''</span><span class="pun">);</span></li><li class="L5"><span class="pln">    submitted </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span></li><li class="L6"><span class="pln">    onSubmit</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">submitted </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span></li><li class="L7"><span class="pln">    newHero</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">    </span><span class="com">// this.model = new User('','');</span></li><li class="L9"><span class="pln">    </span><span class="pun">}</span></li><li class="L0"><span class="pln">  </span><span class="pun">}</span></li><li class="L1"><span class="pln">    </span></li></ol></pre>
     </div>
     <div role="tabpanel" class="tab-pane" id="profile">
-      <pre class="prettyprint lang-html linenums:1">
-&#x3C;div class=&#x22;col-md-6&#x22;&#x3E;
-   &#x3C;h3&#x3E;Angular 2 Form Validations Demo&#x3C;/h3&#x3E;
-   &#x3C;form (ngSubmit)=&#x22;onSubmit()&#x22; #loginForm=&#x22;ngForm&#x22;&#x3E;
-   &#x3C;div class=&#x22;form-group&#x22;&#x3E;
-      &#x3C;label for=&#x22;name&#x22;&#x3E;Name&#x3C;/label&#x3E;
-      &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;name&#x22; #name=&#x22;ngModel&#x22;&#x3E;
-   &#x3C;/div&#x3E;
-   &#x3C;div class=&#x22;form-group&#x22;&#x3E;
-      &#x3C;label for=&#x22;name&#x22;&#x3E;Email Address&#x3C;/label&#x3E;
-      &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;emailaddress&#x22; #email=&#x22;ngModel&#x22;&#x3E;
-   &#x3C;/div&#x3E;
-   &#x3C;div class=&#x22;form-group&#x22;&#x3E;
-      &#x3C;label for=&#x22;name&#x22;&#x3E;Mobile Number&#x3C;/label&#x3E;
-      &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;mobilenumber&#x22; #mobile=&#x22;ngModel&#x22;&#x3E;
-   &#x3C;/div&#x3E;
-   &#x3C;div class=&#x22;form-group&#x22;&#x3E;
-      &#x3C;label for=&#x22;name&#x22;&#x3E;Password&#x3C;/label&#x3E;
-      &#x3C;input type=&#x22;password&#x22; class=&#x22;form-control&#x22; id=&#x22;password&#x22; #password=&#x22;ngModel&#x22;&#x3E;
-   &#x3C;/div&#x3E;
-   &#x3C;div class=&#x22;form-group&#x22;&#x3E;
-      &#x3C;label for=&#x22;name&#x22;&#x3E;Confirm Password&#x3C;/label&#x3E;
-      &#x3C;input type=&#x22;password&#x22; class=&#x22;form-control&#x22; id=&#x22;confirmPassword&#x22; #confirmPassword=&#x22;ngModel&#x22;&#x3E;
-   &#x3C;/div&#x3E;
-   &#x3C;button type=&#x22;submit&#x22; class=&#x22;btn btn-success btn-block&#x22; [disabled]=&#x22;!loginForm.form.valid&#x22;&#x3E;Submit&#x3C;/button&#x3E;
-   &#x3C;/form&#x3E;
-&#x3C;/div&#x3E;
-      </pre>
+      <pre class="prettyprint lang-html linenums:1 prettyprinted" style=""><ol class="linenums"><li value="1" class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-md-6"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;h3&gt;</span><span class="pln">Angular 2 Form Validations Demo</span><span class="tag">&lt;/h3&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;form</span><span class="pln"> (</span><span class="atn">ngSubmit</span><span class="pln">)</span><span class="pun">=</span><span class="atv">"onSubmit()"</span><span class="pln"> #</span><span class="atn">loginForm</span><span class="pun">=</span><span class="atv">"ngForm"</span><span class="tag">&gt;</span></li><li class="L3"><span class="pln">   </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">      </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"name"</span><span class="tag">&gt;</span><span class="pln">Name</span><span class="tag">&lt;/label&gt;</span></li><li class="L5"><span class="pln">      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-control"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"name"</span><span class="pln"> #</span><span class="atn">name</span><span class="pun">=</span><span class="atv">"ngModel"</span><span class="tag">&gt;</span></li><li class="L6"><span class="pln">   </span><span class="tag">&lt;/div&gt;</span></li><li class="L7"><span class="pln">   </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span></li><li class="L8"><span class="pln">      </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"name"</span><span class="tag">&gt;</span><span class="pln">Email Address</span><span class="tag">&lt;/label&gt;</span></li><li class="L9"><span class="pln">      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-control"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"emailaddress"</span><span class="pln"> #</span><span class="atn">email</span><span class="pun">=</span><span class="atv">"ngModel"</span><span class="tag">&gt;</span></li><li class="L0"><span class="pln">   </span><span class="tag">&lt;/div&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">      </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"name"</span><span class="tag">&gt;</span><span class="pln">Mobile Number</span><span class="tag">&lt;/label&gt;</span></li><li class="L3"><span class="pln">      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-control"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"mobilenumber"</span><span class="pln"> #</span><span class="atn">mobile</span><span class="pun">=</span><span class="atv">"ngModel"</span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">   </span><span class="tag">&lt;/div&gt;</span></li><li class="L5"><span class="pln">   </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span></li><li class="L6"><span class="pln">      </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"name"</span><span class="tag">&gt;</span><span class="pln">Password</span><span class="tag">&lt;/label&gt;</span></li><li class="L7"><span class="pln">      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"password"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-control"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"password"</span><span class="pln"> #</span><span class="atn">password</span><span class="pun">=</span><span class="atv">"ngModel"</span><span class="tag">&gt;</span></li><li class="L8"><span class="pln">   </span><span class="tag">&lt;/div&gt;</span></li><li class="L9"><span class="pln">   </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span></li><li class="L0"><span class="pln">      </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"name"</span><span class="tag">&gt;</span><span class="pln">Confirm Password</span><span class="tag">&lt;/label&gt;</span></li><li class="L1"><span class="pln">      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"password"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-control"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"confirmPassword"</span><span class="pln"> #</span><span class="atn">confirmPassword</span><span class="pun">=</span><span class="atv">"ngModel"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;/div&gt;</span></li><li class="L3"><span class="pln">   </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-success btn-block"</span><span class="pln"> [</span><span class="atn">disabled</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"!loginForm.form.valid"</span><span class="tag">&gt;</span><span class="pln">Submit</span><span class="tag">&lt;/button&gt;</span></li><li class="L4"><span class="pln">   </span><span class="tag">&lt;/form&gt;</span></li><li class="L5"><span class="tag">&lt;/div&gt;</span></li><li class="L6"><span class="pln">      </span></li></ol></pre>
     
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
-    <pre class="prettyprint lang-ts linenums:1">
-    import { Directive, forwardRef, Attribute } from '@angular/core';
-    import { NG_VALIDATORS,Validator,
-             Validators,AbstractControl,ValidatorFn } from '@angular/forms';
-
-    @Directive({
-        selector: '[validateEqual][formControlName],[validateEqual][formControl],
-                   [validateEqual][ngModel]',
-        providers: [
-                    { provide: NG_VALIDATORS, 
-                      useExisting: forwardRef(() =&gt; EqualValidator),
-                      multi: true }
-                   ]
-    })
-    export class EqualValidator implements Validator {
-        constructor( @Attribute('validateEqual') public validateEqual: string) {}
-
-        validate(c: AbstractControl): { [key: string]: any } {
-            // self value (e.g. retype password)
-            let v = c.value;
-
-            // control value (e.g. password)
-            let e = c.root.get(this.validateEqual);
-
-            // value not equal
-            if (e &amp;&amp; v !== e.value) return {
-                validateEqual: false
-            }
-            return null;
-        }
-    }
-    </pre>
+    <pre class="prettyprint lang-ts linenums:1 prettyprinted" style=""><ol class="linenums"><li value="1" class="L0"><span class="pln">    </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="typ">Directive</span><span class="pun">,</span><span class="pln"> forwardRef</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Attribute</span><span class="pln"> </span><span class="pun">}</span><span class="pln"> from </span><span class="str">'@angular/core'</span><span class="pun">;</span></li><li class="L1"><span class="pln">    </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> NG_VALIDATORS</span><span class="pun">,</span><span class="typ">Validator</span><span class="pun">,</span></li><li class="L2"><span class="pln">             </span><span class="typ">Validators</span><span class="pun">,</span><span class="typ">AbstractControl</span><span class="pun">,</span><span class="typ">ValidatorFn</span><span class="pln"> </span><span class="pun">}</span><span class="pln"> from </span><span class="str">'@angular/forms'</span><span class="pun">;</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pln">    </span><span class="lit">@Directive</span><span class="pun">({</span></li><li class="L5"><span class="pln">        selector</span><span class="pun">:</span><span class="pln"> </span><span class="str">'[</span><span class="pln">validateEqual</span><span class="pun">][</span><span class="pln">formControlName</span><span class="pun">],[</span><span class="pln">validateEqual</span><span class="pun">][</span><span class="pln">formControl</span><span class="pun">],</span></li><li class="L6"><span class="pln">                   </span><span class="pun">[</span><span class="pln">validateEqual</span><span class="pun">][</span><span class="pln">ngModel</span><span class="pun">]</span><span class="str">',</span></li><li class="L7"><span class="pln">        providers</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span></li><li class="L8"><span class="pln">                    </span><span class="pun">{</span><span class="pln"> provide</span><span class="pun">:</span><span class="pln"> NG_VALIDATORS</span><span class="pun">,</span><span class="pln"> </span></li><li class="L9"><span class="pln">                      useExisting</span><span class="pun">:</span><span class="pln"> forwardRef</span><span class="pun">(()</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="typ">EqualValidator</span><span class="pun">),</span></li><li class="L0"><span class="pln">                      multi</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pln"> </span><span class="pun">}</span></li><li class="L1"><span class="pln">                   </span><span class="pun">]</span></li><li class="L2"><span class="pln">    </span><span class="pun">})</span></li><li class="L3"><span class="pln">    </span><span class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">EqualValidator</span><span class="pln"> </span><span class="kwd">implements</span><span class="pln"> </span><span class="typ">Validator</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">        </span><span class="kwd">constructor</span><span class="pun">(</span><span class="pln"> </span><span class="lit">@Attribute</span><span class="pun">(</span><span class="str">'validateEqual'</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> validateEqual</span><span class="pun">:</span><span class="pln"> string</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{}</span></li><li class="L5"><span class="pln">&nbsp;</span></li><li class="L6"><span class="pln">        validate</span><span class="pun">(</span><span class="pln">c</span><span class="pun">:</span><span class="pln"> </span><span class="typ">AbstractControl</span><span class="pun">):</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="pun">[</span><span class="pln">key</span><span class="pun">:</span><span class="pln"> string</span><span class="pun">]:</span><span class="pln"> any </span><span class="pun">}</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">            </span><span class="com">// self value (e.g. retype password)</span></li><li class="L8"><span class="pln">            </span><span class="kwd">let</span><span class="pln"> v </span><span class="pun">=</span><span class="pln"> c</span><span class="pun">.</span><span class="pln">value</span><span class="pun">;</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="pln">            </span><span class="com">// control value (e.g. password)</span></li><li class="L1"><span class="pln">            </span><span class="kwd">let</span><span class="pln"> e </span><span class="pun">=</span><span class="pln"> c</span><span class="pun">.</span><span class="pln">root</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">validateEqual</span><span class="pun">);</span></li><li class="L2"><span class="pln">&nbsp;</span></li><li class="L3"><span class="pln">            </span><span class="com">// value not equal</span></li><li class="L4"><span class="pln">            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">e </span><span class="pun">&amp;&amp;</span><span class="pln"> v </span><span class="pun">!==</span><span class="pln"> e</span><span class="pun">.</span><span class="pln">value</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">                validateEqual</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span></li><li class="L6"><span class="pln">            </span><span class="pun">}</span></li><li class="L7"><span class="pln">            </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span></li><li class="L8"><span class="pln">        </span><span class="pun">}</span></li><li class="L9"><span class="pln">    </span><span class="pun">}</span></li><li class="L0"><span class="pln">    </span></li></ol></pre>
     
     </div>
     <div role="tabpanel" class="tab-pane" id="settings">
-     <pre class="prettyprint lang-ts linenums:1">
-export class User{
-    constructor(
-        public name:string,
-        public email: string,
-        public mobile: number,
-        public gender: string,
-        public password: any,
-        public confirmPassword: any
-    ){}
-}      
-    </pre>
+     <pre class="prettyprint lang-ts linenums:1 prettyprinted" style=""><ol class="linenums"><li value="1" class="L0"><span class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">User</span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="kwd">constructor</span><span class="pun">(</span></li><li class="L2"><span class="pln">        </span><span class="kwd">public</span><span class="pln"> name</span><span class="pun">:</span><span class="pln">string</span><span class="pun">,</span></li><li class="L3"><span class="pln">        </span><span class="kwd">public</span><span class="pln"> email</span><span class="pun">:</span><span class="pln"> string</span><span class="pun">,</span></li><li class="L4"><span class="pln">        </span><span class="kwd">public</span><span class="pln"> mobile</span><span class="pun">:</span><span class="pln"> number</span><span class="pun">,</span></li><li class="L5"><span class="pln">        </span><span class="kwd">public</span><span class="pln"> gender</span><span class="pun">:</span><span class="pln"> string</span><span class="pun">,</span></li><li class="L6"><span class="pln">        </span><span class="kwd">public</span><span class="pln"> password</span><span class="pun">:</span><span class="pln"> any</span><span class="pun">,</span></li><li class="L7"><span class="pln">        </span><span class="kwd">public</span><span class="pln"> confirmPassword</span><span class="pun">:</span><span class="pln"> any</span></li><li class="L8"><span class="pln">    </span><span class="pun">){}</span></li><li class="L9"><span class="pun">}</span><span class="pln">      </span></li><li class="L0"><span class="pln">    </span></li></ol></pre>
     </div>
   </div>
 
@@ -291,7 +252,7 @@ export class User{
 
 <p>Now it’s time for us to apply the validations on each field.</p>
 
-<h3 id="first-name-validation">First Name Validation</h3>
+<h3 id="First-Name-Validation" class="anchor">First Name Validation</h3>
 <p><b>Requirement</b> - Required and only alphabets allowed in the name field.</p>
 <ul>
   <li><code class="highlighter-rouge">required</code> attribute on input tag ensures that the filed value is mandatory.</li>
@@ -304,24 +265,10 @@ export class User{
 
 <p>Based on the type of error, whether on <code class="highlighter-rouge">required</code> or on <code class="highlighter-rouge">pattern</code> attributes, the error messages are shown and hidden.</p>
 <div class="code-area">
- <pre class="prettyprint lang-html linenums:1">
-&#x3C;div class=&#x22;form-group&#x22;&#x3E;
-   &#x3C;label for=&#x22;name&#x22;&#x3E;Name&#x3C;/label&#x3E;
-   &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;name&#x22;
-   required
-   pattern=&#x22;[a-zA-Z][a-zA-Z ]+&#x22;
-   [(ngModel)]=&#x22;model.name&#x22; name=&#x22;name&#x22;
-   #name=&#x22;ngModel&#x22;&#x3E;
-   &#x3C;div [hidden]=&#x22;name.valid || name.pristine&#x22;
-      class=&#x22;alert alert-danger&#x22;&#x3E;
-      &#x3C;div [hidden]=&#x22;!name.hasError(&#x27;required&#x27;)&#x22;&#x3E;Name is required&#x3C;/div&#x3E;
-      &#x3C;div [hidden]=&#x22;!name.hasError(&#x27;pattern&#x27;)&#x22;&#x3E;Only alphabetsallowed&#x3C;/div&#x3E;
-   &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;
- </pre>
+ <pre class="prettyprint lang-html linenums:1 prettyprinted" style=""><ol class="linenums"><li value="1" class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"name"</span><span class="tag">&gt;</span><span class="pln">Name</span><span class="tag">&lt;/label&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-control"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"name"</span></li><li class="L3"><span class="pln">   </span><span class="atn">required</span></li><li class="L4"><span class="pln">   </span><span class="atn">pattern</span><span class="pun">=</span><span class="atv">"[a-zA-Z][a-zA-Z ]+"</span></li><li class="L5"><span class="pln">   [(</span><span class="atn">ngModel</span><span class="pln">)]</span><span class="pun">=</span><span class="atv">"model.name"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"name"</span></li><li class="L6"><span class="pln">   #</span><span class="atn">name</span><span class="pun">=</span><span class="atv">"ngModel"</span><span class="tag">&gt;</span></li><li class="L7"><span class="pln">   </span><span class="tag">&lt;div</span><span class="pln"> [</span><span class="atn">hidden</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"name.valid || name.pristine"</span></li><li class="L8"><span class="pln">      </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"alert alert-danger"</span><span class="tag">&gt;</span></li><li class="L9"><span class="pln">      </span><span class="tag">&lt;div</span><span class="pln"> [</span><span class="atn">hidden</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"!name.hasError('required')"</span><span class="tag">&gt;</span><span class="pln">Name is required</span><span class="tag">&lt;/div&gt;</span></li><li class="L0"><span class="pln">      </span><span class="tag">&lt;div</span><span class="pln"> [</span><span class="atn">hidden</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"!name.hasError('pattern')"</span><span class="tag">&gt;</span><span class="pln">Only alphabetsallowed</span><span class="tag">&lt;/div&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;/div&gt;</span></li><li class="L2"><span class="tag">&lt;/div&gt;</span></li><li class="L3"><span class="pln"> </span></li></ol></pre>
 </div>
 
-<h3 id="email-address-validation">Email Address Validation</h3>
+<h3 id="Email-Address-Validation" class="anchor">Email Address Validation</h3>
 <p><b>Requirement</b> - Validate the email format <code class="highlighter-rouge">joe@gmail.com</code>. Entered email should be having valid email with @, .co or.com.</p>
 
 <ul>
@@ -329,25 +276,10 @@ export class User{
   <li><code class="highlighter-rouge">pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" </code> takes regular expression <code class="highlighter-rouge">^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$</code> to check for valid email.</li>
 </ul>
 <div class="code-area">
- <pre class="prettyprint lang-html linenums:1">
-&#x3C;div class=&#x22;form-group&#x22;&#x3E;
-&#x3C;label for=&#x22;name&#x22;&#x3E;Email Address&#x3C;/label&#x3E;
-&#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;emailaddress&#x22;
-required
-[(ngModel)]=&#x22;model.email&#x22; name=&#x22;email&#x22;
-pattern=&#x22;^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$&#x22; 
-#email=&#x22;ngModel&#x22;&#x3E;
-&#x3C;div [hidden]=&#x22;email.valid || email.pristine&#x22;
-   class=&#x22;alert alert-danger&#x22;&#x3E;
-   &#x3C;div [hidden]=&#x22;!email.hasError(&#x27;required&#x27;)&#x22;&#x3E;Email is required&#x3C;/div&#x3E;
-   &#x3C;div [hidden]=&#x22;!email.hasError(&#x27;pattern&#x27;)&#x22;&#x3E;Email format should be 
-      &#x3C;small&#x3E;&#x3C;b&#x3E;joe@abc.com&#x3C;/b&#x3E;&#x3C;/small&#x3E;
-   &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;
-</pre>
+ <pre class="prettyprint lang-html linenums:1 prettyprinted" style=""><ol class="linenums"><li value="1" class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span></li><li class="L1"><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"name"</span><span class="tag">&gt;</span><span class="pln">Email Address</span><span class="tag">&lt;/label&gt;</span></li><li class="L2"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-control"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"emailaddress"</span></li><li class="L3"><span class="atn">required</span></li><li class="L4"><span class="pln">[(</span><span class="atn">ngModel</span><span class="pln">)]</span><span class="pun">=</span><span class="atv">"model.email"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"email"</span></li><li class="L5"><span class="atn">pattern</span><span class="pun">=</span><span class="atv">"^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"</span><span class="pln"> </span></li><li class="L6"><span class="pln">#</span><span class="atn">email</span><span class="pun">=</span><span class="atv">"ngModel"</span><span class="tag">&gt;</span></li><li class="L7"><span class="tag">&lt;div</span><span class="pln"> [</span><span class="atn">hidden</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"email.valid || email.pristine"</span></li><li class="L8"><span class="pln">   </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"alert alert-danger"</span><span class="tag">&gt;</span></li><li class="L9"><span class="pln">   </span><span class="tag">&lt;div</span><span class="pln"> [</span><span class="atn">hidden</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"!email.hasError('required')"</span><span class="tag">&gt;</span><span class="pln">Email is required</span><span class="tag">&lt;/div&gt;</span></li><li class="L0"><span class="pln">   </span><span class="tag">&lt;div</span><span class="pln"> [</span><span class="atn">hidden</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"!email.hasError('pattern')"</span><span class="tag">&gt;</span><span class="pln">Email format should be </span></li><li class="L1"><span class="pln">      </span><span class="tag">&lt;small&gt;&lt;b&gt;</span><span class="pln">joe@abc.com</span><span class="tag">&lt;/b&gt;&lt;/small&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;/div&gt;</span></li><li class="L3"><span class="tag">&lt;/div&gt;</span></li></ol></pre>
 </div>
 
-<h3 id="mobile-number-validation">Mobile Number Validation</h3>
+<h3 id="Mobile-Number-Validation" class="anchor">Mobile Number Validation</h3>
 <p><b>Requirement</b> - Should be only numbers and should have 10 digits only.</p>
 
 <ul>
@@ -358,59 +290,14 @@ pattern=&#x22;^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$&#x22;
 Based on the type of error in each of the attributes above, the error messages are shown.</li>
 </ul>
 <div class="code-area">
- <pre class="prettyprint lang-html linenums:1">
-&#x3C;div class=&#x22;form-group&#x22;&#x3E;
-   &#x3C;label for=&#x22;name&#x22;&#x3E;Mobile Number&#x3C;/label&#x3E;
-   &#x3C;input type=&#x22;text&#x22; class=&#x22;form-control&#x22; id=&#x22;mobilenumber&#x22;
-   required
-   [(ngModel)]=&#x22;model.mobile&#x22; name=&#x22;mobilenumber&#x22;
-   pattern=&#x22;[0-9]*&#x22;
-   minlength=&#x22;10&#x22;
-   maxlength=&#x22;10&#x22; 
-   #mobile=&#x22;ngModel&#x22;&#x3E;
-   &#x3C;div [hidden]=&#x22;mobile.valid || mobile.pristine&#x22;
-      class=&#x22;alert alert-danger&#x22;&#x3E;
-      &#x3C;div [hidden]=&#x22;!mobile.hasError(&#x27;minlength&#x27;)&#x22;&#x3E;Mobile should be 10digit&#x3C;/div&#x3E;
-      &#x3C;div [hidden]=&#x22;!mobile.hasError(&#x27;required&#x27;)&#x22;&#x3E;Mobile is required&#x3C;/div&#x3E;
-      &#x3C;div [hidden]=&#x22;!mobile.hasError(&#x27;pattern&#x27;)&#x22;&#x3E;Mobile numberr should be only numbers&#x3C;/div&#x3E;
-   &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;  
- </pre>
+ <pre class="prettyprint lang-html linenums:1 prettyprinted" style=""><ol class="linenums"><li value="1" class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"name"</span><span class="tag">&gt;</span><span class="pln">Mobile Number</span><span class="tag">&lt;/label&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-control"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"mobilenumber"</span></li><li class="L3"><span class="pln">   </span><span class="atn">required</span></li><li class="L4"><span class="pln">   [(</span><span class="atn">ngModel</span><span class="pln">)]</span><span class="pun">=</span><span class="atv">"model.mobile"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"mobilenumber"</span></li><li class="L5"><span class="pln">   </span><span class="atn">pattern</span><span class="pun">=</span><span class="atv">"[0-9]*"</span></li><li class="L6"><span class="pln">   </span><span class="atn">minlength</span><span class="pun">=</span><span class="atv">"10"</span></li><li class="L7"><span class="pln">   </span><span class="atn">maxlength</span><span class="pun">=</span><span class="atv">"10"</span><span class="pln"> </span></li><li class="L8"><span class="pln">   #</span><span class="atn">mobile</span><span class="pun">=</span><span class="atv">"ngModel"</span><span class="tag">&gt;</span></li><li class="L9"><span class="pln">   </span><span class="tag">&lt;div</span><span class="pln"> [</span><span class="atn">hidden</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"mobile.valid || mobile.pristine"</span></li><li class="L0"><span class="pln">      </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"alert alert-danger"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">      </span><span class="tag">&lt;div</span><span class="pln"> [</span><span class="atn">hidden</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"!mobile.hasError('minlength')"</span><span class="tag">&gt;</span><span class="pln">Mobile should be 10digit</span><span class="tag">&lt;/div&gt;</span></li><li class="L2"><span class="pln">      </span><span class="tag">&lt;div</span><span class="pln"> [</span><span class="atn">hidden</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"!mobile.hasError('required')"</span><span class="tag">&gt;</span><span class="pln">Mobile is required</span><span class="tag">&lt;/div&gt;</span></li><li class="L3"><span class="pln">      </span><span class="tag">&lt;div</span><span class="pln"> [</span><span class="atn">hidden</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"!mobile.hasError('pattern')"</span><span class="tag">&gt;</span><span class="pln">Mobile numberr should be only numbers</span><span class="tag">&lt;/div&gt;</span></li><li class="L4"><span class="pln">   </span><span class="tag">&lt;/div&gt;</span></li><li class="L5"><span class="tag">&lt;/div&gt;</span><span class="pln">  </span></li><li class="L6"><span class="pln"> </span></li></ol></pre>
 </div>
 
-<h3 id="password-matching-validation">Password Matching Validation</h3>
+<h3 id="Password-Matching-Validation" class="anchor">Password Matching Validation</h3>
 <p>Angular 2 does not provide any inbuilt validator to match password. We need to write a custom directive to validate password match.
 Let’s write the directive using the <code class="highlighter-rouge">validator</code> interface.</p>
 <div class="code-area">
- <pre class="prettyprint lang-ts linenums:1">
-import { Directive, forwardRef, Attribute } from '@angular/core';
-import { NG_VALIDATORS,Validator,
-         Validators,AbstractControl,ValidatorFn } from '@angular/forms';
-
-@Directive({
-    selector: '[validateEqual][formControlName],[validateEqual][formControl],[validateEqual][ngModel]',
-    providers: [
-        { provide: NG_VALIDATORS, useExisting: forwardRef(() =&gt; EqualValidator), multi: true }
-    ]
-})
-export class EqualValidator implements Validator {
-    constructor( @Attribute('validateEqual') public validateEqual: string) {}
-
-    validate(c: AbstractControl): { [key: string]: any } {
-        // self value (e.g. retype password)
-        let v = c.value;
-
-        // control value (e.g. password)
-        let e = c.root.get(this.validateEqual);
-
-        // value not equal
-        if (e &amp;&amp; v !== e.value) return {
-            validateEqual: false
-        }
-        return null;
-    }
-}
- </pre>
+ <pre class="prettyprint lang-ts linenums:1 prettyprinted" style=""><ol class="linenums"><li value="1" class="L0"><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="typ">Directive</span><span class="pun">,</span><span class="pln"> forwardRef</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Attribute</span><span class="pln"> </span><span class="pun">}</span><span class="pln"> from </span><span class="str">'@angular/core'</span><span class="pun">;</span></li><li class="L1"><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> NG_VALIDATORS</span><span class="pun">,</span><span class="typ">Validator</span><span class="pun">,</span></li><li class="L2"><span class="pln">         </span><span class="typ">Validators</span><span class="pun">,</span><span class="typ">AbstractControl</span><span class="pun">,</span><span class="typ">ValidatorFn</span><span class="pln"> </span><span class="pun">}</span><span class="pln"> from </span><span class="str">'@angular/forms'</span><span class="pun">;</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="lit">@Directive</span><span class="pun">({</span></li><li class="L5"><span class="pln">    selector</span><span class="pun">:</span><span class="pln"> </span><span class="str">'[validateEqual][formControlName],[validateEqual][formControl],[validateEqual][ngModel]'</span><span class="pun">,</span></li><li class="L6"><span class="pln">    providers</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span></li><li class="L7"><span class="pln">        </span><span class="pun">{</span><span class="pln"> provide</span><span class="pun">:</span><span class="pln"> NG_VALIDATORS</span><span class="pun">,</span><span class="pln"> useExisting</span><span class="pun">:</span><span class="pln"> forwardRef</span><span class="pun">(()</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="typ">EqualValidator</span><span class="pun">),</span><span class="pln"> multi</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pln"> </span><span class="pun">}</span></li><li class="L8"><span class="pln">    </span><span class="pun">]</span></li><li class="L9"><span class="pun">})</span></li><li class="L0"><span class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">EqualValidator</span><span class="pln"> </span><span class="kwd">implements</span><span class="pln"> </span><span class="typ">Validator</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="kwd">constructor</span><span class="pun">(</span><span class="pln"> </span><span class="lit">@Attribute</span><span class="pun">(</span><span class="str">'validateEqual'</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">public</span><span class="pln"> validateEqual</span><span class="pun">:</span><span class="pln"> string</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{}</span></li><li class="L2"><span class="pln">&nbsp;</span></li><li class="L3"><span class="pln">    validate</span><span class="pun">(</span><span class="pln">c</span><span class="pun">:</span><span class="pln"> </span><span class="typ">AbstractControl</span><span class="pun">):</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="pun">[</span><span class="pln">key</span><span class="pun">:</span><span class="pln"> string</span><span class="pun">]:</span><span class="pln"> any </span><span class="pun">}</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">        </span><span class="com">// self value (e.g. retype password)</span></li><li class="L5"><span class="pln">        </span><span class="kwd">let</span><span class="pln"> v </span><span class="pun">=</span><span class="pln"> c</span><span class="pun">.</span><span class="pln">value</span><span class="pun">;</span></li><li class="L6"><span class="pln">&nbsp;</span></li><li class="L7"><span class="pln">        </span><span class="com">// control value (e.g. password)</span></li><li class="L8"><span class="pln">        </span><span class="kwd">let</span><span class="pln"> e </span><span class="pun">=</span><span class="pln"> c</span><span class="pun">.</span><span class="pln">root</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">validateEqual</span><span class="pun">);</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="pln">        </span><span class="com">// value not equal</span></li><li class="L1"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">e </span><span class="pun">&amp;&amp;</span><span class="pln"> v </span><span class="pun">!==</span><span class="pln"> e</span><span class="pun">.</span><span class="pln">value</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">            validateEqual</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span></li><li class="L3"><span class="pln">        </span><span class="pun">}</span></li><li class="L4"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span></li><li class="L5"><span class="pln">    </span><span class="pun">}</span></li><li class="L6"><span class="pun">}</span></li><li class="L7"><span class="pln"> </span></li></ol></pre>
 </div>
 
 <p>The <code class="highlighter-rouge">EqualValidator</code> directive needs to be added to the html code as shown below.</p>
@@ -418,234 +305,118 @@ export class EqualValidator implements Validator {
   <li><code class="highlighter-rouge">validateEqual="password"</code> in which <code class="highlighter-rouge">password</code> is the name of the field whose value is to be matched.</li>
 </ul>
 <div class="code-area">
- <pre class="prettyprint lang-html linenums:1">
-&#x3C;div class=&#x22;form-group&#x22;&#x3E;
-   &#x3C;label for=&#x22;name&#x22;&#x3E;Password&#x3C;/label&#x3E;
-   &#x3C;input type=&#x22;password&#x22; class=&#x22;form-control&#x22; id=&#x22;password&#x22;
-   required
-   [(ngModel)]=&#x22;model.password&#x22; name=&#x22;password&#x22;
-   #password=&#x22;ngModel&#x22;&#x3E;
-   &#x3C;div [hidden]=&#x22;password.valid || password.pristine&#x22;
-      class=&#x22;alert alert-danger&#x22;&#x3E;
-      Password is required
-   &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;
-&#x3C;div class=&#x22;form-group&#x22;&#x3E;
-   &#x3C;label for=&#x22;name&#x22;&#x3E;Confirm Password&#x3C;/label&#x3E;
-   &#x3C;input type=&#x22;password&#x22; class=&#x22;form-control&#x22; id=&#x22;confirmPassword&#x22;
-   required
-   validateEqual=&#x22;password&#x22;
-   [(ngModel)]=&#x22;model.confirmPassword&#x22; name=&#x22;confirmPassword&#x22;
-   #confirmPassword=&#x22;ngModel&#x22;&#x3E;
-   &#x3C;div [hidden]=&#x22;confirmPassword.valid || confirmPassword.pristine&#x22;
-      class=&#x22;alert alert-danger&#x22;&#x3E;
-      Passwords did not match
-   &#x3C;/div&#x3E;
-&#x3C;/div&#x3E;
- </pre>
+ <pre class="prettyprint lang-html linenums:1 prettyprinted" style=""><ol class="linenums"><li value="1" class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"name"</span><span class="tag">&gt;</span><span class="pln">Password</span><span class="tag">&lt;/label&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"password"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-control"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"password"</span></li><li class="L3"><span class="pln">   </span><span class="atn">required</span></li><li class="L4"><span class="pln">   [(</span><span class="atn">ngModel</span><span class="pln">)]</span><span class="pun">=</span><span class="atv">"model.password"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"password"</span></li><li class="L5"><span class="pln">   #</span><span class="atn">password</span><span class="pun">=</span><span class="atv">"ngModel"</span><span class="tag">&gt;</span></li><li class="L6"><span class="pln">   </span><span class="tag">&lt;div</span><span class="pln"> [</span><span class="atn">hidden</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"password.valid || password.pristine"</span></li><li class="L7"><span class="pln">      </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"alert alert-danger"</span><span class="tag">&gt;</span></li><li class="L8"><span class="pln">      Password is required</span></li><li class="L9"><span class="pln">   </span><span class="tag">&lt;/div&gt;</span></li><li class="L0"><span class="tag">&lt;/div&gt;</span></li><li class="L1"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-group"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">   </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"name"</span><span class="tag">&gt;</span><span class="pln">Confirm Password</span><span class="tag">&lt;/label&gt;</span></li><li class="L3"><span class="pln">   </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"password"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-control"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"confirmPassword"</span></li><li class="L4"><span class="pln">   </span><span class="atn">required</span></li><li class="L5"><span class="pln">   </span><span class="atn">validateEqual</span><span class="pun">=</span><span class="atv">"password"</span></li><li class="L6"><span class="pln">   [(</span><span class="atn">ngModel</span><span class="pln">)]</span><span class="pun">=</span><span class="atv">"model.confirmPassword"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"confirmPassword"</span></li><li class="L7"><span class="pln">   #</span><span class="atn">confirmPassword</span><span class="pun">=</span><span class="atv">"ngModel"</span><span class="tag">&gt;</span></li><li class="L8"><span class="pln">   </span><span class="tag">&lt;div</span><span class="pln"> [</span><span class="atn">hidden</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"confirmPassword.valid || confirmPassword.pristine"</span></li><li class="L9"><span class="pln">      </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"alert alert-danger"</span><span class="tag">&gt;</span></li><li class="L0"><span class="pln">      Passwords did not match</span></li><li class="L1"><span class="pln">   </span><span class="tag">&lt;/div&gt;</span></li><li class="L2"><span class="tag">&lt;/div&gt;</span></li><li class="L3"><span class="pln"> </span></li></ol></pre>
 </div>
 
 <p>That’s all folks !!</p>
 
 
                         </div>
-                        <div class="bt-group">
-                            <a class="btn btn-success" href="https://cuppalabs.github.io/angular2-forms" target="blank"><i class="fa fa-desktop" aria-hidden="true"></i> Live Demo</a>
-                            <a class="btn btn-success" href="https://github.com/CuppaLabs/angular2-forms" target="blank"><i class="fa fa-github" aria-hidden="true"></i>Code on Github</a>
-                        </div>
-                        <div class="social-share">
-							<span class="social-share-title pull-left text-capitalize">By Pradeep Terli On 11-03-2017</span>
-                               <ul class="text-center pull-right">
-    <li>
-        <a class="s-facebook" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a>
-    </li>
-    <li>
-        <a class="s-google-plus" href="https://plus.google.com/share?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-google-plus"></i></a>
-    </li>
-    <li>
-        <a class="s-linkedin" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-linkedin"></i></a>
-    </li>
-    <li>
-        <a class="s-twitter" href="http://twitter.com/share?url=https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" rel="nofollow" target="_blank"><i class="fa fa-twitter"></i></a>
-    </li>
-</ul> 
-                        </div>
-                    </div>
-                </article>
-                <div class="top-comment"><!--top comment-->
-                    <img src="/img/pradeep.jpg" class="pull-left img-circle" alt="">
-                    <h4>Pradeep Terli</h4>
-                    <p>Web UI Developer, Blogger, Thinker , Entrepreneur. Loves to explore technology with focus on web technologies.</p>
-                     <div class="social-share">
-                            <ul>
-                                <li><a class="s-facebook" href="https://www.facebook.com/pradeepkumar.terli" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                <li><a class="s-linkedin" href="http://www.linkedin.com/in/pradeep-kumar-terli" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a class="s-google-plus" href=""><i class="fa fa-google-plus"></i></a></li>
-                                <li><a class="s-twitter" href=""><i class="fa fa-twitter"></i></a></li>
-                            </ul>
-                        </div>
-                </div>
-                <div class="comments-section">
-                    
-                        <div id="disqus_thread"></div>
-<script>
 
+          </div>
+          <!--/row-->
+          <div class="comments-section">
 
-var disqus_config = function () {
-this.page.url = "https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/";  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = "Angular 2 Form validations and custom validation, How to Implement"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = '//cuppalabs.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                                
-                    
-                </div>
-            </div>
-            <div class="col-md-4">
-               <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- pradeepterli_sidebar_AdSense1_300x250_as -->
-        <ins class="adsbygoogle"
-            style="display:inline-block;width:300px;height:250px"
-            data-ad-client="ca-pub-4525567075133342"
-            data-ad-slot="2263435109"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+            <div id="disqus_thread"></div>
+            <script>
+              var disqus_config = function () {
+                this.page.url = "/tutorials/how-to-implement-angular2-form-validations/";  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = "Angular 2 Form validations and custom validation, How to Implement"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              };
+              (function () { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = '//cuppalabs.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            </script>
 
-                <aside class="widget about-me-widget">
-                        <div class="about-me-img">
-
-                            <div class="about-me-content text-center">
-                                <img src="/img/pradeep.jpg" alt="" class="img-me">
-
-                                <h3 class="text-uppercase">Pradeep Kumar Terli</h3>
-
-                                <p>Web UI Developer, Blogger, Thinker , Entrepreneur. Loves to explore technology with focus on web technologies.</p>
-                            </div>
-                        </div>
-                        <div class="social-share">
-                            <ul class="text-center text-center">
-                                <li><a class="s-facebook" href="https://www.facebook.com/pradeepkumar.terli" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                <li><a class="s-linkedin" href="http://www.linkedin.com/in/pradeep-kumar-terli" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a class="s-google-plus" href="https://plus.google.com/102171107795347642020"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a class="s-twitter" href="https://twitter.com/PradeepTerli"><i class="fa fa-twitter"></i></a></li>
-                            </ul>
-                        </div>
-                    </aside>
-                 <!--   <aside class="widget news-letter">
-                        <h3 class="widget-title text-uppercase text-center">Get Newsletter</h3>
-
-                        <form action="#">
-                            <input type="email" placeholder="Your email address">
-                            <input type="submit" value="Subscribe Now" class="text-uppercase text-center btn btn-subscribe">
-                        </form>
-
-                    </aside> -->
-                
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- pradeepterli_sidebar_AdSense1_300x250_as -->
-        <ins class="adsbygoogle"
-            style="display:inline-block;width:300px;height:250px"
-            data-ad-client="ca-pub-4525567075133342"
-            data-ad-slot="2263435109"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- pradeepterli_sidebar_AdSense1_300x250_as -->
-        <ins class="adsbygoogle"
-            style="display:inline-block;width:300px;height:250px"
-            data-ad-client="ca-pub-4525567075133342"
-            data-ad-slot="2263435109"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-            </div>
+          </div>
         </div>
+      </div>
+
+    </div>
+    <!--/span-->
+    <div class="col d-none d-md-block sidebar ad-sidebar">
+      <div class="row" style="margin-top: 15px;margin-bottom: 15px;">
+    <div class="col-md-12">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- pradeepterli_sidebar_AdSense1_300x250_as -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-4525567075133342"
+     data-ad-slot="2263435109"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
     </div>
 </div>
 
 
-
-
-
-<footer class="footer">
-  <p>© 2009-2017 https://cuppalabs.github.io <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
-</footer>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=929055083862567";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-</body>
-
+<div class="row" style="margin-top: 15px;margin-bottom: 15px;">
+    <div class="col-md-12">
+       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Sidebar-two -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-4525567075133342"
+     data-ad-slot="8850561506"></ins>
 <script>
-  $(window).scroll(function(){
-  var sticky = $('.sticky'),
-      scroll = $(window).scrollTop(),
-      sticky2 = $('.left-sticky'),
-      sticky3 = $('.content-sticky'),
-      sticky4 = $('.fixed-ad'),
-      sticky5 = $('.sec-menu-sticky'),
-      sticky6 = $('.doc-menu-sticky'),
-      sticky7 = $('.doc-left-sticky');
-
-  if (scroll >= 60) {
-    sticky.addClass('fixed');
-    sticky2.addClass('left-fixed');
-    sticky3.addClass('content-fixed');
-  }
-  else {
-    sticky.removeClass('fixed');
-    sticky2.removeClass('left-fixed');
-    sticky3.removeClass('content-fixed');
-  }
-  if (scroll >= 50) {
-    sticky4.addClass('fixed');
-  }
-  else if (scroll < 50) {
-    sticky4.removeClass('fixed');
-  }
-  if (scroll >= 364) {
-    sticky5.addClass('fixed');
-  }
-  else if (scroll <= 364) {
-    sticky5.removeClass('fixed');
-  }
-  if (scroll >= 200 ) {
-    sticky6.addClass('fixed');
-  }
-  else if (scroll <= 200 ) {
-    sticky6.removeClass('fixed');
-  }
-  if (scroll >= 200 ) {
-    sticky7.addClass('fixed');
-  }
-  else if (scroll <= 200 ) {
-    sticky7.removeClass('fixed');
-  }
-});
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<script>
-$(function() {
-  return $("h2, h3, h4, h5, h6").each(function(i, el) {
-    var $el, icon, id;
+    </div>
+</div>
+    </div>
+    <script>
+  $(function() {
+    var currentTime = toJSONLocal(new Date);
+  $.ajax({
+  method: "GET",
+  url: "https://npm-stat.com/downloads/range/:"+currentTime+"/"
+})
+  .done(function( data ) {
+    var total = 0;
+    $.each(data.downloads, function(key, obj){
+      total += obj.downloads
+    });
+    $("#").empty().html(numberWithCommas(total));
+  });
+  });
+
+
+</script>
+    <!--/span-->
+  </div>
+  <!--/row-->
+
+  <footer class="footer">
+    <p>© 2009-2017 &nbsp <a href="https://cuppalabs.github.io" style="color: #fff;font-size: 16px;">Cuppa Labs</a> &nbsp <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <script>
+    $(function() {
+  return $(".component-article h1, .component-article h2, .component-article h3, .component-article h4, .component-article h5, .component-article h6").each(function(i, el) {
+    var $el, icon, id, val;
     $el = $(el);
-    id = $el.attr('id');
-    icon = '<i class="fa fa-link"></i>';
+    val = $(el).html().split(' ').join('-');
+    id = $el.attr('id', val);
     if (id) {
-      $el.addClass('anchor');
-      return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id));
+      return $el;
+    }
+  });
+});
+    $(function() {
+  return $("#navbar-example2 > a").each(function(i, el) {
+    var $el, icon, id, val;
+    $el = $(el);
+    val = '#'+$(el).html().split(' ').join('-');
+    id = $el.attr('href', val);
+    if (id) {
+      return $el;
     }
   });
 });
@@ -656,52 +427,15 @@ $(function() {
     $el.addClass('table table-bordered table-responsive');
   });
 });
-/*$(function(){
-      $("#myScrollspy ul li a[href^='#']").on('click', function(e) {
-
-       // prevent default anchor click behavior
-       e.preventDefault();
-
-       // animate
-       $('html, body').animate({
-           scrollTop: $(this.hash).offset().top - 75
-         }, 300, function(){
-   
-           // when done, add hash to url
-           // (default click behaviour)
-           window.location.hash = this.hash;
-         });
-
-    });
-
-});*/
-$(document).on('click', '.index-list a', function (event) {
-    "use strict";
-    event.preventDefault();
-    var animLen = $($.attr(this, 'href')).offset().top - 62.667 - 30;
-    $('html, body').animate({
-        scrollTop: animLen
-    }, 300);
-
-});
-$(function () {
-    "use strict";
-    $(window).bind('scroll', function () {
-        $('.anchor').each(function () {
-            var anchored = $(this).attr("id"),
-                position = $(this).position().top - $(window).scrollTop()- 62.667 - 30,
-                targetOffset = $(this).offset().top - 75 - 30;
-
-            if ($(window).scrollTop() > targetOffset) {
-
-                $('ul.index-list').find('li').removeClass("active");
-                $('ul.index-list').find(('*[data-anchor="' + anchored + '"]')).addClass("active");
-            }
-        });
-    });
-});
-</script>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  function toJSONLocal (date) {
+	var local = new Date(date);
+	local.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+	return local.toJSON().slice(0, 10);
+}
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+  </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -712,4 +446,6 @@ $(function () {
   ga('send', 'pageview');
 
 </script>
+</body>
+
 </html>
