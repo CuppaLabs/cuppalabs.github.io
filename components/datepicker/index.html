@@ -417,7 +417,7 @@
         <div class="navbar">
           <i class="fa fa-download" style="font-size: 30px;margin-top: 5px;"></i>
 <div class="mr-md-auto component-title"  style="padding: 11px 0px 0px 10px;text-align: center;">
-    <h4 style="margin: 0;line-height: 13px;" id="cuppa-datepicker"><img style="width:45px;" src="/img/ezgif.gif"/></h4> 
+    <h4 style="margin: 0;line-height: 13px;" id="angular2-datetimepicker"><img style="width:45px;" src="/img/ezgif.gif"/></h4> 
     <small style="line-height: 12px;font-size: 14px;">Downloads</small>
 </div>
         </div>
@@ -458,14 +458,14 @@
     var currentTime = toJSONLocal(new Date);
   $.ajax({
   method: "GET",
-  url: "https://npm-stat.com/downloads/range/2017-11-13:"+currentTime+"/cuppa-datepicker"
+  url: "https://npm-stat.com/downloads/range/2017-11-13:"+currentTime+"/angular2-datetimepicker"
 })
   .done(function( data ) {
     var total = 0;
     $.each(data.downloads, function(key, obj){
       total += obj.downloads
     });
-    $("#cuppa-datepicker").empty().html(numberWithCommas(total));
+    $("#angular2-datetimepicker").empty().html(numberWithCommas(total));
   });
   });
 
