@@ -102,6 +102,43 @@
 
 <div class="col-md-4 card-container">
   <div class="card">
+    <a href="https://cuppalabs.github.io/components/datepicker/"><img class="card-img-top" src="https://cuppalabs.github.io/img/components/datepicker-thumbnail.png" alt="Angular 2 DateTime picker"></a>
+    <div class="card-body">
+      <h4 class="card-title"><a href="https://cuppalabs.github.io/components/datepicker/">Angular 2 DateTime picker</a></h4>
+      <p class="card-text">A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install and integrate.</p>
+    </div>
+    <div class="card-footer">
+      
+       <a href="https://cuppalabs.github.io/components/datepicker/" class="card-link">View Details <i class="fa fa-arrow-right"></i></a>
+      <div class="txt-slot d-inline-block float-right" id="cuppa-datepicker"><img style="width:45px;" src="/img/ezgif.gif"/></div>
+       
+       
+    </div>
+    
+  </div>
+</div>
+<script>
+  $(function() {
+     var currentTime = toJSONLocal(new Date);
+  $.ajax({
+  method: "GET",
+  url: "https://npm-stat.com/downloads/range/2017-11-13:"+currentTime+"/cuppa-datepicker"
+})
+  .done(function( data ) {
+    var total = 0;
+    $.each(data.downloads, function(key, obj){
+      total += obj.downloads
+    });
+    $("#cuppa-datepicker").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
+  });
+  });
+</script>
+ 
+ 
+ 
+
+<div class="col-md-4 card-container">
+  <div class="card">
     <a href="https://cuppalabs.github.io/components/multiselectDropdown/"><img class="card-img-top" src="https://cuppalabs.github.io/img/components/multiselect-thumbnail.png" alt="MultiSelect Dropdown"></a>
     <div class="card-body">
       <h4 class="card-title"><a href="https://cuppalabs.github.io/components/multiselectDropdown/">MultiSelect Dropdown</a></h4>
@@ -208,43 +245,6 @@
       total += obj.downloads
     });
     $("#cuppa-ng2-grid").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
-  });
-  });
-</script>
- 
- 
- 
-
-<div class="col-md-4 card-container">
-  <div class="card">
-    <a href="https://cuppalabs.github.io/components/datepicker/"><img class="card-img-top" src="https://cuppalabs.github.io/img/components/datepicker-thumbnail.png" alt="Angular 2 DateTime picker"></a>
-    <div class="card-body">
-      <h4 class="card-title"><a href="https://cuppalabs.github.io/components/datepicker/">Angular 2 DateTime picker</a></h4>
-      <p class="card-text">A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install and integrate.</p>
-    </div>
-    <div class="card-footer">
-      
-       <a href="https://cuppalabs.github.io/components/datepicker/" class="card-link">View Details <i class="fa fa-arrow-right"></i></a>
-      <div class="txt-slot d-inline-block float-right" id="cuppa-datepicker"><img style="width:45px;" src="/img/ezgif.gif"/></div>
-       
-       
-    </div>
-    
-  </div>
-</div>
-<script>
-  $(function() {
-     var currentTime = toJSONLocal(new Date);
-  $.ajax({
-  method: "GET",
-  url: "https://npm-stat.com/downloads/range/2017-02-12:"+currentTime+"/cuppa-datepicker"
-})
-  .done(function( data ) {
-    var total = 0;
-    $.each(data.downloads, function(key, obj){
-      total += obj.downloads
-    });
-    $("#cuppa-datepicker").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
   });
   });
 </script>
