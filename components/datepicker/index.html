@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
-  <title>DateTime picker</title>
+  <title>Angular 2 DateTime picker</title>
   <link href="https://cuppalabs.github.io/css/main.css" rel="stylesheet">
   <meta name="description" content="A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install and integrate.">
   <meta content='angular 2 dropdown, angular2 dropdown, angular 2 multiselect dropdown, angular 2 multiselect' name='keywords' />
   <meta property="og:description" content="A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install and integrate." />
   <meta property="og:url" content="/components/datepicker/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="DateTime picker" />
+  <meta property="og:title" content="Angular 2 DateTime picker" />
   <meta property="og:site_name" content="Cuppa Labs" />
   <meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
   <meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
@@ -94,7 +94,7 @@
       <div class="row component-headline">
         <div class="col-md-12 px-0">
         <div class="navbar">
-          <h4 class="mr-md-auto component-title">DateTime picker</h4>
+          <h4 class="mr-md-auto component-title">Angular 2 DateTime picker</h4>
           <ul class="navbar-nav flex-row ml-md-auto">
             <li class="nav-item dropdown">
               <a class="nav-item nav-link mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -150,12 +150,11 @@
             
             <a href="#Overview" class="list-group-item">Overview</a> 
             <a href="#Getting Started" class="list-group-item">Getting Started</a> 
+            <a href="#Installation" class="list-group-item">Installation</a> 
             <a href="#Usage" class="list-group-item">Usage</a> 
-            <a href="#API Documentation" class="list-group-item">API Documentation</a> 
-            <a href="#Configuration" class="list-group-item">Configuration</a> 
-            <a href="#Events" class="list-group-item">Events</a> 
+            <a href="#Settings" class="list-group-item">Settings</a> 
+            <a href="#Callback Methods" class="list-group-item">Callback Methods</a> 
             <a href="#Date Formats Support" class="list-group-item">Date Formats Support</a> 
-            <a href="#External Dependencies" class="list-group-item">External Dependencies</a> 
 
           </div>
           <div class="card bg-default mb-3 user-card" style="max-width: 20rem;">
@@ -197,112 +196,128 @@
           <div class="row component-article">
             <h3 id="overview">Overview</h3>
 
-<p>Angular Cuppa DateTimepicker is a cool responsive DateTimepicker directive for Web and Mobile. It is Mobile friendly and light weight. Developed by <a href="http://www.cuppalabs.com">Cuppa Labs</a>.</p>
+<p>Angular 2 DateTimepicker is a cool responsive DateTimepicker component for Web and Mobile. It is Mobile friendly and light weight. Developed by <a href="http://www.cuppalabs.com">Cuppa Labs</a>.</p>
 
 <h3 id="getting-started">Getting Started</h3>
+<p>To get started with using the multiselect dropdown component, follow the below steps. It’s easy to integrate and just a matter of minutes.</p>
+
+<h3 id="installation">Installation</h3>
 <ul>
-  <li>Install with <a href="https://www.npmjs.com">npm</a>: <code class="highlighter-rouge">npm install angular-cuppa-datepicker</code></li>
+  <li>The datetimepicker package is published on the <a href="https://www.npmjs.com/package/angular2-datetimepicker">npm</a> Registry.</li>
+  <li>Install the package with <a href="https://www.npmjs.com">npm</a>:</li>
 </ul>
 
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>	<span class="nx">npm</span> <span class="nx">install</span> <span class="nx">angular2</span><span class="o">-</span><span class="nx">datetimepicker</span>
+</code></pre>
+</div>
+
 <h3 id="usage">Usage</h3>
-<h5 id="add-datepicker-directive-script">Add Datepicker Directive Script</h5>
-<p>Include the <code class="highlighter-rouge">datepicker-directive.js</code> script file in the <code class="highlighter-rouge">&lt;head&gt;</code> section or at the bottom of your html page.</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"datepicker-directive.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre>
-</div>
-<h5 id="css">CSS</h5>
-<p>Include the CSS file in <code class="highlighter-rouge">&lt;head&gt;</code> section of your page.</p>
+<p>Import <code class="highlighter-rouge">AngularDateTimePickerModule</code> into your <code class="highlighter-rouge">AppModule</code></p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"cuppa-datepicker-styles.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">AngularDateTimePickerModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'angular2-datetimepicker'</span><span class="p">;</span>
 
-<h4 id="initialize">Initialize</h4>
-
-<p>Inject the directive <code class="highlighter-rouge">cuppaDatepickerDirective</code> as a dependency into the module where the datepicker needs to be initialized.</p>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s2">"cuppaDatepicker"</span><span class="p">,[</span><span class="s2">"cuppaDatepickerDirective"</span><span class="p">])</span>
-<span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s2">"cuppaDatepickerController"</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">){</span>
-        <span class="nx">$scope</span><span class="p">.</span><span class="nx">myDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-        <span class="nx">$scope</span><span class="p">.</span><span class="nx">myDate2</span> <span class="o">=</span> <span class="s2">"04-18-1990 12:15 AM"</span><span class="p">;</span>
-<span class="p">});</span>
+<span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
+  <span class="c1">// ...</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">AngularDateTimePickerModule</span><span class="p">,</span>
+  <span class="p">]</span>
+  <span class="c1">// ...</span>
+<span class="p">})</span>
 
 </code></pre>
 </div>
-<h4 id="html">HTML</h4>
-<p>Directive tag declaration.</p>
-<div class="language-html highlighter-rouge"><pre class="highlight"><code> <span class="nt">&lt;cuppa-datepicker</span> 
- 		<span class="na">ng-model=</span><span class="s">"myDate"</span> 
-		<span class="na">big-banner=</span><span class="s">"true"</span> 
-		<span class="na">format=</span><span class="s">"dd/MM/yyyy hh:mm a"</span> 
-		<span class="na">default-open=</span><span class="s">"true"</span>
-		<span class="na">time-picker=</span><span class="s">"true"</span> 
-		<span class="na">on-date-select=</span><span class="s">"onDateSelect(selectedDate)"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/cuppa-datepicker&gt;</span>
+<p>Declare the component data variables and options in your component where you want to consume the dropdown component.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+    
+	<span class="nl">date</span><span class="p">:</span> <span class="nb">Date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+	<span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="na">bigBanner</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+		<span class="na">timePicker</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+		<span class="na">format</span><span class="p">:</span> <span class="s1">'dd-MM-yyyy'</span><span class="p">,</span>
+		<span class="na">defaultOpen</span><span class="p">:</span> <span class="kc">true</span>
+	<span class="p">}</span>
+	<span class="nx">constructor</span><span class="p">(){}</span>
+    <span class="nx">ngOnInit</span><span class="p">(){</span>
+       
+    <span class="p">}</span>
+<span class="p">}</span>
+
 </code></pre>
 </div>
 
-<h2 id="api-documentation">API Documentation</h2>
+<p>Add the following component tag in the template where your want to place the datepicker</p>
 
-<h2 id="configuration">Configuration</h2>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<span class="nt">&lt;angular2-date-picker</span> <span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">date</span><span class="err">"</span> <span class="err">[</span><span class="na">settings</span><span class="err">]="</span><span class="na">settings</span><span class="err">"</span><span class="nt">&gt;&lt;/angular2-date-picker&gt;</span>
 
-<p>Following directive attirbutes can be configured.</p>
+</code></pre>
+</div>
+
+<h3 id="settings">Settings</h3>
+
+<p>Following <code class="highlighter-rouge">settings</code> object properties can be used to configure the component.</p>
 
 <table>
   <thead>
     <tr>
       <th style="text-align: left">Property</th>
-      <th style="text-align: left">Required</th>
+      <th style="text-align: left">Type</th>
       <th style="text-align: left">Default</th>
       <th style="text-align: left">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">ng-model</code></td>
-      <td style="text-align: left">YES</td>
-      <td style="text-align: left"><code class="highlighter-rouge">''</code></td>
-      <td style="text-align: left">scope model for the date field.</td>
+      <td style="text-align: left">format</td>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">dd-MMM-yyyy hh:mm a</td>
+      <td style="text-align: left">Date format of the selected date.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">big-banner</code></td>
-      <td style="text-align: left">Optional</td>
-      <td style="text-align: left"><code class="highlighter-rouge">true</code></td>
-      <td style="text-align: left">Set to true to have a cool banner above the month table. Set false to have a simple datepicker</td>
+      <td style="text-align: left">bigBanner</td>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">true</td>
+      <td style="text-align: left">The banner section to show the date details.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">format</code></td>
-      <td style="text-align: left">optional</td>
-      <td style="text-align: left"><code class="highlighter-rouge">dd/MM/yyyy</code></td>
-      <td style="text-align: left">Date format of the calendar. This will be bound to the model as the date’s value.</td>
+      <td style="text-align: left">defaultOpen</td>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">false</td>
+      <td style="text-align: left">To open the datepicker popover on load. Default is set to false.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">default-open</code></td>
-      <td style="text-align: left">optional</td>
-      <td style="text-align: left"><code class="highlighter-rouge">false</code></td>
-      <td style="text-align: left">To open the dateoicker popover on load. Default false.</td>
+      <td style="text-align: left">timePicker</td>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">false</td>
+      <td style="text-align: left">Enable time picker feature.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">time-picker</code></td>
-      <td style="text-align: left">optional</td>
-      <td style="text-align: left"><code class="highlighter-rouge">false</code></td>
-      <td style="text-align: left">Enable timepicker feature.</td>
+      <td style="text-align: left">closeOnSelect</td>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">true</td>
+      <td style="text-align: left">to close the popover on date select or on click of done button.</td>
     </tr>
   </tbody>
 </table>
 
-<h2 id="events">Events</h2>
+<h2 id="callback-methods">Callback Methods</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">on-date-select</code></li>
+  <li><code class="highlighter-rouge">onDateSelect</code></li>
 </ul>
 
-<p>Define a callback method to call on select of the date.</p>
+<p>Define a callback method to be called on select of the date.</p>
 
-<p>Example :</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>  
+  <span class="nt">&lt;angular2-date-picker</span> <span class="err">(</span><span class="na">onDateSelect</span><span class="err">)="</span><span class="na">onDateSelect</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> 
+			<span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">date</span><span class="err">"</span> 
+			<span class="err">[</span><span class="na">settings</span><span class="err">]="</span><span class="na">settings</span><span class="err">"</span> <span class="nt">&gt;</span>
+  <span class="nt">&lt;/angular2-date-picker&gt;</span>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>  on-date-select="onDateSelect(selectedDate)"
 </code></pre>
 </div>
 <h2 id="date-formats-support">Date Formats Support</h2>
@@ -354,40 +369,16 @@
   <li>‘shortTime’: equivalent to ‘h:mm a’ for en_US locale (e.g. 12:05 PM)</li>
 </ul>
 
-<h4 id="external-dependencies">External Dependencies</h4>
+<h2 id="run-locally">Run locally</h2>
+<ul>
+  <li>Clone the repository or downlod the .zip,.tar files.</li>
+  <li>Run <code class="highlighter-rouge">npm install</code></li>
+  <li>Run <code class="highlighter-rouge">ng serve</code> for a dev server</li>
+  <li>Navigate to <code class="highlighter-rouge">http://localhost:4200/</code></li>
+</ul>
 
-<p>We have font awesome icons as dependency for the component. Don’t forget to include the following dependencies.</p>
-
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://use.fontawesome.com/698aa4e2c2.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre>
-</div>
-
-<h2 id="licence">Licence</h2>
-
-<p>This project is licensed under the MIT license. See the <a href="LICENSE">LICENSE</a> file for more info.</p>
-
-<p>–</p>
-
-<p>The MIT License (MIT)
-Copyright (c) 2016 Cuppa Labs</p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the “Software”), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p>
+<h2 id="license">License</h2>
+<p>MIT License.</p>
 
 <h2 id="credits">Credits</h2>
 <p>Thanks to Font Awesome and Moment.js for the libraries.</p>
@@ -404,7 +395,7 @@ THE SOFTWARE.</p>
             <script>
               var disqus_config = function () {
                 this.page.url = "/components/datepicker/";  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = "DateTime picker"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                this.page.identifier = "Angular 2 DateTime picker"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
               };
               (function () { // DON'T EDIT BELOW THIS LINE
                 var d = document, s = d.createElement('script');
