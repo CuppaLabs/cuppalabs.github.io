@@ -152,6 +152,8 @@
             <a href="#Getting Started" class="list-group-item">Getting Started</a> 
             <a href="#Installation" class="list-group-item">Installation</a> 
             <a href="#Usage" class="list-group-item">Usage</a> 
+            <a href="#Template - For custom html of menu item" class="list-group-item">Template - For custom html of menu item</a> 
+            <a href="#Using with Angular Forms" class="list-group-item">Using with Angular Forms</a> 
             <a href="#Settings" class="list-group-item">Settings</a> 
             <a href="#Callback Methods" class="list-group-item">Callback Methods</a> 
 
@@ -305,6 +307,39 @@
     <span class="err">(</span><span class="na">onSelectAll</span><span class="err">)="</span><span class="na">onSelectAll</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span>
     <span class="err">(</span><span class="na">onDeSelectAll</span><span class="err">)="</span><span class="na">onDeSelectAll</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/angular2-multiselect&gt;</span>
+
+</code></pre>
+</div>
+<h3 id="template---for-custom-html-of-menu-item">Template - For custom html of menu item</h3>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;angular2-multiselect</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">dropdownList</span><span class="err">"</span> <span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">selectedItems</span><span class="err">"</span> <span class="err">[</span><span class="na">settings</span><span class="err">]="</span><span class="na">dropdownSettings</span><span class="err">"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;c-item&gt;</span>
+          <span class="nt">&lt;ng-template</span> <span class="na">let-item=</span><span class="s">"item"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">style=</span><span class="s">"color: #333;min-width: 150px;"</span><span class="nt">&gt;&lt;/label&gt;</span>
+            <span class="nt">&lt;img</span> <span class="err">[</span><span class="na">src</span><span class="err">]="</span><span class="na">item</span><span class="err">.</span><span class="na">image</span><span class="err">"</span> <span class="na">style=</span><span class="s">"width: 30px; border: 1px solid #efefef;margin-right: 20px;"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label&gt;</span>Capital - <span class="nt">&lt;/label&gt;</span>
+          <span class="nt">&lt;/ng-template&gt;</span>
+  <span class="nt">&lt;/c-item&gt;</span>    
+<span class="nt">&lt;/angular2-multiselect&gt;</span>
+
+</code></pre>
+</div>
+
+<h3 id="using-with-angular-forms">Using with Angular Forms</h3>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<span class="nt">&lt;form</span> <span class="err">(</span><span class="na">ngSubmit</span><span class="err">)="</span><span class="na">onSubmit</span><span class="err">()"</span> <span class="err">#</span><span class="na">loginForm=</span><span class="s">"ngForm"</span> <span class="na">style=</span><span class="s">"border: 1px solid #ccc; padding: 10px;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Skills<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;angular2-multiselect</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">itemList</span><span class="err">"</span> <span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">formModel</span><span class="err">.</span><span class="na">skills</span><span class="err">"</span> 
+                                  <span class="err">[</span><span class="na">settings</span><span class="err">]="</span><span class="na">settings</span><span class="err">"</span> 
+                                  <span class="err">(</span><span class="na">onSelect</span><span class="err">)="</span><span class="na">onItemSelect</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span>
+                                  <span class="err">(</span><span class="na">onDeSelect</span><span class="err">)="</span><span class="na">OnItemDeSelect</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> 
+                                  <span class="err">(</span><span class="na">onSelectAll</span><span class="err">)="</span><span class="na">onSelectAll</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> 
+                                  <span class="err">(</span><span class="na">onDeSelectAll</span><span class="err">)="</span><span class="na">onDeSelectAll</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> <span class="na">name=</span><span class="s">"skills"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/angular2-multiselect&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
 
 </code></pre>
 </div>
