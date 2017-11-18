@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
   <title>Cuppa Labs - UI Development | AngularJS | Angular 2 Tutorials | Demos | Javascript | Angular | HTML5 | CSS3</title>
+  <noscript id="deferred-styles2">
   <link href="https://cuppalabs.github.io/css/main.css" rel="stylesheet">
+  </noscript>
   <meta name="description" content="UI Programming Tech Blog with Demos and Tutorials. Learn Angular 2, JavaScript, HTML5, CSS3 with examples. Free UI components and tutorials for your web projects.">
   <meta content='angular, angular2, jaascript, html5,css3' name='keywords' />
   <meta property="og:description" content="UI Programming Tech Blog with Demos and Tutorials. Learn Angular 2, JavaScript, HTML5, CSS3 with examples. Free UI components and tutorials for your web projects." />
@@ -20,9 +22,10 @@
   <meta property="article:tag" content="html5" />
   <meta property="article:tag" content="css3" />
   <meta property="og:image" content="https://cuppalabs.github.io/img/banner-img/website-banner.png" />
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<noscript id="deferred-styles">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+   </noscript>
+  <script async src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 </head>
 
@@ -471,6 +474,32 @@ function numberWithCommas(x) {
   ga('send', 'pageview');
 
 </script>
+<script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
+  <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles2");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
 </body>
 
 </html>
