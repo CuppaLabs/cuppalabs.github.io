@@ -199,6 +199,8 @@
             <a href="#Getting Started" class="list-group-item">Getting Started</a> 
             <a href="#Installation" class="list-group-item">Installation</a> 
             <a href="#Usage" class="list-group-item">Usage</a> 
+            <a href="#Configuration Settings" class="list-group-item">Configuration Settings</a> 
+            <a href="#Callback API" class="list-group-item">Callback API</a> 
             <a href="#Dependencies" class="list-group-item">Dependencies</a> 
 
           </div>
@@ -293,6 +295,81 @@ An angular 2 slide navigation menu component for mobile and web. Hamburger kind 
   <span class="p">}</span>
 </code></pre>
 </div>
+<h3 id="configuration-settings">Configuration Settings</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Property</th>
+      <th style="text-align: left">type</th>
+      <th style="text-align: left">description</th>
+      <th style="text-align: left">default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">animation</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">name of the hamburger animation. Refer to the below list of supported animation types</td>
+      <td style="text-align: left">collapse</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">offset</td>
+      <td style="text-align: left">object “offset”: {“top”: 55}</td>
+      <td style="text-align: left">The offset value of the menu from top, left, right and bottom</td>
+      <td style="text-align: left">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">closeOnCLick</td>
+      <td style="text-align: left">boolean</td>
+      <td style="text-align: left">To close the menu as soo as an item is selected.</td>
+      <td style="text-align: left">false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Supported animations list :</p>
+<ul>
+  <li>3dx</li>
+  <li>3dx-r</li>
+  <li>3dy</li>
+  <li>3dy-r</li>
+  <li>3dxy</li>
+  <li>3dxy-r</li>
+  <li>arrow</li>
+  <li>arrow-r</li>
+  <li>arrowalt</li>
+  <li>arrowalt-r</li>
+  <li>arrowturn</li>
+  <li>arrowturn-r</li>
+  <li>boring</li>
+  <li>collapse</li>
+  <li>collapse-r</li>
+  <li>elastic</li>
+  <li>elastic-r</li>
+  <li>emphatic</li>
+  <li>emphatic-r</li>
+  <li>minus</li>
+  <li>slider</li>
+  <li>slider-r</li>
+  <li>spin</li>
+  <li>spin-r</li>
+  <li>spring</li>
+  <li>spring-r</li>
+  <li>stand</li>
+  <li>stand-r</li>
+  <li>squeeze</li>
+  <li>vortex</li>
+  <li>vortex-r</li>
+</ul>
+
+<h3 id="callback-api">Callback API</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">onMenuClose()</code> - This method is triggered when menu is closed.</li>
+  <li><code class="highlighter-rouge">onMenuOpen()</code> - Triggered when menu is opened.</li>
+  <li><code class="highlighter-rouge">onItemSelect(item:any)</code> - Triggered when a menu item is selected. Returns the selected menu item object.</li>
+</ul>
 
 <h3 id="dependencies">Dependencies</h3>
 <ul>
