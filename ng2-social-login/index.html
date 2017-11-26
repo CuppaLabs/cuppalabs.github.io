@@ -21,9 +21,9 @@
   <meta property="article:tag" content="css3" />
   <meta property="og:image" content="https://cuppalabs.github.io/img/social-login/oauth-banner.png" />
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
- <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example2" data-offset="60">
@@ -56,9 +56,10 @@
           <a class="nav-link" href="https://cuppalabs.github.io/aboutme">About Me</a>
         </li>
         <li class="nav-item">
-<!--          <button type="button" class="btn btn-primary donation-button" data-toggle="modal" data-target="#exampleModalLong">
+          <button type="button" id="paypal-form" class="btn btn-primary donation-button" data-toggle="modal" data-target="#exampleModalLong">
             Donate 
-          </button>-->
+          </button>
+          <a id="insta-button" href="https://www.instamojo.com/@cuppalabs/" rel="im-checkout" data-behaviour="remote" data-style="flat" data-text="Donate"></a>
         </li>
       </ul>
       <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
@@ -114,7 +115,7 @@
                   <label for="inlineFormInputName2">Currency</label>
                   <select class="form-control" id="donatecurrency">
                       <option value="USD">USD</option>
-                      <option value="INR">INR</option>
+                      <option value="BRL">BRL</option>
                   </select>
                 </div>
                 <div class="col-md-12">
@@ -132,9 +133,7 @@
     </div>
   </div>
 </div>
-</div> 
-  
-      <div class="jumbotron ">
+</div>     <div class="jumbotron ">
       <div class="container-fluid">
         <div class="col-md-7">
           <h2>Angular 2 Social Login Script</h2>
@@ -394,7 +393,8 @@ $(function () {
 
 
   <footer class="footer">
-    <p>© 2009-2017 &nbsp <a href="https://cuppalabs.github.io" style="color: #fff;font-size: 16px;">Cuppa Labs</a> &nbsp <b>Made in India</b>. All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
+    <p>© 2009-2017 &nbsp <a href="https://cuppalabs.github.io" style="color: #fff;font-size: 16px;">Cuppa Labs</a> &nbsp <b>Made in India</b>.
+      All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
     crossorigin="anonymous"></script>
@@ -402,106 +402,124 @@ $(function () {
     crossorigin="anonymous"></script>
   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   <script>
-    $(function() {
-  return $(".component-article h1, .component-article h2, .component-article h3, .component-article h4, .component-article h5, .component-article h6").each(function(i, el) {
-    var $el, icon, id, val;
-    $el = $(el);
-    val = $(el).html().split(' ').join('-');
-    id = $el.attr('id', val);
-    if (id) {
-      return $el;
+    $(function () {
+      return $(".component-article h1, .component-article h2, .component-article h3, .component-article h4, .component-article h5, .component-article h6").each(function (i, el) {
+        var $el, icon, id, val;
+        $el = $(el);
+        val = $(el).html().split(' ').join('-');
+        id = $el.attr('id', val);
+        if (id) {
+          return $el;
+        }
+      });
+    });
+    $(function () {
+      return $("#navbar-example2 > a").each(function (i, el) {
+        var $el, icon, id, val;
+        $el = $(el);
+        val = '#' + $(el).html().split(' ').join('-');
+        id = $el.attr('href', val);
+        if (id) {
+          return $el;
+        }
+      });
+    });
+    $(function () {
+      return $("table").each(function (i, el) {
+        var $el, icon, id;
+        $el = $(el);
+        $el.addClass('table table-bordered table-responsive');
+      });
+    });
+    function toJSONLocal(date) {
+      var local = new Date(date);
+      local.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+      return local.toJSON().slice(0, 10);
     }
-  });
-});
-    $(function() {
-  return $("#navbar-example2 > a").each(function(i, el) {
-    var $el, icon, id, val;
-    $el = $(el);
-    val = '#'+$(el).html().split(' ').join('-');
-    id = $el.attr('href', val);
-    if (id) {
-      return $el;
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
-  });
-});
-$(function() {
-  return $("table").each(function(i, el) {
-    var $el, icon, id;
-    $el = $(el);
-    $el.addClass('table table-bordered table-responsive');
-  });
-});
-  function toJSONLocal (date) {
-	var local = new Date(date);
-	local.setMinutes(date.getMinutes() - date.getTimezoneOffset());
-	return local.toJSON().slice(0, 10);
-}
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
   </script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <script>
+    (function (i, s, o, g, r, a, m) {    
+i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-93566400-1', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-93566400-1', 'auto');
+    ga('send', 'pageview');
 
-</script>
-<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  </script>
+  <script src="https://js.instamojo.com/v1/button.js"></script>
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
-    <script>
-        paypal.Button.render({
+  <script>
+    paypal.Button.render({
 
-            env: 'sandbox', // sandbox | production
+      env: 'sandbox', // sandbox | production
 
-            // PayPal Client IDs - replace with your own
-            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
-            client: {
-                sandbox:    'AWFjenC6Lf5-W1a4eAULLkJTjM4n-MEo4wra64YgCRVdiCG4gcJC2VrQ_RxXLSri08-ZOWDcVpML1ZBl'
-            },
-            style: {
-              size:'responsive',
-              color: 'blue',
-              label: 'pay'
-            },
+      // PayPal Client IDs - replace with your own
+      // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+      client: {
+        sandbox: 'ASrA_m_vzFgS5z-H54iD_PTYGhKj_kRB5soHsPcnq_n6Qv1bLpr5MWxSmmS8kZUlmtPTRPVYSC6ZD6Fe'
+      },
+      style: {
+        size: 'responsive',
+        color: 'blue',
+        label: 'pay'
+      },
 
-            // Show the buyer a 'Pay Now' button in the checkout flow
-            commit: true,
+      // Show the buyer a 'Pay Now' button in the checkout flow
+      commit: true,
 
-            // payment() is called when the button is clicked
-            payment: function(data, actions) {
-                var amount = document.getElementById("donateamount").value;
-                var currency = document.getElementById("donatecurrency").value;
-                // Make a call to the REST api to create the payment
-                if(amount == null || currency == null){
-                  return false;
-                }
-                return actions.payment.create({
-                    payment: {
-                        transactions: [
-                            {
-                                amount: { total: amount, currency: currency }
-                            }
-                        ]
-                    }
-                });
-            },
+      // payment() is called when the button is clicked
+      payment: function (data, actions) {
+        var amount = document.getElementById("donateamount").value;
+        var currency = document.getElementById("donatecurrency").value;
+        // Make a call to the REST api to create the payment
+        if (amount == null || currency == null) {
+          return false;
+        }
+        return actions.payment.create({
+          payment: {
+            transactions: [
+              {
+                amount: { total: amount, currency: currency }
+              }
+            ]
+          }
+        });
+      },
 
-            // onAuthorize() is called when the buyer approves the payment
-            onAuthorize: function(data, actions) {
+      // onAuthorize() is called when the buyer approves the payment
+      onAuthorize: function (data, actions) {
 
-                // Make a call to the REST api to execute the payment
-                return actions.payment.execute().then(function() {
-                    window.alert('Payment Complete!');
-                });
-            }
+        // Make a call to the REST api to execute the payment
+        return actions.payment.execute().then(function () {
+          window.alert('Payment Complete!');
+        });
+      }
 
-        }, '#paypal-button');
-
-    </script>
+    }, '#paypal-button');
+  </script>
+  <script>
+    $(document).ready(function () {
+      $.getJSON('http://freegeoip.net/json/', function (result) {
+        if (result.country_code === "IN") {
+          $("#paypal-form").hide();
+          $('.im-checkout > a').attr("class","");
+          $('.im-checkout > a').attr("class","btn btn-primary donation-button");
+          $(".im-checkout").show();
+        }
+        else{
+          $("#paypal-form").show();
+          $(".im-checkout").hide();
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

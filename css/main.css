@@ -1104,7 +1104,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {
 .masthead-planets {
   background-image: url("../img/nebula-2.jpg");
 }
-#paypal-button {
+#paypal-button, #insta-button {
   padding-top: 25px;
 }
 @media (min-width: 576px){
@@ -1115,7 +1115,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {
 .modal-body {
   padding: 20px 50px 50px 50px;
 }
-#paypal-button {
+#paypal-button, #insta-button {
   position: relative;
   top: 50%;
   padding: 0px;
@@ -1135,6 +1135,12 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {
     border-radius: 30px;
     min-width: 120px;
     cursor: pointer;
+}
+#paypal-form, .im-checkout {
+  display: none;
+}
+.im-checkout{
+  margin: 0px !important;
 }
 .jumbotron{
   margin-bottom: 0px;
