@@ -551,7 +551,7 @@ i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
   </script>
   <script>
     $(document).ready(function () {
-      $.getJSON('http://freegeoip.net/json/', function (result) {
+      $.getJSON('https://freegeoip.net/json/', function (result) {
         if (result.country_code === "IN") {
           $("#paypal-form").hide();
           $('.im-checkout > a').attr("class","");
