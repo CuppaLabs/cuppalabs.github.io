@@ -23,7 +23,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
+ <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example2" data-offset="60">
@@ -55,6 +55,11 @@
         <li class="nav-item ">
           <a class="nav-link" href="https://cuppalabs.github.io/aboutme">About Me</a>
         </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary donation-button" data-toggle="modal" data-target="#exampleModalLong">
+            Donate 
+          </button>
+        </li>
       </ul>
       <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
         <li class="nav-item">
@@ -85,7 +90,49 @@
       </ul>
     </div>
   </div>
-</nav> 
+</nav>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Donate and keep us going !!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="row">
+              <form class="form-inline donate-form">
+
+                <div class="col-md-8">
+                  <label for="inlineFormInputName2">Amount</label>
+                  <input type="text" id="donateamount" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="Enter amount...">
+                </div>
+                <div class="col-md-4">
+                  <label for="inlineFormInputName2">Currency</label>
+                  <select class="form-control" id="donatecurrency">
+                      <option value="USD">USD</option>
+                      <option value="INR">INR</option>
+                  </select>
+                </div>
+                <div class="col-md-12">
+                  <label for="inlineFormInputName2">Email</label>
+                  <input type="text" id="donateamount" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="Enter email address...">
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div id="paypal-button"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> 
   
   <div class="container">
 
@@ -626,6 +673,58 @@ function numberWithCommas(x) {
   ga('send', 'pageview');
 
 </script>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+    <script>
+        paypal.Button.render({
+
+            env: 'sandbox', // sandbox | production
+
+            // PayPal Client IDs - replace with your own
+            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+            client: {
+                sandbox:    'AWFjenC6Lf5-W1a4eAULLkJTjM4n-MEo4wra64YgCRVdiCG4gcJC2VrQ_RxXLSri08-ZOWDcVpML1ZBl'
+            },
+            style: {
+              size:'responsive',
+              color: 'blue',
+              label: 'pay'
+            },
+
+            // Show the buyer a 'Pay Now' button in the checkout flow
+            commit: true,
+
+            // payment() is called when the button is clicked
+            payment: function(data, actions) {
+                var amount = document.getElementById("donateamount").value;
+                var currency = document.getElementById("donatecurrency").value;
+                // Make a call to the REST api to create the payment
+                if(amount == null || currency == null){
+                  return false;
+                }
+                return actions.payment.create({
+                    payment: {
+                        transactions: [
+                            {
+                                amount: { total: amount, currency: currency }
+                            }
+                        ]
+                    }
+                });
+            },
+
+            // onAuthorize() is called when the buyer approves the payment
+            onAuthorize: function(data, actions) {
+
+                // Make a call to the REST api to execute the payment
+                return actions.payment.execute().then(function() {
+                    window.alert('Payment Complete!');
+                });
+            }
+
+        }, '#paypal-button');
+
+    </script>
 </body>
 
 </html>

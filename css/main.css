@@ -1104,7 +1104,38 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {
 .masthead-planets {
   background-image: url("../img/nebula-2.jpg");
 }
-
+#paypal-button {
+  padding-top: 25px;
+}
+@media (min-width: 576px){
+.modal-dialog {
+    max-width: 50%;
+    margin: 30px auto;
+}
+.modal-body {
+  padding: 20px 50px 50px 50px;
+}
+#paypal-button {
+  position: relative;
+  top: 50%;
+  padding: 0px;
+}
+}
+.donate-form input, .donate-form select{
+  width: 100% !important;
+  border-color: #1ea3ff;
+  color: #1565c0 !important;
+}
+.donate-form label{
+ justify-content: left !important;
+ margin-top: 20px;
+}
+.donation-button {
+      margin-top: 10px;
+    border-radius: 30px;
+    min-width: 120px;
+    cursor: pointer;
+}
 .jumbotron{
   margin-bottom: 0px;
   background: #039BE5;
