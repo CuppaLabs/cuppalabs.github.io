@@ -103,8 +103,11 @@
       </div>
       <div class="modal-body">
         <div class="row">
+                        <div class="alert alert-success" role="alert" id="successMsg">
+Your transaction is successful. Thank you for your support</div>
           <div class="col-md-7">
             <div class="row">
+
               <form class="form-inline donate-form">
 
                 <div class="col-md-8">
@@ -400,12 +403,13 @@ i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
   <script>
     paypal.Button.render({
 
-      env: 'sandbox', // sandbox | production
+      env: 'production', // sandbox | production
 
       // PayPal Client IDs - replace with your own
       // Create a PayPal app: https://developer.paypal.com/developer/applications/create
       client: {
-        sandbox: 'ASrA_m_vzFgS5z-H54iD_PTYGhKj_kRB5soHsPcnq_n6Qv1bLpr5MWxSmmS8kZUlmtPTRPVYSC6ZD6Fe'
+        sandbox:'ASrA_m_vzFgS5z-H54iD_PTYGhKj_kRB5soHsPcnq_n6Qv1bLpr5MWxSmmS8kZUlmtPTRPVYSC6ZD6Fe',
+        production: 'AWq8LJAEPvVwLwHU46JUHWyGCr5MvmmXLFFD1tE6u6XkiTp-wjfqbrGhS7GYLm9tQTJKuqwlQF42byo-'
       },
       style: {
         size: 'responsive',
@@ -440,7 +444,7 @@ i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
 
         // Make a call to the REST api to execute the payment
         return actions.payment.execute().then(function () {
-          window.alert('Payment Complete!');
+          $('#successMsg').show();
         });
       }
 
@@ -460,6 +464,10 @@ i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
           $(".im-checkout").hide();
         }
       });
+      $('#exampleModalLong').on('hidden.bs.modal', function (e) {
+        document.getElementById("donateamount").value = '';
+        $('#successMsg').hide();
+});
     });
   </script>
 </body>
