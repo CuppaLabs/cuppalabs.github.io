@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
   <title>Circular Fan Menu</title>
@@ -10,7 +12,7 @@
   <meta name="description" content="Cuppa Angular Fan Menu is an angular directive for cool menu componet for web and mobile , developed using `angularJS`, `CSS3`, `HTML5`.">
   <meta content='cool circular menu, circular menu, fan menu, circular fan menu' name='keywords' />
   <meta property="og:description" content="Cuppa Angular Fan Menu is an angular directive for cool menu componet for web and mobile , developed using `angularJS`, `CSS3`, `HTML5`." />
-  <meta property="og:url" content="/components/fanmenu/" />
+  <meta property="og:url" content="https://cuppalabs.github.io/components/fanmenu/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Circular Fan Menu" />
   <meta property="og:site_name" content="Cuppa Labs" />
@@ -27,6 +29,7 @@
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example2" data-offset="60">
+<div id="load"></div>
 
   <nav class="navbar navbar-expand-md top-navbar d-print-none">
   <div class="container">
@@ -54,6 +57,9 @@
         </li>
         <li class="nav-item ">
           <a class="nav-link" href="https://cuppalabs.github.io/aboutme">About Me</a>
+        </li>
+         <li class="nav-item ">
+          <a class="nav-link" href="https://cuppalabs.github.io/interview-experiences">Interview Experiences</a>
         </li>
         <li class="nav-item">
           <button type="button" id="paypal-form" class="btn btn-primary donation-button" data-toggle="modal" data-target="#exampleModalLong">
@@ -150,6 +156,8 @@ Your transaction is successful. Thank you for your support</div>
             <a class="dropdown-item disabled"><h6>All Components</h6></a>
              
   
+  
+ 
  
   <a class="dropdown-item" href="https://cuppalabs.github.io/components/datepicker/">Angular 2 DateTime picker</a>
  
@@ -173,6 +181,8 @@ Your transaction is successful. Thank you for your support</div>
  
   <a class="dropdown-item" href="https://cuppalabs.github.io/components/fanmenu/">Circular Fan Menu</a>
  
+ 
+  
  
   
  
@@ -874,6 +884,13 @@ i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
     }, '#paypal-button');
   </script>
   <script>
+    document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'complete') {
+         document.getElementById('interactive');
+         document.getElementById('load').style.visibility="hidden";
+  }
+}
     $(document).ready(function () {
       $.getJSON('https://freegeoip.net/json/', function (result) {
         if (result.country_code === "IN") {
@@ -893,6 +910,13 @@ i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
 });
     });
   </script>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4525567075133342",
+    enable_page_level_ads: true
+  });
+</script>
 </body>
 
 </html>

@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
   <title>Cuppa Labs - UI Development | AngularJS | Angular 2 Tutorials | Demos | Javascript | Angular | HTML5 | CSS3</title>
@@ -10,7 +12,7 @@
   <meta name="description" content="UI Programming Tech Blog with Demos and Tutorials. Learn Angular 2, JavaScript, HTML5, CSS3 with examples. Free UI components and tutorials for your web projects.">
   <meta content='angular, angular2, jaascript, html5,css3' name='keywords' />
   <meta property="og:description" content="UI Programming Tech Blog with Demos and Tutorials. Learn Angular 2, JavaScript, HTML5, CSS3 with examples. Free UI components and tutorials for your web projects." />
-  <meta property="og:url" content="/" />
+  <meta property="og:url" content="https://cuppalabs.github.io/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Cuppa Labs - UI Development | AngularJS | Angular 2 Tutorials | Demos | Javascript | Angular | HTML5 | CSS3" />
   <meta property="og:site_name" content="Cuppa Labs" />
@@ -27,6 +29,7 @@
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example2" data-offset="60">
+<div id="load"></div>
 
   <nav class="navbar navbar-expand-md top-navbar d-print-none">
   <div class="container">
@@ -54,6 +57,9 @@
         </li>
         <li class="nav-item ">
           <a class="nav-link" href="https://cuppalabs.github.io/aboutme">About Me</a>
+        </li>
+         <li class="nav-item ">
+          <a class="nav-link" href="https://cuppalabs.github.io/interview-experiences">Interview Experiences</a>
         </li>
         <li class="nav-item">
           <button type="button" id="paypal-form" class="btn btn-primary donation-button" data-toggle="modal" data-target="#exampleModalLong">
@@ -143,6 +149,8 @@ Your transaction is successful. Thank you for your support</div>
   
 
       
+  
+ 
  
  
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -185,10 +193,14 @@ Your transaction is successful. Thank you for your support</div>
   
  
   
+ 
+  
 
   </ol>
   <div class="carousel-inner">
       
+  
+ 
  
  
 
@@ -321,6 +333,8 @@ Your transaction is successful. Thank you for your support</div>
   
  
   
+ 
+  
 
   </div>
   <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -343,6 +357,21 @@ Your transaction is successful. Thank you for your support</div>
    <div class="row">
           
   
+ 
+<div class="col-md-3 card-container">
+  <div class="card">
+    <a href="https://cuppalabs.github.io/interview-experiences/hackerearth-frontend-interview-experience/"><img class="card-img-top" src="https://cuppalabs.github.io/img/interview-experiences/screenshot1.png" alt="Hackerearth frontend developer interview experience"></a>
+    <div class="card-body">
+      <h4 class="card-title"><a href="https://cuppalabs.github.io/interview-experiences/hackerearth-frontend-interview-experience/">Hackerearth frontend developer interview experience</a></h4>
+      <p class="card-text">Hackerearth is a recruitment platform to hire candidates based on skill.I applied for frontend develloper position.</p>
+    </div>
+     <div class="card-footer">
+       <a href="https://cuppalabs.github.io/interview-experiences/hackerearth-frontend-interview-experience/" class="card-link">View Details <i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+</div>
+ 
+ 
  
 <div class="col-md-3 card-container">
   <div class="card">
@@ -440,6 +469,8 @@ Your transaction is successful. Thank you for your support</div>
   </div>
 </div>
  
+ 
+  
  
   
  
@@ -577,6 +608,13 @@ i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
     }, '#paypal-button');
   </script>
   <script>
+    document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'complete') {
+         document.getElementById('interactive');
+         document.getElementById('load').style.visibility="hidden";
+  }
+}
     $(document).ready(function () {
       $.getJSON('https://freegeoip.net/json/', function (result) {
         if (result.country_code === "IN") {
@@ -596,6 +634,13 @@ i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
 });
     });
   </script>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4525567075133342",
+    enable_page_level_ads: true
+  });
+</script>
 </body>
 
 </html>

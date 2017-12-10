@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
   <title>Angular 2 Form validations and custom validation, How to Implement</title>
@@ -10,7 +12,7 @@
   <meta name="description" content="Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2 validate interface.">
   <meta content='angular 2 form, angular form validation, custom angular 2 form' name='keywords' />
   <meta property="og:description" content="Today, let’s implement angular 2 inbuilt validations and create a custom validation using angular 2 validate interface." />
-  <meta property="og:url" content="/tutorials/how-to-implement-angular2-form-validations/" />
+  <meta property="og:url" content="https://cuppalabs.github.io/tutorials/how-to-implement-angular2-form-validations/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Angular 2 Form validations and custom validation, How to Implement" />
   <meta property="og:site_name" content="Cuppa Labs" />
@@ -27,6 +29,7 @@
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example2" data-offset="60">
+<div id="load"></div>
 
   <nav class="navbar navbar-expand-md top-navbar d-print-none">
   <div class="container">
@@ -54,6 +57,9 @@
         </li>
         <li class="nav-item ">
           <a class="nav-link" href="https://cuppalabs.github.io/aboutme">About Me</a>
+        </li>
+         <li class="nav-item ">
+          <a class="nav-link" href="https://cuppalabs.github.io/interview-experiences">Interview Experiences</a>
         </li>
         <li class="nav-item">
           <button type="button" id="paypal-form" class="btn btn-primary donation-button" data-toggle="modal" data-target="#exampleModalLong">
@@ -554,6 +560,13 @@ i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
     }, '#paypal-button');
   </script>
   <script>
+    document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'complete') {
+         document.getElementById('interactive');
+         document.getElementById('load').style.visibility="hidden";
+  }
+}
     $(document).ready(function () {
       $.getJSON('https://freegeoip.net/json/', function (result) {
         if (result.country_code === "IN") {
@@ -573,6 +586,13 @@ i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
 });
     });
   </script>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4525567075133342",
+    enable_page_level_ads: true
+  });
+</script>
 </body>
 
 </html>
