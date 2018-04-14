@@ -40,8 +40,13 @@ body {
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 }
+.navbar-brand {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
 .top-navbar {
     padding: 0px 15px;
+    min-height: 56px;
 }
 .top-navbar .nav-item > .nav-link{
     border-bottom: 2px solid transparent;
@@ -662,6 +667,26 @@ a:hover {
 }
 .badge-black {
     color: #333;
+}
+
+.gb_fc {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 4px;
+    padding: 12px;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    -webkit-user-select: none;
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+.gb_fc svg {
+    color: black;
+    fill: #000000;
 }
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
