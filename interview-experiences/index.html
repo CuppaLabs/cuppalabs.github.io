@@ -29,27 +29,6 @@
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example2" data-offset="60">
-<div id="load">
-  <div class="loader">
-	<div class="loader-inner">
-		<div class="loader-line-wrap">
-			<div class="loader-line"></div>
-		</div>
-		<div class="loader-line-wrap">
-			<div class="loader-line"></div>
-		</div>
-		<div class="loader-line-wrap">
-			<div class="loader-line"></div>
-		</div>
-		<div class="loader-line-wrap">
-			<div class="loader-line"></div>
-		</div>
-		<div class="loader-line-wrap">
-			<div class="loader-line"></div>
-		</div>
-	</div>
-</div>
-</div>
 
   <nav class="navbar navbar-expand-md top-navbar d-print-none">
   <div class="container">
@@ -394,13 +373,6 @@ i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
     }, '#paypal-button');
   </script>
   <script>
-    document.onreadystatechange = function () {
-  var state = document.readyState
-  if (state == 'complete') {
-         document.getElementById('interactive');
-         document.getElementById('load').style.visibility="hidden";
-  }
-}
     $(document).ready(function () {
       $.getJSON('https://freegeoip.net/json/', function (result) {
         if (result.country_code === "IN") {
