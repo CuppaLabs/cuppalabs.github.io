@@ -530,6 +530,24 @@
       <td style="text-align: left">false</td>
     </tr>
     <tr>
+      <td style="text-align: left">enableFilterSelectAll</td>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">A ‘select all’ checkbox to select all filtered results.</td>
+      <td style="text-align: left">true</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">filterSelectAllText</td>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">Text to display as the label of select all option</td>
+      <td style="text-align: left">Select all filtered results</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">filterUnSelectAllText</td>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">Text to display as the label of unSelect option</td>
+      <td style="text-align: left">UnSelect all filtered results</td>
+    </tr>
+    <tr>
       <td style="text-align: left">maxHeight</td>
       <td style="text-align: left">Number</td>
       <td style="text-align: left">Set maximum height of the dropdown list in px.</td>
@@ -595,10 +613,34 @@
       <td style="text-align: left">Set the position of the dropdown list to ‘top’ or ‘bottom’</td>
       <td style="text-align: left">bottom</td>
     </tr>
+    <tr>
+      <td style="text-align: left">noDataLabel</td>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">Label text when no data is available in the list</td>
+      <td style="text-align: left">‘No Data Available’</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">searchBy</td>
+      <td style="text-align: left">Array</td>
+      <td style="text-align: left">Search the list by certain properties of the list item. Ex: [“itemName, “id”,”name”]. Deafult is , it will search the list by all the properties of list item</td>
+      <td style="text-align: left">[]</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">lazyLoading</td>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">Enable lazy loading. Used to render large datasets.</td>
+      <td style="text-align: left">false</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">showCheckbox</td>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">Show or hide checkboxes in the list</td>
+      <td style="text-align: left">true</td>
+    </tr>
   </tbody>
 </table>
 
-<h4 id="callback-methods">Callback Methods</h4>
+<h4 id="events">Events</h4>
 <ul>
   <li><code class="highlighter-rouge">onSelect</code> - Return the selected item on selection.
   Example : (onSelect)=”onItemSelect($event)”</li>
