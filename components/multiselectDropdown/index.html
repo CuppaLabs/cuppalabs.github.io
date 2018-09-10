@@ -262,6 +262,7 @@
             <a href="#Installation" class="list-group-item">Installation</a> 
             <a href="#Usage" class="list-group-item">Usage</a> 
             <a href="#Template - For custom html of menu item" class="list-group-item">Template - For custom html of menu item</a> 
+            <a href="#Themes and Theming" class="list-group-item">Themes and Theming</a> 
             <a href="#Using with Template Driven Forms" class="list-group-item">Using with Template Driven Forms</a> 
             <a href="#Using with Reactive Forms" class="list-group-item">Using with Reactive Forms</a> 
             <a href="#Configuration Settings" class="list-group-item">Configuration Settings</a> 
@@ -278,7 +279,13 @@
 
           </div>
           <div class="row component-article">
-            <h4 id="overview">Overview</h4>
+            <p>`</p>
+<h3 id="important-">IMPORTANT !!</h3>
+<h4 id="from-v300-onwards-you-need-to-include-defaultthemescss-file-or-create-your-theme-and-add-it-refer-to-theme-section-below">From <code class="highlighter-rouge">v3.0.0</code> onwards you need to include <code class="highlighter-rouge">default.themes.css</code> file or create your theme and add it. Refer to <a href="https://cuppalabs.github.io/components/multiselectDropdown/#Template---For-custom-html-of-menu-item">theme section</a> below</h4>
+
+<p>`</p>
+
+<h4 id="overview">Overview</h4>
 
 <p>A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install and integrate.</p>
 
@@ -407,6 +414,16 @@
 
 </code></pre>
 </div>
+<h3 id="themes-and-theming">Themes and Theming</h3>
+
+<ul>
+  <li>From v3.0.0 onwards, you need to include <code class="highlighter-rouge">default.theme.css</code> file to get the basic styling of the dropdown.</li>
+  <li>The component package has a themes folder in node_modules at <code class="highlighter-rouge">angular2-multiselect-dropdown\themes\default.theme.css</code></li>
+  <li>Include the <code class="highlighter-rouge">default.theme.css</code> in <code class="highlighter-rouge">angular-cli.json</code> (for versions below angular 6) and <code class="highlighter-rouge">angular.json</code> (for version 6 or more).</li>
+  <li><a href="https://github.com/CuppaLabs/angular2-multiselect-dropdown/blob/master/.angular-cli.json">Refer this file</a> on how to add the css file to your angular project.</li>
+</ul>
+
+<p>You can create your own theme from now on. You can have a look at example scss theming file at <a href="https://github.com/CuppaLabs/angular2-multiselect-dropdown/tree/master/src/themes/default.theme.scss">Default theme</a></p>
 
 <h3 id="using-with-template-driven-forms">Using with Template Driven Forms</h3>
 
