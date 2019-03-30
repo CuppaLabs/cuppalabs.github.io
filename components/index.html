@@ -25,7 +25,6 @@
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example2" data-offset="60">
@@ -491,79 +490,6 @@ i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
     ga('create', 'UA-93566400-1', 'auto');
     ga('send', 'pageview');
 
-  </script>
-  <script src="https://js.instamojo.com/v1/button.js"></script>
-  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-
-  <script>
-    paypal.Button.render({
-
-      env: 'production', // sandbox | production
-
-      // PayPal Client IDs - replace with your own
-      // Create a PayPal app: https://developer.paypal.com/developer/applications/create
-      client: {
-        sandbox:'ASrA_m_vzFgS5z-H54iD_PTYGhKj_kRB5soHsPcnq_n6Qv1bLpr5MWxSmmS8kZUlmtPTRPVYSC6ZD6Fe',
-        production: 'AWq8LJAEPvVwLwHU46JUHWyGCr5MvmmXLFFD1tE6u6XkiTp-wjfqbrGhS7GYLm9tQTJKuqwlQF42byo-'
-      },
-      style: {
-        size: 'responsive',
-        color: 'blue',
-        label: 'pay'
-      },
-
-      // Show the buyer a 'Pay Now' button in the checkout flow
-      commit: true,
-
-      // payment() is called when the button is clicked
-      payment: function (data, actions) {
-        var amount = document.getElementById("donateamount").value;
-        var currency = document.getElementById("donatecurrency").value;
-        // Make a call to the REST api to create the payment
-        if (amount == null || currency == null) {
-          return false;
-        }
-        return actions.payment.create({
-          payment: {
-            transactions: [
-              {
-                amount: { total: amount, currency: currency }
-              }
-            ]
-          }
-        });
-      },
-
-      // onAuthorize() is called when the buyer approves the payment
-      onAuthorize: function (data, actions) {
-
-        // Make a call to the REST api to execute the payment
-        return actions.payment.execute().then(function () {
-          $('#successMsg').show();
-        });
-      }
-
-    }, '#paypal-button');
-  </script>
-  <script>
-    $(document).ready(function () {
-      $.getJSON('https://freegeoip.net/json/', function (result) {
-        if (result.country_code === "IN") {
-          $("#paypal-form").hide();
-          $('.im-checkout > a').attr("class","");
-          $('.im-checkout > a').attr("class","btn btn-primary donation-button");
-          $(".im-checkout").show();
-        }
-        else{
-          $("#paypal-form").show();
-          $(".im-checkout").hide();
-        }
-      });
-      $('#exampleModalLong').on('hidden.bs.modal', function (e) {
-        document.getElementById("donateamount").value = '';
-        $('#successMsg').hide();
-});
-    });
   </script>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
