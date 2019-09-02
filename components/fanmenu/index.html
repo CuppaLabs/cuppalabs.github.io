@@ -686,7 +686,8 @@ THE SOFTWARE.</p>
     var currentTime = toJSONLocal(new Date);
   $.ajax({
   method: "GET",
-  url: "https://npm-stat.com/downloads/range/2016-11-01:"+currentTime+"/cuppa-angular-menu"
+  url: "https://api.npmjs.org/downloads/range/2016-11-01:"+currentTime+"/cuppa-angular-menu"
+
 })
   .done(function( data ) {
     var total = 0;
