@@ -577,9 +577,7 @@ THE SOFTWARE.</p>
           );
         }
         Promise.all(requests)
-          // map array of responses into an array of response.json() to read their content
           .then((responses) => Promise.all(responses.map((r) => r.json())))
-          // all JSON answers are parsed: "users" is the array of them
           .then((data) => {
             var total = 0;
             data.forEach((obj) => {
@@ -587,18 +585,6 @@ THE SOFTWARE.</p>
             });
             $("#cuppa-ng2-slidemenu").empty().html(numberWithCommas(total));
           });
-        /*         $.getJSON(
-          "https://npm-stat.com/api/download-counts?package=cuppa-ng2-slidemenu&from=2017-01-28&until=" +
-            currentTime,
-          function (data) {
-            var total = 0;
-            var list = data["cuppa-ng2-slidemenu"];
-            Object.keys(list).forEach(function (key) {
-              total += list[key];
-            });
-            $("#cuppa-ng2-slidemenu").empty().html(numberWithCommas(total));
-          }
-        ); */
       });
     </script>
     <script>

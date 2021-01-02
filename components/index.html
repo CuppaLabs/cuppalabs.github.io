@@ -192,20 +192,34 @@
   </div>
 </div>
 <script>
-  $(function() {
-     var currentTime = toJSONLocal(new Date);
-  $.ajax({
-  method: "GET",
-  url: "https://npm-stat.com/downloads/range/2017-11-11:"+currentTime+"/angular2-datetimepicker"
-})
-  .done(function( data ) {
-    var total = 0;
-    $.each(data.downloads, function(key, obj){
-      total += obj.downloads
-    });
-    $("#angular2-datetimepicker").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
-  });
-  });
+  $(function () {
+        var requests = [];
+        var currentTime = toJSONLocal(new Date());
+        var d = new Date();
+        var currentYear = d.getFullYear();
+        for (var k = 2017; k <= currentYear; k++) {
+          var first_date = toJSONLocal(new Date(k, 0, 1));
+          var last_date = toJSONLocal(new Date(k, 11, 31));
+          requests.push(
+            fetch(
+              "https://api.npmjs.org/downloads/point/" +
+                first_date +
+                ":" +
+                last_date +
+                "/angular2-datetimepicker"
+            )
+          );
+        }
+        Promise.all(requests)
+          .then((responses) => Promise.all(responses.map((r) => r.json())))
+          .then((data) => {
+            var total = 0;
+            data.forEach((obj) => {
+              total += obj.downloads;
+            });
+            $("#angular2-datetimepicker").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
+          });
+      });
 </script>
  
  
@@ -243,20 +257,34 @@
   </div>
 </div>
 <script>
-  $(function() {
-     var currentTime = toJSONLocal(new Date);
-  $.ajax({
-  method: "GET",
-  url: "https://npm-stat.com/downloads/range/2017-04-01:"+currentTime+"/angular2-multiselect-dropdown"
-})
-  .done(function( data ) {
-    var total = 0;
-    $.each(data.downloads, function(key, obj){
-      total += obj.downloads
-    });
-    $("#angular2-multiselect-dropdown").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
-  });
-  });
+  $(function () {
+        var requests = [];
+        var currentTime = toJSONLocal(new Date());
+        var d = new Date();
+        var currentYear = d.getFullYear();
+        for (var k = 2017; k <= currentYear; k++) {
+          var first_date = toJSONLocal(new Date(k, 0, 1));
+          var last_date = toJSONLocal(new Date(k, 11, 31));
+          requests.push(
+            fetch(
+              "https://api.npmjs.org/downloads/point/" +
+                first_date +
+                ":" +
+                last_date +
+                "/angular2-multiselect-dropdown"
+            )
+          );
+        }
+        Promise.all(requests)
+          .then((responses) => Promise.all(responses.map((r) => r.json())))
+          .then((data) => {
+            var total = 0;
+            data.forEach((obj) => {
+              total += obj.downloads;
+            });
+            $("#angular2-multiselect-dropdown").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
+          });
+      });
 </script>
  
  
@@ -298,20 +326,34 @@
   </div>
 </div>
 <script>
-  $(function() {
-     var currentTime = toJSONLocal(new Date);
-  $.ajax({
-  method: "GET",
-  url: "https://npm-stat.com/downloads/range/2017-01-28:"+currentTime+"/cuppa-ng2-slidemenu"
-})
-  .done(function( data ) {
-    var total = 0;
-    $.each(data.downloads, function(key, obj){
-      total += obj.downloads
-    });
-    $("#cuppa-ng2-slidemenu").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
-  });
-  });
+  $(function () {
+        var requests = [];
+        var currentTime = toJSONLocal(new Date());
+        var d = new Date();
+        var currentYear = d.getFullYear();
+        for (var k = 2017; k <= currentYear; k++) {
+          var first_date = toJSONLocal(new Date(k, 0, 1));
+          var last_date = toJSONLocal(new Date(k, 11, 31));
+          requests.push(
+            fetch(
+              "https://api.npmjs.org/downloads/point/" +
+                first_date +
+                ":" +
+                last_date +
+                "/cuppa-ng2-slidemenu"
+            )
+          );
+        }
+        Promise.all(requests)
+          .then((responses) => Promise.all(responses.map((r) => r.json())))
+          .then((data) => {
+            var total = 0;
+            data.forEach((obj) => {
+              total += obj.downloads;
+            });
+            $("#cuppa-ng2-slidemenu").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
+          });
+      });
 </script>
  
  
@@ -349,20 +391,34 @@
   </div>
 </div>
 <script>
-  $(function() {
-     var currentTime = toJSONLocal(new Date);
-  $.ajax({
-  method: "GET",
-  url: "https://npm-stat.com/downloads/range/2017-01-15:"+currentTime+"/cuppa-ng2-grid"
-})
-  .done(function( data ) {
-    var total = 0;
-    $.each(data.downloads, function(key, obj){
-      total += obj.downloads
-    });
-    $("#cuppa-ng2-grid").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
-  });
-  });
+  $(function () {
+        var requests = [];
+        var currentTime = toJSONLocal(new Date());
+        var d = new Date();
+        var currentYear = d.getFullYear();
+        for (var k = 2017; k <= currentYear; k++) {
+          var first_date = toJSONLocal(new Date(k, 0, 1));
+          var last_date = toJSONLocal(new Date(k, 11, 31));
+          requests.push(
+            fetch(
+              "https://api.npmjs.org/downloads/point/" +
+                first_date +
+                ":" +
+                last_date +
+                "/cuppa-ng2-grid"
+            )
+          );
+        }
+        Promise.all(requests)
+          .then((responses) => Promise.all(responses.map((r) => r.json())))
+          .then((data) => {
+            var total = 0;
+            data.forEach((obj) => {
+              total += obj.downloads;
+            });
+            $("#cuppa-ng2-grid").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
+          });
+      });
 </script>
  
  
@@ -400,20 +456,34 @@
   </div>
 </div>
 <script>
-  $(function() {
-     var currentTime = toJSONLocal(new Date);
-  $.ajax({
-  method: "GET",
-  url: "https://npm-stat.com/downloads/range/2016-11-01:"+currentTime+"/cuppa-angular-menu"
-})
-  .done(function( data ) {
-    var total = 0;
-    $.each(data.downloads, function(key, obj){
-      total += obj.downloads
-    });
-    $("#cuppa-angular-menu").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
-  });
-  });
+  $(function () {
+        var requests = [];
+        var currentTime = toJSONLocal(new Date());
+        var d = new Date();
+        var currentYear = d.getFullYear();
+        for (var k = 2017; k <= currentYear; k++) {
+          var first_date = toJSONLocal(new Date(k, 0, 1));
+          var last_date = toJSONLocal(new Date(k, 11, 31));
+          requests.push(
+            fetch(
+              "https://api.npmjs.org/downloads/point/" +
+                first_date +
+                ":" +
+                last_date +
+                "/cuppa-angular-menu"
+            )
+          );
+        }
+        Promise.all(requests)
+          .then((responses) => Promise.all(responses.map((r) => r.json())))
+          .then((data) => {
+            var total = 0;
+            data.forEach((obj) => {
+              total += obj.downloads;
+            });
+            $("#cuppa-angular-menu").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
+          });
+      });
 </script>
  
  

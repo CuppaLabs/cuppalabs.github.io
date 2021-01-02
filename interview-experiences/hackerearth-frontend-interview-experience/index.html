@@ -476,21 +476,34 @@ They booked flight tickets. I went to bangalore for pair programming round.</p>
 </div>
     </div>
     <script>
-  $(function() {
-    var currentTime = toJSONLocal(new Date);
-  $.ajax({
-  method: "GET",
-  url: "https://npm-stat.com/downloads/range/2017-12-10:"+currentTime+"/cuppa-ng2-grid"
-})
-  .done(function( data ) {
-    var total = 0;
-    $.each(data.downloads, function(key, obj){
-      total += obj.downloads
-    });
-    $("#cuppa-ng2-grid").empty().html(numberWithCommas(total));
-  });
-  });
-
+  $(function () {
+        var requests = [];
+        var currentTime = toJSONLocal(new Date());
+        var d = new Date();
+        var currentYear = d.getFullYear();
+        for (var k = 2017; k <= currentYear; k++) {
+          var first_date = toJSONLocal(new Date(k, 0, 1));
+          var last_date = toJSONLocal(new Date(k, 11, 31));
+          requests.push(
+            fetch(
+              "https://api.npmjs.org/downloads/point/" +
+                first_date +
+                ":" +
+                last_date +
+                "/cuppa-ng2-grid"
+            )
+          );
+        }
+        Promise.all(requests)
+          .then((responses) => Promise.all(responses.map((r) => r.json())))
+          .then((data) => {
+            var total = 0;
+            data.forEach((obj) => {
+              total += obj.downloads;
+            });
+            $("#cuppa-ng2-grid").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
+          });
+      });
 
 </script>
 <script>

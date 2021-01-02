@@ -769,9 +769,7 @@
           );
         }
         Promise.all(requests)
-          // map array of responses into an array of response.json() to read their content
           .then((responses) => Promise.all(responses.map((r) => r.json())))
-          // all JSON answers are parsed: "users" is the array of them
           .then((data) => {
             var total = 0;
             data.forEach((obj) => {
@@ -779,18 +777,6 @@
             });
             $("#angular2-multiselect-dropdown").empty().html(numberWithCommas(total));
           });
-        /*         $.getJSON(
-          "https://npm-stat.com/api/download-counts?package=angular2-multiselect-dropdown&from=2017-04-01&until=" +
-            currentTime,
-          function (data) {
-            var total = 0;
-            var list = data["angular2-multiselect-dropdown"];
-            Object.keys(list).forEach(function (key) {
-              total += list[key];
-            });
-            $("#angular2-multiselect-dropdown").empty().html(numberWithCommas(total));
-          }
-        ); */
       });
     </script>
     <script>
