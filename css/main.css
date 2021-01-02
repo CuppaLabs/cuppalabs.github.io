@@ -7,6 +7,7 @@
 /*# sourceMappingURL=bootstrap.min.css.map */
 body {
     background-color: #fff;
+    font-weight: 100;
     font-size: 14px;
 }
 .component-article h1,.component-article h2,.component-article h3,.component-article h4,.component-article h5,.component-article h6 {

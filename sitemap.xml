@@ -6,7 +6,7 @@
   
     
       <url>
-  <loc>https://cuppalabs.github.io/aboutme/</loc>
+  <loc>https://cuppalabs.github.io/aboutMe/</loc>
   
   
 </url>
@@ -60,34 +60,7 @@
   
     
       <url>
-  <loc>https://cuppalabs.github.io/components/</loc>
-  
-  
-</url>
-
-    
-  
-    
-      <url>
   <loc>https://cuppalabs.github.io/interview-experiences/</loc>
-  
-  
-</url>
-
-    
-  
-    
-      <url>
-  <loc>https://cuppalabs.github.io/ng2-social-login/documentation/</loc>
-  
-  
-</url>
-
-    
-  
-    
-      <url>
-  <loc>https://cuppalabs.github.io/ng2-social-login/</loc>
   
   
 </url>
@@ -106,6 +79,33 @@
     
       <url>
   <loc>https://cuppalabs.github.io/</loc>
+  
+  
+</url>
+
+    
+  
+    
+      <url>
+  <loc>https://cuppalabs.github.io/components/</loc>
+  
+  
+</url>
+
+    
+  
+    
+      <url>
+  <loc>https://cuppalabs.github.io/ng2-social-login/</loc>
+  
+  
+</url>
+
+    
+  
+    
+      <url>
+  <loc>https://cuppalabs.github.io/ng2-social-login/documentation/</loc>
   
   
 </url>
