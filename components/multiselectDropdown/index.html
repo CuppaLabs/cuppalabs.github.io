@@ -7,21 +7,21 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
-  <title>Angular Multiselect Dropdown | Cuppa Labs</title>
+  <title>Angular 2 MultiSelect Dropdown</title>
   <link href="https://cuppalabs.github.io/css/main.css" rel="stylesheet">
-  <meta name="description" content="Multiselect dropdown component library for Angular v11, 10, 9, 8, 6, 4 apps. Easy and simple to integrate. Powerful library by Cuppa Labs">
-  <meta content='angular 11 multiselect, angular 2 dropdown, angular2 dropdown, angular 2 multiselect dropdown, angular 2 multiselect' name='keywords' />
-  <meta property="og:description" content="Multiselect dropdown component library for Angular v11, 10, 9, 8, 6, 4 apps. Easy and simple to integrate. Powerful library by Cuppa Labs" />
+  <meta name="description" content="A multiselect dropdown component for angular 2 and 4 applications. Developed in Angular 2 and 4, its easy to install and integrate.">
+  <meta content='angular 2 dropdown, angular2 dropdown, angular 2 multiselect dropdown, angular 2 multiselect' name='keywords' />
+  <meta property="og:description" content="A multiselect dropdown component for angular 2 and 4 applications. Developed in Angular 2 and 4, its easy to install and integrate." />
   <meta property="og:url" content="https://cuppalabs.github.io/components/multiselectDropdown/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Angular MultiSelect Dropdown | Cuppa Labs" />
+  <meta property="og:title" content="Angular 2 MultiSelect Dropdown" />
   <meta property="og:site_name" content="Cuppa Labs" />
   <meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
   <meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
   <meta property="article:tag" content="Angular 2" />
   <meta property="article:tag" content="html5" />
   <meta property="article:tag" content="css3" />
-  <meta property="og:image" content="https://cuppalabs.github.io/img/components/dropdown-banner.jpeg" />
+  <meta property="og:image" content="https://cuppalabs.github.io/img/components/dropdown-block.png" />
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -289,21 +289,13 @@
           </div>
         </div>
         <div class="col-md-7 col-lg-7 pl-0">
-          <div class="row component-article">
-            <div class="col component-image">
-              <img
-                class="img-fluid"
-                src="https://cuppalabs.github.io/img/components/dropdown-banner.jpeg"
-              />
-            </div>
+          <div class="col component-image">
+            <img
+              class="img-fluid"
+              src="https://cuppalabs.github.io/img/components/multiselect.jpeg"
+            />
           </div>
-          <div class="row component-article"><p>`</p>
-<h3 id="important-">IMPORTANT !!</h3>
-<h4 id="from-v300-onwards-you-need-to-include-defaultthemescss-file-or-create-your-theme-and-add-it-refer-to-theme-section-below">From <code class="language-plaintext highlighter-rouge">v3.0.0</code> onwards you need to include <code class="language-plaintext highlighter-rouge">default.themes.css</code> file or create your theme and add it. Refer to <a href="https://cuppalabs.github.io/components/multiselectDropdown/#Template---For-custom-html-of-menu-item">theme section</a> below</h4>
-
-<p>`</p>
-
-<h4 id="overview">Overview</h4>
+          <div class="col component-article"><h4 id="overview">Overview</h4>
 
 <p>A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install and integrate.</p>
 
@@ -320,6 +312,8 @@
 
 <h4 id="getting-started">Getting Started</h4>
 <p>To get started with using the multiselect dropdown component, follow the below steps. It’s easy to integrate and just a matter of minutes.</p>
+<h6 id="important-">IMPORTANT !!</h6>
+<p>From <code class="language-plaintext highlighter-rouge">v3.0.0</code> onwards you need to include <code class="language-plaintext highlighter-rouge">default.themes.css</code> file or create your theme and add it. Refer to <a href="https://cuppalabs.github.io/components/multiselectDropdown/#Template---For-custom-html-of-menu-item">theme section</a> below</p>
 
 <h4 id="installation">Installation</h4>
 <ul>
@@ -414,7 +408,7 @@
 <span class="nt">&lt;/angular2-multiselect&gt;</span>
 
 </code></pre></div></div>
-<h3 id="template---for-custom-html-of-menu-item">Template - For custom html of menu item</h3>
+<h4 id="template---for-custom-html-of-menu-item">Template - For custom html of menu item</h4>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;angular2-multiselect</span> <span class="na">[data]=</span><span class="s">"dropdownList"</span> <span class="na">[(ngModel)]=</span><span class="s">"selectedItems"</span> <span class="na">[settings]=</span><span class="s">"dropdownSettings"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;c-item&gt;</span>
@@ -427,7 +421,7 @@
 <span class="nt">&lt;/angular2-multiselect&gt;</span>
 
 </code></pre></div></div>
-<h3 id="themes-and-theming">Themes and Theming</h3>
+<h4 id="themes-and-theming">Themes and Theming</h4>
 
 <ul>
   <li>From v3.0.0 onwards, you need to include <code class="language-plaintext highlighter-rouge">default.theme.css</code> file to get the basic styling of the dropdown.</li>
@@ -438,7 +432,7 @@
 
 <p>You can create your own theme from now on. You can have a look at example scss theming file at <a href="https://github.com/CuppaLabs/angular2-multiselect-dropdown/tree/master/src/themes/default.theme.scss">Default theme</a></p>
 
-<h3 id="using-with-template-driven-forms">Using with Template Driven Forms</h3>
+<h4 id="using-with-template-driven-forms">Using with Template Driven Forms</h4>
 
 <p>Include the dropdown tag in the form html as follows</p>
 
@@ -467,7 +461,7 @@
 <span class="p">};</span>
 
 </code></pre></div></div>
-<h3 id="using-with-reactive-forms">Using with Reactive Forms</h3>
+<h4 id="using-with-reactive-forms">Using with Reactive Forms</h4>
 <p>Incluse the dropdwon in reactive form way as below</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -682,7 +676,7 @@
   Example : (onClose)=”onClose($event)”</li>
 </ul>
 
-<h2 id="run-locally">Run locally</h2>
+<h4 id="run-locally">Run locally</h4>
 <ul>
   <li>Clone the repository or downlod the .zip,.tar files.</li>
   <li>Run <code class="language-plaintext highlighter-rouge">npm install</code></li>
@@ -690,7 +684,7 @@
   <li>Navigate to <code class="language-plaintext highlighter-rouge">http://localhost:4200/</code></li>
 </ul>
 
-<h2 id="license">License</h2>
+<h4 id="license">License</h4>
 <p>MIT License.</p>
 </div>
           <!--/row-->

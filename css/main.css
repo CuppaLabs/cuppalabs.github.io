@@ -7,11 +7,10 @@
 /*# sourceMappingURL=bootstrap.min.css.map */
 body {
     background-color: #fff;
-    font-size: 14px;
+    font-size: 1rem;
 }
 .component-article h1,.component-article h2,.component-article h3,.component-article h4,.component-article h5,.component-article h6 {
     width: 100%;
-    margin-top: 30px;
 }
 .component-title > .fa {
     margin-right: 10px;
@@ -59,12 +58,11 @@ body {
     padding: 15px 15px;
 }
 .top-navbar .nav-item.active > .nav-link{
-    color: rgb(233,161,66);
-    font-weight: 500;
-    border-bottom-color: rgb(233,161,66);
+    color: rgb(0,122,255);
+    border-bottom: 3px solid rgb(0,122,255);
 }
 .top-navbar .nav-item > .nav-link:hover {
-    color: rgb(233,161,66) !important;
+    color: rgb(121 121 121) !important;
 }
 .center-content {
     margin-top: 15px;
@@ -139,8 +137,11 @@ body {
     padding: 0 10px;
 }
 .component-article{
-    padding: 10px;
+    padding: 10px 20px;
     position: relative;
+}
+.component-article p, .component-article ul {
+    margin-bottom: 2rem;
 }
 .component-article h3 {
     width: 100%;
@@ -194,7 +195,7 @@ body {
     z-index: 1;
 }
 pre.highlight{
-    border-radius: 4px;
+    border-radius: 0px;
     width: 100%;
 }
 pre{
@@ -216,10 +217,11 @@ pre{
     padding: 0px 30px;
 }
 .top-navbar .navbar-nav .nav-link {
-    color: #757575;
+    color: #333;
 }
 .component-headline .btn {
     color: #fff !important;
+    border-radius: 0px;
 }
 .component-list {
 }
@@ -327,7 +329,7 @@ pre{
     text-align: center;
 }
 .component-image{
-    padding: 0px;
+    padding: 20px;
 }
 .component-image img{
     width: 100%;
@@ -431,7 +433,7 @@ h6{
 }
 }
 .carousel-inner {
-     background: linear-gradient(to right,#5076a5 0,#afafaf 100%);
+     background: linear-gradient(to right,#20436f 0,#2b0404 100%);
      height: 500px;
 }
 .slide-0 {
@@ -464,7 +466,7 @@ h6{
     background: #fff;
     min-width: 140px;
     margin: 0 5px;
-    border-radius: 3px;
+    border-radius: 0px;
 }
 .code-area{
     border: 2px solid #1976D2;
@@ -767,8 +769,7 @@ pre code {
 }
 pre.highlight {
     background-color: transparent !important;
-    border: 2px solid #1976D2 !important;
-    margin-top: 10px !important;
+    border: 1px solid #1976D2 !important;
     margin-bottom: 20px !important;
 }
 
