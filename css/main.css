@@ -84,7 +84,7 @@ body {
     left: 0;
     z-index: 1000;
 }
-.component-headline .navbar-nav .dropdown-menu {
+/* .component-headline .navbar-nav .dropdown-menu {
     left: -100%;
     padding: 0px;
     margin: 0px;
@@ -95,7 +95,7 @@ body {
     display: inline-block;
     padding: 15px 15px;
     text-align: center;
-}
+} */
 .list-group-item{
     padding-top: 10px;
     padding-bottom: 10px;
@@ -146,8 +146,21 @@ body {
 .component-article h3 {
     width: 100%;
 }
+.tutorial-article {
+    padding: 0px 20px;
+    position: relative;
+}
 .navbar-nav .dropdown-menu{
     position: absolute !important;
+}
+.article-share {
+    margin-left: auto;
+}
+.article-share .dropdown-item{
+    padding: 0.25rem 1rem;
+}
+.article-share .dropdown-item i {
+    margin-right: 10px;
 }
 .user-card{
     margin: 0px !important;
@@ -432,9 +445,15 @@ h6{
     font-size: 12px;
 }
 }
+.carousel {
+/*     background: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v326-kul-49-connection_3.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=ccb4970323835a0be31974913a17d435);
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
 .carousel-inner {
-     background: linear-gradient(to right,#20436f 0,#2b0404 100%);
-     height: 500px;
+     background: linear-gradient(to right,#20436f 0,#6d1545 100%);
+/*      background: #2f6ec3;
+ */     height: 500px;
 }
 .slide-0 {
 }
@@ -522,9 +541,10 @@ h6{
     padding: 0px;
 }
 .stats-section .fa-download{
-    font-size: 40px;
-    margin-top: 7px;
+    font-size: 2rem;
+    margin-top: 10px;
     display: inline-block;
+    float: left;
 }
 .stats-section .component-title{
     padding: 0px 0px 0px 10px;
@@ -672,14 +692,25 @@ h6{
 .nav-avatar-link {
     position: relative;
     padding-left: 52px !important;
-    font-size: 12px;
+    font-size: 0.865rem;
     line-height: 17px;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
 }
+.nav-avatar-link label {
+    margin: 0;
+}
+.nav-avatar-link label.date {
+    color: #a5a5a5;
+    padding: 0px 5px;
+}
+.tutorial-meta-info {
+    padding: 10px 0px;
+    display: flex;
+}
 .nav-avatar{
-    width: 32px !important;
-    height: 32px;
+    width: 25px !important;
+    height: 25px;
     position: absolute;
     left: 15px;
     top: 50%;
@@ -737,7 +768,30 @@ a:hover {
 .component-headline .top-navbar {
     width: 100%;
 }
-
+.article.sidebar {
+    top: 10px;
+    height: calc(100vh - 10px);
+}
+.list-group-item, .list-group-item a {
+    border: none;
+    color: #a2a2a2;
+    /* border-right: 2px solid #e8e6e6; */
+    font-size: 0.825rem;
+}
+.list-group-item.active {
+    background-color: transparent;
+    color: rgb(0,122,255);
+}
+.list-group-item .date {
+    padding: 0px !important;
+}
+.list-group-item.avatar-content {
+    border-bottom: 1px solid #e8e6e6;
+}
+.share-list a {
+    padding: 5px 5px;
+    font-size: 1.25rem !important;
+}
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

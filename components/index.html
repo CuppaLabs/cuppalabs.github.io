@@ -66,33 +66,28 @@
       </ul>
       <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
         <li class="nav-item">
-          <a class="nav-item nav-link" href="https://github.com/CuppaLabs">
+          <a class="nav-item nav-link" target="__blank" href="https://github.com/CuppaLabs">
                 <i class="fa fa-github"></i>
             </a>
         </li>
         <li class="nav-item">
-          <a class="nav-item nav-link" href="https://www.facebook.com/cuppalabs">
+          <a class="nav-item nav-link" target="__blank" href="https://www.facebook.com/cuppalabs">
                 <i class="fa fa-facebook"></i>
             </a>
         </li>
         <li class="nav-item">
-          <a class="nav-item nav-link" href="https://www.linkedin.com/in/pradeep-kumar-terli">
+          <a class="nav-item nav-link" target="__blank" href="https://www.linkedin.com/in/pradeep-kumar-terli">
                 <i class="fa fa-linkedin"></i>
             </a>
         </li>
         <li class="nav-item">
-          <a class="nav-item nav-link" href="https://plus.google.com/102171107795347642020">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-item nav-link" href="https://twitter.com/PradeepTerli">
+          <a class="nav-item nav-link" target="__blank" href="https://twitter.com/PradeepTerli">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
         <li class="nav-item ">
           <a class="nav-link nav-avatar-link" href="https://cuppalabs.github.io/aboutme">
-          <img src="https://cuppalabs.github.io/img/pradeep.jpg" class="avatar-img img-me nav-avatar"/>
+          <img src="https://cuppalabs.github.io/img/profile_pic.jpeg" class="avatar-img img-me nav-avatar"/>
           Author <br>
           Pradeep Kumar Terli
           </a>
@@ -156,73 +151,6 @@
          
  
   
-  
- 
- 
-
-<div class="col-md-4 card-container pl-2 pr-2">
-  <div class="card">
-    <a href="https://cuppalabs.github.io/components/datepicker/"><img class="card-img-top" src="https://cuppalabs.github.io/img/components/datepicker-thumbnail.png" alt="Angular 2 DateTime picker"></a>
-    <div class="card-body">
-      <h5 class="card-title"><a href="https://cuppalabs.github.io/components/datepicker/">Angular 2 DateTime picker</a></h5>
-      <a class="nav-link nav-avatar-link  author-badge badge-black" href="https://cuppalabs.github.io/aboutme">
-          <img src="https://cuppalabs.github.io/img/pradeep.jpg" class="avatar-img img-me nav-avatar"/>
-          By <br>
-          Pradeep Kumar Terli
-          </a>
-      <p class="card-text">Angular 2 DateTimepicker is a cool responsive DateTimepicker component for Web and Mobile. It is Mobile friendly and light weight</p>
-    </div>
-    <div class="card-footer">
-        <ul class="list-group list-group-horizontal">
-            
-            <li class="list-group-item">
-                
-              <div class="txt-slot d-inline-block float-left" id="angular2-datetimepicker"><img style="width:45px;" src="/img/ezgif.gif"/></div>
-               
-               
-            </li>
-            <li class="list-group-item">
-                
-                <a href="https://cuppalabs.github.io/components/datepicker/" class="card-link"><small>Read More</small> <i class="fa fa-angle-right"></i></a>
-                
-            </li>
-          </ul>
-    </div>
-    
-  </div>
-</div>
-<script>
-  $(function () {
-        var requests = [];
-        var currentTime = toJSONLocal(new Date());
-        var d = new Date();
-        var currentYear = d.getFullYear();
-        for (var k = 2017; k <= currentYear; k++) {
-          var first_date = toJSONLocal(new Date(k, 0, 1));
-          var last_date = toJSONLocal(new Date(k, 11, 31));
-          requests.push(
-            fetch(
-              "https://api.npmjs.org/downloads/point/" +
-                first_date +
-                ":" +
-                last_date +
-                "/angular2-datetimepicker"
-            )
-          );
-        }
-        Promise.all(requests)
-          .then((responses) => Promise.all(responses.map((r) => r.json())))
-          .then((data) => {
-            var total = 0;
-            data.forEach((obj) => {
-              total += obj.downloads;
-            });
-            $("#angular2-datetimepicker").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
-          });
-      });
-</script>
- 
- 
  
 
 <div class="col-md-4 card-container pl-2 pr-2">
@@ -231,7 +159,7 @@
     <div class="card-body">
       <h5 class="card-title"><a href="https://cuppalabs.github.io/components/multiselectDropdown/">Angular 2 MultiSelect Dropdown</a></h5>
       <a class="nav-link nav-avatar-link  author-badge badge-black" href="https://cuppalabs.github.io/aboutme">
-          <img src="https://cuppalabs.github.io/img/pradeep.jpg" class="avatar-img img-me nav-avatar"/>
+          <img src="https://cuppalabs.github.io/img/profile_pic.jpeg" class="avatar-img img-me nav-avatar"/>
           By <br>
           Pradeep Kumar Terli
           </a>
@@ -296,11 +224,80 @@
 
 <div class="col-md-4 card-container pl-2 pr-2">
   <div class="card">
+    <a href="https://cuppalabs.github.io/components/datepicker/"><img class="card-img-top" src="https://cuppalabs.github.io/img/components/datepicker-thumbnail.png" alt="Angular 2 DateTime picker"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="https://cuppalabs.github.io/components/datepicker/">Angular 2 DateTime picker</a></h5>
+      <a class="nav-link nav-avatar-link  author-badge badge-black" href="https://cuppalabs.github.io/aboutme">
+          <img src="https://cuppalabs.github.io/img/profile_pic.jpeg" class="avatar-img img-me nav-avatar"/>
+          By <br>
+          Pradeep Kumar Terli
+          </a>
+      <p class="card-text">Angular 2 DateTimepicker is a cool responsive DateTimepicker component for Web and Mobile. It is Mobile friendly and light weight</p>
+    </div>
+    <div class="card-footer">
+        <ul class="list-group list-group-horizontal">
+            
+            <li class="list-group-item">
+                
+              <div class="txt-slot d-inline-block float-left" id="angular2-datetimepicker"><img style="width:45px;" src="/img/ezgif.gif"/></div>
+               
+               
+            </li>
+            <li class="list-group-item">
+                
+                <a href="https://cuppalabs.github.io/components/datepicker/" class="card-link"><small>Read More</small> <i class="fa fa-angle-right"></i></a>
+                
+            </li>
+          </ul>
+    </div>
+    
+  </div>
+</div>
+<script>
+  $(function () {
+        var requests = [];
+        var currentTime = toJSONLocal(new Date());
+        var d = new Date();
+        var currentYear = d.getFullYear();
+        for (var k = 2017; k <= currentYear; k++) {
+          var first_date = toJSONLocal(new Date(k, 0, 1));
+          var last_date = toJSONLocal(new Date(k, 11, 31));
+          requests.push(
+            fetch(
+              "https://api.npmjs.org/downloads/point/" +
+                first_date +
+                ":" +
+                last_date +
+                "/angular2-datetimepicker"
+            )
+          );
+        }
+        Promise.all(requests)
+          .then((responses) => Promise.all(responses.map((r) => r.json())))
+          .then((data) => {
+            var total = 0;
+            data.forEach((obj) => {
+              total += obj.downloads;
+            });
+            $("#angular2-datetimepicker").empty().html('<i class="fa fa-download"></i>'+numberWithCommas(total));
+          });
+      });
+</script>
+ 
+ 
+  
+ 
+  
+ 
+ 
+
+<div class="col-md-4 card-container pl-2 pr-2">
+  <div class="card">
     <a href="https://cuppalabs.github.io/components/slidemenu/"><img class="card-img-top" src="https://cuppalabs.github.io/img/components/slidemenu-thumbnail.png" alt="Angular 2 Slide Menu"></a>
     <div class="card-body">
       <h5 class="card-title"><a href="https://cuppalabs.github.io/components/slidemenu/">Angular 2 Slide Menu</a></h5>
       <a class="nav-link nav-avatar-link  author-badge badge-black" href="https://cuppalabs.github.io/aboutme">
-          <img src="https://cuppalabs.github.io/img/pradeep.jpg" class="avatar-img img-me nav-avatar"/>
+          <img src="https://cuppalabs.github.io/img/profile_pic.jpeg" class="avatar-img img-me nav-avatar"/>
           By <br>
           Pradeep Kumar Terli
           </a>
@@ -365,7 +362,7 @@
     <div class="card-body">
       <h5 class="card-title"><a href="https://cuppalabs.github.io/components/datatable/">Angular 2 Data Table</a></h5>
       <a class="nav-link nav-avatar-link  author-badge badge-black" href="https://cuppalabs.github.io/aboutme">
-          <img src="https://cuppalabs.github.io/img/pradeep.jpg" class="avatar-img img-me nav-avatar"/>
+          <img src="https://cuppalabs.github.io/img/profile_pic.jpeg" class="avatar-img img-me nav-avatar"/>
           By <br>
           Pradeep Kumar Terli
           </a>
@@ -430,7 +427,7 @@
     <div class="card-body">
       <h5 class="card-title"><a href="https://cuppalabs.github.io/components/fanmenu/">Circular Fan Menu</a></h5>
       <a class="nav-link nav-avatar-link  author-badge badge-black" href="https://cuppalabs.github.io/aboutme">
-          <img src="https://cuppalabs.github.io/img/pradeep.jpg" class="avatar-img img-me nav-avatar"/>
+          <img src="https://cuppalabs.github.io/img/profile_pic.jpeg" class="avatar-img img-me nav-avatar"/>
           By <br>
           Pradeep Kumar Terli
           </a>
@@ -500,8 +497,6 @@
   
  
   
- 
-  
 
 
    </div>
@@ -548,7 +543,7 @@
 </div>
 
   <footer class="footer">
-    <p>© 2009-2017 &nbsp <a href="https://cuppalabs.github.io" style="color: #fff;font-size: 16px;">Cuppa Labs</a> &nbsp <b>Made in India</b>.
+    <p>© 2009-2021 &nbsp <a href="https://cuppalabs.github.io" style="color: #fff;font-size: 16px;">Cuppa Labs</a> &nbsp <b>Made in India</b>.
       All rights reserved and copyrighted to <b>Pradeep Kumar Terli</b></p>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
