@@ -792,6 +792,23 @@ a:hover {
     padding: 5px 5px;
     font-size: 1.25rem !important;
 }
+.covid-slide .banner-img {
+    width: 100%;
+}
+.covid-slide{
+    padding-top: 80px;
+}
+.covid-slide .btn {
+    border-radius: 0;
+    width: 50%;
+}
+.covid-slide ul{
+    list-style: none;
+    padding: 0;
+}
+.covid-slide .fa-check-circle {
+    margin-right: 10px;
+}
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
