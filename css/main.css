@@ -67,6 +67,10 @@ body {
 .center-content {
     margin-top: 15px;
 }
+.about-me .center-content{
+    box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%);
+    padding: 3rem;
+}
 .ad-sidebar {
     width: 300px !important;
     top: 0 !important;
@@ -250,26 +254,72 @@ pre{
 }
 .contact-details{
     padding: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 0;
+    display: block;
 }
 .contact-details li{
     list-style: none;
     padding: 0px;
     float: left;
 }
+.contact-details a {
+    color: #757575;
+}
+.introduction .fa-map-marker {
+    margin-right: 9px !important;
+    margin-left: 3px;
+}
 .exp-details{
     list-style: none;
+    font-size: 0.875rem;
+    color: #757575;
+    padding: 0;
 }
 .exp-details li{
     padding: 0px 0px 10px 0px;
-    width: 49%;
+    width: 50%;
     float: left;
+}
+.exp-details li:nth-child(2) {
+    text-align: right;
+}
+.exp-details .fa {
+    font-size: 0.75rem;
+}
+.role-details .organization {
+    text-align: right;
+    margin-bottom: 4px;
+}
+.tech-skills .page-header {
+    margin-bottom: 12px;
+}
+.tech-skills .badge {
+    border-radius: 0;
+}
+.job-details {
+    margin-bottom: 15px;
 }
 .job-description{
     padding: 0px 15px;
+    color: #58677c;
 }
 .job-description li{
     
+}
+.college-details {
+
+}
+.college-details .degree {
+    color: #434E5E;
+    margin: 0;
+}
+.college-details .course {
+    color: #757575;
+}
+.college-details .college {
+    color: #434E5E;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 .badge{
     padding: 5px 10px;
@@ -297,14 +347,30 @@ pre{
     width: 50%;
     border:0;
 }
-.role, .organization, .about-me .fa{
+.organization, .about-me .fa{
     color: #f49e22;
+}
+.role {
+    color: #5d5d5d;
+    margin: 0;
+}
+.email, .location, .mobile {
+    color: #757575;
+}
+.fa-envelope {
+    font-size: 0.75rem !important;
+}
+.fa-mobile-phone {
+    font-size: 1.25rem !important;   
+}
+.introduction {
+    margin-bottom: 20px;
 }
 #introduction .contact-details{
     margin-top: 15px;
 }
 .about-me .fa{
-    margin-right: 10px;
+    margin-right: 5px;
 }
 .documentation-container{
     padding-top: 0px;
@@ -324,9 +390,14 @@ pre{
 }
 .page-header{
     margin-top: 10px;
-    border-bottom: 3px solid #f49e22;
+    border-bottom: 2px solid #f49e22;
     color: #f49e22;
     width: 100%;
+}
+.job-title {
+    font-size: 1.125rem;
+    color: #434E5E;
+    margin-bottom: 4px;
 }
 .footer {
     background: #333;
@@ -360,16 +431,13 @@ pre{
 
 @media print {
 body {
-    font-size: 11px;
+    font-size: 12px;
     font-family: 'Roboto', sans-serif;
     margin: 0px 0px 0px 0px; 
 }
 html, body { height: 100%; }
 div.page {
   margin: 10px 10px 10px 10px; 
-  page-break-before: none;
-  page-break-after: none;
-  page-break-inside: avoid;
 }
 .footer {
     display: none;
@@ -443,6 +511,9 @@ div.page {
 }
 h6{
     font-size: 12px;
+}
+.badge{
+    margin: 5px 1px;
 }
 }
 .carousel {
@@ -809,6 +880,19 @@ a:hover {
 .covid-slide .fa-check-circle {
     margin-right: 10px;
 }
+@media print {
+    html, body { height: auto; }
+    .about-me .center-content {
+      box-shadow: none;
+      padding: 0;
+    }
+    .job-title {
+        font-size: 0.875rem;
+    }
+    .exp-details {
+        font-size: 0.65rem;    
+    }
+  }
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
