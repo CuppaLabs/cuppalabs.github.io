@@ -892,6 +892,9 @@ a:hover {
     .exp-details {
         font-size: 0.65rem;    
     }
+    ins {
+        display: none !important;
+    }
   }
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
